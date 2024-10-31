@@ -17,6 +17,7 @@ import {
   FaAngleDoubleRight,
   FaSearch 
 } from 'react-icons/fa';
+import axios from 'axios';
 import WorldMap from './WorldMap';
 import CountryFlag from './CountryFlag';
 import { MainDataLoad } from './MainDataContext';
@@ -33,11 +34,13 @@ const Home = () => {
     pickedCountryModal, 
     setPickedCountryModal,
     pickedCountry, 
-    setPickedCountry
+    setPickedCountry,
+    countryData
   } = MainDataLoad(); 
   const [hasScrolled, setHasScrolled] = useState(false);
 
-
+  console.log(countryData);
+  
 
 
   return (
@@ -72,7 +75,7 @@ const Home = () => {
           <div className="mncntntpt2 right">
             {(pickedCountryModal && pickedCountry) && <div className="mncntntpt2rSelected">
               <div className="mncntntpt2rsCountryName">
-                <h5>{pickedCountry}</h5>
+                <h5>{pickedCountry} <br /><span>{countryData?.name?.official}</span> </h5>
                 <div>
                   <CountryFlag countryName={`${pickedCountry}`} />
                 </div>

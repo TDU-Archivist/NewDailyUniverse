@@ -191,8 +191,8 @@ section.mainContainerPage.top{
     height: 25vw;
     width: 40%;
     z-index: 5;
-    background: rgba(255, 255, 255, 0.1);
-    box-shadow: 0 4px 30px black;
+    background: rgba(20, 20, 20, 0.5);
+    box-shadow: 0 0 10px gray;
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
     border-radius: 1vw;
@@ -205,6 +205,16 @@ section.mainContainerPage.top{
     display: flex;
     justify-content: space-between;
     align-items: top;
+}
+.mncntntpt2rsCountryName h5 {
+    line-height: 1vw;
+}
+.mncntntpt2rsCountryName h5 span{
+    font-size: 0.7vw;
+    line-height: 0.7vw;
+    font-weight: 400;
+    font-family: "Oswald", sans-serif;
+    opacity: 50%;
 }
 .mncntntpt2rsCountryName div{
     height: 2.5vw;
