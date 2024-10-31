@@ -24,6 +24,8 @@ const CountryFlag = ({ countryName }) => {
                     setFlagUrl('https://flagcdn.com/w320/cf.png');
                 } else if (countryName.toLowerCase() === 'dem. rep. congo') {
                     setFlagUrl('https://flagcdn.com/w320/cd.png');
+                } else if (countryName.toLowerCase() === 'fr. s. antarctic lands') {
+                    setFlagUrl('https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Flag_of_the_French_Southern_and_Antarctic_Lands.svg/2560px-Flag_of_the_French_Southern_and_Antarctic_Lands.svg.png');
                 }
                 // console.error("Error fetching the country flag:", error);
                 // setFlagUrl(''); // Clear the flag URL if there's an error
