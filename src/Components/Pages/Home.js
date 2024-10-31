@@ -18,8 +18,23 @@ import {
   FaSearch 
 } from 'react-icons/fa';
 import WorldMap from './WorldMap';
+import CountryFlag from './CountryFlag';
+import { MainDataLoad } from './MainDataContext';
+
+
+
 
 const Home = () => {
+  const { 
+    createTDUAccount, 
+    setCreateTDUAccount,
+    loginTDUAccount, 
+    setLoginTDUAccount,
+    pickedCountryModal, 
+    setPickedCountryModal,
+    pickedCountry, 
+    setPickedCountry
+  } = MainDataLoad(); 
   const [hasScrolled, setHasScrolled] = useState(false);
 
 
@@ -36,8 +51,33 @@ const Home = () => {
           <div className="mncntntpt2 left">
             <h4>CHECK WORLD HAPPENINGS TODAY</h4>
             <p>Stay Updated on World Events - Explore Happenings and Destinations Across Every Country</p>
+            <div className="mncntntpt2lBreakingNews">
+              <h5>BREAKING NEWS</h5>
+              <div className="mncntntpt2lbn">
+                <div className="mncntntpt2lbnContent">
+                  <img src={require('../assets/imgs/TDULandingBG.png')} alt="" />
+                </div>
+                <div className="mncntntpt2lbnContent">
+                  <img src={require('../assets/imgs/TDULandingBG.png')} alt="" />
+                </div>
+                <div className="mncntntpt2lbnContent">
+                  <img src={require('../assets/imgs/TDULandingBG.png')} alt="" />
+                </div>
+                <div className="mncntntpt2lbnContent">
+                  <img src={require('../assets/imgs/TDULandingBG.png')} alt="" />
+                </div>
+              </div>
+            </div>
           </div>
           <div className="mncntntpt2 right">
+            {(pickedCountryModal && pickedCountry) && <div className="mncntntpt2rSelected">
+              <div className="mncntntpt2rsCountryName">
+                <h5>{pickedCountry}</h5>
+                <div>
+                  <CountryFlag countryName={`${pickedCountry}`} />
+                </div>
+              </div>
+            </div>}
             <div className="mncntntpt2rSearch">
               <input type="text" placeholder='Search Country here..'/>
               <h6><FaSearch /></h6>
