@@ -1,0 +1,146 @@
+h1, h2, h3, h4, h5, h6, p{
+    color: white;
+}
+h1, h2, h3, h4, h5, h6{
+    /* font-family: "Bebas Neue", sans-serif; */
+    font-family: "Oswald", sans-serif;
+}
+p{
+    font-size: 0.9vw;
+}
+h1{
+    font-size: 10vw;
+}
+h2{
+    font-size: 5vw;
+}
+h3{
+    font-size: 4vw;
+}
+h4{
+    font-size: 2vw;
+}
+h5{
+    font-size: 1.5vw;
+}
+h6{
+    font-size: 1vw;
+}
+
+
+.mainContainer.home{
+    height: auto;
+    width: 100%;
+    background: black;
+}
+
+/*----- Landing Section -----*/
+
+
+
+section.mainContainerPage.top{
+    height: auto;
+    width: 100%;
+    padding: 4vw 5vw;
+    background: 
+        linear-gradient(black 0%, transparent),
+        linear-gradient(transparent, black 100%),
+        url('../assets/imgs/TDULandingBG.png') no-repeat center;
+    background-size: cover;
+}
+.mainContentPage.top1{
+    height: auto;
+    width: 100%;
+    padding: 3vw 7vw;
+    padding-bottom: 2vw;
+    text-align: center;
+}
+.mainContentPage.top1 img{
+    height: 10vw;
+    margin: 0 auto;
+    margin-bottom: 1%;
+}
+.mainContentPage.top1 h3{
+    font-size: 4vw;
+    line-height: 4vw;
+    margin-bottom: 1%;
+    font-weight: 600;
+    font-style: "Bebas Neue", sans-serif;
+}
+.mainContentPage.top1 h6{
+    font-weight: 400;
+}
+
+
+
+.mainContentPage.top2{
+    height: 32vw;
+    width: 100%;
+    background: rgb(30, 30, 30);
+    border-radius: 1vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: top;
+}
+.mncntntpt2.left{
+    height: 100%;
+    width: 35%;
+    padding: 2%;
+}
+.mncntntpt2.left h4{
+    font-size: 3vw;
+    line-height: 3vw;
+    margin-bottom: 3%;
+}
+.mncntntpt2.right{
+    height: 100%;
+    width: 65%;
+    overflow: hidden;
+    background: rgb(20, 20, 20);
+    border-radius: 1vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.map-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.mncntntpt2rSearch{
+    position: absolute;
+    height: auto;
+    width: 35%;
+    top: 1.5vw;
+    right: 1.5vw;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 50px;
+    align-items: center;
+    border: solid 2px white;
+    padding: 3px 15px;
+    z-index: 5;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+}
+.mncntntpt2rSearch input{
+    width: 90%;
+    background: none;
+    border: none;
+    font-size: 0.7vw;
+    outline: none;
+    color: white;
+}
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&display=swap');
+/* font-family: 'Bruno Ace SC', cursive; */
+h6{
+    font-family: "Bebas Neue", sans-serif;
+}
+
+nav{
+    height: auto;
+    width: 100%;
+    padding: 0.5vw 5vw;
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: black;
+    z-index: 999;
+}
+.mainNavContainer{
+    height: auto;
+    width: 100%;
+}
+.navContainer{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.navContainer.mobile{
+    display: none;
+}
+
+/* Website */
+
+.navContent a{
+    text-decoration: none;
+}
+.navContent.left{
+    height: 100%;
+    width: 20%;
+}
+.navContent.left a{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+.navContent.left img{
+    height: 2.2vw;
+    max-width: 100%;
+    margin-right: 5%;
+}
+.navContent.left h4{
+    font-weight: 400;
+    font-size: 1.7vw;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    font-family: "Bebas Neue", sans-serif;
+}
+.navContent.right{
+    height: 100%;
+    width: auto;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    padding: 0.5vw;
+    padding-left: 2vw;
+    border-radius: 50px;
+    background: rgb(40, 40, 40);
+}
+.nvcntntr.links{
+    height: auto;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+.nvcntntr.links button{
+    font-size: 0.9vw;
+    margin-left: 2vw;
+    color: gray;
+    text-decoration: none;
+    font-weight: 400;
+    font-family: "Bebas Neue", sans-serif;
+    transition: 400ms ease;
+    background: none;
+    border: none;
+    outline: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 400ms ease;
+}
+.nvcntntr.links button:hover{
+    color: white;
+    transition: 400ms ease;
+}
+.nvcntntr.links a{
+    font-size: 0.9vw;
+    margin-left: 2vw;
+    color: gray;
+    text-decoration: none;
+    font-weight: 400;
+    font-family: "Bebas Neue", sans-serif;
+    transition: 400ms ease;
+}
+.nvcntntr.links a:hover{
+    color: white;
+    transition: 400ms ease;
+}
+.nvcntntr.user{
+    height: auto;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    margin-left: 2vw;
+}
+.nvcntntr.user button#nvcntntruSignup{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    outline: none;
+    border: solid 2px white;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2px 20px;
+    border-radius: 50px;
+    transition: 400ms ease;
+}
+.nvcntntr.user button#nvcntntruSignup:hover{
+    background: white;
+    transition: 400ms ease;
+}
+.nvcntntr.user button#nvcntntruSignup h6{
+    font-size: 0.9vw;
+    font-weight: 400;
+    transition: 400ms ease;
+}
+.nvcntntr.user button#nvcntntruSignup:hover h6{
+    color: black;
+    transition: 400ms ease;
+}
+.nvcntntr.user button#nvcntntruLogin{
+    font-size: 1.5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    outline: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    margin-left: 0.5vw;
+    transition: 400ms ease;
+    border-radius: 50%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

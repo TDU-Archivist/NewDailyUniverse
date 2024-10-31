@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+html, body {
+  scroll-behavior: smooth;
+}
+body{
+  background: black;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+::-webkit-scrollbar{
+  background: none;
+  height: .5vw;
+  width: 0.5vw;
+  cursor: pointer;
+}
+::-webkit-scrollbar-thumb{
+  background: white;
+  border-radius: .5vw;
+  cursor: pointer;
+}
+::-webkit-scrollbar-track{
+  background: none;
+}
