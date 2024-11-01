@@ -380,6 +380,84 @@ section.mainContainerPage.mid{
     justify-content: center;
     align-items: center;
 }
+.mainContentPage.mid2{
+    height: auto;
+    width: 100%;
+    margin: 5% 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.mncntntpm2.left{
+    height: 30vw;
+    width: 50%;
+    background: url('../assets/imgs/TDULandingBG.png') no-repeat center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1vw;
+    overflow: hidden;
+    position: relative;
+}
+.mncntntpm2.left img{
+    height: 100%;
+}
+.mncntntpm2.left p{
+    position: absolute;
+    bottom: 1vw;
+    left: 1vw;
+    opacity: 50%;
+    font-size: 0.7vw;
+    font-style: italic;
+}
+.mncntntpm2.right{
+    height: auto;
+    width: 47%;
+    padding: 2% 3%;
+}
+.mncntntpm2Author h6{
+    font-weight: 400;
+}
+.mncntntpm2Author p{
+    font-size: 0.7vw;
+    opacity: 50%;
+}
+.mncntntpm2Title{
+    height: 16vw;
+    margin: 2% 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.mncntntpm2Title h3{
+    line-height: 4vw;
+}
+
+
+
+
+
+.mainContentPage.mid3{
+    height: auto;
+    width: 100%;
+    background: rgb(30, 30, 30);
+    margin: 3% 0;
+    padding: 3%;
+    text-align: center;
+    border-radius: 1vw;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 

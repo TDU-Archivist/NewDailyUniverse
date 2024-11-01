@@ -81,7 +81,6 @@ const Home = () => {
     // Cleanup interval on component unmount
     return () => clearInterval(interval);
   }, []);
-
   useEffect(() => {
     // Get user's location
     if (navigator.geolocation) {
@@ -113,20 +112,17 @@ const Home = () => {
       setLocation('Geolocation not supported');
     }
   }, []);
-
-  // Format time as "hh:mm AM/PM"
   const formattedTime = currentDateTime.toLocaleTimeString('en-US', {
     hour: '2-digit',
     minute: '2-digit',
     hour12: true,
   });
-
-  // Format date as "Month day, year"
   const formattedDate = currentDateTime.toLocaleDateString('en-US', {
     year: 'numeric',
     month: 'long',
     day: 'numeric',
   });
+
 
   const handleHideCountrySummaryModal = () => {
     setPickedCountry(false);
@@ -281,6 +277,27 @@ const Home = () => {
               <p>This is a news subtitle only.</p>
             </div>
           </a>
+        </div>
+        <div className="mainContentPage mid2">
+          <div className="mncntntpm2 left">
+            <img src={require('../assets/imgs/TDULandingBG.png')} alt="" />
+            <p>Photo/Image by: Photographer</p>
+          </div>
+          <div className="mncntntpm2 right">
+            <div className="mncntntpm2Author">
+              <h6>WRITTEN BY. JOHN DOE</h6>
+              <p>November 2, 2024</p>
+            </div>
+            <div className="mncntntpm2Title">
+              <h3>THIS WAS A MOVIE REVIEW ABOUT A TRENDING MOVIE</h3>
+            </div>
+            <div className="mncntntpm2SubTitle">
+              <p>This was a subtitle or might the summary of the movie review.</p>
+            </div>
+          </div>
+        </div>
+        <div className="mainContentPage mid3">
+          <h5>LET'S PLACE ANY TEXT OR GIF ADS HERE</h5>
         </div>
       </section>
     </div>
