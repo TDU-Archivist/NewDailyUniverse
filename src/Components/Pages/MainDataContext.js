@@ -100,7 +100,7 @@ export const MainDataLoadProvider = ({ children }) => {
                 pickedCountry, 
                 setPickedCountry,
                 countryData,
-                countryThreeTouristSpots
+                countryThreeTouristSpots,
             }}>
             {children}
         </MainDataContext.Provider>

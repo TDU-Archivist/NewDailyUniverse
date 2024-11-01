@@ -183,6 +183,7 @@ section.mainContainerPage.top{
     font-size: 0.7vw;
     outline: none;
     color: white;
+    text-transform: capitalize;
 }
 .mncntntpt2rSelected{
     position: absolute;
@@ -196,7 +197,34 @@ section.mainContainerPage.top{
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
     border-radius: 1vw;
+    transition: 400ms ease;
     padding: 2%;
+    opacity: 0;
+}
+.mncntntpt2rSelected.active{
+    animation: roll-in-right2 400ms ease;
+    opacity: 1;
+}
+.mncntntpt2rSelected button#closeCountry{
+    position: absolute;
+    top: -0.5vw;
+    right: -0.5vw;
+    padding: 0.4vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: whitesmoke;
+    font-size: 0.7vw;
+    transition: 400ms ease;
+}
+.mncntntpt2rSelected button#closeCountry:hover{
+    background: red;
+    color: white;
+    transition: 400ms ease;
 }
 .mncntntpt2rsCountryName{
     height: 3vw;
@@ -219,7 +247,7 @@ section.mainContainerPage.top{
 .mncntntpt2rscnFlag{
     height: 2.5vw;
     width: 4vw;
-    border-radius: 0.5vw;
+    border-radius: 0.3vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -346,6 +374,19 @@ section.mainContainerPage.top{
     0% {
       opacity: 0;
       transform: translateX(-100%);
+    }
+    30% {
+      opacity: 0.5;
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0px);
+    }
+}
+@keyframes roll-in-left2 {
+    0% {
+      opacity: 0;
+      transform: translateX(10px);
     }
     30% {
       opacity: 0.5;

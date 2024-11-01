@@ -2,19 +2,7 @@ import React, { useEffect, useState } from 'react'
 import "../CSS/home.css";
 import { Link } from 'react-router-dom';
 import { 
-  FaPiggyBank,
-  FaHandshake,
-  FaGraduationCap,
-  FaIcons,
-  FaHollyBerry,
-  FaGamepad,
-  FaCartPlus,
-  FaGlasses,
-  FaUserGraduate,
-  FaBullhorn,
-  FaCheckCircle,
-  FaArrowCircleRight,
-  FaAngleDoubleRight,
+  FaTimes,
   FaSearch 
 } from 'react-icons/fa';
 import axios from 'axios';
@@ -62,13 +50,43 @@ const Home = () => {
     pickedCountry, 
     setPickedCountry,
     countryData,
-    countryThreeTouristSpots
+    countryThreeTouristSpots,
   } = MainDataLoad(); 
   const [hasScrolled, setHasScrolled] = useState(false);
+  const [showImages, setShowImages] = useState([]);
 
-  console.log(countryData);
-  console.log(countryThreeTouristSpots?.tourist_spots);
-  
+  useEffect(() => {
+    if (countryThreeTouristSpots?.tourist_spots) {
+      const initialImageStates = countryThreeTouristSpots.tourist_spots.map(() => false);
+      setShowImages(initialImageStates);
+      countryThreeTouristSpots.tourist_spots.forEach((_, index) => {
+        setTimeout(() => {
+          setShowImages(prevState => {
+            const newState = [...prevState];
+            newState[index] = true;
+            return newState;
+          });
+        }, 1500);
+      });
+    }
+  }, [countryThreeTouristSpots]);
+
+  const handleHideCountrySummaryModal = () => {
+    setPickedCountry(false);
+  }
+  const handleSearchCountry = (e) => {
+    function toCapitalCase(str) {
+      return str.replace(/\b\w/g, char => char.toUpperCase());
+    }
+
+    const country = e.target.value;
+    setPickedCountryModal(false);
+    setPickedCountry(toCapitalCase(country));
+    const timeoutId = setTimeout(() => {
+        setPickedCountryModal(true);
+    }, 400);
+    return () => clearTimeout(timeoutId);
+  }
   
 
 
@@ -103,7 +121,8 @@ const Home = () => {
           </div>
           <div className="mncntntpt2 right">
             {(pickedCountryModal && pickedCountry) && 
-              <div className="mncntntpt2rSelected">
+              <div className={(pickedCountryModal && pickedCountry) ? "mncntntpt2rSelected active" : "mncntntpt2rSelected"}>
+                <button id='closeCountry' onClick={handleHideCountrySummaryModal}><FaTimes className='faIcons'/></button>
                 <div className="mncntntpt2rsCountryName">
                   <div className='mncntntpt2rscnName'>
                     <h5>{pickedCountry}</h5>
@@ -116,13 +135,13 @@ const Home = () => {
                 </div>
                 <div className="mncntntpt2rsSubHeader">
                   <span>
-                    <p>Area: <br /><NumberFormatter number={countryData?.area}/> km^2</p>
+                    <p>Area : <br /><NumberFormatter number={countryData?.area}/> km^2</p>
                   </span>
                   <span>
-                    <p>Population: <br /><NumberFormatter number={countryData?.population}/> </p>
+                    <p>Population : <br /><NumberFormatter number={countryData?.population}/> </p>
                   </span>
                   <span id='mncntntpt2rsCapital'>
-                    <p>Capital: <br /><TextSlicer text={`${countryData?.capital ? countryData?.capital[0] : 'None'}`} maxLength={20} /> </p>   
+                    <p>Capital : <br /><TextSlicer text={`${countryData?.capital ? countryData?.capital[0] : 'None'}`} maxLength={20} /> </p>   
                   </span>
                 </div>
                 <div className="mncntntpt2rsTourist">
@@ -132,11 +151,18 @@ const Home = () => {
                       <>
                         {countryThreeTouristSpots?.tourist_spots.map((data, i) => (
                           <a className="mncntntpt2rstContent" key={i}>
-                            <p>{data.name}</p>
-                            {data.image ? 
-                              <img src={data.image} alt="" />:
-                              <img src={require('../assets/imgs/TDULandingBG.png')} alt="" />
-                            }
+                            {showImages[i] ? (
+                              data.image ? (
+                                <>
+                                  <p>{data.name}</p>
+                                  <img src={data.image} alt={data.name} />
+                                </>
+                              ) : (
+                                <img src={require('../assets/imgs/TDULandingBG.png')} alt="Default" />
+                              )
+                            ) : (
+                              <img src={require('../assets/imgs/TDULandingBG.png')} alt="Loading..." />
+                            )}
                           </a>
                         ))}
                       </>:<>
@@ -155,12 +181,10 @@ const Home = () => {
                 </div>
               </div>
             }
-            {(!pickedCountryModal && !pickedCountry) && 
-              <div className="mncntntpt2rSearch">
-                <input type="text" placeholder='Search Country here..'/>
-                <h6><FaSearch /></h6>
-              </div>
-            }
+            <div className="mncntntpt2rSearch">
+              <input type="text" placeholder='Search Country here..' onChange={handleSearchCountry}/>
+              <h6><FaSearch /></h6>
+            </div>
             <WorldMap />
           </div>
         </div>

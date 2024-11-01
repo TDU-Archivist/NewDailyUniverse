@@ -566,15 +566,32 @@
         "tourist_spots": [
           {
             "name": "Niagara Falls",
-            "image": "https://upload.wikimedia.org/wikipedia/commons/3/3b/Niagara_Falls_Canada.jpg"
+            "image": "https://upload.wikimedia.org/wikipedia/commons/a/ab/3Falls_Niagara.jpg"
           },
           {
             "name": "Banff National Park",
-            "image": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Banff_National_Park.jpg"
+            "image": "https://cdn.britannica.com/71/94371-050-293AE931/Mountains-region-Ten-Peaks-Moraine-Lake-Alberta.jpg"
           },
           {
             "name": "CN Tower",
-            "image": "https://upload.wikimedia.org/wikipedia/commons/5/58/CN_Tower_Canada.jpg"
+            "image": "https://seeyousoon.ca/wp-content/uploads/2020/07/Toronto-Skyline.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Greenland",
+        "tourist_spots": [
+          {
+            "name": "Ilulissat Icefjord",
+            "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0c/74/03/6c/photo1jpg.jpg?w=900&h=500&s=1"
+          },
+          {
+            "name": "Greenland National Museum and Archives",
+            "image": "https://s3.ca-central-1.amazonaws.com/adventurecanada.com-assets2/content/landscape-img/_640x360_crop_center-center_82_line/Museum-buildings-left-along-Nuuk-waterfront.jpg"
+          },
+          {
+            "name": "Nuuk",
+            "image": "https://www.wanderlustmagazine.com/wp-content/uploads/2023/11/shutterstock_1484319500.jpg"
           }
         ]
       },
@@ -1845,7 +1862,7 @@
           },
           {
             "name": "Pamir Highway",
-            "image": "https://assets.bucketlistly.blog/sites/5adf778b6eabcc00190b75b1/content_entry5adf77af6eabcc00190b75b6/5ae4601cdfa2010053aefd40/files/8-days-pamir-highway-itnierary-tajikistan-main-image-hd-op.webp"
+            "image": "https://pamirtrips.com/wp-content/uploads/along-the-pamir-highway.jpg"
           },
           {
             "name": "Jisev Valley",
@@ -2232,15 +2249,15 @@
         "tourist_spots": [
           {
             "name": "New York City",
-            "image": "https://upload.wikimedia.org/wikipedia/commons/e/e1/New_York_City_USA.jpg"
+            "image": "https://i.natgeofe.com/k/5b396b5e-59e7-43a6-9448-708125549aa1/new-york-statue-of-liberty.jpg"
           },
           {
             "name": "Los Angeles",
-            "image": "https://upload.wikimedia.org/wikipedia/commons/c/cb/Los_Angeles_USA.jpg"
+            "image": "https://www.visittheusa.com/sites/default/files/styles/hero_l/public/images/hero_media_image/2017-01/Getty_515070156_EDITORIALONLY_LosAngeles_HollywoodBlvd_Web72DPI_0.jpg?h=0a8b6f8b&itok=B_VKqykq"
           },
           {
             "name": "Chicago",
-            "image": "https://upload.wikimedia.org/wikipedia/commons/c/c0/Chicago_USA.jpg"
+            "image": "https://cdn.choosechicago.com/uploads/2019/06/general-contact.jpg"
           }
         ]
       },

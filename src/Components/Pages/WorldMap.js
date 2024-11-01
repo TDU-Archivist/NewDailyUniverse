@@ -5,7 +5,7 @@ import { MainDataLoad } from './MainDataContext';
 const WorldMap = () => {
     const { 
         setPickedCountryModal,
-        setPickedCountry
+        setPickedCountry,
     } = MainDataLoad(); 
     const geoUrl = 'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json';
 
@@ -20,43 +20,42 @@ const WorldMap = () => {
             <ZoomableGroup zoom={1} minZoom={1} maxZoom={3} center={[0, 0]}>
             <Geographies geography={geoUrl}>
                 {({ geographies }) =>
-                geographies.map((geo) => (
-                    <Geography
-                    key={geo.rsmKey}
-                    geography={geo}
-                    onClick={() => {
-                        // Display the country name on hover
-                        const countryName = geo.properties.name || geo.properties.NAME;
-                        if (countryName) {
-                            setPickedCountryModal(true);
-                            setPickedCountry(countryName);
-
-                            const timeoutId = setTimeout(() => {
+                    geographies.map((geo) => (
+                        <Geography
+                        key={geo.rsmKey}
+                        geography={geo}
+                        onClick={() => {
+                            // Display the country name on hover
+                            const countryName = geo.properties.name || geo.properties.NAME;
+                            if (countryName) {
                                 setPickedCountryModal(false);
-                            }, 10000);
-                            return () => clearTimeout(timeoutId);
-                        } else {
-                            console.log("Country name not found");
-                        }
-                    }}
-                    style={{
-                        default: {
-                        fill: '#d3d3d3', // Grayscale color for default
-                        outline: 'none',
-                        },
-                        hover: {
-                        fill: 'red', // Skyblue color on hover
-                        outline: 'none',
-                        cursor: 'pointer',
-                        },
-                        pressed: {
-                        fill: 'red',
-                        outline: 'none',
-                        cursor: 'pointer',
-                        },
-                    }}
-                    />
-                ))
+                                setPickedCountry(countryName);
+                                const timeoutId = setTimeout(() => {
+                                    setPickedCountryModal(true);
+                                }, 400);
+                                return () => clearTimeout(timeoutId);
+                            } else {
+                                console.log("Country name not found");
+                            }
+                        }}
+                        style={{
+                            default: {
+                            fill: '#d3d3d3', // Grayscale color for default
+                            outline: 'none',
+                            },
+                            hover: {
+                            fill: 'red', // Skyblue color on hover
+                            outline: 'none',
+                            cursor: 'pointer',
+                            },
+                            pressed: {
+                            fill: 'red',
+                            outline: 'none',
+                            cursor: 'pointer',
+                            },
+                        }}
+                        />
+                    ))
                 }
             </Geographies>
             </ZoomableGroup>
