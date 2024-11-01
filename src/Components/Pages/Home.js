@@ -19,12 +19,38 @@ import {
 } from 'react-icons/fa';
 import axios from 'axios';
 import WorldMap from './WorldMap';
+import MapViewer from './MapViewer';
 import CountryFlag from './CountryFlag';
 import { MainDataLoad } from './MainDataContext';
 
 
+const TextSlicer = ({ text = '', maxLength }) => {
+  const truncatedText = text.length > maxLength ? text.slice(0, maxLength) + '...' : text;
+  return (
+    <>{truncatedText}</>
+  );
+};
+const formatNumber = (num) => {
+  if (typeof num !== 'number' || isNaN(num)) {
+    return '';
+  }
 
+  const truncateDecimal = (value, decimals) => {
+    const factor = Math.pow(10, decimals);
+    return Math.floor(value * factor) / factor;
+  };
 
+  if (num >= 1_000_000) {
+    return truncateDecimal(num / 1_000_000, 1) + 'M';
+  } else if (num >= 100_000) {
+    return truncateDecimal(num / 1_000, 1) + 'K';
+  }
+  
+  return num.toString();
+};
+const NumberFormatter = ({ number }) => {
+  return <>{number > 0 ? formatNumber(number) : 0}</>;
+};
 const Home = () => {
   const { 
     createTDUAccount, 
@@ -35,11 +61,14 @@ const Home = () => {
     setPickedCountryModal,
     pickedCountry, 
     setPickedCountry,
-    countryData
+    countryData,
+    countryThreeTouristSpots
   } = MainDataLoad(); 
   const [hasScrolled, setHasScrolled] = useState(false);
 
   console.log(countryData);
+  console.log(countryThreeTouristSpots?.tourist_spots);
+  
   
 
 
@@ -73,18 +102,65 @@ const Home = () => {
             </div>
           </div>
           <div className="mncntntpt2 right">
-            {(pickedCountryModal && pickedCountry) && <div className="mncntntpt2rSelected">
-              <div className="mncntntpt2rsCountryName">
-                <h5>{pickedCountry} <br /><span>{countryData?.name?.official}</span> </h5>
-                <div>
-                  <CountryFlag countryName={`${pickedCountry}`} />
+            {(pickedCountryModal && pickedCountry) && 
+              <div className="mncntntpt2rSelected">
+                <div className="mncntntpt2rsCountryName">
+                  <div className='mncntntpt2rscnName'>
+                    <h5>{pickedCountry}</h5>
+                    <h6>{countryData?.name?.official}</h6>
+                  </div>
+                  <div className='mncntntpt2rscnFlag'>
+                    {/* <CountryFlag countryName={`${pickedCountry}`} /> */}
+                    <img src={`${countryData?.flags?.png}`} alt="" />
+                  </div>
+                </div>
+                <div className="mncntntpt2rsSubHeader">
+                  <span>
+                    <p>Area: <br /><NumberFormatter number={countryData?.area}/> km^2</p>
+                  </span>
+                  <span>
+                    <p>Population: <br /><NumberFormatter number={countryData?.population}/> </p>
+                  </span>
+                  <span id='mncntntpt2rsCapital'>
+                    <p>Capital: <br /><TextSlicer text={`${countryData?.capital ? countryData?.capital[0] : 'None'}`} maxLength={20} /> </p>   
+                  </span>
+                </div>
+                <div className="mncntntpt2rsTourist">
+                  <h6>RECOMMENDED TOURIST SPOTS</h6>
+                  <div className="mncntntpt2rst">
+                    {countryThreeTouristSpots?.tourist_spots.length > 0 ?
+                      <>
+                        {countryThreeTouristSpots?.tourist_spots.map((data, i) => (
+                          <a className="mncntntpt2rstContent" key={i}>
+                            <p>{data.name}</p>
+                            {data.image ? 
+                              <img src={data.image} alt="" />:
+                              <img src={require('../assets/imgs/TDULandingBG.png')} alt="" />
+                            }
+                          </a>
+                        ))}
+                      </>:<>
+                        <a className="mncntntpt2rstContent">
+                          <img src={require('../assets/imgs/TDULandingBG.png')} alt="" />
+                        </a>
+                        <a className="mncntntpt2rstContent">
+                          <img src={require('../assets/imgs/TDULandingBG.png')} alt="" />
+                        </a>
+                        <a className="mncntntpt2rstContent">
+                          <img src={require('../assets/imgs/TDULandingBG.png')} alt="" />
+                        </a>
+                      </>
+                    }
+                  </div>
                 </div>
               </div>
-            </div>}
-            <div className="mncntntpt2rSearch">
-              <input type="text" placeholder='Search Country here..'/>
-              <h6><FaSearch /></h6>
-            </div>
+            }
+            {(!pickedCountryModal && !pickedCountry) && 
+              <div className="mncntntpt2rSearch">
+                <input type="text" placeholder='Search Country here..'/>
+                <h6><FaSearch /></h6>
+              </div>
+            }
             <WorldMap />
           </div>
         </div>

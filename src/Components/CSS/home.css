@@ -188,8 +188,8 @@ section.mainContainerPage.top{
     position: absolute;
     top: 1.5vw;
     left: 1.5vw;
-    height: 25vw;
-    width: 40%;
+    height: 29vw;
+    width: 35%;
     z-index: 5;
     background: rgba(20, 20, 20, 0.5);
     box-shadow: 0 0 10px gray;
@@ -197,26 +197,26 @@ section.mainContainerPage.top{
     -webkit-backdrop-filter: blur(15px);
     border-radius: 1vw;
     padding: 2%;
-    animation: roll-in-right2 400ms ease;
 }
 .mncntntpt2rsCountryName{
-    height: auto;
+    height: 3vw;
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: top;
 }
-.mncntntpt2rsCountryName h5 {
-    line-height: 1vw;
+.mncntntpt2rscnName h5 {
+    font-size: 1.2vw;
+    line-height: 1.5vw;
 }
-.mncntntpt2rsCountryName h5 span{
+.mncntntpt2rscnName h6{
     font-size: 0.7vw;
-    line-height: 0.7vw;
+    line-height: 1vw;
     font-weight: 400;
     font-family: "Oswald", sans-serif;
     opacity: 50%;
 }
-.mncntntpt2rsCountryName div{
+.mncntntpt2rscnFlag{
     height: 2.5vw;
     width: 4vw;
     border-radius: 0.5vw;
@@ -225,13 +225,99 @@ section.mainContainerPage.top{
     align-items: center;
     overflow: hidden;
 }
-.mncntntpt2rsCountryName div img{
+.mncntntpt2rscnFlag img{
     height: 100%;
     width: 100%;
 }
-.mncntntpt2rsCountryName div p{
-    font-size: 0.5vw;
+.mncntntpt2rsSubHeader{
+    height: auto;
+    width: 100%;
+    margin: 5% 0;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    opacity: 50%;
 }
+.mncntntpt2rsSubHeader span{
+    height: auto;
+    width: 30%;
+}
+.mncntntpt2rsSubHeader span#mncntntpt2rsCapital{
+    width: 40%;
+}
+.mncntntpt2rsSubHeader span p{
+    font-size: 0.6vw;
+    line-height: 0.8vw;
+    /* color: gray; */
+}
+.mncntntpt2rsTourist{
+    height: auto;
+    width: 100%;
+    margin-top: 10%;
+}
+.mncntntpt2rsTourist h6{
+    font-size: 0.7vw;
+    font-weight: 400;
+}
+.mncntntpt2rst{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: top;
+    margin-top: 2%;
+    padding-bottom: 3%;
+    overflow-y: hidden;
+    overflow-x: auto;
+    position: relative;
+}
+.mncntntpt2rstContent{
+    height: auto;
+    width: 100%;
+    background: black;
+    margin-right: 0.5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 0.5vw;
+    position: relative;
+    cursor: pointer;
+}
+.mncntntpt2rstContent img{
+    height: 8vw;
+    border-radius: 0.5vw;
+}
+.mncntntpt2rstContent p{
+    position: absolute;
+    text-shadow: 0 0 10px black;
+    top: 0.5vw;
+    left: 0.5vw;
+    font-size: 0.7vw;
+    line-height: 0.8vw;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

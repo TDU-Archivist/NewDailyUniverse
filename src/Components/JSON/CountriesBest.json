@@ -1,0 +1,2334 @@
+{
+    "countries": [
+      {
+        "name": "Afghanistan",
+        "tourist_spots": [
+          {
+            "name": "Bamiyan Buddhas",
+            "image": "https://cdn.new7wonders.com/app/uploads/sites/2/2016/09/bb.jpg"
+          },
+          {
+            "name": "Band-e Amir National Park",
+            "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/09/71/64/36/band-e-amir-national.jpg?w=1200&h=1200&s=1"
+          },
+          {
+            "name": "Kabul Museum",
+            "image": "https://cdn.sanity.io/images/cxgd3urn/production/d7ab53c5e01a376faa9808eb08b9d0b3876f4599-1024x683.jpg?rect=0,34,1024,614&w=1200&h=720&q=85&fit=crop&auto=format"
+          }
+        ]
+      },
+      {
+        "name": "Albania",
+        "tourist_spots": [
+          {
+            "name": "Butrint National Park",
+            "image": "https://nationalparks-15bc7.kxcdn.com/images/parks/butrint/Butrint%20National%20Park%20roman%20amphitheater.jpg"
+          },
+          {
+            "name": "Shkodra Castle",
+            "image": "https://albaniatouristplaces.com/wp-content/uploads/2023/03/castle-of-shkodra-atp.jpg"
+          },
+          {
+            "name": "Berat Castle",
+            "image": "https://albania360.com/wp-content/uploads/2023/01/pexels-klidjon-gozhina-5987058-758x426.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Algeria",
+        "tourist_spots": [
+          {
+            "name": "Sahara Desert",
+            "image": "https://cdn-ikppcfn.nitrocdn.com/jqtVDbjdfBPrQSiPhMihAdYLibcqMkkx/assets/images/optimized/rev-4c3905d/sevennaturalwonders.org/wp-content/uploads/2023/11/Sahara-Desert-sunset.jpg"
+          },
+          {
+            "name": "Algiers Casbah",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/7/7d/Alger_Kasbah02.jpg"
+          },
+          {
+            "name": "Timgad",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/c/ce/Timgad_%2815685889550%29.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Andorra",
+        "tourist_spots": [
+          {
+            "name": "Grandvalira Ski Resort",
+            "image": "https://cdn.sanity.io/images/bjsgnxuy/production/b4ecbf1e2bf8fe9551c94c9921d25a541fde333d-5464x3640.jpg?rect=558,0,3937,3640&w=768&h=710&q=65&auto=format"
+          },
+          {
+            "name": "Casa de la Vall",
+            "image": "https://static.wixstatic.com/media/359f89_a2f2fa5bc3c74a7492b9f6017eab3aca~mv2.png/v1/fill/w_568,h_602,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/359f89_a2f2fa5bc3c74a7492b9f6017eab3aca~mv2.png"
+          },
+          {
+            "name": "Sant Joan de Caselles",
+            "image": "https://media-cdn.tripadvisor.com/media/photo-s/0f/c8/3a/3a/church-of-sant-joan-de.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Angola",
+        "tourist_spots": [
+          {
+            "name": "Kalandula Falls",
+            "image": "https://static1.thetravelimages.com/wordpress/wp-content/uploads/2023/06/full-view-of-the-kalandula-waterfalls-on-lucala-river-in-angola.jpg"
+          },
+          {
+            "name": "Luanda Bay",
+            "image": "https://wallpapers.com/images/hd/luanda-bay-angola-o8tu46631x0n2tv0.jpg"
+          },
+          {
+            "name": "Benguela Railroad",
+            "image": "https://www.theheritageportal.co.za/sites/default/files/styles/adaptive/public/articles/Train%20on%20the%20Benguela%20Railway.jpg?itok=GgyAhJ1Y"
+          }
+        ]
+      },
+      {
+        "name": "Antigua and Barbuda",
+        "tourist_spots": [
+          {
+            "name": "Half Moon Bay",
+            "image": "https://drupal-prod.visitcalifornia.com/sites/default/files/styles/fluid_1920/public/vc_halfmoonbay_st_rf_586994572_1280x640.jpg.webp?itok=Qcx3elgu"
+          },
+          {
+            "name": "Nelson's Dockyard",
+            "image": "https://whc.unesco.org/uploads/thumbs/site_1499_0004-1200-630-20160610105352.jpg"
+          },
+          {
+            "name": "Shirley Heights",
+            "image": "https://www.sandals.com/blog/content/images/2023/05/Shirley-Heights-Antigua-Harbor-View.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Argentina",
+        "tourist_spots": [
+          {
+            "name": "Iguazu Falls",
+            "image": "https://www.journeylatinamerica.com/app/uploads/destinations/argentina/igauzu/arg_iguazu_shutterstock_1338447983.jpg"
+          },
+          {
+            "name": "Patagonia",
+            "image": "https://s3.us-west-1.amazonaws.com/assets.activeadventures.com/public/South-America/Chile-Patagonia.jpg"
+          },
+          {
+            "name": "Buenos Aires",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Puerto_Madero%2C_Buenos_Aires_%2840689219792%29_%28cropped%29.jpg/800px-Puerto_Madero%2C_Buenos_Aires_%2840689219792%29_%28cropped%29.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Armenia",
+        "tourist_spots": [
+          {
+            "name": "Lake Sevan",
+            "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/16/c7/80/6b/caption.jpg?w=800&h=800&s=1"
+          },
+          {
+            "name": "Geghard Monastery",
+            "image": "https://silkroadarmenia.am/wp-content/uploads/2020/07/GEGHARD-6.jpg"
+          },
+          {
+            "name": "Khor Virap",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/6/6e/Monasterio_Khor_Virap%2C_Armenia%2C_2016-10-01%2C_DD_25.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Australia",
+        "tourist_spots": [
+          {
+            "name": "Sydney Opera House",
+            "image": "https://cdn.britannica.com/96/100196-050-C92064E0/Sydney-Opera-House-Port-Jackson.jpg"
+          },
+          {
+            "name": "Great Barrier Reef",
+            "image": "https://greatbarrierreef.org/wp-content/uploads/2022/06/Lady-Musgrave-Island-Great-Barrier-Reef.jpg"
+          },
+          {
+            "name": "Uluru",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/ULURU.jpg/1200px-ULURU.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Austria",
+        "tourist_spots": [
+          {
+            "name": "Vienna State Opera",
+            "image": "https://m-festival.biz/en/wp-content/uploads/2023/04/323927622_5694523843997527_6046703828531623519_n.jpeg"
+          },
+          {
+            "name": "Hofburg Palace",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/3/31/Wien_-_Neue_Hofburg.JPG"
+          },
+          {
+            "name": "Salzburg",
+            "image": "https://img3.oastatic.com/img2/82781519/max/variant.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Azerbaijan",
+        "tourist_spots": [
+          {
+            "name": "Flame Towers",
+            "image": "https://media.cnn.com/api/v1/images/stellar/prod/190828174042-flame-towers-at-night.jpg?q=w_1600,h_900,x_0,y_0,c_fill"
+          },
+          {
+            "name": "Gobustan National Park",
+            "image": "https://testour.az/uploads/Gobustan-hill.jpg"
+          },
+          {
+            "name": "Sheki Khan's Palace",
+            "image": "https://www.re-thinkingthefuture.com/wp-content/uploads/2024/07/A12787-UNESCO-World-Heritage-Sites-Historic-Centre-of-Sheki-with-the-Khans-Palace-Image-4.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Bahamas",
+        "tourist_spots": [
+          {
+            "name": "Nassau",
+            "image": "https://a.travel-assets.com/findyours-php/viewfinder/images/res70/25000/25710-Nassau.jpg"
+          },
+          {
+            "name": "Exuma Cays",
+            "image": "https://bnt.bs/wp-content/uploads/2020/01/ECLSP-2-1-1.jpg"
+          },
+          {
+            "name": "Atlantis Paradise Island",
+            "image": "https://tempo.cdn.tambourine.com/windsong/media/bmot-islands-nassau-stay-quad-atlantis-65676e2f5d600.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Bahrain",
+        "tourist_spots": [
+          {
+            "name": "Bahrain Fort",
+            "image": "https://www.ootlah.com/wp-content/uploads/2020/06/930px-300px-Bahrain-Fort-banner.png"
+          },
+          {
+            "name": "The Tree of Life",
+            "image": "https://travel2unlimited.com/wp-content/uploads/2014/09/2-4.jpg"
+          },
+          {
+            "name": "Bab Al Bahrain",
+            "image": "https://d3op4vi6v9jbl8.cloudfront.net/s3fs-public/styles/large/public/2020-06/babalbahrain-edited.jpg?VersionId=I3a9qwwQ62FLXHM7F_Rj2.WolUoZzHKF&itok=xAq2IBmK"
+          }
+        ]
+      },
+      {
+        "name": "Bangladesh",
+        "tourist_spots": [
+          {
+            "name": "Sundarbans",
+            "image": "https://tourrom.com/wp-content/uploads/2019/01/Sundarban_Tiger.jpg"
+          },
+          {
+            "name": "Cox's Bazar",
+            "image": "https://tbbd-flight.s3.ap-southeast-1.amazonaws.com/blogiJR0K1sWVNFzinGC_l4r3IdsVLyxZfkr.jpg"
+          },
+          {
+            "name": "Srimangal",
+            "image": "https://media.licdn.com/dms/image/C4E12AQHz6QcbqNdcbg/article-cover_image-shrink_720_1280/0/1520141734157?e=2147483647&v=beta&t=BG4R0opMUEA6TALsLx8MLB7MW2BDLNvs_bttyzUTWow"
+          }
+        ]
+      },
+      {
+        "name": "Sri Lanka",
+        "tourist_spots": [
+          {
+            "name": "Sigiriya The Ancient Rock Fortress",
+            "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/ed/85/6b/um-palacio-no-topo-da.jpg?w=1200&h=1200&s=1"
+          },
+          {
+            "name": "Colombo",
+            "image": "https://www.andbeyond.com/wp-content/uploads/sites/5/colombo-sri-lanka.jpg"
+          },
+          {
+            "name": "Udawalawe National Park",
+            "image": "https://srilanka.gg/wp-content/uploads/2023/08/Udawalawe-National-Park-2.jpeg"
+          }
+        ]
+      },
+      {
+        "name": "Barbados",
+        "tourist_spots": [
+          {
+            "name": "Bathsheba Beach",
+            "image": "https://a.travel-assets.com/findyours-php/viewfinder/images/res70/47000/47963-Bathsheba.jpg"
+          },
+          {
+            "name": "Harrison's Cave",
+            "image": "https://images.myguide-cdn.com/barbados/companies/harrisons-cave/large/harrisons-cave-431027.jpg"
+          },
+          {
+            "name": "Bridgetown",
+            "image": "https://bureaumundo.com/wp-content/uploads/2024/01/Bridgetown-Conheca-a-rica-historia-da-capital-de-Barbados-foto1.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Nepal",
+        "tourist_spots": [
+          {
+            "name": "Kathmandu",
+            "image": "https://media.digitalnomads.world/wp-content/uploads/2021/07/20115822/kathmandu-digital-nomads.jpg"
+          },
+          {
+            "name": "Lumbini",
+            "image": "https://www.buddhisttourism.online/assets/images/lumbini-banner2.webp"
+          },
+          {
+            "name": "Nagarkot",
+            "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/08/40/02/28/nagarkot.jpg?w=1100&h=1100&s=1"
+          }
+        ]
+      },
+      {
+        "name": "Belarus",
+        "tourist_spots": [
+          {
+            "name": "Mir Castle",
+            "image": "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-674x446/0a/3a/e4/cf.jpg"
+          },
+          {
+            "name": "Brest Hero-Fortress",
+            "image": "https://cdn.belarus.travel/Files/News/brest-fortress-hero/brest-fortress-2.jpg"
+          },
+          {
+            "name": "Nesvizh Castle",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/8/84/%D0%9D%D1%8F%D1%81%D0%B2%D1%96%D0%B6_%D1%96_%D0%9D%D1%8F%D1%81%D0%B2%D1%96%D0%B6%D1%81%D0%BA%D1%96_%D0%B7%D0%B0%D0%BC%D0%B0%D0%BA_12.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Belgium",
+        "tourist_spots": [
+          {
+            "name": "Grand Place",
+            "image": "https://images.musement.com/cover/0153/81/grand-place-brussels-adobestock-171059236-jpeg_header-15280225.jpg"
+          },
+          {
+            "name": "Atomium",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Brussels_-_Atomium_2022.jpg/1200px-Brussels_-_Atomium_2022.jpg"
+          },
+          {
+            "name": "Bruges",
+            "image": "https://i0.wp.com/greeneyedglobetrotters.com/wp-content/uploads/2023/12/DSC_0025_2.jpg?fit=1024%2C739&ssl=1"
+          }
+        ]
+      },
+      {
+        "name": "Belize",
+        "tourist_spots": [
+          {
+            "name": "Great Blue Hole",
+            "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0c/88/0e/f7/great-blue-hole-belize.jpg?w=1200&h=-1&s=1"
+          },
+          {
+            "name": "Ambergris Caye",
+            "image": "https://www.anywhere.com/img-a/belize/destinations/ambergris-caye/ambergis-caye.jpg"
+          },
+          {
+            "name": "Xunantunich",
+            "image": "https://shesavesshetravels.com/wp-content/uploads/2021/10/xunantunich-mayan-ruins--720x540.jpg.webp"
+          }
+        ]
+      },
+      {
+        "name": "Benin",
+        "tourist_spots": [
+          {
+            "name": "Ouidah Museum of History",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Musee_d%27Histoire_in_Ouidah_2015.jpg/800px-Musee_d%27Histoire_in_Ouidah_2015.jpg"
+          },
+          {
+            "name": "Ganvie",
+            "image": "https://images.adsttc.com/media/images/645a/25ba/0dd6/2e4f/ed2a/8220/newsletter/the-floating-village-of-ganvie-a-model-for-socio-ecological-urbanism_2.jpg?1683629502"
+          },
+          {
+            "name": "Royal Palaces of Abomey",
+            "image": "https://www.ancient-origins.net/sites/default/files/field/image/Roya-Palaces-of-Abomey.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Bhutan",
+        "tourist_spots": [
+          {
+            "name": "Paro Taktsang",
+            "image": "https://www.annees-de-pelerinage.com/wp-content/uploads/2019/11/taktsang-tiger-nest-bhutan.jpg"
+          },
+          {
+            "name": "Punakha Dzong",
+            "image": "https://www.andbeyond.com/wp-content/uploads/sites/5/bhutan-punakha-dzong-river.jpg"
+          },
+          {
+            "name": "Thimphu",
+            "image": "https://cdn.britannica.com/02/75702-050-C11357BD/Schoolchildren-hill-Thimpu-Bhutan.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Bolivia",
+        "tourist_spots": [
+          {
+            "name": "Salar de Uyuni",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/4/4a/Salar_Uyuni_au01.jpg"
+          },
+          {
+            "name": "La Paz",
+            "image": "https://d1n2xttr94otou.cloudfront.net/prod/2023-05/La%20Paz%2C%20Bolivia.jpg"
+          },
+          {
+            "name": "Lake Titicaca",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Lake_Titicaca_on_the_Andes_from_Bolivia.jpg/800px-Lake_Titicaca_on_the_Andes_from_Bolivia.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Bosnia and Herzegovina",
+        "tourist_spots": [
+          {
+            "name": "Stari Most",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Mostar_Old_Town_Panorama_2007.jpg/640px-Mostar_Old_Town_Panorama_2007.jpg"
+          },
+          {
+            "name": "Sarajevo",
+            "image": "https://cdn.britannica.com/01/137401-050-C2F0EEDA/Sarajevo-Bos-Her.jpg"
+          },
+          {
+            "name": "Blagaj Tekke",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/d/d0/Blagaj_Ceilings.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Botswana",
+        "tourist_spots": [
+          {
+            "name": "Okavango Delta",
+            "image": "https://i0.wp.com/www.garminworldmaps.com/wp-content/uploads/explore-okavango-delta-01.jpg?fit=1920%2C1080&ssl=1"
+          },
+          {
+            "name": "Chobe National Park",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/4/45/Gnus_zebras_chobe_national_park.jpg"
+          },
+          {
+            "name": "Moremi Game Reserve",
+            "image": "https://www.africaincoming.com/images/city/953749916430166223704972.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Brazil",
+        "tourist_spots": [
+          {
+            "name": "Christ the Redeemer",
+            "image": "https://cdn.britannica.com/54/150754-050-5B93A950/statue-Christ-the-Redeemer-Rio-de-Janeiro.jpg"
+          },
+          {
+            "name": "Iguazu Falls",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Cataratas.jpg/1200px-Cataratas.jpg"
+          },
+          {
+            "name": "Amazon Rainforest",
+            "image": "https://images.nationalgeographic.org/image/upload/v1638890315/EducationHub/photos/amazon-river-basin.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Brunei",
+        "tourist_spots": [
+          {
+            "name": "Sultan Omar Ali Saifuddien Mosque",
+            "image": "https://lp-cms-production.imgix.net/2019-06/7b687702f19acb8e5e72dfd30c4cc65c-omar-ali-saifuddien-mosque.jpg"
+          },
+          {
+            "name": "Ulu Temburong National Park",
+            "image": "https://ak-d.tripcdn.com/images/10021f000001gxcq2C6C9.jpg?proc=source%2Ftrip"
+          },
+          {
+            "name": "Jame'Asr Hassanil Bolkiah Mosque",
+            "image": "https://www.photohound.co/images/1035084l.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Bulgaria",
+        "tourist_spots": [
+          {
+            "name": "Rila Monastery",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/4/46/Rila_Monastery%2C_August_2013.jpg"
+          },
+          {
+            "name": "Plovdiv",
+            "image": "https://media.tacdn.com/media/attractions-splice-spp-674x446/06/96/47/12.jpg"
+          },
+          {
+            "name": "Nessebar",
+            "image": "https://emmaeatsandexplores.com/wp-content/uploads/2024/07/Nessebar-1.jpeg"
+          }
+        ]
+      },
+      {
+        "name": "Burkina Faso",
+        "tourist_spots": [
+          {
+            "name": "Ouagadougou",
+            "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/08/19/ac/2f/getlstd-property-photo.jpg?w=1200&h=-1&s=1"
+          },
+          {
+            "name": "Bobo-Dioulasso",
+            "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/08/b0/0b/75/mosque-of-bobo-dioulasso.jpg?w=1400&h=1400&s=1"
+          },
+          {
+            "name": "Nazinga Game Ranch",
+            "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/14/21/f6/10/floresta-de-nazinga.jpg?w=1200&h=1200&s=1"
+          }
+        ]
+      },
+      {
+        "name": "Burundi",
+        "tourist_spots": [
+          {
+            "name": "Gitega",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/a/ad/Gitega_Burundi.jpg"
+          },
+          {
+            "name": "Lake Tanganyika",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/8/8f/Lake_Tanganyika_Burundi.jpg"
+          },
+          {
+            "name": "Kibira National Park",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/2/2c/Kibira_National_Park.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Cabo Verde",
+        "tourist_spots": [
+          {
+            "name": "Sal Island",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/a/a6/Sal_Island_Cabo_Verde.jpg"
+          },
+          {
+            "name": "Fogo Volcano",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/b/b4/Fogo_Volcano.jpg"
+          },
+          {
+            "name": "Praia",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/a/a4/Praia_Cabo_Verde.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Cambodia",
+        "tourist_spots": [
+          {
+            "name": "Angkor Wat",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/20171126_Angkor_Wat_4712_DxO.jpg/1200px-20171126_Angkor_Wat_4712_DxO.jpg"
+          },
+          {
+            "name": "Phnom Penh",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Phnom_Penh_Independence_Monument.jpg/800px-Phnom_Penh_Independence_Monument.jpg"
+          },
+          {
+            "name": "Siem Reap",
+            "image": "https://amotravel.com/wp-content/uploads/2016/06/Siem-Reap-Cambodia-700x467.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Cameroon",
+        "tourist_spots": [
+          {
+            "name": "Mount Cameroon",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/d/d2/Mount_Cameroon.jpg"
+          },
+          {
+            "name": "Waza National Park",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Waza_National_Park.jpg"
+          },
+          {
+            "name": "Yaoundé",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/6/69/Yaound%C3%A9_Cameroon.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Canada",
+        "tourist_spots": [
+          {
+            "name": "Niagara Falls",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/3/3b/Niagara_Falls_Canada.jpg"
+          },
+          {
+            "name": "Banff National Park",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Banff_National_Park.jpg"
+          },
+          {
+            "name": "CN Tower",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/5/58/CN_Tower_Canada.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Central African Republic",
+        "tourist_spots": [
+          {
+            "name": "Dzanga-Sangha National Park",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Dzanga-Sangha_National_Park.jpg"
+          },
+          {
+            "name": "Boali Waterfalls",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/e/e4/Boali_Waterfalls.jpg"
+          },
+          {
+            "name": "Mbaiki",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/5/5f/Mbaiki_CAR.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Chad",
+        "tourist_spots": [
+          {
+            "name": "Zakouma National Park",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/0/06/Zakouma_National_Park.jpg"
+          },
+          {
+            "name": "N'Djamena",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/6/67/N%27Djamena_Chad.jpg"
+          },
+          {
+            "name": "Lake Chad",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/1/13/Lake_Chad.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Chile",
+        "tourist_spots": [
+          {
+            "name": "Torres del Paine National Park",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/d/d2/Torres_del_Paine_National_Park.jpg"
+          },
+          {
+            "name": "Easter Island",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/5/51/Easter_Island_Statues.jpg"
+          },
+          {
+            "name": "Santiago",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/b/b6/Santiago_Chile.jpg"
+          }
+        ]
+      },
+      {
+        "name": "China",
+        "tourist_spots": [
+          {
+            "name": "Great Wall of China",
+            "image": "https://images.nationalgeographic.org/image/upload/v1638892506/EducationHub/photos/the-great-wall-of-china.jpg"
+          },
+          {
+            "name": "Forbidden City",
+            "image": "https://cdn.britannica.com/03/198203-050-138BB1C3/entrance-Gate-of-Divine-Might-Beijing-Forbidden.jpg"
+          },
+          {
+            "name": "Terracotta Army",
+            "image": "https://globalvolunteers.org/wp-content/uploads/2016/12/terracotta-army.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Colombia",
+        "tourist_spots": [
+          {
+            "name": "Cartagena",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/2/2b/Cartagena_Colombia.jpg"
+          },
+          {
+            "name": "Medellín",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/b/b4/Medellin_Colombia.jpg"
+          },
+          {
+            "name": "Cocora Valley",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/5/5d/Cocora_Valley_Colombia.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Comoros",
+        "tourist_spots": [
+          {
+            "name": "Moroni",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Moroni_Comoros.jpg"
+          },
+          {
+            "name": "Anjouan",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Anjouan_Comoros.jpg"
+          },
+          {
+            "name": "Moheli",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/3/3f/Moheli_Comoros.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Congo, Democratic Republic of the",
+        "tourist_spots": [
+          {
+            "name": "Virunga National Park",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/2/26/Virunga_National_Park.jpg"
+          },
+          {
+            "name": "Kahuzi-Biega National Park",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/b/b5/Kahuzi-Biega_National_Park.jpg"
+          },
+          {
+            "name": "Lubumbashi",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/3/36/Lubumbashi_DR_Congo.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Congo, Republic of the",
+        "tourist_spots": [
+          {
+            "name": "Odzala-Kokoua National Park",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/b/b7/Odzala-Kokoua_National_Park.jpg"
+          },
+          {
+            "name": "Brazzaville",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/d/dd/Brazzaville_Congo.jpg"
+          },
+          {
+            "name": "Lola ya Bonobo",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/a/a8/Lola_ya_Bonobo.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Costa Rica",
+        "tourist_spots": [
+          {
+            "name": "Arenal Volcano",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/7/7f/Arenal_Volcano_Costa_Rica.jpg"
+          },
+          {
+            "name": "Monteverde Cloud Forest",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/b/b7/Monteverde_Cloud_Forest.jpg"
+          },
+          {
+            "name": "Tortuguero National Park",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Tortuguero_National_Park.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Croatia",
+        "tourist_spots": [
+          {
+            "name": "Dubrovnik",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/1/1e/Dubrovnik_Croatia.jpg"
+          },
+          {
+            "name": "Plitvice Lakes National Park",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Plitvice_Lakes_National_Park.jpg"
+          },
+          {
+            "name": "Split",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/c/c2/Split_Croatia.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Cuba",
+        "tourist_spots": [
+          {
+            "name": "Havana",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Havana_Cuba.jpg"
+          },
+          {
+            "name": "Varadero",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/5/53/Varadero_Cuba.jpg"
+          },
+          {
+            "name": "Trinidad",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/e/e5/Trinidad_Cuba.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Cyprus",
+        "tourist_spots": [
+          {
+            "name": "Kyrenia",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/2/28/Kyrenia_Cyprus.jpg"
+          },
+          {
+            "name": "Paphos",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/b/b6/Paphos_Cyprus.jpg"
+          },
+          {
+            "name": "Limassol",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/7/72/Limassol_Cyprus.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Solomon Is.",
+        "tourist_spots": [
+          {
+            "name": "Skull Island",
+            "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2c/32/86/d2/this-is-what-skull-island.jpg?w=500&h=500&s=1"
+          },
+          {
+            "name": "Auki",
+            "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/18/d6/2f/a3/auki.jpg?w=1400&h=1400&s=1"
+          },
+          {
+            "name": "Yandina",
+            "image": "https://files.openlot.com.au/p/estate-image/Yandina%20Glen%20Townhomes%20-%20Yandina___1710473237_0.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Czech Republic",
+        "tourist_spots": [
+          {
+            "name": "Prague",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/1/1e/Prague_Czech_Republic.jpg"
+          },
+          {
+            "name": "Cesky Krumlov",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/1/16/Cesky_Krumlov_Czech_Republic.jpg"
+          },
+          {
+            "name": "Karlovy Vary",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/2/25/Karlovy_Vary_Czech_Republic.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Denmark",
+        "tourist_spots": [
+          {
+            "name": "Copenhagen",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/a/a4/Copenhagen_Denmark.jpg"
+          },
+          {
+            "name": "Aarhus",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/b/b2/Aarhus_Denmark.jpg"
+          },
+          {
+            "name": "Odense",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/3/3c/Odense_Denmark.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Djibouti",
+        "tourist_spots": [
+          {
+            "name": "Lake Assal",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/e/e7/Lake_Assal.jpg"
+          },
+          {
+            "name": "Tadjoura",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/1/12/Tadjoura_Djibouti.jpg"
+          },
+          {
+            "name": "Djibouti City",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Djibouti_City.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Dominica",
+        "tourist_spots": [
+          {
+            "name": "Boiling Lake",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/5/54/Boiling_Lake_Dominica.jpg"
+          },
+          {
+            "name": "Roseau",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/7/7d/Roseau_Dominica.jpg"
+          },
+          {
+            "name": "Trafalgar Falls",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/a/a3/Trafalgar_Falls.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Dominican Republic",
+        "tourist_spots": [
+          {
+            "name": "Punta Cana",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/b/b1/Punta_Cana_Dominican_Republic.jpg"
+          },
+          {
+            "name": "Santo Domingo",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/1/14/Santo_Domingo_Dominican_Republic.jpg"
+          },
+          {
+            "name": "Samana",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/1/14/Samana_Dominican_Republic.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Ecuador",
+        "tourist_spots": [
+          {
+            "name": "Galapagos Islands",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/6/67/Galapagos_Islands_Ecuador.jpg"
+          },
+          {
+            "name": "Quito",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/c/cf/Quito_Ecuador.jpg"
+          },
+          {
+            "name": "Cuenca",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Cuenca_Ecuador.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Egypt",
+        "tourist_spots": [
+          {
+            "name": "Pyramids of Giza",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/0/03/Pyramids_of_Giza.jpg"
+          },
+          {
+            "name": "Luxor",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/e/ee/Luxor_Egypt.jpg"
+          },
+          {
+            "name": "Cairo",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/3/35/Cairo_Egypt.jpg"
+          }
+        ]
+      },
+      {
+        "name": "El Salvador",
+        "tourist_spots": [
+          {
+            "name": "Santa Ana Volcano",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/b/b1/Santa_Ana_Volcano.jpg"
+          },
+          {
+            "name": "San Salvador",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/1/16/San_Salvador_El_Salvador.jpg"
+          },
+          {
+            "name": "El Tunco",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/0/01/El_Tunco.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Equatorial Guinea",
+        "tourist_spots": [
+          {
+            "name": "Malabo",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Malabo_Equatorial_Guinea.jpg"
+          },
+          {
+            "name": "Bata",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/2/25/Bata_Equatorial_Guinea.jpg"
+          },
+          {
+            "name": "Monte Alén National Park",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Monte_Alén_National_Park.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Eritrea",
+        "tourist_spots": [
+          {
+            "name": "Asmara",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/b/b0/Asmara_Eritrea.jpg"
+          },
+          {
+            "name": "Massawa",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/8/83/Massawa_Eritrea.jpg"
+          },
+          {
+            "name": "Keren",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/7/7d/Keren_Eritrea.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Estonia",
+        "tourist_spots": [
+          {
+            "name": "Tallinn",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/a/a4/Tallinn_Estonia.jpg"
+          },
+          {
+            "name": "Tartu",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Tartu_Estonia.jpg"
+          },
+          {
+            "name": "Pärnu",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/c/c0/P%C3%A4rnu_Estonia.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Eswatini",
+        "tourist_spots": [
+          {
+            "name": "Mbabane",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Mbabane_Eswatini.jpg"
+          },
+          {
+            "name": "Mlilwane Wildlife Sanctuary",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/0/09/Mlilwane_Wildlife_Sanctuary.jpg"
+          },
+          {
+            "name": "Hlane Royal National Park",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/4/4c/Hlane_Royal_National_Park.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Ethiopia",
+        "tourist_spots": [
+          {
+            "name": "Lalibela",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/6/61/Lalibela_Ethiopia.jpg"
+          },
+          {
+            "name": "Addis Ababa",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Addis_Ababa_Ethiopia.jpg"
+          },
+          {
+            "name": "Simien Mountains",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/0/06/Simien_Mountains_Ethiopia.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Fiji",
+        "tourist_spots": [
+          {
+            "name": "Nadi",
+            "image": "https://www.jetstar.com/_/media/inspiration-hub/article-images/22feb/fiji-nadi-best-things-to-do/nan_nadi_dravuniisland_adobestock96495542w1300xh867.jpg?rev=0df24125c8ed42948ab9c970fbbfc018&w=320&rc=1&cw=320&ch=197&cx=8&cy=0&hash=921CF17DF49A244D8D6A6C4B12BEF002816901EC%20320w,/_/media/inspiration-hub/article-images/22feb/fiji-nadi-best-things-to-do/nan_nadi_dravuniisland_adobestock96495542w1300xh867.jpg?rev=0df24125c8ed42948ab9c970fbbfc018&w=360&rc=1&cw=360&ch=222&cx=9&cy=0&hash=F4DEFAB074C16F08BBB2E685A95EFCD369B4FB87%20360w,/_/media/inspiration-hub/article-images/22feb/fiji-nadi-best-things-to-do/nan_nadi_dravuniisland_adobestock96495542w1300xh867.jpg?rev=0df24125c8ed42948ab9c970fbbfc018&w=400&rc=1&cw=400&ch=246&cx=10&cy=0&hash=E24DF2CC825DFF189CA9396AE1365E29EC145BE9%20400w,/_/media/inspiration-hub/article-images/22feb/fiji-nadi-best-things-to-do/nan_nadi_dravuniisland_adobestock96495542w1300xh867.jpg?rev=0df24125c8ed42948ab9c970fbbfc018&w=440&rc=1&cw=440&ch=271&cx=11&cy=0&hash=078EBC7CEE34D4F7E6C7B718E53B169C5ADAD61A%20440w"
+          },
+          {
+            "name": "Suva",
+            "image": "https://static01.nyt.com/images/2023/05/06/travel/oakImage-1663853463601/oakImage-1663853463601-superJumbo.jpg"
+          },
+          {
+            "name": "Mamanuca Islands",
+            "image": "https://fijiguide.com/wp-content/uploads/2018/06/ManaIslandResort-1920x1280.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Finland",
+        "tourist_spots": [
+          {
+            "name": "Helsinki",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/d/d5/Helsinki_Finland.jpg"
+          },
+          {
+            "name": "Rovaniemi",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/1/12/Rovaniemi_Finland.jpg"
+          },
+          {
+            "name": "Lapland",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/e/e7/Lapland_Finland.jpg"
+      }
+        ]
+      },
+      {
+        "name": "France",
+        "tourist_spots": [
+          {
+            "name": "Paris",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/a/a6/Paris_France.jpg"
+          },
+          {
+            "name": "Nice",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/3/36/Nice_France.jpg"
+          },
+          {
+            "name": "Lyon",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/0/07/Lyon_France.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Vanuatu",
+        "tourist_spots": [
+          {
+            "name": "Ekasup Village",
+            "image": "https://media-cdn.tripadvisor.com/media/photo-s/18/44/9c/0c/we-visited-ekasup-village.jpg"
+          },
+          {
+            "name": "Mystery Island",
+            "image": "https://vanuatu.com.au/wp-content/uploads/2015/03/Mystery-Island-4.jpg"
+          },
+          {
+            "name": "Blue Lagoon",
+            "image": "https://mediaim.expedia.com/destination/2/6aacd9352004f8be68031e83a0494b65.jpg"
+          }
+        ]
+      },
+      {
+        "name": "New Caledonia",
+        "tourist_spots": [
+          {
+            "name": "Bourail",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/0/02/201_au_28_-07-2004_553.jpg"
+          },
+          {
+            "name": "Amedee Lighthouse",
+            "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/04/c1/10/79/great-view.jpg?w=1200&h=1200&s=1"
+          },
+          {
+            "name": "Kanumera",
+            "image": "https://a.travel-assets.com/findyours-php/viewfinder/images/res70/111000/111487-Kanumera-Beach.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Gabon",
+        "tourist_spots": [
+          {
+            "name": "Libreville",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Libreville_Gabon.jpg"
+          },
+          {
+            "name": "Loango National Park",
+            "image": "https://upload.wikimedia/commons/c/cf/Loango_National_Park.jpg"
+          },
+          {
+            "name": "Port-Gentil",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/5/5f/Port-Gentil_Gabon.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Gambia",
+        "tourist_spots": [
+          {
+            "name": "Banjul",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Banjul_Gambia.jpg"
+          },
+          {
+            "name": "Kunta Kinteh Island",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/3/31/Kunta_Kinteh_Island.jpg"
+          },
+          {
+            "name": "Abuko Nature Reserve",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/7/7e/Abuko_Nature_Reserve.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Georgia",
+        "tourist_spots": [
+          {
+            "name": "Tbilisi",
+            "image": "https://static01.nyt.com/images/2018/06/17/travel/17hours1/merlin_138493119_dc17f17f-96a2-4487-a9ea-214914926374-articleLarge.jpg?quality=75&auto=webp&disable=upscale"
+          },
+          {
+            "name": "Batumi",
+            "image": "https://i0.wp.com/mytravelation.com/wp-content/uploads/2023/11/Batumi.jpeg"
+          },
+          {
+            "name": "Kazbegi",
+            "image": "https://wander-lush.org/wp-content/uploads/2021/04/Visit-Kazbegi-Gergeti-Trinity-Church-DP-hero.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Germany",
+        "tourist_spots": [
+          {
+            "name": "Berlin",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/e/e0/Berlin_Germany.jpg"
+          },
+          {
+            "name": "Munich",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/1/17/Munich_Germany.jpg"
+          },
+          {
+            "name": "Hamburg",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/c/c5/Hamburg_Germany.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Ghana",
+        "tourist_spots": [
+          {
+            "name": "Accra",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/4/49/Accra_Ghana.jpg"
+          },
+          {
+            "name": "Kakum National Park",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/7/72/Kakum_National_Park.jpg"
+          },
+          {
+            "name": "Cape Coast",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Cape_Coast_Ghana.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Greece",
+        "tourist_spots": [
+          {
+            "name": "Athens",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/6/66/Athens_Greece.jpg"
+          },
+          {
+            "name": "Santorini",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/5/53/Santorini_Greece.jpg"
+          },
+          {
+            "name": "Mykonos",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/9/95/Mykonos_Greece.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Grenada",
+        "tourist_spots": [
+          {
+            "name": "St. George's",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/a/a4/St_George%27s_Grenada.jpg"
+          },
+          {
+            "name": "Grand Anse Beach",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/0/06/Grand_Anse_Beach_Grenada.jpg"
+          },
+          {
+            "name": "Carriacou",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/e/e7/Carriacou_Grenada.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Guatemala",
+        "tourist_spots": [
+          {
+            "name": "Antigua",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Antigua_Guatemala.jpg"
+          },
+          {
+            "name": "Tikal",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/2/2b/Tikal_Guatemala.jpg"
+          },
+          {
+            "name": "Lake Atitlán",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/c/cd/Lake_Atitlan.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Guinea",
+        "tourist_spots": [
+          {
+            "name": "Conakry",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/c/cb/Conakry_Guinea.jpg"
+          },
+          {
+            "name": "Mount Nimba",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/e/e6/Mount_Nimba.jpg"
+          },
+          {
+            "name": "Fouta Djallon",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/5/54/Fouta_Djallon.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Guinea-Bissau",
+        "tourist_spots": [
+          {
+            "name": "Bissau",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/0/01/Bissau_Guinea-Bissau.jpg"
+          },
+          {
+            "name": "Orango Islands",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/d/d8/Orango_Islands.jpg"
+          },
+          {
+            "name": "Bubaque",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/8/89/Bubaque_Guinea-Bissau.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Honduras",
+        "tourist_spots": [
+          {
+            "name": "Tegucigalpa",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/3/35/Tegucigalpa_Honduras.jpg"
+          },
+          {
+            "name": "Roatan",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/d/da/Roatan_Honduras.jpg"
+          },
+          {
+            "name": "Copan Ruinas",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/c/c2/Copan_Ruinas_Honduras.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Hungary",
+        "tourist_spots": [
+          {
+            "name": "Budapest",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/3/30/Budapest_Hungary.jpg"
+          },
+          {
+            "name": "Eger",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Eger_Hungary.jpg"
+          },
+          {
+            "name": "Lake Balaton",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/c/cf/Lake_Balaton.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Iceland",
+        "tourist_spots": [
+          {
+            "name": "Reykjavik",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/b/b7/Reykjavik_Iceland.jpg"
+          },
+          {
+            "name": "Golden Circle",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/6/63/Golden_Circle_Iceland.jpg"
+          },
+          {
+            "name": "Blue Lagoon",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/e/e8/Blue_Lagoon_Iceland.jpg"
+          }
+        ]
+      },
+      {
+        "name": "India",
+        "tourist_spots": [
+          {
+            "name": "Taj Mahal",
+            "image": "https://images.unsplash.com/photo-1564507592333-c60657eea523?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHRhaiUyMG1haGFsfGVufDB8fDB8fHww"
+          },
+          {
+            "name": "Delhi",
+            "image": "https://deih43ym53wif.cloudfront.net/Rajpath-delhi-shutterstock_1195751923.jpg_7647e1aad2.jpg"
+          },
+          {
+            "name": "Varanasi",
+            "image": "https://media.istockphoto.com/id/1164329797/photo/hindu-sadhu-sitting-on-a-boat-overlooking-varanasi-city-architecture-at-sunset.jpg?s=612x612&w=0&k=20&c=LbpIHRo7kGT7dbUr6b6UuD1d6P0yCaKZ2lbqo3TY988="
+          }
+        ]
+      },
+      {
+        "name": "Indonesia",
+        "tourist_spots": [
+          {
+            "name": "Bali",
+            "image": "https://ik.imagekit.io/tvlk/blog/2023/09/shutterstock_631736717.jpg?tr=c-at_max"
+          },
+          {
+            "name": "Jakarta",
+            "image": "https://img.static-kl.com/images/media/B6441E54-1D2C-416B-A9060E669E194710"
+          },
+          {
+            "name": "Yogyakarta",
+            "image": "https://cdn.britannica.com/66/145866-050-921B75D7/Temple-Prambanan-Yogyakarta-Indon-Java.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Ireland",
+        "tourist_spots": [
+          {
+            "name": "Dublin",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/5/55/Dublin_Ireland.jpg"
+          },
+          {
+            "name": "Galway",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/7/7e/Galway_Ireland.jpg"
+          },
+          {
+            "name": "Cliffs of Moher",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Cliffs_of_Moher_Ireland.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Israel",
+        "tourist_spots": [
+          {
+            "name": "Jerusalem",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/b/b0/Jerusalem_Israel.jpg"
+          },
+          {
+            "name": "Tel Aviv",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Tel_Aviv_Israel.jpg"
+          },
+          {
+            "name": "Dead Sea",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Dead_Sea_Israel.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Italy",
+        "tourist_spots": [
+          {
+            "name": "Rome",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/5/5d/Rome_Italy.jpg"
+          },
+          {
+            "name": "Venice",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/3/3b/Venice_Italy.jpg"
+          },
+          {
+            "name": "Florence",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/a/a3/Florence_Italy.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Jamaica",
+        "tourist_spots": [
+          {
+            "name": "Kingston",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/d/d8/Kingston_Jamaica.jpg"
+          },
+          {
+            "name": "Montego Bay",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Montego_Bay_Jamaica.jpg"
+          },
+          {
+            "name": "Negril",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/0/0b/Negril_Jamaica.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Japan",
+        "tourist_spots": [
+          {
+            "name": "Tokyo",
+            "image": "https://media.cntraveler.com/photos/63482b255e7943ad4006df0b/16:9/w_2560%2Cc_limit/tokyoGettyImages-1031467664.jpeg"
+          },
+          {
+            "name": "Kyoto",
+            "image": "https://content.r9cdn.net/rimg/dimg/83/d4/85f68013-city-20339-16489ec9b8b.jpg?crop=true&width=1020&height=498"
+          },
+          {
+            "name": "Osaka",
+            "image": "https://cdn.cheapoguides.com/wp-content/uploads/sites/3/2020/06/osaka-dotonbori-iStock-1138049211-1024x683.jpg"
+          }
+        ]
+      },
+      {
+        "name": "North Korea",
+        "tourist_spots": [
+          {
+            "name": "Demilitarized Zone",
+            "image": "https://i0.wp.com/round-city.com/wp-content/uploads/2021/07/FIG_02_JSA-scaled.jpg?fit=2560%2C1440&ssl=1"
+          },
+          {
+            "name": "Tower of the Juche Idea",
+            "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/06/d9/47/f5/tower-of-the-juche-idea.jpg?w=1200&h=1200&s=1"
+          },
+          {
+            "name": "Kim Il-sung Square",
+            "image": "https://www.north-korea-travel.com/image-files/kim-il-sung-square-ministry-of-agriculture.ktg.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Jordan",
+        "tourist_spots": [
+          {
+            "name": "Petra",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Petra_Jordan.jpg"
+          },
+          {
+            "name": "Amman",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/b/b7/Amman_Jordan.jpg"
+          },
+          {
+            "name": "Wadi Rum",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Wadi_Rum_Jordan.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Kenya",
+        "tourist_spots": [
+          {
+            "name": "Nairobi",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Nairobi_Kenya.jpg"
+          },
+          {
+            "name": "Masai Mara",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/d/d2/Masai_Mara_Kenya.jpg"
+          },
+          {
+            "name": "Mount Kenya",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Mount_Kenya.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Kuwait",
+        "tourist_spots": [
+          {
+            "name": "Kuwait City",
+            "image": "https://mediaim.expedia.com/destination/1/b9d212f92b2d308b19b9c6b8af5047ad.jpg"
+          },
+          {
+            "name": "The Grand Mosque",
+            "image": "https://madhyamamonline.com/h-upload/2024/04/08/2225388-whatsappimage2024-04-06at13840pm.webp"
+          },
+          {
+            "name": "The Avenues",
+            "image": "https://mabanee.com/storage/storageproject-image-text/gensler_avenues_kuwait_%C2%A9hufton+crow_003-1832017500.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Qatar",
+        "tourist_spots": [
+          {
+            "name": "Museum of Islamic Art",
+            "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/27/14/b7/a6/caption.jpg?w=900&h=-1&s=1&cx=1243&cy=1464&chk=v1_871e24301afcf61fb437"
+          },
+          {
+            "name": "National Museum of Qatar",
+            "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/27/14/b7/15/caption.jpg?w=900&h=500&s=1&cx=1205&cy=481&chk=v1_35cfe335589d71a4a2df"
+          },
+          {
+            "name": "The Pearl Island",
+            "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2b/57/d0/44/caption.jpg?w=900&h=500&s=1"
+          }
+        ]
+      },
+      {
+        "name": "Laos",
+        "tourist_spots": [
+          {
+            "name": "Luang Prabang",
+            "image": "https://tripjive.com/wp-content/uploads/2024/09/Top-10-Things-to-Do-in-Luang-Prabang.jpg"
+          },
+          {
+            "name": "Vang Vieng",
+            "image": "https://www.asiakingtravel.com/cuploads/files/Vang%20Vieng%20-1.jpg"
+          },
+          {
+            "name": "Vientiane",
+            "image": "https://www.pinyourfootsteps.com/wp-content/uploads/2023/12/vientiane_laos-12-scaled.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Latvia",
+        "tourist_spots": [
+          {
+            "name": "Riga",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Riga_Latvia.jpg"
+          },
+          {
+            "name": "Jurmala",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Jurmala_Latvia.jpg"
+          },
+          {
+            "name": "Cesis",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/4/43/Cesis_Latvia.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Lebanon",
+        "tourist_spots": [
+          {
+            "name": "Beirut",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/7/7f/Beirut_Lebanon.jpg"
+          },
+          {
+            "name": "Byblos",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/5/52/Byblos_Lebanon.jpg"
+          },
+          {
+            "name": "Baalbek",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/2/20/Baalbek_Lebanon.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Liberia",
+        "tourist_spots": [
+          {
+            "name": "Monrovia",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/2/27/Monrovia_Liberia.jpg"
+          },
+          {
+            "name": "Gbarnga",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/5/5f/Gbarnga_Liberia.jpg"
+          },
+          {
+            "name": "Sierra Leone",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/b/b5/Sierra_Leone_Liberia.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Lithuania",
+        "tourist_spots": [
+          {
+            "name": "Vilnius",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/c/cb/Vilnius_Lithuania.jpg"
+          },
+          {
+            "name": "Kaunas",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/2/24/Kaunas_Lithuania.jpg"
+          },
+          {
+            "name": "Klaipeda",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Klaipeda_Lithuania.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Luxembourg",
+        "tourist_spots": [
+          {
+            "name": "Luxembourg City",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/4/41/Luxembourg_City.jpg"
+          },
+          {
+            "name": "Echternach",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/7/73/Echternach_Luxembourg.jpg"
+          },
+          {
+            "name": "Vianden",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/e/e5/Vianden_Luxembourg.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Malaysia",
+        "tourist_spots": [
+          {
+            "name": "Kuala Lumpur",
+            "image": "https://cdn.britannica.com/49/102749-050-B4874C95/Kuala-Lumpur-Malaysia.jpg"
+          },
+          {
+            "name": "Penang",
+            "image": "https://onpenang.com/wp-content/uploads/2024/01/Kek-Lok-Si-Temple-Penang-1024x731.jpg"
+          },
+          {
+            "name": "Langkawi",
+            "image": "https://media1.thrillophilia.com/filestore/f6xqty1ud1oxdknfy2erhcjc9r7w_1578662870_langkawi-island-malaysia-8.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Malta",
+        "tourist_spots": [
+          {
+            "name": "Valletta",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Valletta_Malta.jpg"
+          },
+          {
+            "name": "Mdina",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/e/ef/Mdina_Malta.jpg"
+          },
+          {
+            "name": "Gozo",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/b/bf/Gozo_Malta.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Mexico",
+        "tourist_spots": [
+          {
+            "name": "Mexico City",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/d/d6/Mexico_City_Mexico.jpg"
+          },
+          {
+            "name": "Cancun",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/4/42/Cancun_Mexico.jpg"
+          },
+          {
+            "name": "Tulum",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/a/a3/Tulum_Mexico.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Morocco",
+        "tourist_spots": [
+          {
+            "name": "Marrakech",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Marrakech_Morocco.jpg"
+          },
+          {
+            "name": "Fez",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/a/a6/Fez_Morocco.jpg"
+          },
+          {
+            "name": "Chefchaouen",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/4/41/Chefchaouen_Morocco.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Netherlands",
+        "tourist_spots": [
+          {
+            "name": "Amsterdam",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/8/84/Amsterdam_Netherlands.jpg"
+          },
+          {
+            "name": "Rotterdam",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Rotterdam_Netherlands.jpg"
+          },
+          {
+            "name": "Utrecht",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Utrecht_Netherlands.jpg"
+          }
+        ]
+      },
+      {
+        "name": "New Zealand",
+        "tourist_spots": [
+          {
+            "name": "Auckland",
+            "image": "https://cdn.britannica.com/99/61399-050-B867F67F/skyline-Auckland-New-Zealand-Westhaven-Marina.jpg"
+          },
+          {
+            "name": "Queenstown",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/c/c9/Queenstown_1_%288168013172%29.jpg"
+          },
+          {
+            "name": "Wellington",
+            "image": "https://a.travel-assets.com/findyours-php/viewfinder/images/res70/179000/179180-Wellington.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Nicaragua",
+        "tourist_spots": [
+          {
+            "name": "Managua",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/1/10/Managua_Nicaragua.jpg"
+          },
+          {
+            "name": "Granada",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/7/74/Granada_Nicaragua.jpg"
+          },
+          {
+            "name": "León",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/7/76/Leon_Nicaragua.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Norway",
+        "tourist_spots": [
+          {
+            "name": "Oslo",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/9/94/Oslo_Norway.jpg"
+          },
+          {
+            "name": "Bergen",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/7/7f/Bergen_Norway.jpg"
+          },
+          {
+            "name": "Stavanger",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/4/49/Stavanger_Norway.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Pakistan",
+        "tourist_spots": [
+          {
+            "name": "Karachi",
+            "image": "https://cdn.britannica.com/85/128585-050-5A1BDD02/Karachi-Pakistan.jpg"
+          },
+          {
+            "name": "Lahore",
+            "image": "https://cdn.britannica.com/48/143848-050-C4971221/Lahore-Museum-Pakistan.jpg"
+          },
+          {
+            "name": "Islamabad",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Faisal_Masjid_From_Damn_e_koh.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Kyrgyzstan",
+        "tourist_spots": [
+          {
+            "name": "Karakol",
+            "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0d/8d/e9/b8/holy-trinity-cathedral.jpg?w=1200&h=700&s=1"
+          },
+          {
+            "name": "Jeti-Oguz Canyon",
+            "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0d/a5/17/65/seven-bulls.jpg?w=700&h=400&s=1"
+          },
+          {
+            "name": "Panfilov Park",
+            "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/08/42/6c/ae/2nd-biggest-wooden-church.jpg?w=900&h=500&s=1"
+          }
+        ]
+      },
+      {
+        "name": "Kazakhstan",
+        "tourist_spots": [
+          {
+            "name": "Astana",
+            "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/15/33/fb/6c/astana.jpg?w=600&h=500&s=1"
+          },
+          {
+            "name": "Kok-Tobe Hill",
+            "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0c/4a/95/67/almaty.jpg?w=900&h=500&s=1"
+          },
+          {
+            "name": "Charyn Canyon",
+            "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/17/40/bd/37/vue-generale.jpg?w=900&h=-1&s=1"
+          }
+        ]
+      },
+      {
+        "name": "Uzbekistan",
+        "tourist_spots": [
+          {
+            "name": "Registan",
+            "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/13/53/92/b8/all-lit-up.jpg?w=900&h=500&s=1"
+          },
+          {
+            "name": "Shah-i-Zinda",
+            "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2d/d9/7b/48/caption.jpg?w=900&h=-1&s=1"
+          },
+          {
+            "name": "Tashkent",
+            "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/15/33/fb/7b/tashkent.jpg?w=600&h=500&s=1"
+          }
+        ]
+      },
+      {
+        "name": "Tajikistan",
+        "tourist_spots": [
+          {
+            "name": "Dushanbe",
+            "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/02/2f/a8/8e/dushanbe.jpg?w=1400&h=1400&s=1"
+          },
+          {
+            "name": "Pamir Highway",
+            "image": "https://assets.bucketlistly.blog/sites/5adf778b6eabcc00190b75b1/content_entry5adf77af6eabcc00190b75b6/5ae4601cdfa2010053aefd40/files/8-days-pamir-highway-itnierary-tajikistan-main-image-hd-op.webp"
+          },
+          {
+            "name": "Jisev Valley",
+            "image": "https://www.asia-hikes.com/wp-content/uploads/2021/06/Upper-Jizeu-Valley-1024x596.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Turkmenistan",
+        "tourist_spots": [
+          {
+            "name": "Darvaza Gas Crater",
+            "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/05/c4/d3/44/door-to-hell-gas-deposit.jpg?w=800&h=-1&s=1"
+          },
+          {
+            "name": "Turkmen Carpet Museum",
+            "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/05/fa/f5/90/turkmen-carpet-museum.jpg?w=900&h=500&s=1"
+          },
+          {
+            "name": "Gypjak Mosque",
+            "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/13/ca/be/a4/20180718-191811-largejpg.jpg?w=900&h=500&s=1"
+          }
+        ]
+      },
+      {
+        "name": "Philippines",
+        "tourist_spots": [
+          {
+            "name": "Manila",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/RizalParkjf8388_27.JPG/800px-RizalParkjf8388_27.JPG"
+          },
+          {
+            "name": "Palawan",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Kayangan_Lake%2C_Coron_-_Palawan.jpg/800px-Kayangan_Lake%2C_Coron_-_Palawan.jpg"
+          },
+          {
+            "name": "Boracay",
+            "image": "https://lp-cms-production.imgix.net/2023-05/shutterstock_editorial_1741828760.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Iran",
+        "tourist_spots": [
+          {
+            "name": "Tehran",
+            "image": "https://www.cloud-europamundo.com/img/carousel/hd/Teheran_20190808122956.jpg"
+          },
+          {
+            "name": "Shiraz",
+            "image": "https://iranontour.com/wp-content/uploads/2023/12/How-Do-I-Get-from-Shiraz-to-Persepolis-scaled.jpg"
+          },
+          {
+            "name": "Golestan Palace",
+            "image": "https://pasargad-tours.com/wp-content/uploads/2021/12/1-1.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Portugal",
+        "tourist_spots": [
+          {
+            "name": "Lisbon",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/2/2c/Lisbon_Portugal.jpg"
+          },
+          {
+            "name": "Porto",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/8/84/Porto_Portugal.jpg"
+          },
+          {
+            "name": "Sintra",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/d/d7/Sintra_Portugal.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Romania",
+        "tourist_spots": [
+          {
+            "name": "Bucharest",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/1/1b/Bucharest_Romania.jpg"
+          },
+          {
+            "name": "Sibiu",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/2/26/Sibiu_Romania.jpg"
+          },
+          {
+            "name": "Brașov",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/2/29/Brașov_Romania.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Russia",
+        "tourist_spots": [
+          {
+            "name": "Moscow",
+            "image": "https://cdn.britannica.com/57/144557-050-00422BA6/Moscow.jpg"
+          },
+          {
+            "name": "Saint Petersburg",
+            "image": "https://cdn.britannica.com/42/178442-050-417FEC6F/Cathedral-of-the-Resurrection-Christ-St-Petersburg.jpg"
+          },
+          {
+            "name": "Kazan",
+            "image": "https://airpano.ru/files/360video/vr-kazan/images/image2.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Mongolia",
+        "tourist_spots": [
+          {
+            "name": "Genghis Khan Statue Complex",
+            "image": "https://skyticket.com/guide/wp-content/uploads/2017/10/iStock-495388574-e1517540781898-680x402.jpg"
+          },
+          {
+            "name": "Gorkhi-Terelj National Park",
+            "image": "https://www.discovermongolia.mn/uploads/b-Turtle-Rock-formation-in-the-Terelj-National-Park-Mongolia.jpg"
+          },
+          {
+            "name": "Galleria Ulaanbaatar",
+            "image": "https://www.gpsmycity.com/img/gd_sight/7417.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Saudi Arabia",
+        "tourist_spots": [
+          {
+            "name": "Riyadh",
+            "image": "https://dom-publishers.com/cdn/shop/articles/iStock-1264361225_1024x1024.jpg?v=1709557130"
+          },
+          {
+            "name": "Jeddah",
+            "image": "https://www.remotelands.com/storage/media/5870/conversions/b220510018-banner-size.jpg"
+          },
+          {
+            "name": "Mecca",
+            "image": "https://cdn.britannica.com/20/153520-050-177A78E4/Kabah-hajj-pilgrims-Saudi-Arabia-Mecca.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Iraq",
+        "tourist_spots": [
+          {
+            "name": "Erbil",
+            "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/01/9b/eb/78/blick-von-der-festung.jpg?w=600&h=-1&s=1"
+          },
+          {
+            "name": "Sulaymaniyah",
+            "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0b/64/cf/ef/views-from-the-beautiful.jpg?w=600&h=500&s=1"
+          },
+          {
+            "name": "Imam Ali Holy Shrine",
+            "image": "https://miro.medium.com/v2/resize:fit:2000/1*xIm2Z1csYJSMEm-QJVacbw.jpeg"
+          }
+        ]
+      },
+      {
+        "name": "Singapore",
+        "tourist_spots": [
+          {
+            "name": "Singapore City",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Singapore_City.jpg"
+          },
+          {
+            "name": "Sentosa Island",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/5/55/Sentosa_Island_Singapore.jpg"
+          },
+          {
+            "name": "Marina Bay Sands",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/7/72/Marina_Bay_Sands_Singapore.jpg"
+          }
+        ]
+      },
+      {
+        "name": "South Africa",
+        "tourist_spots": [
+          {
+            "name": "Cape Town",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/b/b2/Cape_Town_South_Africa.jpg"
+          },
+          {
+            "name": "Johannesburg",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/3/30/Johannesburg_South_Africa.jpg"
+          },
+          {
+            "name": "Durban",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/d/d5/Durban_South_Africa.jpg"
+          }
+        ]
+      },
+      {
+        "name": "South Korea",
+        "tourist_spots": [
+          {
+            "name": "Seoul",
+            "image": "https://content.r9cdn.net/rimg/dimg/30/0c/6318617a-city-35982-163ff913019.jpg?width=1366&height=768&xhint=2421&yhint=1876&crop=true"
+          },
+          {
+            "name": "Busan",
+            "image": "https://www.agoda.com/wp-content/uploads/2023/12/Featured-photo-Busan-at-night.jpg"
+          },
+          {
+            "name": "Incheon",
+            "image": "https://i0.wp.com/mytravelation.com/wp-content/uploads/2023/11/Incheon.jpeg"
+          }
+        ]
+      },
+      {
+        "name": "Spain",
+        "tourist_spots": [
+          {
+            "name": "Barcelona",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/8/88/Barcelona_Spain.jpg"
+          },
+          {
+            "name": "Madrid",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/a/a7/Madrid_Spain.jpg"
+          },
+          {
+            "name": "Seville",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/b/b4/Seville_Spain.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Sweden",
+        "tourist_spots": [
+          {
+            "name": "Stockholm",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/2/29/Stockholm_Sweden.jpg"
+          },
+          {
+            "name": "Gothenburg",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/1/17/Gothenburg_Sweden.jpg"
+          },
+          {
+            "name": "Malmo",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Malmo_Sweden.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Switzerland",
+        "tourist_spots": [
+          {
+            "name": "Zurich",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Zurich_Switzerland.jpg"
+          },
+          {
+            "name": "Geneva",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/b/b4/Geneva_Switzerland.jpg"
+          },
+          {
+            "name": "Lucerne",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/d/d8/Lucerne_Switzerland.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Papua New Guinea",
+        "tourist_spots": [
+          {
+            "name": "Port Moresby",
+            "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/15/44/1d/3e/ela-beach-side-in-port.jpg?w=1400&h=1400&s=1"
+          },
+          {
+            "name": "Rabaul",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/9/90/Rabaul_from_Vulcanology_Observatory.jpg"
+          },
+          {
+            "name": "Alotau",
+            "image": "https://www.journeygourmet.com/continentes/Oceania/Pap%C3%BAa_Nueva_Guinea/Alotau/Alotau/imagen.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Timor-Leste",
+        "tourist_spots": [
+          {
+            "name": "Atauro",
+            "image": "https://d36tnp772eyphs.cloudfront.net/blogs/1/2019/09/Beachscape-of-East-Timor.jpg"
+          },
+          {
+            "name": "Baucau",
+            "image": "https://travelsetu.com/apps/uploads/new_destinations_photos/destination/2024/07/03/152d66f6640b7e9d6c34d2e051c1f0a4_1000x1000.jpg"
+          },
+          {
+            "name": "Balibo Fort Hotel",
+            "image": "https://www.secret-retreats.com/wp-content/uploads/gallery/balibo/balibo-01.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Myanmar",
+        "tourist_spots": [
+          {
+            "name": "Sule Pagoda",
+            "image": "https://i0.wp.com/www.maxhotelsgroup.com/wp-content/uploads/2021/10/Yangon-Sule-Pagoda-01.jpeg?ssl=1"
+          },
+          {
+            "name": "Mount Popa",
+            "image": "https://evivatour.com/wp-content/uploads/2021/09/Mt.-Popa-in-Bagan-1000x565.jpg"
+          },
+          {
+            "name": "Chaukhtatgyi Paya",
+            "image": "https://www.topasiatour.com/pic/myanmar/attractions/chaukhtatgyi-buddha-temple-02.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Taiwan",
+        "tourist_spots": [
+          {
+            "name": "Taipei",
+            "image": "https://content.r9cdn.net/rimg/dimg/03/bd/c9c27e88-city-19888-176e2713ee4.jpg?width=1200&height=630&crop=true"
+          },
+          {
+            "name": "Kaohsiung",
+            "image": "https://warmcheaptrips.com/wp-content/uploads/2020/05/Lorus-Pond-1127x800.jpg"
+          },
+          {
+            "name": "Tainan",
+            "image": "https://res.klook.com/image/upload/Mobile/City/qtuzbwvkx4q3xujhl628.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Thailand",
+        "tourist_spots": [
+          {
+            "name": "Bangkok",
+            "image": "https://d2e5ushqwiltxm.cloudfront.net/wp-content/uploads/sites/67/2023/08/29092117/Experience-the-captivating-charm-of-Walking-Street-in-Bangkok.jpg"
+          },
+          {
+            "name": "Chiang Mai",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/8/85/0020-%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B8%AA%E0%B8%B4%E0%B8%87%E0%B8%AB%E0%B9%8C%E0%B8%A7%E0%B8%A3%E0%B8%A1%E0%B8%AB%E0%B8%B2%E0%B8%A7%E0%B8%B4%E0%B8%AB%E0%B8%B2%E0%B8%A3.jpg"
+          },
+          {
+            "name": "Phuket",
+            "image": "https://www.aleenta.com/wp-content/uploads/Islands-to-Explore-from-Phuket.jpg"
+          }
+        ]
+      },
+      {
+        "name": "United Arab Emirates",
+        "tourist_spots": [
+          {
+            "name": "Dubai",
+            "image": "https://content.presspage.com/uploads/2431/1920_dubaiconnect.jpg?10000"
+          },
+          {
+            "name": "Abu Dhabi",
+            "image": "https://adro.gov.ae/-/media/Project/Expat-Bureau/Expat-Bureau/AD1_5New/WhyAD/Mobile-Header.jpg?h=420&w=750&hash=81963623B6D3C618E151F18F3C90DC31"
+          },
+          {
+            "name": "Sharjah",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Majaz_2012.jpg/1200px-Majaz_2012.jpg"
+          }
+        ]
+      },
+      {
+        "name": "United Kingdom",
+        "tourist_spots": [
+          {
+            "name": "London",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/4/4b/London_United_Kingdom.jpg"
+          },
+          {
+            "name": "Edinburgh",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/3/36/Edinburgh_United_Kingdom.jpg"
+          },
+          {
+            "name": "Manchester",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/7/73/Manchester_United_Kingdom.jpg"
+          }
+        ]
+      },
+      {
+        "name": "United States of America",
+        "tourist_spots": [
+          {
+            "name": "New York City",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/e/e1/New_York_City_USA.jpg"
+          },
+          {
+            "name": "Los Angeles",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/c/cb/Los_Angeles_USA.jpg"
+          },
+          {
+            "name": "Chicago",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/c/c0/Chicago_USA.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Vietnam",
+        "tourist_spots": [
+          {
+            "name": "Hanoi",
+            "image": "https://media1.thrillophilia.com/filestore/5f1ixe9xtnwg6tsjvc7iiiqttahh_shutterstock_243530122.jpg"
+          },
+          {
+            "name": "Ho Chi Minh City",
+            "image": "https://lp-cms-production.imgix.net/2021-01/shutterstockRF_718619590.jpg"
+          },
+          {
+            "name": "Da Nang",
+            "image": "https://imageio.forbes.com/specials-images/imageserve/5e2cb634f133f400076aabb4/vietnam/0x0.jpg?format=jpg&crop=782,521,x2,y1,safe&width=960"
+          }
+        ]
+      },
+      {
+        "name": "Yemen",
+        "tourist_spots": [
+          {
+            "name": "Sana'a",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/9/9d/Sana%27a_%282286825748%29.jpg"
+          },
+          {
+            "name": "Socotra Island",
+            "image": "https://cso-yemen.org/wp-content/uploads/2024/05/unique_wildlife_on_socotra.jpg"
+          },
+          {
+            "name": "Aden",
+            "image": "https://lh3.googleusercontent.com/p/AF1QipNKoHFShmwr-8LiOnzLqoorNkAbNT_af8CmSp_a=h2172-w1082"
+          }
+        ]
+      },
+      {
+        "name": "Oman",
+        "tourist_spots": [
+          {
+            "name": "Sultan Qaboos Grand Mosque",
+            "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0d/5f/ea/88/aussenansicht-des-grossen.jpg?w=900&h=500&s=1"
+          },
+          {
+            "name": "Wadi Shab",
+            "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/10/f0/71/0f/wadi-shab-swimming-hole.jpg?w=900&h=500&s=1"
+          },
+          {
+            "name": "Royal Opera House",
+            "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0d/d7/03/44/amazing-royal-opera-house.jpg?w=900&h=500&s=1"
+          }
+        ]
+      },
+      {
+        "name": "Zambia",
+        "tourist_spots": [
+          {
+            "name": "Victoria Falls",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/3/3c/Victoria_Falls_Zambia.jpg"
+          },
+          {
+            "name": "Lower Zambezi National Park",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Lower_Zambezi_National_Park.jpg"
+          },
+          {
+            "name": "Kafue National Park",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/7/72/Kafue_National_Park_Zambia.jpg"
+          }
+        ]
+      },
+      {
+        "name": "Zimbabwe",
+        "tourist_spots": [
+          {
+            "name": "Victoria Falls",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/3/3c/Victoria_Falls_Zimbabwe.jpg"
+          },
+          {
+            "name": "Hwange National Park",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/2/20/Hwange_National_Park_Zimbabwe.jpg"
+          },
+          {
+            "name": "Mana Pools National Park",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/b/b6/Mana_Pools_National_Park_Zimbabwe.jpg"
+          }
+        ]
+      }
+    ]
+  }
+  
