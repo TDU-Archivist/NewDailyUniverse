@@ -13,8 +13,11 @@ export const MainDataLoadProvider = ({ children }) => {
     const [countryThreeTouristSpots, setCountryThreeTouristSpots] = useState([]);
 
     const fetchCountryData = async () => {
-        try {
 
+
+
+        
+        try {
             if (pickedCountry.toLowerCase() === 'china') {
                 const response = await axios.get('https://restcountries.com/v3.1/alpha/CHN');
                 const data = response.data[0];

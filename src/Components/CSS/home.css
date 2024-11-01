@@ -32,6 +32,7 @@ h6{
     height: auto;
     width: 100%;
     background: black;
+    padding-bottom: 10vw;
 }
 
 /*----- Landing Section -----*/
@@ -42,6 +43,7 @@ section.mainContainerPage.top{
     height: auto;
     width: 100%;
     padding: 4vw 5vw;
+    padding-bottom: 0;
     background: 
         linear-gradient(black 0%, transparent),
         linear-gradient(transparent, black 100%),
@@ -161,29 +163,18 @@ section.mainContainerPage.top{
 .mncntntpt2rSearch{
     position: absolute;
     height: auto;
-    width: 35%;
-    top: 1.5vw;
+    top: 1vw;
     right: 1.5vw;
-    display: flex;
-    justify-content: space-between;
-    border-radius: 50px;
-    align-items: center;
-    border: solid 2px white;
-    padding: 3px 15px;
     z-index: 5;
-    background: rgba(255, 255, 255, 0.1);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
+    text-align: right;
 }
-.mncntntpt2rSearch input{
-    width: 90%;
-    background: none;
-    border: none;
-    font-size: 0.7vw;
-    outline: none;
-    color: white;
-    text-transform: capitalize;
+.mncntntpt2rSearch h5{
+    font-size: 2vw;
+}
+.mncntntpt2rSearch p{
+    font-size: 0.6vw;
+    line-height: 0.8vw;
+    opacity: 50%;
 }
 .mncntntpt2rSelected{
     position: absolute;
@@ -322,7 +313,7 @@ section.mainContainerPage.top{
     text-shadow: 0 0 10px black;
     top: 0.5vw;
     left: 0.5vw;
-    font-size: 0.7vw;
+    font-size: 0.55vw;
     line-height: 0.8vw;
 }
 
@@ -333,12 +324,62 @@ section.mainContainerPage.top{
 
 
 
-
-
-
-
-
-
+section.mainContainerPage.mid{
+    height: auto;
+    width: 100%;
+    padding: 2vw 5vw;
+}
+.mainContentPage.mid1{
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.mncntntpm1{
+    height: 15vw;
+    width: 24%;
+    background: url('../assets/imgs/TDULandingBG.png') no-repeat center;
+    background-size: cover;
+    border-radius: 1vw;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+.mncntntpm1 img{
+    height: 100%;
+}
+.mncntntpm1Title{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: auto;
+    width: 100%;
+    background: rgba(20, 20, 20, 0.5);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    padding: 5%;
+    text-align: center;
+}
+.mncntntpm1Title h6{
+    height: 2.5vw;
+    line-height: 1.2vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.mncntntpm1Title p{
+    height: 2vw;
+    font-size: 0.7vw;
+    line-height: 1vw;
+    margin-top: 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 
 

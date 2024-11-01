@@ -32,7 +32,7 @@ const WorldMap = () => {
                                 setPickedCountry(countryName);
                                 const timeoutId = setTimeout(() => {
                                     setPickedCountryModal(true);
-                                }, 400);
+                                }, 500);
                                 return () => clearTimeout(timeoutId);
                             } else {
                                 console.log("Country name not found");

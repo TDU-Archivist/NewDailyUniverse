@@ -54,6 +54,8 @@ const Home = () => {
   } = MainDataLoad(); 
   const [hasScrolled, setHasScrolled] = useState(false);
   const [showImages, setShowImages] = useState([]);
+  const [currentDateTime, setCurrentDateTime] = useState(new Date());
+  const [location, setLocation] = useState('Fetching location...');
 
   useEffect(() => {
     if (countryThreeTouristSpots?.tourist_spots) {
@@ -70,24 +72,81 @@ const Home = () => {
       });
     }
   }, [countryThreeTouristSpots]);
+  useEffect(() => {
+    // Update the currentDateTime every second
+    const interval = setInterval(() => {
+      setCurrentDateTime(new Date());
+    }, 1000);
+
+    // Cleanup interval on component unmount
+    return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    // Get user's location
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        async (position) => {
+          const { latitude, longitude } = position.coords;
+
+          // Use a simpler geocoding API for city and country only (replace YOUR_API_KEY)
+          try {
+            const response = await fetch(
+              `https://geocode.xyz/${latitude},${longitude}?geoit=json`
+            );
+            const data = await response.json();
+
+            if (data.city && data.country) {
+              setLocation(`${data.city}, ${data.country}`);
+            } else {
+              setLocation('Location not found');
+            }
+          } catch (error) {
+            setLocation('Error fetching location');
+          }
+        },
+        () => {
+          setLocation('Unable to retrieve location');
+        }
+      );
+    } else {
+      setLocation('Geolocation not supported');
+    }
+  }, []);
+
+  // Format time as "hh:mm AM/PM"
+  const formattedTime = currentDateTime.toLocaleTimeString('en-US', {
+    hour: '2-digit',
+    minute: '2-digit',
+    hour12: true,
+  });
+
+  // Format date as "Month day, year"
+  const formattedDate = currentDateTime.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
 
   const handleHideCountrySummaryModal = () => {
     setPickedCountry(false);
   }
-  const handleSearchCountry = (e) => {
-    function toCapitalCase(str) {
-      return str.replace(/\b\w/g, char => char.toUpperCase());
-    }
+  // const handleSearchCountry = (e) => {
+  //   function toCapitalCase(str) {
+  //     return str.replace(/\b\w/g, char => char.toUpperCase());
+  //   }
+  //   const country = e.target.value;
+  //   setPickedCountryModal(false);
+  //   setPickedCountry(toCapitalCase(country));
 
-    const country = e.target.value;
-    setPickedCountryModal(false);
-    setPickedCountry(toCapitalCase(country));
-    const timeoutId = setTimeout(() => {
-        setPickedCountryModal(true);
-    }, 400);
-    return () => clearTimeout(timeoutId);
-  }
+  //   const timeoutId = setTimeout(() => {
+  //     setPickedCountryModal(true);
+  //   }, 400);
+  //   return () => clearTimeout(timeoutId);
+  // }
   
+
+
 
 
   return (
@@ -182,11 +241,46 @@ const Home = () => {
               </div>
             }
             <div className="mncntntpt2rSearch">
-              <input type="text" placeholder='Search Country here..' onChange={handleSearchCountry}/>
-              <h6><FaSearch /></h6>
+              {/* <input type="text" placeholder='Search Country here..' onChange={handleSearchCountry}/>
+              <h6><FaSearch /></h6> */}
+              <h5>{formattedTime}</h5>
+              <p>{formattedDate}</p>
+              <p>{location}</p>
             </div>
             <WorldMap />
           </div>
+        </div>
+      </section>
+      <section className="mainContainerPage mid">
+        <div className="mainContentPage mid1">
+          <a className="mncntntpm1">
+            <img src={require('../assets/imgs/TDULandingBG.png')} alt="" />
+            <div className="mncntntpm1Title">
+              <h6>THIS WAS A NEWS HEADER</h6>
+              <p>This is a news subtitle only.</p>
+            </div>
+          </a>
+          <a className="mncntntpm1">
+            <img src={require('../assets/imgs/TDULandingBG.png')} alt="" />
+            <div className="mncntntpm1Title">
+              <h6>THIS WAS A NEWS HEADER</h6>
+              <p>This is a news subtitle only.</p>
+            </div>
+          </a>
+          <a className="mncntntpm1">
+            <img src={require('../assets/imgs/TDULandingBG.png')} alt="" />
+            <div className="mncntntpm1Title">
+              <h6>THIS WAS A NEWS HEADER</h6>
+              <p>This is a news subtitle only.</p>
+            </div>
+          </a>
+          <a className="mncntntpm1">
+            <img src={require('../assets/imgs/TDULandingBG.png')} alt="" />
+            <div className="mncntntpm1Title">
+              <h6>THIS WAS A NEWS HEADER</h6>
+              <p>This is a news subtitle only.</p>
+            </div>
+          </a>
         </div>
       </section>
     </div>

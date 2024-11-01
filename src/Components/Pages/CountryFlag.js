@@ -9,14 +9,11 @@ const CountryFlag = ({ countryName }) => {
         const fetchCountryFlag = async () => {
             try {
                 const response = await axios.get(`https://restcountries.com/v3.1/name/${countryName}`);
-
                 if(countryName.toLowerCase() === 'china'){
                     setFlagUrl('https://flagcdn.com/w320/cn.png');
                 } else {
                     setFlagUrl(response.data[0].flags.png); // Get the flag URL
                 }
-                
-
             } catch (error) {
                  if (countryName.toLowerCase() === 's. sudan') {
                     setFlagUrl('https://flagcdn.com/w320/ss.png');
