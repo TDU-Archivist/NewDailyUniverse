@@ -443,11 +443,21 @@ section.mainContainerPage.mid{
     width: 100%;
     background: rgb(30, 30, 30);
     margin: 3% 0;
-    padding: 3%;
     text-align: center;
     border-radius: 1vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-
+.mncntntpm3AdContainer{
+    height: auto;
+    width: 100%;
+    padding: 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
 
 
 

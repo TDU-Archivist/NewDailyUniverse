@@ -285,7 +285,7 @@ const Home = () => {
           </div>
           <div className="mncntntpm2 right">
             <div className="mncntntpm2Author">
-              <h6>WRITTEN BY. JOHN DOE</h6>
+              <h6>REVIEW BY. JOHN DOE</h6>
               <p>November 2, 2024</p>
             </div>
             <div className="mncntntpm2Title">
@@ -297,7 +297,9 @@ const Home = () => {
           </div>
         </div>
         <div className="mainContentPage mid3">
-          <h5>LET'S PLACE ANY TEXT OR GIF ADS HERE</h5>
+          <div className="mncntntpm3AdContainer">
+            <h5>LET'S PLACE ANY TEXT OR GIF ADS HERE</h5>
+          </div>
         </div>
       </section>
     </div>
