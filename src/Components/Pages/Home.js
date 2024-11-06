@@ -9,6 +9,7 @@ import axios from 'axios';
 import WorldMap from './WorldMap';
 import MapViewer from './MapViewer';
 import CountryFlag from './CountryFlag';
+import ExchangeRateMarquee from './ExchangeRateMarquee';
 import { MainDataLoad } from './MainDataContext';
 
 
@@ -53,13 +54,16 @@ const Home = () => {
     pickedCountry, 
     setPickedCountry,
     countryData,
+    countryCurrency,
     countryThreeTouristSpots,
+    exchangeRates,
   } = MainDataLoad(); 
   const [hasScrolled, setHasScrolled] = useState(false);
+  const [countryExchangeRate, setCountryExchangeRate] = useState([])
   const [showImages, setShowImages] = useState([]);
   const [currentDateTime, setCurrentDateTime] = useState(new Date());
   const [location, setLocation] = useState('Fetching location...');
-
+  
   useEffect(() => {
     if (countryThreeTouristSpots?.tourist_spots) {
       const initialImageStates = countryThreeTouristSpots.tourist_spots.map(() => false);
@@ -76,14 +80,18 @@ const Home = () => {
     }
   }, [countryThreeTouristSpots]);
   useEffect(() => {
-    // Update the currentDateTime every second
-    const interval = setInterval(() => {
-      setCurrentDateTime(new Date());
-    }, 1000);
-
-    // Cleanup interval on component unmount
-    return () => clearInterval(interval);
-  }, []);
+    if (Array.isArray(exchangeRates) && Array.isArray(countryCurrency) && countryCurrency.length > 0) {
+      const pickedCountryCurrency = countryCurrency[0]?.currency;
+      const countryDollarExchange = exchangeRates.find(
+        country => country.currency === pickedCountryCurrency
+      );
+  
+      // Only set state if the value is different to prevent unnecessary re-renders
+      if (countryDollarExchange) {
+        setCountryExchangeRate(countryDollarExchange);
+      }
+    }
+  }, [exchangeRates, countryCurrency]);
   useEffect(() => {
     // Get user's location
     if (navigator.geolocation) {
@@ -114,6 +122,14 @@ const Home = () => {
     } else {
       setLocation('Geolocation not supported');
     }
+
+    // Update the currentDateTime every second
+    const interval = setInterval(() => {
+      setCurrentDateTime(new Date());
+    }, 1000);
+
+    // Cleanup interval on component unmount
+    return () => clearInterval(interval);
   }, []);
   const formattedTime = currentDateTime.toLocaleTimeString('en-US', {
     hour: '2-digit',
@@ -126,25 +142,9 @@ const Home = () => {
     day: 'numeric',
   });
 
-
   const handleHideCountrySummaryModal = () => {
     setPickedCountry(false);
   }
-  // const handleSearchCountry = (e) => {
-  //   function toCapitalCase(str) {
-  //     return str.replace(/\b\w/g, char => char.toUpperCase());
-  //   }
-  //   const country = e.target.value;
-  //   setPickedCountryModal(false);
-  //   setPickedCountry(toCapitalCase(country));
-
-  //   const timeoutId = setTimeout(() => {
-  //     setPickedCountryModal(true);
-  //   }, 400);
-  //   return () => clearTimeout(timeoutId);
-  // }
-  
-
 
 
 
@@ -236,6 +236,10 @@ const Home = () => {
                       </>
                     }
                   </div>
+                </div>
+                <div className="mncntntpt2rsExchange">
+                  <h6>US DOLLAR EXCHANGE</h6>
+                  <h6>{`${countryExchangeRate.value} ${countryCurrency[0]?.currency}`}</h6>
                 </div>
               </div>
             }
@@ -361,6 +365,15 @@ const Home = () => {
                 Distinctio, sed consequatur?
               </p>
             </div>
+          </div>
+        </div>
+        <div className="mainContentPage mid5">
+          <div className="mncntntpm5More">
+            <h4>US DOLLAR EXCHANGE RATE</h4>
+            {/* <Link><h6>VIEW MORE</h6></Link> */}
+          </div>
+          <div className="mncntntpm5Container">
+            <ExchangeRateMarquee exchangeRate={exchangeRates} />
           </div>
         </div>
       </section>

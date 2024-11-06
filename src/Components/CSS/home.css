@@ -275,7 +275,7 @@ section.mainContainerPage.top{
     margin-top: 10%;
 }
 .mncntntpt2rsTourist h6{
-    font-size: 0.7vw;
+    font-size: 0.9vw;
     font-weight: 400;
 }
 .mncntntpt2rst{
@@ -316,8 +316,18 @@ section.mainContainerPage.top{
     font-size: 0.55vw;
     line-height: 0.8vw;
 }
-
-
+.mncntntpt2rsExchange{
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 3% 0;
+}
+.mncntntpt2rsExchange h6{
+    font-size: 0.9vw;
+    font-weight: 400;
+}
 
 
 
@@ -562,10 +572,58 @@ section.mainContainerPage.mid{
 
 
 
-
-
-
-
+.mainContentPage.mid5{
+    height: auto;
+    width: 100%;
+    margin: 5% 0;
+}
+.mncntntpm5More{
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+.mncntntpm5More a{
+    text-decoration: none;
+    opacity: 50%;
+    transition: 400ms ease;
+}
+.mncntntpm5More a h6{
+    font-weight: 400;
+    font-size: 0.9vw;
+}
+.mncntntpm5More a:hover{
+    opacity: 100%;
+    transition: 400ms ease;
+}
+.mncntntpm5Container{
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 2%;
+}
+.mncntntpm5Container .marquee{
+    display: inline-block;
+    animation: marquee 600s linear infinite;
+}
+.mncntntpm5Container .marquee-item{
+    display: inline-block;
+    background: rgb(30, 30, 30);
+    padding: 0.5vw 2vw;
+    margin: 0 5px;
+    border-radius: 10px;
+}
+  
+@keyframes marquee {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+}
 
 
 
