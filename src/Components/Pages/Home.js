@@ -3,7 +3,9 @@ import "../CSS/home.css";
 import { Link } from 'react-router-dom';
 import { 
   FaTimes,
-  FaSearch 
+  FaSearch,
+  FaExternalLinkAlt,
+  FaArrowRight  
 } from 'react-icons/fa';
 import axios from 'axios';
 import WorldMap from './WorldMap';
@@ -188,7 +190,7 @@ const Home = () => {
                   </div>
                   <div className='mncntntpt2rscnFlag'>
                     {/* <CountryFlag countryName={`${pickedCountry}`} /> */}
-                    <img src={`${countryData?.flags?.png}`} alt="" />
+                    <img src={(countryData?.flags?.png) ? `${countryData?.flags?.png}` : require('../assets/imgs/TDULandingBG.png')} alt="" />
                   </div>
                 </div>
                 <div className="mncntntpt2rsSubHeader">
@@ -203,7 +205,10 @@ const Home = () => {
                   </span>
                 </div>
                 <div className="mncntntpt2rsTourist">
-                  <h6>RECOMMENDED TOURIST SPOTS</h6>
+                  <div className="mncntntpt2rstHeader">
+                    <h6>RECOMMENDED TOURIST SPOTS</h6>
+                    <Link><FaExternalLinkAlt /></Link>
+                  </div>
                   <div className="mncntntpt2rst">
                     {countryThreeTouristSpots?.tourist_spots.length > 0 ?
                       <>
@@ -239,7 +244,7 @@ const Home = () => {
                 </div>
                 <div className="mncntntpt2rsExchange">
                   <h6>US DOLLAR EXCHANGE</h6>
-                  <h6>{`${countryExchangeRate.value} ${countryCurrency[0]?.currency}`}</h6>
+                  <h6>{(countryExchangeRate.value) ? `${countryExchangeRate.value} ${countryCurrency[0]?.currency}` : 0}</h6>
                 </div>
               </div>
             }
@@ -374,6 +379,101 @@ const Home = () => {
           </div>
           <div className="mncntntpm5Container">
             <ExchangeRateMarquee exchangeRate={exchangeRates} />
+          </div>
+        </div>
+        <div className="mainContentPage mid6">
+          <div className="mncntntpm6Container">
+            <div className="mncntntpm6cHeader">
+              <h4>BUSINESS</h4>
+              <Link><h6><FaArrowRight className='faIcons'/></h6></Link>
+            </div>
+            <div className="mncntntpm6cContent">
+              <div className="mncntntpm6ccArticle">
+                <div>
+                  <img src="" alt="" />
+                </div>
+                <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h5>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. At est nisi quae accusantium sed, eligendi maiores nihil eveniet veniam, error, aliquam in dolor ratione nobis enim voluptas animi soluta! Asperiores?</p>
+              </div>
+              <div className="mncntntpm6ccArticle">
+                <div>
+                  <img src="" alt="" />
+                </div>
+                <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h5>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. At est nisi quae accusantium sed, eligendi maiores nihil eveniet veniam, error, aliquam in dolor ratione nobis enim voluptas animi soluta! Asperiores?</p>
+              </div>
+            </div>
+          </div>
+          <div className="mncntntpm6Container">
+            <div className="mncntntpm6cHeader">
+              <h4>SPORTS</h4>
+              <Link><h6><FaArrowRight className='faIcons'/></h6></Link>
+            </div>
+            <div className="mncntntpm6cContent">
+              <div className="mncntntpm6ccArticle">
+                <div>
+                  <img src="" alt="" />
+                </div>
+                <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h5>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. At est nisi quae accusantium sed, eligendi maiores nihil eveniet veniam, error, aliquam in dolor ratione nobis enim voluptas animi soluta! Asperiores?</p>
+              </div>
+              <div className="mncntntpm6ccArticle">
+                <div>
+                  <img src="" alt="" />
+                </div>
+                <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h5>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. At est nisi quae accusantium sed, eligendi maiores nihil eveniet veniam, error, aliquam in dolor ratione nobis enim voluptas animi soluta! Asperiores?</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="mainContentPage mid7">
+          <div className="mncntntpm7Container left">
+            <div className="mncntntpm7cHeader">
+              <h4>EDITOR'S PARADISE</h4>
+            </div>
+            <div className="mncntntpm7clContent">
+              <img src="" alt="" />
+              <div className="mncntntpm7clcTitle">
+                <h4>Lorem ipsum dolor sit</h4>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit sit corporis ab repudiandae voluptas iste! Quae, totam deleniti cumque labore nisi possimus quia doloremque provident nam excepturi perferendis, omnis temporibus.</p>
+              </div>
+            </div>
+          </div>
+          <div className="mncntntpm7Container right">
+            <div className="mncntntpm7cHeader">
+              <h5>MUST CHECK DESTINATIONS</h5>
+              <Link><h6>VIEW MORE</h6></Link>
+            </div>
+            <div className="mncntntpm7crContent">
+              <div className='mncntntpm7crc'>
+                <div>
+                  <img src="" alt="" />
+                </div>
+                <span>
+                  <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h5>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad excepturi aliquam nisi libero.</p>
+                </span>
+              </div>
+              <div className='mncntntpm7crc'>
+                <div>
+                  <img src="" alt="" />
+                </div>
+                <span>
+                  <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h5>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad excepturi aliquam nisi libero.</p>
+                </span>
+              </div>
+              <div className='mncntntpm7crc'>
+                <div>
+                  <img src="" alt="" />
+                </div>
+                <span>
+                  <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h5>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad excepturi aliquam nisi libero.</p>
+                </span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
