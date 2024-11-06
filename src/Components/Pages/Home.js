@@ -28,7 +28,9 @@ const formatNumber = (num) => {
     return Math.floor(value * factor) / factor;
   };
 
-  if (num >= 1_000_000) {
+  if (num >= 1_000_000_000) {
+    return truncateDecimal(num / 1_000_000_000, 1) + 'B';
+  } else if (num >= 1_000_000) {
     return truncateDecimal(num / 1_000_000, 1) + 'M';
   } else if (num >= 100_000) {
     return truncateDecimal(num / 1_000, 1) + 'K';
@@ -39,6 +41,7 @@ const formatNumber = (num) => {
 const NumberFormatter = ({ number }) => {
   return <>{number > 0 ? formatNumber(number) : 0}</>;
 };
+
 const Home = () => {
   const { 
     createTDUAccount, 
@@ -253,28 +256,28 @@ const Home = () => {
             <img src={require('../assets/imgs/TDULandingBG.png')} alt="" />
             <div className="mncntntpm1Title">
               <h6>THIS WAS A NEWS HEADER</h6>
-              <p>This is a news subtitle only.</p>
+              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex earum eos laborum ducimus ipsam...</p>
             </div>
           </a>
           <a className="mncntntpm1">
             <img src={require('../assets/imgs/TDULandingBG.png')} alt="" />
             <div className="mncntntpm1Title">
               <h6>THIS WAS A NEWS HEADER</h6>
-              <p>This is a news subtitle only.</p>
+              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex earum eos laborum ducimus ipsam...</p>
             </div>
           </a>
           <a className="mncntntpm1">
             <img src={require('../assets/imgs/TDULandingBG.png')} alt="" />
             <div className="mncntntpm1Title">
               <h6>THIS WAS A NEWS HEADER</h6>
-              <p>This is a news subtitle only.</p>
+              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex earum eos laborum ducimus ipsam...</p>
             </div>
           </a>
           <a className="mncntntpm1">
             <img src={require('../assets/imgs/TDULandingBG.png')} alt="" />
             <div className="mncntntpm1Title">
               <h6>THIS WAS A NEWS HEADER</h6>
-              <p>This is a news subtitle only.</p>
+              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex earum eos laborum ducimus ipsam...</p>
             </div>
           </a>
         </div>
@@ -292,13 +295,72 @@ const Home = () => {
               <h3>THIS WAS A MOVIE REVIEW ABOUT A TRENDING MOVIE</h3>
             </div>
             <div className="mncntntpm2SubTitle">
-              <p>This was a subtitle or might the summary of the movie review.</p>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel maiores laborum quidem aspernatur nostrum officia velit quo culpa, assumenda repellendus accusamus labore aperiam nemo illo laudantium earum, tempore dicta fuga!</p>
+            </div>
+            <div className="mncntntpm2More">
+              <Link><h6>VIEW MORE REVIEWS</h6></Link>
             </div>
           </div>
         </div>
         <div className="mainContentPage mid3">
           <div className="mncntntpm3AdContainer">
             <h5>LET'S PLACE ANY TEXT OR GIF ADS HERE</h5>
+          </div>
+        </div>
+        <div className="mainContentPage mid4">
+          <div className="mncntntpm4More">
+            <h4>LATEST NEWS</h4>
+            <Link><h6>VIEW MORE</h6></Link>
+          </div>
+          <div className="mncntntpm4Container">
+            <div className="mncntntpm4Content">
+              <div>
+                <img src="" alt="" />
+              </div>
+              <h5>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</h5>
+              <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut inventore 
+                beatae, cum quisquam pariatur repellendus possimus tenetur delectus 
+                voluptas expedita cumque ea veniam eum repudiandae totam architecto. 
+                Distinctio, sed consequatur?
+              </p>
+            </div>
+            <div className="mncntntpm4Content">
+              <div>
+                <img src="" alt="" />
+              </div>
+              <h5>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</h5>
+              <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut inventore 
+                beatae, cum quisquam pariatur repellendus possimus tenetur delectus 
+                voluptas expedita cumque ea veniam eum repudiandae totam architecto. 
+                Distinctio, sed consequatur?
+              </p>
+            </div>
+            <div className="mncntntpm4Content">
+              <div>
+                <img src="" alt="" />
+              </div>
+              <h5>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</h5>
+              <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut inventore 
+                beatae, cum quisquam pariatur repellendus possimus tenetur delectus 
+                voluptas expedita cumque ea veniam eum repudiandae totam architecto. 
+                Distinctio, sed consequatur?
+              </p>
+            </div>
+            <div className="mncntntpm4Content">
+              <div>
+                <img src="" alt="" />
+              </div>
+              <h5>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</h5>
+              <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut inventore 
+                beatae, cum quisquam pariatur repellendus possimus tenetur delectus 
+                voluptas expedita cumque ea veniam eum repudiandae totam architecto. 
+                Distinctio, sed consequatur?
+              </p>
+            </div>
           </div>
         </div>
       </section>
