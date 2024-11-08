@@ -103,7 +103,12 @@ h6{
     background: black;
     color: white;
     border-radius: 10px;
+    transition: 400ms ease;
     outline: none;
+}
+.mdlcntntrlContent div input.error{
+    border: solid 2px red;
+    transition: 400ms ease;
 }
 .mdlcntntrlContent div button{
     position: absolute;
@@ -194,8 +199,20 @@ h6{
     font-size: 0.7vw;
     cursor: pointer;
 }
-
-
+.mdlcntntrrErrorModal{
+    height: auto;
+    padding: 2% 5%;
+    position: absolute;
+    top: 2vw;
+    left: 0;
+    background: red;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
+.mdlcntntrrErrorModal p{
+    font-size: 0.7vw;
+    line-height: 0.7vw;
+}
 
 
 

@@ -35,4 +35,116 @@ h6{
     padding-bottom: 10vw;
 }
 
-/*----- Landing Section -----*/
+
+
+
+section.adminPanelContainerPage{
+    height: auto;
+    width: 100%;
+    padding: 4.5vw 5vw;
+    padding-bottom: 0;
+}
+.adminPanelContentPage{
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+}
+.admnpnlcp.left{
+    height: auto;
+    width: 20%;
+    padding: 1%;
+    background: rgb(20, 20, 20);
+    border-radius: 1vw;
+}
+.admnpnlcplHeader{
+    height: auto;
+    width: 100%;
+    padding: 3%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.admnpnlcplHeader img{
+    height: 3.5vw;
+    width: 3.5vw;
+    margin-right: 7%;
+}
+.admnpnlcplHeader span h5{
+    font-size: 1.2vw;
+    line-height: 1.5vw;
+}
+.admnpnlcplHeader span h6{
+    font-weight: 400;
+    line-height: 1vw;
+    color: gray;
+}
+
+
+
+
+
+.admnpnlcplNavigations{
+    height: auto;
+    width: 100%;
+    margin-top: 10%;
+}
+.admnpnlcplNavigations button{
+    width: 100%;
+    padding: 3% 5%;
+    margin-bottom: 2%;
+    text-align: left;
+    border-radius: 10px;
+    background: none;
+    border: none;
+    outline: none;
+    opacity: 30%;
+    transition: 400ms ease;
+    cursor: pointer;
+}
+.admnpnlcplNavigations button h6{
+    font-size: 0.9vw;
+    font-weight: 400;
+}
+.admnpnlcplNavigations button.active{
+    opacity: 100%;
+    background: rgb(30, 30, 30);
+    transition: 400ms ease;
+}
+.admnpnlcplNavigations button:hover{
+    opacity: 100%;
+    background: rgb(30, 30, 30);
+    transition: 400ms ease;
+}
+.admnpnlcplnOthers{
+    height: auto;
+    width: 100%;
+    background: rgb(25, 25, 25);
+    border-radius: 0.5vw;
+    padding: 3%;
+}
+.admnpnlcplnOthers h6#admnpnlcplnoNavs{
+    width: 100%;
+    padding: 3% 5%;
+    margin-bottom: 3%;
+    text-align: left;
+    border-radius: 10px;
+}
+
+
+
+
+
+.admnpnlcp.right{
+    height: 100vh;
+    width: 75%;
+    background: rgb(20, 20, 20);
+    border-radius: 1vw;
+    padding: 1% 2%;
+}
+.admnpnlcp.right p{
+    color: gray;
+}
+
+

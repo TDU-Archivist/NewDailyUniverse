@@ -9,6 +9,7 @@ import ScrollToTop from './Components/Pages/ScrollToTop';
 
 import { MainDataLoadProvider } from './Components/Pages/MainDataContext';
 import Home from './Components/Pages/Home'
+import AdminPanel from './Components/Pages/AdminPanel';
 
 
 
@@ -26,6 +27,7 @@ function App() {
           <Route path="/" element={<Home/>}/>
 
 
+          <Route path="/AdminPanel" element={<AdminPanel/>}/>
         </Routes>
         {/* <Footer /> */}
       </div>
