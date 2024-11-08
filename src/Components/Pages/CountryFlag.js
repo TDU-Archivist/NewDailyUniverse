@@ -17,6 +17,8 @@ const CountryFlag = ({ countryName }) => {
             } catch (error) {
                  if (countryName.toLowerCase() === 's. sudan') {
                     setFlagUrl('https://flagcdn.com/w320/ss.png');
+                } else if(countryName.toLowerCase() === 'hong kong s.a.r.'){
+                    setFlagUrl('https://flagcdn.com/w320/hk.png');
                 } else if(countryName.toLowerCase() === 'oman'){
                     setFlagUrl('https://flagcdn.com/w320/om.png');
                 } else if (countryName.toLowerCase() === 'central african rep.') {

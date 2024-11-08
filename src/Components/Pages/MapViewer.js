@@ -14,7 +14,7 @@ const MapViewer = () => {
                 height={500}
                 style={{ width: '100%', height: 'auto' }}
             >
-                <ZoomableGroup zoom={1} minZoom={1} maxZoom={4} center={[0, 0]}>
+                <ZoomableGroup zoom={1} minZoom={1} maxZoom={10} center={[0, 0]}>
                     <Geographies geography={geoUrl}>
                         {({ geographies }) =>
                             geographies.map((geo) => (

@@ -218,11 +218,15 @@ section.mainContainerPage.top{
     transition: 400ms ease;
 }
 .mncntntpt2rsCountryName{
-    height: 3vw;
+    height: 4vw;
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: top;
+}
+.mncntntpt2rscnName{
+    height: auto;
+    width: 75%;
 }
 .mncntntpt2rscnName h5 {
     font-size: 1.2vw;

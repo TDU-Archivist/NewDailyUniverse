@@ -2028,15 +2028,32 @@
         "tourist_spots": [
           {
             "name": "Singapore City",
-            "image": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Singapore_City.jpg"
+            "image": "https://www.sheltonsgroup.com/wp-content/uploads/2024/02/AdobeStock_209824591-scaled.jpeg"
           },
           {
             "name": "Sentosa Island",
-            "image": "https://upload.wikimedia.org/wikipedia/commons/5/55/Sentosa_Island_Singapore.jpg"
+            "image": "https://www.sentosa.gov.sg/images/partner-us/opportunities/sentosa-aerial.jpg"
           },
           {
             "name": "Marina Bay Sands",
-            "image": "https://upload.wikimedia.org/wikipedia/commons/7/72/Marina_Bay_Sands_Singapore.jpg"
+            "image": "https://dunham-bush.com/wp-content/uploads/2020/01/Marina-Bay-Sands.webp"
+          }
+        ]
+      },
+      {
+        "name": "Hong Kong S.A.R.",
+        "tourist_spots": [
+          {
+            "name": "Hong Kong Disneyland",
+            "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/4f/6d/28/hong-kong-disneyland.jpg?w=900&h=500&s=1"
+          },
+          {
+            "name": "Victoria Peak",
+            "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0b/c9/50/88/photo3jpg.jpg?w=900&h=500&s=1"
+          },
+          {
+            "name": "Tian Tan Buddha",
+            "image": "https://www.awaygowe.com/wp-content/uploads/2012/12/hongkong-bigbuddha-featured2.webp"
           }
         ]
       },

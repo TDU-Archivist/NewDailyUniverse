@@ -5,6 +5,7 @@ import axios from 'axios';
 const MainDataContext = createContext();
 
 export const MainDataLoadProvider = ({ children }) => {
+    const [webLoader, setWebLoader] = useState(false);
     const [createTDUAccount, setCreateTDUAccount] = useState(false);
     const [loginTDUAccount, setLoginTDUAccount] = useState(false);
     const [pickedCountryModal, setPickedCountryModal] = useState(false);
@@ -32,6 +33,50 @@ export const MainDataLoadProvider = ({ children }) => {
                 setCountryData(data);
             } else if (pickedCountry.toLowerCase() === 'ireland') {
                 const response = await axios.get('https://restcountries.com/v3.1/alpha/IRL');
+                const data = response.data[0];
+                const countryCurrency = data?.currencies;
+                const formattedData = Object.entries(countryCurrency).map(([currency, info]) => ({
+                    currency,
+                    name: info?.name,
+                    symbol: info?.symbol,
+                }));
+                setCountryCurrency(formattedData);
+                setCountryData(data);
+            } else if (pickedCountry.toLowerCase() === 'hong kong s.a.r.') {
+                const response = await axios.get('https://restcountries.com/v3.1/alpha/HK');
+                const data = response.data[0];
+                const countryCurrency = data?.currencies;
+                const formattedData = Object.entries(countryCurrency).map(([currency, info]) => ({
+                    currency,
+                    name: info?.name,
+                    symbol: info?.symbol,
+                }));
+                setCountryCurrency(formattedData);
+                setCountryData(data);
+            } else if (pickedCountry.toLowerCase() === 'indian ocean territories') {
+                const response = await axios.get('https://restcountries.com/v3.1/alpha/IO');
+                const data = response.data[0];
+                const countryCurrency = data?.currencies;
+                const formattedData = Object.entries(countryCurrency).map(([currency, info]) => ({
+                    currency,
+                    name: info?.name,
+                    symbol: info?.symbol,
+                }));
+                setCountryCurrency(formattedData);
+                setCountryData(data);
+            } else if (pickedCountry.toLowerCase() === 'antarctica') {
+                const response = await axios.get('https://restcountries.com/v3.1/alpha/AQ');
+                const data = response.data[0];
+                const countryCurrency = data?.currencies;
+                const formattedData = Object.entries(countryCurrency).map(([currency, info]) => ({
+                    currency,
+                    name: info?.name,
+                    symbol: info?.symbol,
+                }));
+                setCountryCurrency(formattedData);
+                setCountryData(data);
+            } else if (pickedCountry.toLowerCase() === 'south georgia and south sandwich islands') {
+                const response = await axios.get('https://restcountries.com/v3.1/alpha/GS');
                 const data = response.data[0];
                 const countryCurrency = data?.currencies;
                 const formattedData = Object.entries(countryCurrency).map(([currency, info]) => ({
