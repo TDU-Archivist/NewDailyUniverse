@@ -104,7 +104,12 @@ h6{
     background: black;
     color: white;
     border-radius: 10px;
+    transition: 400ms ease;
     outline: none;
+}
+.mdlcntntllContent div input.error{
+    border: solid 2px red;
+    transition: 400ms ease;
 }
 .mdlcntntllContent div button{
     position: absolute;

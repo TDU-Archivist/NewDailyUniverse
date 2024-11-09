@@ -38,8 +38,6 @@ const RegisterTDU = () => {
     const [errorResponseModal, setErrorResponseModal] = useState(false);
     const [successResponseModal, setSuccessResponseModal] = useState(false);
     const [messageResponse, setMessageResponse] = useState('')
-
-    
     const tduUserRegistrationAPI = process.env.REACT_APP_TDU_USER_REGISTRATION_API;
 
 

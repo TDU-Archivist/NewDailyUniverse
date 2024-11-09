@@ -5,6 +5,12 @@ import axios from 'axios';
 const MainDataContext = createContext();
 
 export const MainDataLoadProvider = ({ children }) => {
+    const userLoggedIn = localStorage.getItem('isLoggedIn');
+    const StoredUserID = localStorage.getItem('tduProfileUserID');
+    const StoredUserData = localStorage.getItem('tduProfileAccount')
+    const StoredUserDataJSON = JSON.parse(StoredUserData)
+    
+
     const [webLoader, setWebLoader] = useState(false);
     const [createTDUAccount, setCreateTDUAccount] = useState(false);
     const [loginTDUAccount, setLoginTDUAccount] = useState(false);
@@ -259,9 +265,11 @@ export const MainDataLoadProvider = ({ children }) => {
     }, []);
 
 
-
     return (
         <MainDataContext.Provider value={{ 
+                userLoggedIn,
+                StoredUserID,
+                StoredUserDataJSON,
                 createTDUAccount, 
                 setCreateTDUAccount,
                 loginTDUAccount, 

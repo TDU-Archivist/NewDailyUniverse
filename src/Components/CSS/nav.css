@@ -125,23 +125,35 @@ nav{
     border: solid 2px white;
     color: white;
     cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     padding: 2px 20px;
     border-radius: 50px;
     transition: 400ms ease;
 }
-.nvcntntr.user button#nvcntntruSignup:hover{
+.nvcntntr.user a#nvcntntruUser{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid 2px white;
+    color: white;
+    width: 7vw;
+    padding: 2px 10px;
+    border-radius: 50px;
+    transition: 400ms ease;
+}
+.nvcntntr.user button#nvcntntruSignup:hover,
+.nvcntntr.user a#nvcntntruUser:hover{
     background: white;
     transition: 400ms ease;
 }
-.nvcntntr.user button#nvcntntruSignup h6{
+.nvcntntr.user button#nvcntntruSignup h6,
+.nvcntntr.user a#nvcntntruUser h6{
     font-size: 0.9vw;
     font-weight: 400;
     transition: 400ms ease;
+    text-transform: uppercase;
 }
-.nvcntntr.user button#nvcntntruSignup:hover h6{
+.nvcntntr.user button#nvcntntruSignup:hover h6,
+.nvcntntr.user a#nvcntntruUser:hover h6{
     color: black;
     transition: 400ms ease;
 }
@@ -159,7 +171,20 @@ nav{
     transition: 400ms ease;
     border-radius: 50%;
 }
-
+.nvcntntr.user a#nvcntntruAdmin{
+    font-size: 1.5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    outline: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    margin-left: 0.5vw;
+    transition: 400ms ease;
+    border-radius: 50%;
+}
 
 
 

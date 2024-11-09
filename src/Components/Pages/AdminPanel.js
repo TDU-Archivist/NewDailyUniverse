@@ -1,7 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import "../CSS/adminPanel.css";
+import { MainDataLoad } from './MainDataContext';
 
 const AdminPanel = () => {
+    const { 
+      userLoggedIn,
+      StoredUserID,
+      StoredUserDataJSON,
+    } = MainDataLoad(); 
+
+
+    
     return (
         <div className='mainContainer adminPanel'>
             <section className="adminPanelContainerPage">
@@ -20,6 +29,9 @@ const AdminPanel = () => {
                             <button className=''><h6>ADD NEWS ARTICLE</h6></button>
                             <button className=''><h6>ADD MOVIE REVIEW</h6></button>
                             <button className=''><h6>ADD TOURIST SPOTS</h6></button>
+                            <button className=''><h6>ADD POLL</h6></button>
+                            <button className=''><h6>ADD ADS</h6></button>
+                            <button className=''><h6>ADD PRODUCT</h6></button>
                             <div className="admnpnlcplnOthers">
                                 <h6 id='admnpnlcplnoNavs'>OTHERS</h6>
                                 <button className=''><h6>ADD TELECAST CHANNEL</h6></button>
@@ -28,11 +40,12 @@ const AdminPanel = () => {
                                 <button className=''><h6>ADD SPORTS TEAM</h6></button>
                                 <button className=''><h6>ADD AIRLINE</h6></button>
                                 <button className=''><h6>ADD AIRPORT</h6></button>
+                                <button className=''><h6>ADD VISA GUIDE</h6></button>
                             </div>
                         </div>
                     </div>
                     <div className="admnpnlcp right">
-                        <h4>GOOD DAY ADMIN JOSH,</h4>
+                        <h4>GOOD DAY ADMIN {StoredUserDataJSON?.username},</h4>
                         <p>Welcome to the Admin Panel! By accessing this panel, you agree to adhere to TDU's Content Terms and Conditions and Privacy Policies.</p>
                     </div>
                 </div>

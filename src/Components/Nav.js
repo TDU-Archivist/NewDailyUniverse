@@ -10,16 +10,32 @@ import {
     FaTwitter,
     FaGithub,
     FaYoutube,
-    FaRegUserCircle
+    FaRegUserCircle,
+    FaPowerOff
 } from 'react-icons/fa';
-
+import { 
+  MdOutlineAdminPanelSettings,
+  MdPowerSettingsNew  
+} from "react-icons/md";
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import LoginTDU from './Pages/LoginTDU';
 import RegisterTDU from './Pages/RegisterTDU';
 import { MainDataLoad } from './Pages/MainDataContext';
 
+
+
+const TextSlicer = ({ text = '', maxLength }) => {
+  const truncatedText = text.length > maxLength ? text.slice(0, maxLength) + '...' : text;
+  return (
+    <>{truncatedText}</>
+  );
+};
 const Nav = () => {
   const { 
+    userLoggedIn,
+    StoredUserID,
+    StoredUserDataJSON,
     createTDUAccount, 
     setCreateTDUAccount,
     loginTDUAccount, 
@@ -31,9 +47,7 @@ const Nav = () => {
     countryData,
     countryThreeTouristSpots,
   } = MainDataLoad(); 
-
-
-
+  const navigate = useNavigate();
   const handleRegisterTDU = () => {
     setCreateTDUAccount(true)
   }
@@ -41,7 +55,15 @@ const Nav = () => {
     setLoginTDUAccount(true)
   }
 
+  const handleUserLogout = () => {
+    if (!userLoggedIn) return;
 
+    localStorage.removeItem('tduProfileAccount');
+    localStorage.removeItem('tduProfileUserID');
+    localStorage.removeItem('isLoggedIn');
+    window.location.reload();
+    navigate('/')
+  };
 
   
 
@@ -67,10 +89,14 @@ const Nav = () => {
                   <Link>Destinations</Link>
                   <Link>Visa Guide</Link>
                 </div>
-                <div className="nvcntntr user">
+                {(!userLoggedIn && !StoredUserID) ? <div className="nvcntntr user">
                   <button id='nvcntntruSignup' onClick={handleRegisterTDU}><h6>REGISTER</h6></button>
                   <button id='nvcntntruLogin' onClick={handleLoginTDU}><FaRegUserCircle className='faIcons'/></button>
-                </div>
+                </div>:<div className="nvcntntr user">
+                  <Link id='nvcntntruUser'><h6><TextSlicer text={`${StoredUserDataJSON?.username}`} maxLength={8} /></h6></Link>
+                  {(StoredUserDataJSON?.state === "Admin") && <Link id='nvcntntruAdmin' to="/AdminPanel"><MdOutlineAdminPanelSettings className='faIcons'/></Link>}
+                  <button id='nvcntntruLogin' onClick={handleUserLogout}><MdPowerSettingsNew className='faIcons'/></button>
+                </div>}
               </div>
           </div>
       </div>

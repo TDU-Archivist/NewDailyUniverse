@@ -143,6 +143,9 @@ section.adminPanelContainerPage{
     border-radius: 1vw;
     padding: 1% 2%;
 }
+.admnpnlcp.right h4{
+    text-transform: uppercase;
+}
 .admnpnlcp.right p{
     color: gray;
 }
