@@ -16,6 +16,8 @@ import AdminPanel from './Components/Pages/AdminPanel';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 
 function App() {
+  const StoredUserData = localStorage.getItem('tduProfileAccount')
+  const StoredUserDataJSON = JSON.parse(StoredUserData)
   
   return (
     <MainDataLoadProvider>
@@ -27,7 +29,7 @@ function App() {
           <Route path="/" element={<Home/>}/>
 
 
-          <Route path="/AdminPanel" element={<AdminPanel/>}/>
+          {(StoredUserDataJSON?.state === 'Admin') && <Route path="/AdminPanel" element={<AdminPanel/>}/>}
         </Routes>
         {/* <Footer /> */}
       </div>

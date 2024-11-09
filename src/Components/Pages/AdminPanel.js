@@ -4,15 +4,21 @@ import { MainDataLoad } from './MainDataContext';
 
 const AdminPanel = () => {
     const { 
-      userLoggedIn,
-      StoredUserID,
-      StoredUserDataJSON,
+        webLoader,
+        userLoggedIn,
+        StoredUserID,
+        StoredUserDataJSON,
     } = MainDataLoad(); 
 
 
     
     return (
         <div className='mainContainer adminPanel'>
+            <div className={webLoader ? "allLoaderContainer active" : "allLoaderContainer disable"}>
+                <div className="loaderContent">
+                    <img src={require('../assets/imgs/TheDailyUniverseLogo.png')} alt="" />
+                </div>
+            </div>
             <section className="adminPanelContainerPage">
                 <div className="adminPanelContentPage">
                     <div className="admnpnlcp left">

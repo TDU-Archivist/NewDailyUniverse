@@ -47,6 +47,7 @@ const NumberFormatter = ({ number }) => {
 
 const Home = () => {
   const { 
+    webLoader,
     createTDUAccount, 
     setCreateTDUAccount,
     loginTDUAccount, 
@@ -152,6 +153,13 @@ const Home = () => {
 
   return (
     <div className='mainContainer home'>
+      <div className={webLoader ? "allLoaderContainer active" : "allLoaderContainer disable"}>
+        <div className="loaderContent">
+          <img src={require('../assets/imgs/TheDailyUniverseLogo.png')} alt="" />
+        </div>
+      </div>
+
+
       <section className="mainContainerPage top">
         <div className="mainContentPage top1">
           <h3>THE DAILY UNIVERSE</h3>

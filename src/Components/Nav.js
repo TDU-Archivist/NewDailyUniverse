@@ -61,8 +61,8 @@ const Nav = () => {
     localStorage.removeItem('tduProfileAccount');
     localStorage.removeItem('tduProfileUserID');
     localStorage.removeItem('isLoggedIn');
-    window.location.reload();
     navigate('/')
+    window.location.reload();
   };
 
   

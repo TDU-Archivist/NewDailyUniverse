@@ -99,7 +99,7 @@ section.adminPanelContainerPage{
     background: none;
     border: none;
     outline: none;
-    opacity: 30%;
+    opacity: 25%;
     transition: 400ms ease;
     cursor: pointer;
 }

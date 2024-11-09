@@ -39,6 +39,52 @@ h6{
 
 
 
+
+.allLoaderContainer{
+    height: 100vh;
+    width: 100%;
+    background: black;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    text-align: center;
+}
+.allLoaderContainer.active{
+    top: 0;
+    left: 0;
+    transition: 600ms ease;
+}
+.allLoaderContainer.disable{
+    top: -100%;
+    left: 0;
+    transition: 800ms ease;
+}
+.loaderContent{
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.loaderContent img{
+    height: 10vw;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 section.mainContainerPage.top{
     height: auto;
     width: 100%;

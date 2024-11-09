@@ -59,6 +59,28 @@ export const MainDataLoadProvider = ({ children }) => {
                 }));
                 setCountryCurrency(formattedData);
                 setCountryData(data);
+            } else if (pickedCountry.toLowerCase() === 'baykonur cosmodrome') {
+                const response = await axios.get('https://restcountries.com/v3.1/alpha/KZ');
+                const data = response.data[0];
+                const countryCurrency = data?.currencies;
+                const formattedData = Object.entries(countryCurrency).map(([currency, info]) => ({
+                    currency,
+                    name: info?.name,
+                    symbol: info?.symbol,
+                }));
+                setCountryCurrency(formattedData);
+                setCountryData(data);
+            } else if (pickedCountry.toLowerCase() === 'siachen glacier') {
+                const response = await axios.get('https://restcountries.com/v3.1/alpha/IN');
+                const data = response.data[0];
+                const countryCurrency = data?.currencies;
+                const formattedData = Object.entries(countryCurrency).map(([currency, info]) => ({
+                    currency,
+                    name: info?.name,
+                    symbol: info?.symbol,
+                }));
+                setCountryCurrency(formattedData);
+                setCountryData(data);
             } else if (pickedCountry.toLowerCase() === 'indian ocean territories') {
                 const response = await axios.get('https://restcountries.com/v3.1/alpha/IO');
                 const data = response.data[0];
@@ -248,21 +270,29 @@ export const MainDataLoadProvider = ({ children }) => {
     };
 
     useEffect(() => {
+        setWebLoader(true);
+        const timeoutId = setTimeout(() => {
+            setWebLoader(false);
+        }, 3000);
+        return () => clearTimeout(timeoutId);
+    }, []);
+
+
+    useEffect(() => {
         if (pickedCountry) {
             fetchCountryData();
         }
         const ThreeTouristSpots = CountriesBest.countries.find(country => country.name === pickedCountry)
         setCountryThreeTouristSpots(ThreeTouristSpots);
-
-    }, [pickedCountry]);
-
-    useEffect(() => {
         fetchExchangeRates();
+
+
         const interval = setInterval(() => {
           fetchExchangeRates();
         }, 60000); // 60000 ms = 1 minute
+        
         return () => clearInterval(interval);
-    }, []);
+    }, [pickedCountry]);
 
 
     return (
@@ -270,6 +300,7 @@ export const MainDataLoadProvider = ({ children }) => {
                 userLoggedIn,
                 StoredUserID,
                 StoredUserDataJSON,
+                webLoader,
                 createTDUAccount, 
                 setCreateTDUAccount,
                 loginTDUAccount, 
