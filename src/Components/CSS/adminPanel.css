@@ -137,11 +137,12 @@ section.adminPanelContainerPage{
 
 
 .admnpnlcp.right{
-    height: 100vh;
+    height: auto;
     width: 75%;
     background: rgb(20, 20, 20);
     border-radius: 1vw;
     padding: 1% 2%;
+    padding-bottom: 5%;
 }
 .admnpnlcp.right h4{
     text-transform: uppercase;
@@ -151,3 +152,151 @@ section.adminPanelContainerPage{
 }
 
 
+.admnpnlcprNavigation{
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin: 3% 0;
+}
+.admnpnlcprNavigation button{
+    background: none;
+    color: white;
+    padding: 5px 10px;
+    outline: none;
+    border: none;
+    border-bottom: solid 2px transparent;
+    margin-right: 3%;
+    opacity: 50%;
+    font-size: 0.9vw;
+    font-family: "Oswald", sans-serif;
+    transition: 400ms ease;
+    cursor: pointer;
+}
+.admnpnlcprNavigation button.active{
+    opacity: 100%;
+    border-bottom: solid 2px white;
+    transition: 400ms ease;
+}
+.admnpnlcprNavigation button:hover{
+    opacity: 100%;
+    transition: 400ms ease;
+}
+
+
+
+.admnpnlcprContents{
+    height: auto;
+    width: 100%;
+}
+.admnpnlcprcNumSummary{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.admnpnlcprcNumSummary div{
+    height: auto;
+    width: 19%;
+    padding: 2%;
+    border: solid 2px gray;
+    border-radius: 1vw;
+}
+.admnpnlcprcNumSummary div h6{
+    font-weight: 400;
+    font-size: 0.7vw;
+    color: gray;
+    margin-top: 2%;
+}
+.admnpnlcprc.graphData{
+    height: auto;
+    width: 100%;
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: top;
+}
+.admnpnlcprcgd.left{
+    height: auto;
+    width: 60%;
+}
+.admnpnlcprcgdlHeader,
+.admnpnlcprcgdrHeader{
+    height: 2.5vw;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.admnpnlcprcgdlHeader div{
+    height: auto;
+    width: 50%;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+.admnpnlcprcgdlHeader div select{
+    background: rgb(20, 20, 20);
+    border: solid 2px whitesmoke;
+    color: white;
+    margin-left: 3%;
+    padding: 2px 5px;
+    border-radius: 8px;
+}
+.admnpnlcprcgd.right{
+    height: auto;
+    width: 35%;
+}
+.admnpnlcprcgdrPublished{
+    height: 265px;
+    width: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.admnpnlcprcgdrpEmpty{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(30, 30, 30);
+    border-radius: 1vw;
+}
+.admnpnlcprcgdrpEmpty span p{
+    opacity: 50%;
+}
+
+
+
+.admnpnlcprc.sTouristSpot,
+.admnpnlcprc.sMovieReview{
+    height: auto;
+    width: 100%;
+    margin-top: 3%;
+}
+.admnpnlcprcsrsContainer,
+.admnpnlcprcsmrContainer{
+    height: 15vw;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1%;
+}
+
+
+.admnpnlcprcsrscEmpty{
+    height: 15vw;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(30, 30, 30);
+    border-radius: 1vw;
+}
+.admnpnlcprcsrscEmpty span p{
+    opacity: 50%;
+}
