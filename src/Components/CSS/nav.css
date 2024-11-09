@@ -129,36 +129,39 @@ nav{
     border-radius: 50px;
     transition: 400ms ease;
 }
-.nvcntntr.user a#nvcntntruUser{
+.nvcntntr.user button#nvcntntruLogout{
     display: flex;
     justify-content: center;
     align-items: center;
+    background: none;
+    outline: none;
     border: solid 2px white;
     color: white;
-    width: 7vw;
-    padding: 2px 10px;
+    cursor: pointer;
+    padding: 2px 25px;
     border-radius: 50px;
     transition: 400ms ease;
+    margin-left: 1vw;
 }
 .nvcntntr.user button#nvcntntruSignup:hover,
-.nvcntntr.user a#nvcntntruUser:hover{
+.nvcntntr.user button#nvcntntruLogout:hover{
     background: white;
     transition: 400ms ease;
 }
 .nvcntntr.user button#nvcntntruSignup h6,
-.nvcntntr.user a#nvcntntruUser h6{
+.nvcntntr.user button#nvcntntruLogout h6{
     font-size: 0.9vw;
     font-weight: 400;
     transition: 400ms ease;
     text-transform: uppercase;
 }
 .nvcntntr.user button#nvcntntruSignup:hover h6,
-.nvcntntr.user a#nvcntntruUser:hover h6{
+.nvcntntr.user button#nvcntntruLogout:hover h6{
     color: black;
     transition: 400ms ease;
 }
 .nvcntntr.user button#nvcntntruLogin{
-    font-size: 1.5vw;
+    font-size: 1.8vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -167,12 +170,12 @@ nav{
     border: none;
     color: white;
     cursor: pointer;
-    margin-left: 0.5vw;
+    margin-right: 1vw;
     transition: 400ms ease;
     border-radius: 50%;
 }
 .nvcntntr.user a#nvcntntruAdmin{
-    font-size: 1.5vw;
+    font-size: 2vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -181,11 +184,19 @@ nav{
     border: none;
     color: white;
     cursor: pointer;
-    margin-left: 0.5vw;
+    margin-right: 1vw;
     transition: 400ms ease;
     border-radius: 50%;
 }
-
+.nvcntntr.user a#nvcntntruUser{
+    height: 2vw;
+    width: 2vw;
+    background: url('../assets/imgs/TheDailyUniverseLogo.png') no-repeat center;
+    background-size: cover;
+    border-radius: 50%;
+    border: solid 2px gray;
+    /* margin-left: 1vw; */
+}
 
 
 

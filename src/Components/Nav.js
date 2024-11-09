@@ -90,12 +90,14 @@ const Nav = () => {
                   <Link>Visa Guide</Link>
                 </div>
                 {(!userLoggedIn && !StoredUserID) ? <div className="nvcntntr user">
-                  <button id='nvcntntruSignup' onClick={handleRegisterTDU}><h6>REGISTER</h6></button>
                   <button id='nvcntntruLogin' onClick={handleLoginTDU}><FaRegUserCircle className='faIcons'/></button>
+                  <button id='nvcntntruSignup' onClick={handleRegisterTDU}><h6>REGISTER</h6></button>
                 </div>:<div className="nvcntntr user">
-                  <Link id='nvcntntruUser'><h6><TextSlicer text={`${StoredUserDataJSON?.username}`} maxLength={8} /></h6></Link>
                   {(StoredUserDataJSON?.state === "Admin") && <Link id='nvcntntruAdmin' to="/AdminPanel"><MdOutlineAdminPanelSettings className='faIcons'/></Link>}
-                  <button id='nvcntntruLogin' onClick={handleUserLogout}><MdPowerSettingsNew className='faIcons'/></button>
+                  <Link id='nvcntntruUser'>
+                    <img src="" alt="" />
+                  </Link>
+                  <button id='nvcntntruLogout' onClick={handleUserLogout}><h6>LOGOUT</h6></button>
                 </div>}
               </div>
           </div>
