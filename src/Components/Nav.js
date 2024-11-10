@@ -94,7 +94,7 @@ const Nav = () => {
                   <button id='nvcntntruSignup' onClick={handleRegisterTDU}><h6>REGISTER</h6></button>
                 </div>:<div className="nvcntntr user">
                   {(StoredUserDataJSON?.state === "Admin") && <Link id='nvcntntruAdmin' to="/AdminPanel"><MdOutlineAdminPanelSettings className='faIcons'/></Link>}
-                  <Link id='nvcntntruUser'>
+                  <Link id='nvcntntruUser' to={`/${StoredUserDataJSON?.username}`}>
                     <img src="" alt="" />
                   </Link>
                   <button id='nvcntntruLogout' onClick={handleUserLogout}><h6>LOGOUT</h6></button>

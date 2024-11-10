@@ -10,6 +10,7 @@ import ScrollToTop from './Components/Pages/ScrollToTop';
 import { MainDataLoadProvider } from './Components/Pages/MainDataContext';
 import Home from './Components/Pages/Home'
 import AdminPanel from './Components/Pages/AdminPanel';
+import Profile from './Components/Pages/Profile';
 
 
 
@@ -28,8 +29,13 @@ function App() {
         <Routes>
           <Route path="/" element={<Home/>}/>
 
-
+          {(StoredUserData) && <Route path={`/${StoredUserDataJSON?.username}`} element={<Profile/>}/>}
           {(StoredUserDataJSON?.state === 'Admin') && <Route path="/AdminPanel" element={<AdminPanel/>}/>}
+
+
+
+          
+          <Route path="*" element={<Home/>}/>
         </Routes>
         {/* <Footer /> */}
       </div>
