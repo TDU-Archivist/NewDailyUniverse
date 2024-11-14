@@ -13,6 +13,8 @@ import AdminPanel from './Components/Pages/AdminPanel';
 import Profile from './Components/Pages/Profile';
 
 
+import ArticlePage from './Components/Pages/ArticlePage';
+
 
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 
@@ -33,6 +35,7 @@ function App() {
           {(StoredUserDataJSON?.state === 'Admin') && <Route path="/AdminPanel" element={<AdminPanel/>}/>}
 
 
+          <Route path="/News/:newsCanonical" element={<ArticlePage/>}/>
 
           
           <Route path="*" element={<Home/>}/>

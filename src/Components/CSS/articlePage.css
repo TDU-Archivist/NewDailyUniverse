@@ -1,0 +1,180 @@
+h1, h2, h3, h4, h5, h6, p{
+    color: white;
+}
+h1, h2, h3, h4, h5, h6{
+    /* font-family: "Bebas Neue", sans-serif; */
+    font-family: "Oswald", sans-serif;
+}
+p{
+    font-size: 0.9vw;
+}
+h1{
+    font-size: 10vw;
+}
+h2{
+    font-size: 5vw;
+}
+h3{
+    font-size: 4vw;
+}
+h4{
+    font-size: 2vw;
+}
+h5{
+    font-size: 1.5vw;
+}
+h6{
+    font-size: 1vw;
+}
+
+
+.mainContainer.articlePage{
+    height: auto;
+    width: 100%;
+    background: black;
+    padding-bottom: 10vw;
+}
+
+
+
+section.articlePageContainerPage.top{
+    height: auto;
+    width: 100%;
+    padding: 5vw;
+    padding-bottom: 2vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: top;
+}
+.artclpcptHeader{
+    height: auto;
+    width: 100%;
+}
+.artclpcptHeader h3{
+    font-size: 4vw;
+    line-height: 4.5vw;
+}
+.artclpcptHeader h3 span{
+    color: gray;
+}
+
+
+
+
+
+
+
+
+
+
+section.articlePageContainerPage.mid{
+    height: auto;
+    width: 100%;
+    padding: 8vw 5vw;
+    padding-bottom: 2vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: top;
+}
+.articlePageContentMid.left{
+    height: auto;
+    width: 40%;
+}
+.artclpcpmlImg{
+    height: 20vw;
+    width: 100%;
+    background: url('../assets/imgs/TDULandingBG.png') no-repeat center;
+    background-size: cover;
+    overflow: hidden;
+    border-radius: 1vw;
+    position: relative;
+}
+.artclpcpmlImg img{
+    width: 100%;
+}
+.artclpcpmlImg p{
+    position: absolute;
+    bottom: 0.5vw;
+    left: 1vw;
+    font-style: italic;
+    text-shadow: 0 0 10px black;
+    font-size: 0.7vw;
+}
+.artclpcpmlTitle{
+    height: auto;
+    width: 100%;
+    margin: 3% 0;
+}
+.artclpcpmlTitle h4{
+    line-height: 2.3vw;
+}
+.artclpcpmlAuthor{
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin-top: 5%;
+}
+.artclpcpmlAuthor span{
+    height: 4vw;
+    width: 4vw;
+    overflow: hidden;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 3%;
+}
+.artclpcpmlAuthor span img{
+    width: 100%;
+}
+.artclpcpmlAuthor div h5{
+    line-height: 2vw;
+}
+.artclpcpmlAuthor div p{
+    color: gray;
+}
+
+
+
+.articlePageContentMid.right{
+    height: auto;
+    width: 55%;
+}
+.artclpcpmrCountry{
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin-top: 3%;
+}
+.artclpcpmrCountry span{
+    height: 2vw;
+    width: 3vw;
+    border-radius: 5px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 2%;
+}
+.artclpcpmrCountry span img{
+    height: 100%;
+}
+.artclpcpmrSubtitle{
+    height: auto;
+    width: 100%;
+    margin: 3% 0;
+}
+.artclpcpmrContent{
+    height: auto;
+    width: 100%;
+}
+.artclpcpmrContent p{
+    white-space: pre-line;
+}
+
+
+

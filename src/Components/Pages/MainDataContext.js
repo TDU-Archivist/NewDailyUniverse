@@ -22,8 +22,10 @@ export const MainDataLoadProvider = ({ children }) => {
     const [countryThreeTouristSpots, setCountryThreeTouristSpots] = useState([]);
 
     const [viewAllArticles, setViewAllArticles] = useState([])
+    const [viewAllWriters, setViewAllWriters] = useState([])
 
     const tduFetchAllArticlesAPI = process.env.REACT_APP_TDU_FETCH_ARTICLE_API;
+    const tduFetchAllWrittersAPI = process.env.REACT_APP_TDU_FETCH_WRITERS_LIST_API;
     const FIAT_API_URL = `https://open.er-api.com/v6/latest/USD`; 
 
     const fetchCountryData = async () => {
@@ -283,6 +285,17 @@ export const MainDataLoadProvider = ({ children }) => {
             console.error(error);
         }
     }
+    const fetchAllWritters = async () => {
+        try {
+            // Fetch Texeract Network Transactions
+            const articleData = await axios.get(tduFetchAllWrittersAPI);
+            const articleWriterData = articleData.data
+            setViewAllWriters(articleWriterData);
+
+        } catch (error) {
+            console.error(error);
+        }
+    }
 
 
 
@@ -304,6 +317,7 @@ export const MainDataLoadProvider = ({ children }) => {
         setCountryThreeTouristSpots(ThreeTouristSpots);
         fetchExchangeRates();
         fetchAllArticles();
+        fetchAllWritters();
 
 
         const interval = setInterval(() => {
@@ -334,6 +348,7 @@ export const MainDataLoadProvider = ({ children }) => {
                 exchangeRates,
                 fetchAllArticles,
                 viewAllArticles,
+                viewAllWriters,
             }}>
             {children}
         </MainDataContext.Provider>

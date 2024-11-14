@@ -289,7 +289,7 @@ const Home = () => {
       <section className="mainContainerPage mid">
         <div className="mainContentPage mid1">
           {filterGoodNews.slice(0, 4).map((details, i) => (
-            <Link className="mncntntpm1" key={i}>
+            <Link className="mncntntpm1" key={i} to={`/News/${details?.article_canonical}`}>
               <img src={details?.article_image ? `https://staging.thedailyuniverse.com/ArticleImages/${details?.article_image}` : (require('../assets/imgs/TDULandingBG.png'))} alt="" />
               <div className="mncntntpm1Title">
                 <h6><TextSlicer text={`${details?.article_title ? details?.article_title : 'None'}`} maxLength={70} /></h6>
@@ -331,7 +331,7 @@ const Home = () => {
           </div>
           <div className="mncntntpm4Container">
             {filterLatestNews.slice(0, 4).map((details, i) => (
-              <Link className="mncntntpm4Content" key={i}>
+              <Link className="mncntntpm4Content" key={i} to={`/News/${details?.article_canonical}`}>
                 <div>
                   <img src={details?.article_image ? `https://staging.thedailyuniverse.com/ArticleImages/${details?.article_image}` : (require('../assets/imgs/TDULandingBG.png'))} alt="" />
                 </div>
@@ -358,7 +358,7 @@ const Home = () => {
             </div>
             <div className="mncntntpm6cContent">
               {filterBusinessNews.slice(0, 2).map((details, i) => (
-                <Link className="mncntntpm6ccArticle" key={i}>
+                <Link className="mncntntpm6ccArticle" key={i} to={`/News/${details?.article_canonical}`}>
                   <div>
                     <img src={details?.article_image ? `https://staging.thedailyuniverse.com/ArticleImages/${details?.article_image}` : (require('../assets/imgs/TDULandingBG.png'))} alt="" />
                   </div>
@@ -375,7 +375,7 @@ const Home = () => {
             </div>
             <div className="mncntntpm6cContent">
               {filterSportsNews.slice(0, 2).map((details, i) => (
-                <Link className="mncntntpm6ccArticle" key={i}>
+                <Link className="mncntntpm6ccArticle" key={i} to={`/News/${details?.article_canonical}`}>
                   <div>
                     <img src={details?.article_image ? `https://staging.thedailyuniverse.com/ArticleImages/${details?.article_image}` : (require('../assets/imgs/TDULandingBG.png'))} alt="" />
                   </div>
