@@ -155,7 +155,7 @@ const Home = () => {
   const filterBusinessNews = viewAllArticles.filter(business => business.article_type === "Business News")
   const filterSportsNews = viewAllArticles.filter(sports => sports.article_type === "Sports News")
 
-  console.log(filterGoodNews);
+  // console.log(filterGoodNews);
   
 
   return (
@@ -290,7 +290,7 @@ const Home = () => {
         <div className="mainContentPage mid1">
           {filterGoodNews.slice(0, 4).map((details, i) => (
             <Link className="mncntntpm1" key={i}>
-              <img src={require('../assets/imgs/TDULandingBG.png')} alt="" />
+              <img src={details?.article_image ? `https://staging.thedailyuniverse.com/ArticleImages/${details?.article_image}` : (require('../assets/imgs/TDULandingBG.png'))} alt="" />
               <div className="mncntntpm1Title">
                 <h6><TextSlicer text={`${details?.article_title ? details?.article_title : 'None'}`} maxLength={70} /></h6>
                 <p><TextSlicer text={`${details?.article_subtitle ? details?.article_subtitle : 'None'}`} maxLength={100} /></p>
@@ -333,7 +333,7 @@ const Home = () => {
             {filterLatestNews.slice(0, 4).map((details, i) => (
               <Link className="mncntntpm4Content" key={i}>
                 <div>
-                  <img src="" alt="" />
+                  <img src={details?.article_image ? `https://staging.thedailyuniverse.com/ArticleImages/${details?.article_image}` : (require('../assets/imgs/TDULandingBG.png'))} alt="" />
                 </div>
                 <h5>{details?.article_title}</h5>
                 <p>{details?.article_subtitle}</p>
@@ -360,7 +360,7 @@ const Home = () => {
               {filterBusinessNews.slice(0, 2).map((details, i) => (
                 <Link className="mncntntpm6ccArticle" key={i}>
                   <div>
-                    <img src="" alt="" />
+                    <img src={details?.article_image ? `https://staging.thedailyuniverse.com/ArticleImages/${details?.article_image}` : (require('../assets/imgs/TDULandingBG.png'))} alt="" />
                   </div>
                   <h5>{details?.article_title}</h5>
                   <p>{details?.article_subtitle}</p>
@@ -377,7 +377,7 @@ const Home = () => {
               {filterSportsNews.slice(0, 2).map((details, i) => (
                 <Link className="mncntntpm6ccArticle" key={i}>
                   <div>
-                    <img src="" alt="" />
+                    <img src={details?.article_image ? `https://staging.thedailyuniverse.com/ArticleImages/${details?.article_image}` : (require('../assets/imgs/TDULandingBG.png'))} alt="" />
                   </div>
                   <h5>{details?.article_title}</h5>
                   <p>{details?.article_subtitle}</p>

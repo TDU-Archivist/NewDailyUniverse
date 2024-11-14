@@ -106,7 +106,7 @@ const AdminPanel = () => {
             const submitArticleResponse = await axios.post(tduPublishArticleAPI, formPublishNewsArticle);
             const responseMessage = submitArticleResponse.data;
     
-            if (responseMessage.success) {
+            if (responseMessage.success === 'true') {
                 setArticleLoader(false)
                 setArticleResponse(responseMessage.message);
                 setAddArticleTitle('');
@@ -114,13 +114,26 @@ const AdminPanel = () => {
                 setAddArticleImage('');
                 setAddArticleContent('');
                 fetchAllArticles();
-            } else {
+
+                const timeoutId = setTimeout(() => {
+                    setArticleResponse('');
+                }, 3000);
+                return () => clearTimeout(timeoutId);
+            } 
+            
+            if (responseMessage.success === 'false') {
                 setArticleLoader(false);
                 setArticleResponse(responseMessage.message);
                 setAddArticleTitle('');
                 setAddArticleSubtitle('');
                 setAddArticleImage('');
                 setAddArticleContent('');
+
+                
+                const timeoutId = setTimeout(() => {
+                    setArticleResponse('');
+                }, 3000);
+                return () => clearTimeout(timeoutId);
             }
     
         } catch (error) {
@@ -521,6 +534,7 @@ const AdminPanel = () => {
                                 </div>
                             </div>
                             <div className="admnpnlcprcaaBtn">
+                                <p>{articleResponse}</p>
                                 {articleLoader ?
                                     <button><h6>PUBLISHING...</h6></button>:
                                     <button onClick={publishNewsArticle}><h6>PUBLISH ARTICLE</h6></button>

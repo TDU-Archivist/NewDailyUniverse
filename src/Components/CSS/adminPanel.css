@@ -422,9 +422,13 @@ section.adminPanelContainerPage{
     height: auto;
     width: 100%;
     display: flex;
-    justify-content: right;
+    justify-content: space-between;
     align-items: center;
     margin-top: 3%;
+}
+.admnpnlcprcaaBtn p{
+    width: 83%;
+    text-align: center;
 }
 .admnpnlcprcaaBtn button{
     display: flex;

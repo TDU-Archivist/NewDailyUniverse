@@ -613,9 +613,10 @@ section.mainContainerPage.mid{
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
 .mncntntpm4Content div img{
-    width: 100%;
+    height: 100%;
 }
 .mncntntpm4Content h5{
     font-size: 1.2vw;
@@ -783,7 +784,7 @@ section.mainContainerPage.mid{
     width: 100%;
 }
 .mncntntpm6ccArticle h5 {
-    height: 5vw;
+    height: 4.3vw;
     font-size: 1.2vw;
     line-height: 1.5vw;
     padding: 0 5%;
