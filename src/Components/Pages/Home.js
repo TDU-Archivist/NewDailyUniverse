@@ -60,6 +60,7 @@ const Home = () => {
     countryCurrency,
     countryThreeTouristSpots,
     exchangeRates,
+    viewAllArticles,
   } = MainDataLoad(); 
   const [hasScrolled, setHasScrolled] = useState(false);
   const [countryExchangeRate, setCountryExchangeRate] = useState([])
@@ -149,7 +150,13 @@ const Home = () => {
     setPickedCountry(false);
   }
 
+  const filterGoodNews = viewAllArticles.filter(good => good.article_type === "Good News")
+  const filterLatestNews = viewAllArticles.filter(latest => latest.article_type === "Latest News")
+  const filterBusinessNews = viewAllArticles.filter(business => business.article_type === "Business News")
+  const filterSportsNews = viewAllArticles.filter(sports => sports.article_type === "Sports News")
 
+  console.log(filterGoodNews);
+  
 
   return (
     <div className='mainContainer home'>
@@ -168,21 +175,33 @@ const Home = () => {
         <div className="mainContentPage top2">
           <div className="mncntntpt2 left">
             <h4>CHECK WORLD HAPPENINGS TODAY</h4>
-            <p>Stay Updated on World Events - Explore Happenings and Destinations Across Every Country</p>
+            <p id='mncntntpt2SubTitle'>Stay Updated on World Events - Explore Happenings and Destinations Across Every Country</p>
             <div className="mncntntpt2lBreakingNews">
               <h5>BREAKING NEWS</h5>
               <div className="mncntntpt2lbn">
                 <div className="mncntntpt2lbnContent">
                   <img src={require('../assets/imgs/TDULandingBG.png')} alt="" />
+                  <div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, ex earum architecto labor</p>
+                  </div>
                 </div>
                 <div className="mncntntpt2lbnContent">
                   <img src={require('../assets/imgs/TDULandingBG.png')} alt="" />
+                  <div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, ex earum architecto labor</p>
+                  </div>
                 </div>
                 <div className="mncntntpt2lbnContent">
                   <img src={require('../assets/imgs/TDULandingBG.png')} alt="" />
+                  <div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, ex earum architecto labor</p>
+                  </div>
                 </div>
                 <div className="mncntntpt2lbnContent">
                   <img src={require('../assets/imgs/TDULandingBG.png')} alt="" />
+                  <div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, ex earum architecto labor</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -269,34 +288,15 @@ const Home = () => {
       </section>
       <section className="mainContainerPage mid">
         <div className="mainContentPage mid1">
-          <a className="mncntntpm1">
-            <img src={require('../assets/imgs/TDULandingBG.png')} alt="" />
-            <div className="mncntntpm1Title">
-              <h6>THIS WAS A NEWS HEADER</h6>
-              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex earum eos laborum ducimus ipsam...</p>
-            </div>
-          </a>
-          <a className="mncntntpm1">
-            <img src={require('../assets/imgs/TDULandingBG.png')} alt="" />
-            <div className="mncntntpm1Title">
-              <h6>THIS WAS A NEWS HEADER</h6>
-              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex earum eos laborum ducimus ipsam...</p>
-            </div>
-          </a>
-          <a className="mncntntpm1">
-            <img src={require('../assets/imgs/TDULandingBG.png')} alt="" />
-            <div className="mncntntpm1Title">
-              <h6>THIS WAS A NEWS HEADER</h6>
-              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex earum eos laborum ducimus ipsam...</p>
-            </div>
-          </a>
-          <a className="mncntntpm1">
-            <img src={require('../assets/imgs/TDULandingBG.png')} alt="" />
-            <div className="mncntntpm1Title">
-              <h6>THIS WAS A NEWS HEADER</h6>
-              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex earum eos laborum ducimus ipsam...</p>
-            </div>
-          </a>
+          {filterGoodNews.slice(0, 4).map((details, i) => (
+            <Link className="mncntntpm1" key={i}>
+              <img src={require('../assets/imgs/TDULandingBG.png')} alt="" />
+              <div className="mncntntpm1Title">
+                <h6><TextSlicer text={`${details?.article_title ? details?.article_title : 'None'}`} maxLength={70} /></h6>
+                <p><TextSlicer text={`${details?.article_subtitle ? details?.article_subtitle : 'None'}`} maxLength={100} /></p>
+              </div>
+            </Link>
+          ))}
         </div>
         <div className="mainContentPage mid2">
           <div className="mncntntpm2 left">
@@ -330,54 +330,15 @@ const Home = () => {
             <Link><h6>VIEW MORE</h6></Link>
           </div>
           <div className="mncntntpm4Container">
-            <div className="mncntntpm4Content">
-              <div>
-                <img src="" alt="" />
-              </div>
-              <h5>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</h5>
-              <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut inventore 
-                beatae, cum quisquam pariatur repellendus possimus tenetur delectus 
-                voluptas expedita cumque ea veniam eum repudiandae totam architecto. 
-                Distinctio, sed consequatur?
-              </p>
-            </div>
-            <div className="mncntntpm4Content">
-              <div>
-                <img src="" alt="" />
-              </div>
-              <h5>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</h5>
-              <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut inventore 
-                beatae, cum quisquam pariatur repellendus possimus tenetur delectus 
-                voluptas expedita cumque ea veniam eum repudiandae totam architecto. 
-                Distinctio, sed consequatur?
-              </p>
-            </div>
-            <div className="mncntntpm4Content">
-              <div>
-                <img src="" alt="" />
-              </div>
-              <h5>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</h5>
-              <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut inventore 
-                beatae, cum quisquam pariatur repellendus possimus tenetur delectus 
-                voluptas expedita cumque ea veniam eum repudiandae totam architecto. 
-                Distinctio, sed consequatur?
-              </p>
-            </div>
-            <div className="mncntntpm4Content">
-              <div>
-                <img src="" alt="" />
-              </div>
-              <h5>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</h5>
-              <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut inventore 
-                beatae, cum quisquam pariatur repellendus possimus tenetur delectus 
-                voluptas expedita cumque ea veniam eum repudiandae totam architecto. 
-                Distinctio, sed consequatur?
-              </p>
-            </div>
+            {filterLatestNews.slice(0, 4).map((details, i) => (
+              <Link className="mncntntpm4Content" key={i}>
+                <div>
+                  <img src="" alt="" />
+                </div>
+                <h5>{details?.article_title}</h5>
+                <p>{details?.article_subtitle}</p>
+              </Link>
+            ))}
           </div>
         </div>
         <div className="mainContentPage mid5">
@@ -396,20 +357,15 @@ const Home = () => {
               <Link><h6><FaArrowRight className='faIcons'/></h6></Link>
             </div>
             <div className="mncntntpm6cContent">
-              <div className="mncntntpm6ccArticle">
-                <div>
-                  <img src="" alt="" />
-                </div>
-                <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h5>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. At est nisi quae accusantium sed, eligendi maiores nihil eveniet veniam, error, aliquam in dolor ratione nobis enim voluptas animi soluta! Asperiores?</p>
-              </div>
-              <div className="mncntntpm6ccArticle">
-                <div>
-                  <img src="" alt="" />
-                </div>
-                <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h5>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. At est nisi quae accusantium sed, eligendi maiores nihil eveniet veniam, error, aliquam in dolor ratione nobis enim voluptas animi soluta! Asperiores?</p>
-              </div>
+              {filterBusinessNews.slice(0, 2).map((details, i) => (
+                <Link className="mncntntpm6ccArticle" key={i}>
+                  <div>
+                    <img src="" alt="" />
+                  </div>
+                  <h5>{details?.article_title}</h5>
+                  <p>{details?.article_subtitle}</p>
+                </Link>
+              ))}
             </div>
           </div>
           <div className="mncntntpm6Container">
@@ -418,20 +374,15 @@ const Home = () => {
               <Link><h6><FaArrowRight className='faIcons'/></h6></Link>
             </div>
             <div className="mncntntpm6cContent">
-              <div className="mncntntpm6ccArticle">
-                <div>
-                  <img src="" alt="" />
-                </div>
-                <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h5>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. At est nisi quae accusantium sed, eligendi maiores nihil eveniet veniam, error, aliquam in dolor ratione nobis enim voluptas animi soluta! Asperiores?</p>
-              </div>
-              <div className="mncntntpm6ccArticle">
-                <div>
-                  <img src="" alt="" />
-                </div>
-                <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h5>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. At est nisi quae accusantium sed, eligendi maiores nihil eveniet veniam, error, aliquam in dolor ratione nobis enim voluptas animi soluta! Asperiores?</p>
-              </div>
+              {filterSportsNews.slice(0, 2).map((details, i) => (
+                <Link className="mncntntpm6ccArticle" key={i}>
+                  <div>
+                    <img src="" alt="" />
+                  </div>
+                  <h5>{details?.article_title}</h5>
+                  <p>{details?.article_subtitle}</p>
+                </Link>
+              ))}
             </div>
           </div>
         </div>

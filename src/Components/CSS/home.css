@@ -141,7 +141,7 @@ section.mainContainerPage.top{
     line-height: 3vw;
     margin-bottom: 3%;
 }
-.mncntntpt2.left p{
+.mncntntpt2.left p#mncntntpt2SubTitle{
     color: gray;
 }
 .mncntntpt2lBreakingNews{
@@ -177,10 +177,21 @@ section.mainContainerPage.top{
     border-radius: 1vw;
     cursor: pointer;
     border: solid 1px black;
+    position: relative;
 }
 .mncntntpt2lbnContent img{
     width: 20vw;
     border-radius: 1vw;
+}
+.mncntntpt2lbnContent div{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 5%;
+    width: 100%;
+}
+.mncntntpt2lbnContent div p{
+    color: white;
 }
 ::-webkit-scrollbar {
     background: none;
@@ -423,6 +434,7 @@ section.mainContainerPage.mid{
     justify-content: center;
     align-items: center;
     text-decoration: none;
+    cursor: pointer;
 }
 .mncntntpm1 img{
     height: 100%;
@@ -440,8 +452,9 @@ section.mainContainerPage.mid{
     text-align: center;
 }
 .mncntntpm1Title h6{
-    height: 2.5vw;
-    line-height: 1.2vw;
+    height: 3vw;
+    font-size: 1.2vw;
+    line-height: 1.5vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -454,6 +467,7 @@ section.mainContainerPage.mid{
     display: flex;
     justify-content: center;
     align-items: center;
+    color: gray;
 }
 .mainContentPage.mid2{
     height: auto;
@@ -580,13 +594,15 @@ section.mainContainerPage.mid{
     height: auto;
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: left;
     align-items: top;
     margin: 2% 0;
 }
 .mncntntpm4Content{
     height: auto;
     width: 24%;
+    text-decoration: none;
+    margin: 0 0.5%;
 }
 .mncntntpm4Content div{
     height: 14vw;
@@ -602,12 +618,13 @@ section.mainContainerPage.mid{
     width: 100%;
 }
 .mncntntpm4Content h5{
-    height: 6vw;
-    line-height: 2vw;
+    font-size: 1.2vw;
+    line-height: 1.5vw;
     margin: 2% 0;
 }
 .mncntntpm4Content p{
     font-size: 0.7vw;
+    color: gray;
 }
 .mncntntpm4More{
     height: auto;
@@ -739,7 +756,7 @@ section.mainContainerPage.mid{
     width: 100%;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: top;
     margin-top: 5%;
 }
 .mncntntpm6ccArticle{
@@ -749,6 +766,7 @@ section.mainContainerPage.mid{
     background: rgb(20, 20, 20);
     border-radius: 1vw;
     padding-bottom: 3%;
+    text-decoration: none;
 }
 .mncntntpm6ccArticle div{
     height: 14vw;
@@ -765,14 +783,16 @@ section.mainContainerPage.mid{
     width: 100%;
 }
 .mncntntpm6ccArticle h5 {
-    height: 6vw;
-    line-height: 2vw;
+    height: 5vw;
+    font-size: 1.2vw;
+    line-height: 1.5vw;
     padding: 0 5%;
     margin: 2% 0;
 }
 .mncntntpm6ccArticle p {
     font-size: 0.7vw;
     padding: 0 5%;
+    color: gray;
 }
 
 

@@ -28,7 +28,7 @@ h6{
 }
 
 
-.mainContainer.adminPanel{
+.mainContainer.userProfile{
     height: auto;
     width: 100%;
     background: black;
@@ -42,17 +42,213 @@ h6{
 
 
 
-section.userPageContainerPage.top{
-    height: 100vh;
+section.userPageContainerPage{
+    height: auto;
     width: 100%;
-    padding: 4.5vw 5vw;
+    padding: 5vw;
     padding-bottom: 0;
+}
+.userPageContentPage{
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+}
+.usrpgcp.left{
+    height: auto;
+    width: 20%;
+    padding: 1%;
+    background: rgb(20, 20, 20);
+    border-radius: 1vw;
+}
+.usrpgcplHeader{
+    height: 15vw;
+    width: 100%;
+    border-radius: 1vw;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('../assets/imgs/TDULandingLoginRegister.png') no-repeat center;
+    background-size: cover;
+    margin-bottom: 10%;
+}
+.usrpgcplHeader img{
+    height: 100%;
+}
+.usrpgcplContents{
+    height: auto;
+    width: 100%;
+}
+.usrpgcplcHeader{
+    height: auto;
+    width: 100%;
+    padding: 0 3%;
+}
+.usrpgcplcHeader h5{
+    line-height: 1.5vw;
+    margin-bottom: 1%;
+}
+.usrpgcplcHeader h5 sup{
+    margin-left: 3%;
+}
+.usrpgcplcHeader h6{
+    font-weight: 400;
+    color: gray;
+}
+.usrpgcplcHeader a{
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+}
+.usrpgcplcHeader a h4{
+    width: 100%;
+    font-size: 1.2vw;
+    padding: 3% 5%;
+    margin: 10% 0;
+    background: rgb(30, 30, 30);
+    border-radius: 10px;
+}
+
+.usrpgcplcNavigations{
+    height: auto;
+    width: 100%;
+    margin-top: 10%;
+    padding: 0 3%;
+}
+.usrpgcplcNavigations p{
+    color: gray;
+    opacity: 50%;
+    margin: 5% 0;
+    font-size: 0.7vw;
+    font-family: "Oswald", sans-serif;
+}
+.usrpgcplcNavigations button{
+    width: 100%;
+    padding: 3% 5%;
+    margin-bottom: 2%;
+    text-align: left;
+    border-radius: 10px;
+    background: none;
+    border: none;
+    outline: none;
+    opacity: 25%;
+    transition: 400ms ease;
+    cursor: pointer;
+}
+.usrpgcplcNavigations button h6{
+    font-size: 0.9vw;
+    font-weight: 400;
+}
+.usrpgcplcNavigations button.active{
+    opacity: 100%;
+    background: rgb(30, 30, 30);
+    transition: 400ms ease;
+}
+.usrpgcplcNavigations button:hover{
+    opacity: 100%;
+    background: rgb(30, 30, 30);
+    transition: 400ms ease;
 }
 
 
 
 
 
+
+.usrpgcp.right {
+    height: auto;
+    width: 75%;
+    border-radius: 1vw;
+    padding: 0 2%;
+}
+.usrpgcprContainers{
+    height: auto;
+    width: 100%;
+}
+.usrpgcprContents{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    align-items: center;
+    margin-top: 2%;
+}
+.usrpgcprcEmpty{
+    height: 34.5vw;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(20, 20, 20);
+    border-radius: 1vw;
+    opacity: 50%;
+}
+.usrpgcprcEmpty span p{
+    font-size: 0.7vw;
+}
+
+
+.usrpgcprcArticle{
+    height: auto;
+    width: 24%;
+    margin: 0.5%;
+    border-radius: 10px;
+    overflow: hidden;
+    background: rgb(20, 20, 20);
+    position: relative;
+}
+.usrpgcprcArticle button{
+    position: absolute;
+    top: 0.5vw;
+    right: 0.5vw;
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    height: 2vw;
+    font-size: 2vw;
+    color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.usrpgcprcaCountry{
+    height: 3vw;
+    width: 3vw;
+    position: absolute;
+    top: 0.5vw;
+    left: 0.5vw;
+    border-radius: 50%;
+    background: gray;
+}
+.usrpgcprcaCountry img{
+    height: 100%;
+}
+.usrpgcprcArticle img{
+    height: auto;
+    width: 100%;
+}
+.usrpgcprcaTitles{
+    height: auto;
+    width: 100%;
+    padding: 5%;
+}
+.usrpgcprcaTitles h6{
+    font-size: 1vw;
+    line-height: 1.2vw;
+}
+.usrpgcprcaTitles span p{
+    margin-top: 5%;
+    font-size: 0.7vw;
+    color: gray;
+}
 
 
 

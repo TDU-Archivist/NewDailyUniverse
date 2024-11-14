@@ -41,7 +41,7 @@ h6{
 section.adminPanelContainerPage{
     height: auto;
     width: 100%;
-    padding: 4.5vw 5vw;
+    padding: 5vw;
     padding-bottom: 0;
 }
 .adminPanelContentPage{
@@ -144,11 +144,18 @@ section.adminPanelContainerPage{
     padding: 1% 2%;
     padding-bottom: 5%;
 }
-.admnpnlcp.right h4{
+
+
+.admnpnlcprContainer{
+    height: auto;
+    width: 100%;
+}
+.admnpnlcprContainer h4{
     text-transform: uppercase;
 }
-.admnpnlcp.right p{
+.admnpnlcprContainer p{
     color: gray;
+    font-size: 0.7vw;
 }
 
 
@@ -300,3 +307,148 @@ section.adminPanelContainerPage{
 .admnpnlcprcsrscEmpty span p{
     opacity: 50%;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.admnpnlcprContainer.addArticle{
+    height: auto;
+    width: 100%;
+}
+.admnpnlcprcAddArticle{
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    margin-top: 3%;
+}
+.admnpnlcprcaa.left{
+    height: auto;
+    width: 30%;
+}
+.admnpnlcprcaa.left div{
+    margin-bottom: 1vw;
+}
+.admnpnlcprcaa.left div h6{
+    margin-left: 2%;
+    margin-bottom: 1%;
+    font-size: 0.7vw;
+    font-weight: 600;
+    color: gray;
+}
+.admnpnlcprcaa.left div select,
+.admnpnlcprcaa.left div input{
+    height: auto;
+    width: 100%;
+    padding: 5px 10px;
+    font-size: 0.7vw;
+    border: solid 2px gray;
+    outline: none;
+    background: none;
+    color: white;
+    border-radius: 10px;
+}
+.admnpnlcprcaa.left div select option{
+    background: black;
+}
+
+
+
+
+
+
+
+.admnpnlcprcaa.right{
+    height: auto;
+    width: 65%;
+}
+.admnpnlcprcaa.right div h6{
+    margin-left: 2%;
+    font-size: 0.7vw;
+    font-weight: 600;
+    color: gray;
+}
+.admnpnlcprcaarHeader{
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.admnpnlcprcaarHeader div{
+    width: 49%;
+}
+.admnpnlcprcaarHeader div textarea{
+    height: 5vw;
+    width: 100%;
+    padding: 5px 10px;
+    font-size: 0.7vw;
+    border: solid 2px gray;
+    outline: none;
+    background: none;
+    color: white;
+    border-radius: 10px;
+    resize: none;
+}
+.admnpnlcprcaarContent{
+    height: auto;
+    width: 100%;
+    margin-top: 2%;
+}
+.admnpnlcprcaarContent textarea{
+    height: 16.5vw;
+    width: 100%;
+    padding: 10px;
+    font-size: 0.7vw;
+    border: solid 2px gray;
+    outline: none;
+    background: none;
+    color: white;
+    border-radius: 10px;
+    resize: none;
+}
+.admnpnlcprcaaBtn{
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    margin-top: 3%;
+}
+.admnpnlcprcaaBtn button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    outline: none;
+    border: solid 2px white;
+    color: white;
+    cursor: pointer;
+    padding: 5px 20px;
+    border-radius: 50px;
+    transition: 400ms ease;
+    opacity: 50%;
+    transition: 400ms ease;
+}
+.admnpnlcprcaaBtn button h6{
+    font-size: 0.9vw;
+    font-weight: 600;
+}
+.admnpnlcprcaaBtn button:hover{
+    opacity: 100%;
+    transition: 400ms ease;
+    background: red;
+    border: solid 2px red;
+}
+

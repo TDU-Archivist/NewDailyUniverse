@@ -21,7 +21,9 @@ export const MainDataLoadProvider = ({ children }) => {
     const [countryCurrency, setCountryCurrency] = useState(null);
     const [countryThreeTouristSpots, setCountryThreeTouristSpots] = useState([]);
 
+    const [viewAllArticles, setViewAllArticles] = useState([])
 
+    const tduFetchAllArticlesAPI = process.env.REACT_APP_TDU_FETCH_ARTICLE_API;
     const FIAT_API_URL = `https://open.er-api.com/v6/latest/USD`; 
 
     const fetchCountryData = async () => {
@@ -268,6 +270,22 @@ export const MainDataLoadProvider = ({ children }) => {
           console.log('Failed to fetch exchange rates');
         }
     };
+    const fetchAllArticles = async () => {
+        try {
+            // Fetch Texeract Network Transactions
+            const articleData = await axios.get(tduFetchAllArticlesAPI);
+            let sortedArticleData = articleData.data.sort((a, b) => 
+                new Date(b.article_timestamp) - new Date(a.article_timestamp) // Descending order
+            );
+            setViewAllArticles(sortedArticleData);
+
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
+
+
 
     useEffect(() => {
         setWebLoader(true);
@@ -285,6 +303,7 @@ export const MainDataLoadProvider = ({ children }) => {
         const ThreeTouristSpots = CountriesBest.countries.find(country => country.name === pickedCountry)
         setCountryThreeTouristSpots(ThreeTouristSpots);
         fetchExchangeRates();
+        fetchAllArticles();
 
 
         const interval = setInterval(() => {
@@ -313,6 +332,8 @@ export const MainDataLoadProvider = ({ children }) => {
                 countryCurrency,
                 countryThreeTouristSpots,
                 exchangeRates,
+                fetchAllArticles,
+                viewAllArticles,
             }}>
             {children}
         </MainDataContext.Provider>
