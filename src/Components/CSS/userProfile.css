@@ -75,7 +75,7 @@ section.userPageContainerPage{
     margin-bottom: 10%;
 }
 .usrpgcplHeader img{
-    height: 100%;
+    width: 100%;
 }
 .usrpgcplContents{
     height: auto;

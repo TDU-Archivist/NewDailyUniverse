@@ -87,10 +87,14 @@ const AdminPanel = () => {
         const fullHash = CryptoJS.SHA256(`${addArticleTitle}, ${addArticleWritter}, ${addArticleContent}, ${new Date()}`).toString(CryptoJS.enc.Hex);
         const shortHash = fullHash.substring(0, 20);
 
+        const cleanSymbols = addArticleTitle.replace(/[^a-zA-Z0-9 ]/g, '');
+        const articleCanonical = cleanSymbols.replace(/\s+/g, '-');
+
         const formPublishNewsArticle = {
             tdu_code: `TDU_Article${shortHash}`,
             tdu_country: addArticleCountry,
             tdu_type: addArticleType,
+            tdu_canonical: articleCanonical,
             tdu_title: addArticleTitle,
             tdu_subtitle: addArticleSubTitle,
             tdu_writer: addArticleWritter,

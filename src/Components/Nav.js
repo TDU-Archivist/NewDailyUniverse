@@ -95,7 +95,7 @@ const Nav = () => {
                 </div>:<div className="nvcntntr user">
                   {(StoredUserDataJSON?.state === "Admin") && <Link id='nvcntntruAdmin' to="/AdminPanel"><MdOutlineAdminPanelSettings className='faIcons'/></Link>}
                   <Link id='nvcntntruUser' to={`/${StoredUserDataJSON?.username}`}>
-                    <img src="" alt="" />
+                    <img src={StoredUserDataJSON?.icon ? `https://staging.thedailyuniverse.com/TDUUsers/${StoredUserDataJSON?.icon}` : (require('./assets/imgs/TDULandingBG.png'))} alt="" />
                   </Link>
                   <button id='nvcntntruLogout' onClick={handleUserLogout}><h6>LOGOUT</h6></button>
                 </div>}

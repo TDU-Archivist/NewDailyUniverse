@@ -54,7 +54,7 @@ const Profile = () => {
                 <div className="userPageContentPage">
                     <div className="usrpgcp left">
                         <div className="usrpgcplHeader">
-                            <img src="" alt="" />
+                            <img src={StoredUserDataJSON?.icon ? `https://staging.thedailyuniverse.com/TDUUsers/${StoredUserDataJSON?.icon}` : (require('../assets/imgs/TDULandingBG.png'))} alt="" />
                         </div>
                         <div className="usrpgcplContents">
                             <div className="usrpgcplcHeader">
