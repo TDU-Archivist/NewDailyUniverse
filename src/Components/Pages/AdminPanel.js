@@ -14,6 +14,7 @@ const AdminPanel = () => {
         StoredUserID,
         StoredUserDataJSON,
         fetchAllArticles,
+        viewAllArticles,
     } = MainDataLoad(); 
 
     const weeklyData = [
@@ -213,7 +214,7 @@ const AdminPanel = () => {
                                         <h6>PUBLISHED ARTICLES TODAY</h6>
                                     </div>
                                     <div>
-                                        <h4>0</h4>
+                                        <h4>{viewAllArticles.length}</h4>
                                         <h6>TOTAL ARTICLES</h6>
                                     </div>
                                     <div>
