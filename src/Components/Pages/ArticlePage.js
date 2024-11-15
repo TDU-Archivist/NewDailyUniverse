@@ -77,7 +77,7 @@ const ArticlePage = () => {
                     </div>
                     <div className="artclpcpmlAuthor">
                         <span>
-                            <img src={writerData?.icon ? `https://staging.thedailyuniverse.com/TDUAuthors/${writerData?.icon}` : (require('../assets/imgs/TDULandingBG.png'))} alt="" />
+                            <img src={writerData?.icon ? `https://staging.thedailyuniverse.com/TDUAuthors/${writerData?.icon}` : (require('../assets/imgs/TDULandingLoginRegister.png'))} alt="" />
                         </span>
                         <div>
                             <h5>Written By. {specification?.article_writter}</h5>
@@ -100,7 +100,22 @@ const ArticlePage = () => {
                     </div>
                 </div>
             </section>
-
+            <section className="articlePageContainerPage bot">
+                <div className="articlePageContentBot">
+                    <h4>RECENTLY ADDED ARTICLES</h4>
+                    <div className="artclpcBot">
+                        {viewAllArticles.slice(0, 8).map((details, i) => (
+                            <div className="artclpcbArticle">
+                                <div className="artclpcba">
+                                    <img src={details?.article_image ? `https://staging.thedailyuniverse.com/ArticleImages/${details?.article_image}` : (require('../assets/imgs/TDULandingBG.png'))} alt="" />
+                                </div>
+                                <h5>{details?.article_title}</h5>
+                                <p>{details?.article_subtitle}</p>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
 
 
         </div>

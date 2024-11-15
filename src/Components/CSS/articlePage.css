@@ -125,6 +125,7 @@ section.articlePageContainerPage.mid{
     justify-content: center;
     align-items: center;
     margin-right: 3%;
+    border: solid 2px gray;
 }
 .artclpcpmlAuthor span img{
     width: 100%;
@@ -175,6 +176,78 @@ section.articlePageContainerPage.mid{
 .artclpcpmrContent p{
     white-space: pre-line;
 }
+
+
+
+
+
+
+
+
+
+section.articlePageContainerPage.bot{
+    height: auto;
+    width: 100%;
+    padding: 5vw;
+    padding-top: 10vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: top;
+}
+.articlePageContentBot{
+    height: auto;
+    width: 100%;
+}
+.artclpcBot{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    align-items: top;
+    margin: 2% 0;
+}
+.artclpcbArticle{
+    height: auto;
+    width: 24%;
+    text-decoration: none;
+    margin: 0.5%;
+    overflow: hidden;
+    background: rgb(20, 20, 20);
+    border-radius: 1vw;
+    padding-bottom: 2%;
+}
+.artclpcba{
+    height: 14vw;
+    width: 100%;
+    border-radius: 1vw;
+    background: url(http://localhost:3001/static/media/TDULandingBG.c22c905….png) no-repeat center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5%;
+}
+.artclpcba img {
+    width: 100%;
+}
+.artclpcbArticle h5{
+    height: 4.3vw;
+    font-size: 1.2vw;
+    line-height: 1.5vw;
+    padding: 0 5%;
+    margin: 2% 0;
+}
+.artclpcbArticle p{
+    font-size: 0.7vw;
+    padding: 0 5%;
+    color: gray;
+}
+
+
+
+
+
 
 
 
