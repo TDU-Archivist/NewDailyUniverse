@@ -105,13 +105,13 @@ const ArticlePage = () => {
                     <h4>RECENTLY ADDED ARTICLES</h4>
                     <div className="artclpcBot">
                         {viewAllArticles.slice(0, 8).map((details, i) => (
-                            <div className="artclpcbArticle">
+                            <Link className="artclpcbArticle" key={i} to={`/News/${details?.article_canonical}`}>
                                 <div className="artclpcba">
                                     <img src={details?.article_image ? `https://staging.thedailyuniverse.com/ArticleImages/${details?.article_image}` : (require('../assets/imgs/TDULandingBG.png'))} alt="" />
                                 </div>
                                 <h5>{details?.article_title}</h5>
                                 <p>{details?.article_subtitle}</p>
-                            </div>
+                            </Link>
                         ))}
                     </div>
                 </div>
