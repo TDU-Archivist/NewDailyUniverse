@@ -96,6 +96,219 @@ section.mainContainerPage.top{
         url('../assets/imgs/TDULandingBG.png') no-repeat center;
     background-size: cover;
 }
+
+
+
+
+.mainContentPage.fullMap{
+    height: 43.5vw;
+    width: 100%;
+    overflow: hidden;
+    background: rgb(20, 20, 20);
+    border-radius: 1vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.mncntntpfmSearch{
+    position: absolute;
+    height: auto;
+    width: 20%;
+    top: 1vw;
+    right: 1.5vw;
+    z-index: 5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 20px;
+    border-radius: 50px;
+    overflow: hidden;
+    background: rgba(100, 100, 100, 0.1);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+}
+.mncntntpfmSearch input{
+    width: 90%;
+    background: none;
+    border: none;
+    outline: none;
+    padding-left: 5px;
+    color: white;
+    font-size: 0.7vw;
+}
+.mncntntpfmSearch h5{
+    font-size: 0.9vw;
+}
+.mncntntpfmSuggested{
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 1.5%;
+    height: 100%;
+    width: 30%;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    transition: 400ms ease;
+}
+.mncntntpfmSuggested.hide{
+    left: -24%;
+    transition: 400ms ease;
+}
+.mncntntpfmSuggested button{
+    background: none;
+    border: none;
+    outline: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: red;
+    font-size: 2vw;
+    cursor: pointer;
+}
+.mncntntpfmsggstd{
+    height: 100%;
+    width: 90%;
+    background: rgba(100, 100, 100, 0.1);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-radius: 0.5vw;
+    padding: 5%;
+    position: relative;
+    opacity: 0;
+    transition: 400ms ease;
+}
+.mncntntpfmsggstd.active{
+    opacity: 100%;
+    transition: 400ms ease;
+}
+.mncntntpfmsggstdSearch{
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.mncntntpfmsggstdSearch input{
+    width: 90%;
+    padding: 5px 15px;
+    border-radius: 50px;
+    background: none;
+    border: solid 2px gray;
+    outline: none;
+    color: white;
+    font-size: 0.7vw;
+}
+.mncntntpfmsggstdTopic{
+    height: auto;
+    width: 100%;
+    margin: 3% 0;
+    padding: 2%;
+}
+.mncntntpfmsggstdTopic h6{
+    margin-bottom: 2%;
+}
+.mncntntpfmsggstdTopic.explore div{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    align-items: center;
+}
+.mncntntpfmsggstdTopic.explore div a{
+    padding: 1% 5%;
+    background: gray;
+    border-radius: 50px;
+    text-decoration: none;
+    margin: 1%;
+}
+.mncntntpfmsggstdTopic.explore div a:hover{
+    background: red;
+    transition: 400ms ease;
+}
+.mncntntpfmsggstdTopic.explore div a p{
+    font-size: 0.7vw;
+}
+.mncntntpfmsggstdta{
+    height: auto;
+    width: 100%;
+}
+.mncntntpfmsggstdtaContent{
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2%;
+    background: rgb(20, 20, 20);
+    border-radius: 10px;
+    margin-bottom: 2%;
+}
+.mncntntpfmsggstdtaContent div{
+    height: 4vw;
+    width: 7vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('../assets/imgs/TDULandingBG.png') no-repeat center;
+    background-size: cover;
+}
+.mncntntpfmsggstdtaContent div img{
+    height: 100%;
+}
+.mncntntpfmsggstdtaContent span{
+    width: 55%;
+}
+.mncntntpfmsggstdtaContent span p{
+    font-size: 0.7vw;
+    color: gray;
+}
+.mncntntpfmsggstdtaContent span h6{
+    font-size: 0.9vw;
+    line-height: 1vw;
+}
+.mncntntpfmMinimize{
+    position: absolute;
+    height: auto;
+    bottom: 1vw;
+    right: 1.5vw;
+    z-index: 5;
+}
+.mncntntpfmMinimize button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    color: white;
+    border: none;
+    outline: none;
+    font-size: 2vw;
+    cursor: pointer;
+}
+.mncntntpfmMinimize button:hover{
+    color: red;
+    transition: 400ms ease;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .mainContentPage.top1{
     height: auto;
     width: 100%;
@@ -217,7 +430,7 @@ section.mainContainerPage.top{
     justify-content: center;
     align-items: center;
 }
-.mncntntpt2rSearch{
+.mncntntpt2rCurrentTime{
     position: absolute;
     height: auto;
     top: 1vw;
@@ -225,14 +438,38 @@ section.mainContainerPage.top{
     z-index: 5;
     text-align: right;
 }
-.mncntntpt2rSearch h5{
+.mncntntpt2rCurrentTime h5{
     font-size: 2vw;
 }
-.mncntntpt2rSearch p{
+.mncntntpt2rCurrentTime p{
     font-size: 0.6vw;
     line-height: 0.8vw;
     opacity: 50%;
 }
+.mncntntpt2rFullMap{
+    position: absolute;
+    height: auto;
+    bottom: 1vw;
+    right: 1.5vw;
+    z-index: 5;
+}
+.mncntntpt2rFullMap button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    color: white;
+    border: none;
+    outline: none;
+    font-size: 2vw;
+    cursor: pointer;
+}
+.mncntntpt2rFullMap button:hover{
+    color: red;
+    transition: 400ms ease;
+}
+
+
 .mncntntpt2rSelected{
     position: absolute;
     top: 1.5vw;

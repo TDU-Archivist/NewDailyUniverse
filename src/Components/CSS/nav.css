@@ -46,17 +46,22 @@ nav{
     align-items: center;
 }
 .navContent.left img{
-    height: 2.2vw;
+    height: 2.5vw;
     max-width: 100%;
     margin-right: 5%;
 }
 .navContent.left h4{
     font-weight: 400;
     font-size: 1.7vw;
-    display: flex;
-    justify-content: left;
-    align-items: center;
+    line-height: 1.5vw;
+    margin-top: 0.5vw;
     font-family: "Bebas Neue", sans-serif;
+}
+.navContent.left p{
+    font-size: 0.7vw;
+    line-height: 0.7vw;
+    color: gray;
+    /* font-family: "Bebas Neue", sans-serif; */
 }
 .navContent.right{
     height: 100%;
@@ -64,8 +69,8 @@ nav{
     display: flex;
     justify-content: right;
     align-items: center;
-    padding: 0.5vw;
-    padding-left: 2vw;
+    padding: 5px 10px;
+    padding-left: 15px;
     border-radius: 50px;
     background: rgb(40, 40, 40);
 }
@@ -130,37 +135,52 @@ nav{
     transition: 400ms ease;
 }
 .nvcntntr.user button#nvcntntruLogout{
+    font-size: 1.8vw;
     display: flex;
     justify-content: center;
     align-items: center;
     background: none;
     outline: none;
-    border: solid 2px white;
+    border: none;
     color: white;
     cursor: pointer;
-    padding: 2px 25px;
-    border-radius: 50px;
-    transition: 400ms ease;
     margin-left: 1vw;
+    transition: 400ms ease;
+    border-radius: 50%;
 }
-.nvcntntr.user button#nvcntntruSignup:hover,
 .nvcntntr.user button#nvcntntruLogout:hover{
+    color: red;
+    transition: 400ms ease;
+}
+.nvcntntr.user button#nvcntntruSignup:hover{
     background: white;
     transition: 400ms ease;
 }
-.nvcntntr.user button#nvcntntruSignup h6,
-.nvcntntr.user button#nvcntntruLogout h6{
+.nvcntntr.user button#nvcntntruSignup h6{
     font-size: 0.9vw;
     font-weight: 400;
     transition: 400ms ease;
     text-transform: uppercase;
 }
-.nvcntntr.user button#nvcntntruSignup:hover h6,
-.nvcntntr.user button#nvcntntruLogout:hover h6{
+.nvcntntr.user button#nvcntntruSignup:hover h6{
     color: black;
     transition: 400ms ease;
 }
 .nvcntntr.user button#nvcntntruLogin{
+    font-size: 1.8vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    outline: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    margin-right: 1vw;
+    transition: 400ms ease;
+    border-radius: 50%;
+}
+.nvcntntr.user button#nvcntntruNotification{
     font-size: 1.8vw;
     display: flex;
     justify-content: center;
@@ -189,6 +209,15 @@ nav{
     border-radius: 50%;
 }
 .nvcntntr.user a#nvcntntruUser{
+    height: auto;
+    width: 7vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: solid 2px gray;
+    border-radius: 50px;
+}
+.nvcntntr.user a#nvcntntruUser span{
     height: 1.8vw;
     width: 1.8vw;
     background: url('../assets/imgs/TheDailyUniverseLogo.png') no-repeat center;
@@ -201,10 +230,15 @@ nav{
     justify-content: center;
     align-items: center;
 }
-.nvcntntr.user a#nvcntntruUser img{
+.nvcntntr.user a#nvcntntruUser span img{
     height: 100%;
 }
-
+.nvcntntr.user a#nvcntntruUser h6{
+    width: 80%;
+    font-size: 0.9vw;
+    text-align: center;
+    text-transform: uppercase;
+}
 
 
 

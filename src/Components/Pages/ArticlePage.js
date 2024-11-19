@@ -31,6 +31,7 @@ const ArticlePage = () => {
         viewAllArticles,
         viewAllWriters,
     } = MainDataLoad(); 
+    const navigate = useNavigate();
     const { newsCanonical } = useParams();
     const [countryData, setCountryData] = useState(null)
     const specification = viewAllArticles.find(article => article.article_canonical === newsCanonical);
@@ -41,6 +42,9 @@ const ArticlePage = () => {
             const response = await axios.get(`https://restcountries.com/v3.1/alpha/${specification?.article_country}`);
             const data = response.data[0];
             setCountryData(data);
+
+            console.log(data);
+            
         } catch (error) {
             console.log(error);
         }
@@ -50,6 +54,19 @@ const ArticlePage = () => {
         fetchCountryArticle();
     }
 
+    const handleViewAnotherArticle = (newsCanonical) => {
+        const specification = viewAllArticles.find(article => article.article_canonical === newsCanonical);
+        const fetchCountryNewArticle = async () => {
+            try {
+                const response = await axios.get(`https://restcountries.com/v3.1/alpha/${specification?.article_country}`);
+                const data = response.data[0];
+                setCountryData(data);
+            } catch (error) {
+                console.log(error);
+            }
+        }
+        fetchCountryNewArticle();
+    }
     
 
 
@@ -105,7 +122,7 @@ const ArticlePage = () => {
                     <h4>RECENTLY ADDED ARTICLES</h4>
                     <div className="artclpcBot">
                         {viewAllArticles.slice(0, 8).map((details, i) => (
-                            <Link className="artclpcbArticle" key={i} to={`/News/${details?.article_canonical}`}>
+                            <Link className="artclpcbArticle" key={i} to={`/News/${details?.article_canonical}`} onClick={() => handleViewAnotherArticle(details?.article_canonical)}>
                                 <div className="artclpcba">
                                     <img src={details?.article_image ? `https://staging.thedailyuniverse.com/ArticleImages/${details?.article_image}` : (require('../assets/imgs/TDULandingBG.png'))} alt="" />
                                 </div>

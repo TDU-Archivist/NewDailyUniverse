@@ -297,7 +297,10 @@ export const MainDataLoadProvider = ({ children }) => {
         }
     }
 
-
+    
+    useEffect(() => {
+        localStorage.setItem('fullMap', false)
+    }, []);
 
 
     useEffect(() => {
