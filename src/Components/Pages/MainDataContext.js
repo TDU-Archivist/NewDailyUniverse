@@ -18,6 +18,7 @@ export const MainDataLoadProvider = ({ children }) => {
     const [pickedCountry, setPickedCountry] = useState('');
     const [exchangeRates, setExchangeRates] = useState({});
     const [countryData, setCountryData] = useState(null);
+    const [countryDescription, setCountryDescription] = useState(null);
     const [countryCurrency, setCountryCurrency] = useState(null);
     const [countryThreeTouristSpots, setCountryThreeTouristSpots] = useState([]);
 
@@ -346,6 +347,8 @@ export const MainDataLoadProvider = ({ children }) => {
                 pickedCountry, 
                 setPickedCountry,
                 countryData,
+                countryDescription, 
+                setCountryDescription,
                 countryCurrency,
                 countryThreeTouristSpots,
                 switchFullMap, 

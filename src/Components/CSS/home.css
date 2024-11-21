@@ -140,6 +140,58 @@ section.mainContainerPage.top{
 .mncntntpfmSearch h5{
     font-size: 0.9vw;
 }
+.mncntntpfSuggestedCountry{
+    position: absolute;
+    height: auto;
+    width: 20%;
+    top: 3.5vw;
+    right: 1.5vw;
+    z-index: 5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10px;
+    border-radius: 10px;
+    overflow: hidden;
+    background: rgba(30, 30, 30);
+}
+.mncntntpfSuggestedCountry ul{
+    height: auto;
+    width: 100%;
+    padding-bottom: 5%;
+    list-style: none;
+}
+.mncntntpfSuggestedCountry ul li{
+    color: whitesmoke;
+    padding: 4% 5%;
+    font-size: 0.7vw;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.mncntntpfSuggestedCountry ul li:hover{
+    background: rgba(20, 20, 20);
+    transition: 400ms ease;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .mncntntpfmSuggested{
     position: absolute;
     top: 0;
@@ -151,6 +203,7 @@ section.mainContainerPage.top{
     justify-content: space-between;
     align-items: start;
     transition: 400ms ease;
+    z-index: 3;
 }
 .mncntntpfmSuggested.hide{
     left: -24%;
@@ -167,7 +220,8 @@ section.mainContainerPage.top{
     font-size: 2vw;
     cursor: pointer;
 }
-.mncntntpfmsggstd{
+.mncntntpfmsggstd,
+.mncntntpfmsggstdCountry{
     height: 100%;
     width: 90%;
     background: rgba(100, 100, 100, 0.1);
@@ -179,7 +233,8 @@ section.mainContainerPage.top{
     opacity: 0;
     transition: 400ms ease;
 }
-.mncntntpfmsggstd.active{
+.mncntntpfmsggstd.active,
+.mncntntpfmsggstdCountry.active{
     opacity: 100%;
     transition: 400ms ease;
 }
@@ -295,6 +350,131 @@ section.mainContainerPage.top{
 
 
 
+
+.mncntntpfmsggstdcHeader{
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    position: relative;
+}
+.mncntntpfmsggstdcHeader div{
+    height: auto;
+    width: 73%;
+}
+.mncntntpfmsggstdcHeader div h5{
+    line-height: 1.5vw;
+}
+.mncntntpfmsggstdcHeader div h6{
+    font-size: 0.9vw;
+    line-height: 1vw;
+    font-weight: 400;
+    margin-top: 1%;
+    color: gray;
+}
+.mncntntpfmsggstdcHeader span{
+    height: 3vw;
+    width: 25%;
+    background: url('../assets/imgs/TDULandingBG.png') no-repeat center;
+    background-size: cover;
+    border-radius: 5px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.mncntntpfmsggstdcHeader span img{
+    height: 100%;
+    width: 100%;
+}
+.mncntntpfmsggstdcSubHeader{
+    height: auto;
+    width: 100%;
+    margin-top: 5%;
+}
+.mncntntpfmsggstdcshDes{
+    height: 5vw;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding: 0 1%;
+}
+.mncntntpfmsggstdcshDes p{
+    font-size: 0.7vw;
+    color: whitesmoke;
+}
+.mncntntpfmsggstdcsh{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 3%;
+}
+.mncntntpfmsggstdcshContent{
+    height: auto;
+    width: 49%;
+    margin: 0.5%;
+    background: rgb(20, 20, 20);
+    padding: 2%;
+    border-radius: 0.5vw;
+}
+.mncntntpfmsggstdcshContent p{
+    font-size: 0.5vw;
+    color: gray;
+}
+.mncntntpfmsggstdcshContent div{
+    height: 2vw;
+    width: 100%;
+    margin-top: 3%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.mncntntpfmsggstdcshContent div h6{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.mncntntpfmsggstdcCountrySearch{
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5% 0;
+}
+.mncntntpfmsggstdcCountrySearch input {
+    width: 100%;
+    padding: 5px 15px;
+    border-radius: 50px;
+    background: none;
+    border: solid 2px gray;
+    outline: none;
+    color: white;
+    font-size: 0.7vw;
+}
+.mncntntpfmsggstdcRecommendedDestinations{
+    height: auto;
+    width: 100%;
+}
+.mncntntpfmsggstdcrdHeader{
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.mncntntpfmsggstdcrdHeader a{
+    color: white;
+    text-decoration: none;
+    font-size: 0.9vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 
 

@@ -8,6 +8,7 @@ const WorldMap = () => {
         setPickedCountry,
         setOpenSuggestedMapTopic,
         setFullMapPickedCountry,
+        setCountryDescription,
     } = MainDataLoad(); 
     
     // Updated geoUrl to point to the new GeoJSON dataset

@@ -7,7 +7,8 @@ import {
   FaExternalLinkAlt,
   FaArrowRight,
   FaArrowLeft,
-  FaMapMarkedAlt   
+  FaMapMarkedAlt,
+  FaBook    
 } from 'react-icons/fa';
 import { 
   TbArrowsMinimize,
@@ -67,6 +68,8 @@ const Home = () => {
     pickedCountry, 
     setPickedCountry,
     countryData,
+    countryDescription, 
+    setCountryDescription,
     countryCurrency,
     countryThreeTouristSpots,
     switchFullMap, 
@@ -184,6 +187,15 @@ const Home = () => {
   }
 
   // console.log(pickedCountry);
+
+
+
+  const [countryList, setCountryList] = useState([]);
+  const [searchTermCountry, setSearchTermCountry] = useState("");
+  const [suggestionsCountries, setSuggestionsCountries] = useState([]);
+
+
+
   
 
 
@@ -207,10 +219,47 @@ const Home = () => {
       console.error("Error fetching countries:", error);
     }
   };
+  const fetchSearchCountries = async () => {
+    try {
+      const response = await fetch("https://restcountries.com/v3.1/all");
+      const data = await response.json();
+      const countryNames = data.map((country) => country.name.common);
+      setCountryList(countryNames);
+    } catch (error) {
+      console.error("Error fetching countries:", error);
+    }
+  };
+  const fetchWikiContent = async () => {
+    const clickedCountry = pickedCountry;
+    try {
+      const wikipediaUrl = await axios.get(`https://en.wikipedia.org/api/rest_v1/page/summary/${clickedCountry}`);
+      const wikipediaResponse = wikipediaUrl.data;
+      setCountryDescription(wikipediaResponse);
+      console.log(wikipediaResponse);
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+  };
+
   useEffect(() => {
     fetchRandomCountries();
-  }, []);
+    fetchWikiContent();
+    fetchSearchCountries();
+  }, [pickedCountry]);
 
+  const handleInputSearchCountry = (e) => {
+    const value = e.target.value;
+    setSearchTermCountry(value);
+
+    if (value) {
+      const filtered = countryList.filter((country) =>
+        country.toLowerCase().startsWith(value.toLowerCase())
+      );
+      setSuggestionsCountries(filtered.slice(0, 10)); // Limit suggestions to 10
+    } else {
+      setSuggestionsCountries([]);
+    }
+  };
   const handleFullMapPickedCountry = (clickedCountry) => {
     if(clickedCountry) {
       setPickedCountryModal(false);
@@ -225,7 +274,10 @@ const Home = () => {
       return () => clearTimeout(timeoutId);
     }
   }
-
+  const handleSuggestionCountry = (suggestion) => {
+    setSearchTermCountry(suggestion);
+    setSuggestionsCountries([]);
+  };
 
   // console.log(countryData);
   
@@ -366,83 +418,167 @@ const Home = () => {
           </>:<>
             <div className="mainContentPage fullMap">
               <div className="mncntntpfmSearch">
-                <input type="text" placeholder='Search any country here.'/>
+                <input type="text" value={searchTermCountry} onChange={handleInputSearchCountry} placeholder='Search any country here.'/>
                 <h5><FaSearch className='faIcons'/></h5>
               </div>
-              <div className={(openSuggestedMapTopic) ? "mncntntpfmSuggested active" : "mncntntpfmSuggested hide"}>
-                
-                  {!fullMapPickedCountry ? <>
-                    <div className={(openSuggestedMapTopic) ? "mncntntpfmsggstd active" : "mncntntpfmsggstd"}>
-                      <div className="mncntntpfmsggstdSearch">
-                        <input type="text" placeholder='Search anything here.'/>
-                        <h6><FaSearch className='faIcons'/></h6>
+              {(searchTermCountry.length > 0) && <div className="mncntntpfSuggestedCountry">
+                <ul>
+                  {suggestionsCountries.map((suggestion, index) => (
+                    <li key={index} onClick={() => handleSuggestionCountry(suggestion)}>{suggestion}</li>
+                  ))}
+                </ul>
+              </div>}
+              <div className={(openSuggestedMapTopic) ? "mncntntpfmSuggested active" : "mncntntpfmSuggested hide"}> 
+                {!fullMapPickedCountry ? <>
+                  <div className={(openSuggestedMapTopic) ? "mncntntpfmsggstd active" : "mncntntpfmsggstd"}>
+                    <div className="mncntntpfmsggstdSearch">
+                      <input type="text" placeholder='Search anything here.'/>
+                      <h6><FaSearch className='faIcons'/></h6>
+                    </div>
+                    <div className="mncntntpfmsggstdTopic explore">
+                      <h6>EXPLORE COUNTRY</h6>
+                      <div>
+                        {suggestExploreCountry.map((country, i) => (
+                          <Link key={i} onClick={() => handleFullMapPickedCountry(country)}><p>{country}</p></Link>
+                        ))}
                       </div>
-                      <div className="mncntntpfmsggstdTopic explore">
-                        <h6>EXPLORE COUNTRY</h6>
-                        <div>
-                          {suggestExploreCountry.map((country, i) => (
-                            <Link key={i} onClick={() => handleFullMapPickedCountry(country)}><p>{country}</p></Link>
-                          ))}
+                    </div>
+                    <div className="mncntntpfmsggstdTopic article">
+                      <h6>SUGGESTED TOURIST DESTINATION</h6>
+                      <div className="mncntntpfmsggstdta">
+                        <div className='mncntntpfmsggstdtaContent'>
+                          <div>
+                            <img src="" alt="" />
+                          </div>
+                          <span>
+                            <p>Philippines</p>
+                            <h6>Puerto Princesa, Palawan</h6>
+                          </span>
+                        </div>
+                        <div className='mncntntpfmsggstdtaContent'>
+                          <div>
+                            <img src="" alt="" />
+                          </div>
+                          <span>
+                            <p>Philippines</p>
+                            <h6>Puerto Princesa, Palawan</h6>
+                          </span>
                         </div>
                       </div>
-                      <div className="mncntntpfmsggstdTopic article">
-                        <h6>SUGGESTED TOURIST DESTINATION</h6>
-                        <div className="mncntntpfmsggstdta">
-                          <div className='mncntntpfmsggstdtaContent'>
-                            <div>
-                              <img src="" alt="" />
-                            </div>
-                            <span>
-                              <p>Philippines</p>
-                              <h6>Puerto Princesa, Palawan</h6>
-                            </span>
+                    </div>
+                    <div className="mncntntpfmsggstdTopic restaurants">
+                      <h6>RESTAURANT AROUND YOU</h6>
+                      <div className="mncntntpfmsggstdta">
+                        <div className='mncntntpfmsggstdtaContent'>
+                          <div>
+                            <img src="" alt="" />
                           </div>
-                          <div className='mncntntpfmsggstdtaContent'>
-                            <div>
-                              <img src="" alt="" />
-                            </div>
-                            <span>
-                              <p>Philippines</p>
-                              <h6>Puerto Princesa, Palawan</h6>
-                            </span>
+                          <span>
+                            <p>Philippines</p>
+                            <h6>Puerto Princesa, Palawan</h6>
+                          </span>
+                        </div>
+                        <div className='mncntntpfmsggstdtaContent'>
+                          <div>
+                            <img src="" alt="" />
                           </div>
+                          <span>
+                            <p>Philippines</p>
+                            <h6>Puerto Princesa, Palawan</h6>
+                          </span>
                         </div>
                       </div>
-                      <div className="mncntntpfmsggstdTopic restaurants">
-                        <h6>RESTAURANT AROUND YOU</h6>
-                        <div className="mncntntpfmsggstdta">
-                          <div className='mncntntpfmsggstdtaContent'>
-                            <div>
-                              <img src="" alt="" />
-                            </div>
-                            <span>
-                              <p>Philippines</p>
-                              <h6>Puerto Princesa, Palawan</h6>
-                            </span>
+                    </div>
+                  </div>
+                </>:<>
+                  <div className={(openSuggestedMapTopic) ? "mncntntpfmsggstdCountry active" : "mncntntpfmsggstdCountry"}>
+                    <div className="mncntntpfmsggstdcHeader">
+                      <div>
+                        <h5>{pickedCountry}</h5>
+                        <h6>{countryData?.name?.official}</h6>
+                      </div>
+                      <span>
+                        <img src={(countryData?.flags?.png) ? `${countryData?.flags?.png}` : require('../assets/imgs/TDULandingBG.png')} alt="" />
+                      </span>
+                    </div>
+                    <div className="mncntntpfmsggstdcSubHeader">
+                      <div className="mncntntpfmsggstdcshDes">
+                        <p>{countryDescription?.extract}</p>
+                      </div>
+                      <div className="mncntntpfmsggstdcsh">
+                        <div className="mncntntpfmsggstdcshContent">
+                          <p>CAPITAL</p>
+                          <div>
+                            <h6><TextSlicer text={`${countryData?.capital ? countryData?.capital[0] : 'None'}`} maxLength={15} /></h6>
                           </div>
-                          <div className='mncntntpfmsggstdtaContent'>
-                            <div>
-                              <img src="" alt="" />
-                            </div>
-                            <span>
-                              <p>Philippines</p>
-                              <h6>Puerto Princesa, Palawan</h6>
-                            </span>
+                        </div>
+                        <div className="mncntntpfmsggstdcshContent">
+                          <p>USD TO {countryCurrency[0]?.currency ? `${countryCurrency[0]?.currency}` : 0}</p>
+                          <div>
+                            <h6>{(countryExchangeRate.value) ? `${countryExchangeRate.value} ${countryCurrency[0]?.currency}` : 0}</h6>
+                          </div>
+                        </div>
+                        <div className="mncntntpfmsggstdcshContent">
+                          <p>LAND AREA</p>
+                          <div>
+                            <h6><NumberFormatter number={countryData?.area}/> km^2</h6>
+                          </div>
+                        </div>
+                        <div className="mncntntpfmsggstdcshContent">
+                          <p>POPULATION</p>
+                          <div>
+                            <h6><NumberFormatter number={countryData?.population}/></h6>
                           </div>
                         </div>
                       </div>
                     </div>
-                  </>:<>
-                    <div className={(openSuggestedMapTopic) ? "mncntntpfmsggstd active" : "mncntntpfmsggstd"}>
-                      
+                    <div className="mncntntpfmsggstdcCountrySearch">
+                      <input type="text" placeholder={`Search more on ${pickedCountry}`}/>
                     </div>
-                  </>}
-
+                    <div className="mncntntpfmsggstdcRecommendedDestinations">
+                      <div className="mncntntpfmsggstdcrdHeader">
+                        <h6>RECOMMENDED TOURIST SPOT</h6>
+                        <Link><FaExternalLinkAlt /></Link>
+                      </div>
+                      <div className="mncntntpt2rst">
+                        {countryThreeTouristSpots?.tourist_spots.length > 0 ?
+                          <>
+                            {countryThreeTouristSpots?.tourist_spots.map((data, i) => (
+                              <a className="mncntntpt2rstContent" key={i}>
+                                {showImages[i] ? (
+                                  data.image ? (
+                                    <>
+                                      <p>{data.name}</p>
+                                      <img src={data.image} alt={data.name} />
+                                    </>
+                                  ) : (
+                                    <img src={require('../assets/imgs/TDULandingBG.png')} alt="Default" />
+                                  )
+                                ) : (
+                                  <img src={require('../assets/imgs/TDULandingBG.png')} alt="Loading..." />
+                                )}
+                              </a>
+                            ))}
+                          </>:<>
+                            <a className="mncntntpt2rstContent">
+                              <img src={require('../assets/imgs/TDULandingBG.png')} alt="" />
+                            </a>
+                            <a className="mncntntpt2rstContent">
+                              <img src={require('../assets/imgs/TDULandingBG.png')} alt="" />
+                            </a>
+                            <a className="mncntntpt2rstContent">
+                              <img src={require('../assets/imgs/TDULandingBG.png')} alt="" />
+                            </a>
+                          </>
+                        }
+                      </div>
+                    </div>
+                  </div>
+                </>}
                 {(!openSuggestedMapTopic) ?
                   <button onClick={handleOpenSuggestedMapTopic}><MdKeyboardDoubleArrowRight className='faIcons'/></button>:
                   <button onClick={handleHideSuggestedMapTopic}><MdKeyboardDoubleArrowLeft className='faIcons'/></button>
                 }
-
               </div>
               <div className="mncntntpfmMinimize">
                 <button onClick={handleRevertFullMap}><TbArrowsMinimize className='faIcons'/></button>
