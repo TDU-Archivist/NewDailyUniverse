@@ -69,6 +69,12 @@ const Home = () => {
     countryData,
     countryCurrency,
     countryThreeTouristSpots,
+    switchFullMap, 
+    setSwitchFullMap,
+    openSuggestedMapTopic, 
+    setOpenSuggestedMapTopic,
+    fullMapPickedCountry, 
+    setFullMapPickedCountry,
     exchangeRates,
     viewAllArticles,
   } = MainDataLoad(); 
@@ -167,33 +173,63 @@ const Home = () => {
 
   // console.log(filterGoodNews);
 
-  const [switchFullMap, setSwitchFullMap] = useState(false)
-  const [openSuggestedMapTopic, setOpenSuggestedMapTopic] = useState(true);
-  const openSuggestedTopic = localStorage.getItem('openSuggestion');
-  const switchToFullMap = localStorage.getItem('fullMap');
-  const openSuggestedTopicParse = JSON.parse(openSuggestedTopic);
-  const switchToFullMapParse = JSON.parse(switchToFullMap);
+  const [suggestExploreCountry, setSuggestExploreCountry] = useState([]);
 
 
   const handleSwitchFullMap = () => {
     setSwitchFullMap(true)
-    localStorage.setItem('fullMap', true)
-    localStorage.setItem('openSuggestion', true);
   }
   const handleRevertFullMap = () => {
     setSwitchFullMap(false)
-    localStorage.setItem('fullMap', false)
   }
+
+  // console.log(pickedCountry);
   
+
+
   const handleOpenSuggestedMapTopic = () => {
     setOpenSuggestedMapTopic(true);
-    localStorage.setItem('openSuggestion', true);
   };
   const handleHideSuggestedMapTopic = () => {
     setOpenSuggestedMapTopic(false);
-    localStorage.setItem('openSuggestion', false);
+    setFullMapPickedCountry(false);
+    setPickedCountry('')
   };
   
+  const fetchRandomCountries = async () => {
+    try {
+      const response = await fetch("https://restcountries.com/v3.1/all");
+      const data = await response.json();
+      const shuffled = data.sort(() => 0.5 - Math.random());
+      const randomCountries = shuffled.slice(0, 7).map(country => country.name.common);
+      setSuggestExploreCountry(randomCountries);
+    } catch (error) {
+      console.error("Error fetching countries:", error);
+    }
+  };
+  useEffect(() => {
+    fetchRandomCountries();
+  }, []);
+
+  const handleFullMapPickedCountry = (clickedCountry) => {
+    if(clickedCountry) {
+      setPickedCountryModal(false);
+      setPickedCountry(clickedCountry);
+      setOpenSuggestedMapTopic(false);
+      setFullMapPickedCountry(false);
+      const timeoutId = setTimeout(() => {
+          setPickedCountryModal(true);
+          setOpenSuggestedMapTopic(true);
+          setFullMapPickedCountry(true);
+      }, 500);
+      return () => clearTimeout(timeoutId);
+    }
+  }
+
+
+  // console.log(countryData);
+  
+
 
   return (
     <div className='mainContainer home'>
@@ -205,212 +241,216 @@ const Home = () => {
 
 
       <section className="mainContainerPage top">
-        {(!switchFullMap && switchToFullMapParse === false) ? <>
-          <div className="mainContentPage top1">
-            <h3>THE DAILY UNIVERSE</h3>
-            <h6>Your Gateway to Global News, Travel Guides, and Visa Information</h6>
-          </div>
-          <div className="mainContentPage top2">
-            <div className="mncntntpt2 left">
-              <h4>CHECK WORLD HAPPENINGS TODAY</h4>
-              <p id='mncntntpt2SubTitle'>Stay Updated on World Events - Explore Happenings and Destinations Across Every Country</p>
-              <div className="mncntntpt2lBreakingNews">
-                <h5>BREAKING NEWS</h5>
-                <div className="mncntntpt2lbn">
-                  <div className="mncntntpt2lbnContent">
-                    <img src={require('../assets/imgs/TDULandingBG.png')} alt="" />
-                    <div>
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, ex earum architecto labor</p>
+        {(!switchFullMap) ? 
+          <>
+            <div className="mainContentPage top1">
+              <h3>THE DAILY UNIVERSE</h3>
+              <h6>Your Gateway to Global News, Travel Guides, and Visa Information</h6>
+            </div>
+            <div className="mainContentPage top2">
+              <div className="mncntntpt2 left">
+                <h4>CHECK WORLD HAPPENINGS TODAY</h4>
+                <p id='mncntntpt2SubTitle'>Stay Updated on World Events - Explore Happenings and Destinations Across Every Country</p>
+                <div className="mncntntpt2lBreakingNews">
+                  <h5>BREAKING NEWS</h5>
+                  <div className="mncntntpt2lbn">
+                    <div className="mncntntpt2lbnContent">
+                      <img src={require('../assets/imgs/TDULandingBG.png')} alt="" />
+                      <div>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, ex earum architecto labor</p>
+                      </div>
                     </div>
-                  </div>
-                  <div className="mncntntpt2lbnContent">
-                    <img src={require('../assets/imgs/TDULandingBG.png')} alt="" />
-                    <div>
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, ex earum architecto labor</p>
+                    <div className="mncntntpt2lbnContent">
+                      <img src={require('../assets/imgs/TDULandingBG.png')} alt="" />
+                      <div>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, ex earum architecto labor</p>
+                      </div>
                     </div>
-                  </div>
-                  <div className="mncntntpt2lbnContent">
-                    <img src={require('../assets/imgs/TDULandingBG.png')} alt="" />
-                    <div>
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, ex earum architecto labor</p>
+                    <div className="mncntntpt2lbnContent">
+                      <img src={require('../assets/imgs/TDULandingBG.png')} alt="" />
+                      <div>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, ex earum architecto labor</p>
+                      </div>
                     </div>
-                  </div>
-                  <div className="mncntntpt2lbnContent">
-                    <img src={require('../assets/imgs/TDULandingBG.png')} alt="" />
-                    <div>
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, ex earum architecto labor</p>
+                    <div className="mncntntpt2lbnContent">
+                      <img src={require('../assets/imgs/TDULandingBG.png')} alt="" />
+                      <div>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, ex earum architecto labor</p>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div className="mncntntpt2 right">
-              {(pickedCountryModal && pickedCountry) && 
-                <div className={(pickedCountryModal && pickedCountry) ? "mncntntpt2rSelected active" : "mncntntpt2rSelected"}>
-                  <button id='closeCountry' onClick={handleHideCountrySummaryModal}><FaTimes className='faIcons'/></button>
-                  <div className="mncntntpt2rsCountryName">
-                    <div className='mncntntpt2rscnName'>
-                      <h5>{pickedCountry}</h5>
-                      <h6>{countryData?.name?.official}</h6>
+              <div className="mncntntpt2 right">
+                {(pickedCountryModal && pickedCountry) && 
+                  <div className={(pickedCountryModal && pickedCountry) ? "mncntntpt2rSelected active" : "mncntntpt2rSelected"}>
+                    <button id='closeCountry' onClick={handleHideCountrySummaryModal}><FaTimes className='faIcons'/></button>
+                    <div className="mncntntpt2rsCountryName">
+                      <div className='mncntntpt2rscnName'>
+                        <h5>{pickedCountry}</h5>
+                        <h6>{countryData?.name?.official}</h6>
+                      </div>
+                      <div className='mncntntpt2rscnFlag'>
+                        {/* {(pickedCountry || !countryData?.flags?.png) ?
+                          <CountryFlag countryName={`${pickedCountry}`} />: */}
+                          <img src={(countryData?.flags?.png) ? `${countryData?.flags?.png}` : require('../assets/imgs/TDULandingBG.png')} alt="" />
+                        {/* } */}
+                      </div>
                     </div>
-                    <div className='mncntntpt2rscnFlag'>
-                      {/* {(pickedCountry || !countryData?.flags?.png) ?
-                        <CountryFlag countryName={`${pickedCountry}`} />: */}
-                        <img src={(countryData?.flags?.png) ? `${countryData?.flags?.png}` : require('../assets/imgs/TDULandingBG.png')} alt="" />
-                      {/* } */}
+                    <div className="mncntntpt2rsSubHeader">
+                      <span>
+                        <p>Area : <br /><NumberFormatter number={countryData?.area}/> km^2</p>
+                      </span>
+                      <span>
+                        <p>Population : <br /><NumberFormatter number={countryData?.population}/> </p>
+                      </span>
+                      <span id='mncntntpt2rsCapital'>
+                        <p>Capital : <br /><TextSlicer text={`${countryData?.capital ? countryData?.capital[0] : 'None'}`} maxLength={20} /> </p>   
+                      </span>
                     </div>
-                  </div>
-                  <div className="mncntntpt2rsSubHeader">
-                    <span>
-                      <p>Area : <br /><NumberFormatter number={countryData?.area}/> km^2</p>
-                    </span>
-                    <span>
-                      <p>Population : <br /><NumberFormatter number={countryData?.population}/> </p>
-                    </span>
-                    <span id='mncntntpt2rsCapital'>
-                      <p>Capital : <br /><TextSlicer text={`${countryData?.capital ? countryData?.capital[0] : 'None'}`} maxLength={20} /> </p>   
-                    </span>
-                  </div>
-                  <div className="mncntntpt2rsTourist">
-                    <div className="mncntntpt2rstHeader">
-                      <h6>RECOMMENDED TOURIST SPOTS</h6>
-                      <Link><FaExternalLinkAlt /></Link>
-                    </div>
-                    <div className="mncntntpt2rst">
-                      {countryThreeTouristSpots?.tourist_spots.length > 0 ?
-                        <>
-                          {countryThreeTouristSpots?.tourist_spots.map((data, i) => (
-                            <a className="mncntntpt2rstContent" key={i}>
-                              {showImages[i] ? (
-                                data.image ? (
-                                  <>
-                                    <p>{data.name}</p>
-                                    <img src={data.image} alt={data.name} />
-                                  </>
+                    <div className="mncntntpt2rsTourist">
+                      <div className="mncntntpt2rstHeader">
+                        <h6>RECOMMENDED TOURIST SPOTS</h6>
+                        <Link><FaExternalLinkAlt /></Link>
+                      </div>
+                      <div className="mncntntpt2rst">
+                        {countryThreeTouristSpots?.tourist_spots.length > 0 ?
+                          <>
+                            {countryThreeTouristSpots?.tourist_spots.map((data, i) => (
+                              <a className="mncntntpt2rstContent" key={i}>
+                                {showImages[i] ? (
+                                  data.image ? (
+                                    <>
+                                      <p>{data.name}</p>
+                                      <img src={data.image} alt={data.name} />
+                                    </>
+                                  ) : (
+                                    <img src={require('../assets/imgs/TDULandingBG.png')} alt="Default" />
+                                  )
                                 ) : (
-                                  <img src={require('../assets/imgs/TDULandingBG.png')} alt="Default" />
-                                )
-                              ) : (
-                                <img src={require('../assets/imgs/TDULandingBG.png')} alt="Loading..." />
-                              )}
+                                  <img src={require('../assets/imgs/TDULandingBG.png')} alt="Loading..." />
+                                )}
+                              </a>
+                            ))}
+                          </>:<>
+                            <a className="mncntntpt2rstContent">
+                              <img src={require('../assets/imgs/TDULandingBG.png')} alt="" />
                             </a>
-                          ))}
-                        </>:<>
-                          <a className="mncntntpt2rstContent">
-                            <img src={require('../assets/imgs/TDULandingBG.png')} alt="" />
-                          </a>
-                          <a className="mncntntpt2rstContent">
-                            <img src={require('../assets/imgs/TDULandingBG.png')} alt="" />
-                          </a>
-                          <a className="mncntntpt2rstContent">
-                            <img src={require('../assets/imgs/TDULandingBG.png')} alt="" />
-                          </a>
-                        </>
-                      }
+                            <a className="mncntntpt2rstContent">
+                              <img src={require('../assets/imgs/TDULandingBG.png')} alt="" />
+                            </a>
+                            <a className="mncntntpt2rstContent">
+                              <img src={require('../assets/imgs/TDULandingBG.png')} alt="" />
+                            </a>
+                          </>
+                        }
+                      </div>
+                    </div>
+                    <div className="mncntntpt2rsExchange">
+                      <h6>US DOLLAR EXCHANGE</h6>
+                      <h6>{(countryExchangeRate.value) ? `${countryExchangeRate.value} ${countryCurrency[0]?.currency}` : 0}</h6>
                     </div>
                   </div>
-                  <div className="mncntntpt2rsExchange">
-                    <h6>US DOLLAR EXCHANGE</h6>
-                    <h6>{(countryExchangeRate.value) ? `${countryExchangeRate.value} ${countryCurrency[0]?.currency}` : 0}</h6>
-                  </div>
+                }
+                <div className="mncntntpt2rCurrentTime">
+                  <h5>{formattedTime}</h5>
+                  <p>{formattedDate}</p>
+                  <p>{location}</p>
                 </div>
-              }
-              <div className="mncntntpt2rCurrentTime">
-                <h5>{formattedTime}</h5>
-                <p>{formattedDate}</p>
-                <p>{location}</p>
+                <WorldMap />
+                <div className="mncntntpt2rFullMap">
+                  <button onClick={handleSwitchFullMap}><TbArrowsMaximize className='faIcons'/></button>
+                </div>
+              </div>
+            </div>
+          </>:<>
+            <div className="mainContentPage fullMap">
+              <div className="mncntntpfmSearch">
+                <input type="text" placeholder='Search any country here.'/>
+                <h5><FaSearch className='faIcons'/></h5>
+              </div>
+              <div className={(openSuggestedMapTopic) ? "mncntntpfmSuggested active" : "mncntntpfmSuggested hide"}>
+                
+                  {!fullMapPickedCountry ? <>
+                    <div className={(openSuggestedMapTopic) ? "mncntntpfmsggstd active" : "mncntntpfmsggstd"}>
+                      <div className="mncntntpfmsggstdSearch">
+                        <input type="text" placeholder='Search anything here.'/>
+                        <h6><FaSearch className='faIcons'/></h6>
+                      </div>
+                      <div className="mncntntpfmsggstdTopic explore">
+                        <h6>EXPLORE COUNTRY</h6>
+                        <div>
+                          {suggestExploreCountry.map((country, i) => (
+                            <Link key={i} onClick={() => handleFullMapPickedCountry(country)}><p>{country}</p></Link>
+                          ))}
+                        </div>
+                      </div>
+                      <div className="mncntntpfmsggstdTopic article">
+                        <h6>SUGGESTED TOURIST DESTINATION</h6>
+                        <div className="mncntntpfmsggstdta">
+                          <div className='mncntntpfmsggstdtaContent'>
+                            <div>
+                              <img src="" alt="" />
+                            </div>
+                            <span>
+                              <p>Philippines</p>
+                              <h6>Puerto Princesa, Palawan</h6>
+                            </span>
+                          </div>
+                          <div className='mncntntpfmsggstdtaContent'>
+                            <div>
+                              <img src="" alt="" />
+                            </div>
+                            <span>
+                              <p>Philippines</p>
+                              <h6>Puerto Princesa, Palawan</h6>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="mncntntpfmsggstdTopic restaurants">
+                        <h6>RESTAURANT AROUND YOU</h6>
+                        <div className="mncntntpfmsggstdta">
+                          <div className='mncntntpfmsggstdtaContent'>
+                            <div>
+                              <img src="" alt="" />
+                            </div>
+                            <span>
+                              <p>Philippines</p>
+                              <h6>Puerto Princesa, Palawan</h6>
+                            </span>
+                          </div>
+                          <div className='mncntntpfmsggstdtaContent'>
+                            <div>
+                              <img src="" alt="" />
+                            </div>
+                            <span>
+                              <p>Philippines</p>
+                              <h6>Puerto Princesa, Palawan</h6>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </>:<>
+                    <div className={(openSuggestedMapTopic) ? "mncntntpfmsggstd active" : "mncntntpfmsggstd"}>
+                      
+                    </div>
+                  </>}
+
+                {(!openSuggestedMapTopic) ?
+                  <button onClick={handleOpenSuggestedMapTopic}><MdKeyboardDoubleArrowRight className='faIcons'/></button>:
+                  <button onClick={handleHideSuggestedMapTopic}><MdKeyboardDoubleArrowLeft className='faIcons'/></button>
+                }
+
+              </div>
+              <div className="mncntntpfmMinimize">
+                <button onClick={handleRevertFullMap}><TbArrowsMinimize className='faIcons'/></button>
               </div>
               <WorldMap />
-              <div className="mncntntpt2rFullMap">
-                <button onClick={handleSwitchFullMap}><TbArrowsMaximize className='faIcons'/></button>
-              </div>
             </div>
-          </div>
-        </>:<>
-          <div className="mainContentPage fullMap">
-            <div className="mncntntpfmSearch">
-              <input type="text" placeholder='Search any country here.'/>
-              <h5><FaSearch className='faIcons'/></h5>
-            </div>
-            <div className={(openSuggestedMapTopic && openSuggestedTopicParse === true) ? "mncntntpfmSuggested active" : "mncntntpfmSuggested hide"}>
-              <div className={(openSuggestedMapTopic && openSuggestedTopicParse === true) ? "mncntntpfmsggstd active" : "mncntntpfmsggstd"}>
-                <div className="mncntntpfmsggstdSearch">
-                  <input type="text" placeholder='Search anything here.'/>
-                  <h6><FaSearch className='faIcons'/></h6>
-                </div>
-                <div className="mncntntpfmsggstdTopic explore">
-                  <h6>EXPLORE COUNTRY</h6>
-                  <div>
-                    <Link><p>Philippines</p></Link>
-                    <Link><p>Philippines</p></Link>
-                    <Link><p>Philippines</p></Link>
-                    <Link><p>Philippines</p></Link>
-                    <Link><p>Philippines</p></Link>
-                    <Link><p>Philippines</p></Link>
-                    <Link><p>Philippines</p></Link>
-                  </div>
-                </div>
-                <div className="mncntntpfmsggstdTopic article">
-                  <h6>SUGGESTED TOURIST DESTINATION</h6>
-                  <div className="mncntntpfmsggstdta">
-                    <div className='mncntntpfmsggstdtaContent'>
-                      <div>
-                        <img src="" alt="" />
-                      </div>
-                      <span>
-                        <p>Philippines</p>
-                        <h6>Puerto Princesa, Palawan</h6>
-                      </span>
-                    </div>
-                    <div className='mncntntpfmsggstdtaContent'>
-                      <div>
-                        <img src="" alt="" />
-                      </div>
-                      <span>
-                        <p>Philippines</p>
-                        <h6>Puerto Princesa, Palawan</h6>
-                      </span>
-                    </div>
-                  </div>
-                </div>
-                <div className="mncntntpfmsggstdTopic restaurants">
-                  <h6>RESTAURANT AROUND YOU</h6>
-                  <div className="mncntntpfmsggstdta">
-                    <div className='mncntntpfmsggstdtaContent'>
-                      <div>
-                        <img src="" alt="" />
-                      </div>
-                      <span>
-                        <p>Philippines</p>
-                        <h6>Puerto Princesa, Palawan</h6>
-                      </span>
-                    </div>
-                    <div className='mncntntpfmsggstdtaContent'>
-                      <div>
-                        <img src="" alt="" />
-                      </div>
-                      <span>
-                        <p>Philippines</p>
-                        <h6>Puerto Princesa, Palawan</h6>
-                      </span>
-                    </div>
-                  </div>
-                </div>
-
-
-
-              </div>
-              {(openSuggestedTopicParse === false) ?
-                <button onClick={handleOpenSuggestedMapTopic}><MdKeyboardDoubleArrowRight className='faIcons'/></button>:
-                <button onClick={handleHideSuggestedMapTopic}><MdKeyboardDoubleArrowLeft className='faIcons'/></button>
-              }
-            </div>
-            <div className="mncntntpfmMinimize">
-              <button onClick={handleRevertFullMap}><TbArrowsMinimize className='faIcons'/></button>
-            </div>
-            <WorldMap />
-          </div>
-        </>}
+          </>
+        }
       </section>
       <section className="mainContainerPage mid">
         <div className="mainContentPage mid1">

@@ -21,6 +21,11 @@ export const MainDataLoadProvider = ({ children }) => {
     const [countryCurrency, setCountryCurrency] = useState(null);
     const [countryThreeTouristSpots, setCountryThreeTouristSpots] = useState([]);
 
+    
+    const [switchFullMap, setSwitchFullMap] = useState(false)
+    const [openSuggestedMapTopic, setOpenSuggestedMapTopic] = useState(true);
+    const [fullMapPickedCountry, setFullMapPickedCountry] = useState(false)
+
     const [viewAllArticles, setViewAllArticles] = useState([])
     const [viewAllWriters, setViewAllWriters] = useState([])
 
@@ -297,11 +302,6 @@ export const MainDataLoadProvider = ({ children }) => {
         }
     }
 
-    
-    useEffect(() => {
-        localStorage.setItem('fullMap', false)
-    }, []);
-
 
     useEffect(() => {
         setWebLoader(true);
@@ -348,6 +348,12 @@ export const MainDataLoadProvider = ({ children }) => {
                 countryData,
                 countryCurrency,
                 countryThreeTouristSpots,
+                switchFullMap, 
+                setSwitchFullMap,
+                openSuggestedMapTopic, 
+                setOpenSuggestedMapTopic,
+                fullMapPickedCountry, 
+                setFullMapPickedCountry,
                 exchangeRates,
                 fetchAllArticles,
                 viewAllArticles,

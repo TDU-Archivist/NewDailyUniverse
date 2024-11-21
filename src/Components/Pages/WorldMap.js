@@ -6,6 +6,8 @@ const WorldMap = () => {
     const { 
         setPickedCountryModal,
         setPickedCountry,
+        setOpenSuggestedMapTopic,
+        setFullMapPickedCountry,
     } = MainDataLoad(); 
     
     // Updated geoUrl to point to the new GeoJSON dataset
@@ -32,8 +34,12 @@ const WorldMap = () => {
                                         if (countryName) {
                                             setPickedCountryModal(false);
                                             setPickedCountry(countryName);
+                                            setOpenSuggestedMapTopic(false);
+                                            setFullMapPickedCountry(false);
                                             const timeoutId = setTimeout(() => {
                                                 setPickedCountryModal(true);
+                                                setOpenSuggestedMapTopic(true);
+                                                setFullMapPickedCountry(true);
                                             }, 500);
                                             return () => clearTimeout(timeoutId);
                                         } else {
