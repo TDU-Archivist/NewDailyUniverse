@@ -235,7 +235,7 @@ const Home = () => {
       const wikipediaUrl = await axios.get(`https://en.wikipedia.org/api/rest_v1/page/summary/${clickedCountry}`);
       const wikipediaResponse = wikipediaUrl.data;
       setCountryDescription(wikipediaResponse);
-      console.log(wikipediaResponse);
+      // console.log(wikipediaResponse);
     } catch (error) {
       console.error('Error fetching data:', error);
     }
@@ -276,7 +276,20 @@ const Home = () => {
   }
   const handleSuggestionCountry = (suggestion) => {
     setSearchTermCountry(suggestion);
-    setSuggestionsCountries([]);
+    // setSuggestionsCountries([]);
+
+    if(suggestion) {
+      setPickedCountryModal(false);
+      setPickedCountry(suggestion);
+      setOpenSuggestedMapTopic(false);
+      setFullMapPickedCountry(false);
+      const timeoutId = setTimeout(() => {
+          setPickedCountryModal(true);
+          setOpenSuggestedMapTopic(true);
+          setFullMapPickedCountry(true);
+      }, 500);
+      return () => clearTimeout(timeoutId);
+    }
   };
 
   // console.log(countryData);
@@ -418,16 +431,18 @@ const Home = () => {
           </>:<>
             <div className="mainContentPage fullMap">
               <div className="mncntntpfmSearch">
-                <input type="text" value={searchTermCountry} onChange={handleInputSearchCountry} placeholder='Search any country here.'/>
+                <input type="text" value={searchTermCountry} onChange={handleInputSearchCountry} placeholder='Search any country here...'/>
                 <h5><FaSearch className='faIcons'/></h5>
               </div>
-              {(searchTermCountry.length > 0) && <div className="mncntntpfSuggestedCountry">
-                <ul>
-                  {suggestionsCountries.map((suggestion, index) => (
-                    <li key={index} onClick={() => handleSuggestionCountry(suggestion)}>{suggestion}</li>
-                  ))}
-                </ul>
-              </div>}
+              {(searchTermCountry.length > 0 || searchTermCountry != '') && 
+                <div className="mncntntpfSuggestedCountry">
+                  <ul>
+                    {suggestionsCountries.map((suggestion, index) => (
+                      <li key={index} onClick={() => handleSuggestionCountry(suggestion)}>{suggestion}</li>
+                    ))}
+                  </ul>
+                </div>
+              }
               <div className={(openSuggestedMapTopic) ? "mncntntpfmSuggested active" : "mncntntpfmSuggested hide"}> 
                 {!fullMapPickedCountry ? <>
                   <div className={(openSuggestedMapTopic) ? "mncntntpfmsggstd active" : "mncntntpfmsggstd"}>
@@ -513,9 +528,11 @@ const Home = () => {
                           </div>
                         </div>
                         <div className="mncntntpfmsggstdcshContent">
-                          <p>USD TO {countryCurrency[0]?.currency ? `${countryCurrency[0]?.currency}` : 0}</p>
+                          <p>USD TO {(countryCurrency[0]?.currency) ? `${countryCurrency[0]?.currency}` : ''}</p>
                           <div>
-                            <h6>{(countryExchangeRate.value) ? `${countryExchangeRate.value} ${countryCurrency[0]?.currency}` : 0}</h6>
+                            <h6>
+                              {(countryExchangeRate.value) ? `${countryExchangeRate.value}` : 0} {countryCurrency[0]?.currency ? `${countryCurrency[0]?.currency}` : ''}
+                            </h6>
                           </div>
                         </div>
                         <div className="mncntntpfmsggstdcshContent">

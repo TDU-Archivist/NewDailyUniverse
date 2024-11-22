@@ -144,7 +144,7 @@ section.mainContainerPage.top{
     position: absolute;
     height: auto;
     width: 20%;
-    top: 3.5vw;
+    top: 3vw;
     right: 1.5vw;
     z-index: 5;
     display: flex;
@@ -158,7 +158,6 @@ section.mainContainerPage.top{
 .mncntntpfSuggestedCountry ul{
     height: auto;
     width: 100%;
-    padding-bottom: 5%;
     list-style: none;
 }
 .mncntntpfSuggestedCountry ul li{
