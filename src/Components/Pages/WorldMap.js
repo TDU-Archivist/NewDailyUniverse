@@ -35,6 +35,8 @@ const WorldMap = () => {
                                         if (countryName) {
                                             setPickedCountryModal(false);
                                             setPickedCountry(countryName);
+                                            console.log(countryName);
+                                            
                                             setOpenSuggestedMapTopic(false);
                                             setFullMapPickedCountry(false);
                                             const timeoutId = setTimeout(() => {

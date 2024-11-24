@@ -174,8 +174,6 @@ const Home = () => {
   const filterBusinessNews = viewAllArticles.filter(business => business.article_type === "Business News")
   const filterSportsNews = viewAllArticles.filter(sports => sports.article_type === "Sports News")
 
-  // console.log(filterGoodNews);
-
   const [suggestExploreCountry, setSuggestExploreCountry] = useState([]);
 
 
@@ -186,17 +184,12 @@ const Home = () => {
     setSwitchFullMap(false)
   }
 
-  // console.log(pickedCountry);
-
 
 
   const [countryList, setCountryList] = useState([]);
   const [searchTermCountry, setSearchTermCountry] = useState("");
   const [suggestionsCountries, setSuggestionsCountries] = useState([]);
 
-
-
-  
 
 
   const handleOpenSuggestedMapTopic = () => {
@@ -230,11 +223,13 @@ const Home = () => {
     }
   };
   const fetchWikiContent = async () => {
-    const clickedCountry = pickedCountry;
+    const clickedCountry = countryData?.name?.common;
     try {
-      const wikipediaUrl = await axios.get(`https://en.wikipedia.org/api/rest_v1/page/summary/${clickedCountry}`);
-      const wikipediaResponse = wikipediaUrl.data;
-      setCountryDescription(wikipediaResponse);
+      if(clickedCountry){
+        const wikipediaUrl = await axios.get(`https://en.wikipedia.org/api/rest_v1/page/summary/${clickedCountry}`);
+        const wikipediaResponse = wikipediaUrl.data;
+        setCountryDescription(wikipediaResponse);
+      }
       // console.log(wikipediaResponse);
     } catch (error) {
       console.error('Error fetching data:', error);
@@ -245,7 +240,7 @@ const Home = () => {
     fetchRandomCountries();
     fetchWikiContent();
     fetchSearchCountries();
-  }, [pickedCountry]);
+  }, [countryData]);
 
   const handleInputSearchCountry = (e) => {
     const value = e.target.value;
@@ -292,9 +287,9 @@ const Home = () => {
     }
   };
 
+
   // console.log(countryData);
   
-
 
   return (
     <div className='mainContainer home'>
@@ -509,7 +504,7 @@ const Home = () => {
                   <div className={(openSuggestedMapTopic) ? "mncntntpfmsggstdCountry active" : "mncntntpfmsggstdCountry"}>
                     <div className="mncntntpfmsggstdcHeader">
                       <div>
-                        <h5>{pickedCountry}</h5>
+                        <h5>{countryData?.name?.common}</h5>
                         <h6>{countryData?.name?.official}</h6>
                       </div>
                       <span>
@@ -528,10 +523,10 @@ const Home = () => {
                           </div>
                         </div>
                         <div className="mncntntpfmsggstdcshContent">
-                          <p>USD TO {(countryCurrency[0]?.currency) ? `${countryCurrency[0]?.currency}` : ''}</p>
+                          <p>{(countryCurrency[0]?.currency) ? `USD TO ${countryCurrency[0]?.currency}` : 'NO CURRENCY RECORD'}</p>
                           <div>
                             <h6>
-                              {(countryExchangeRate.value) ? `${countryExchangeRate.value}` : 0} {countryCurrency[0]?.currency ? `${countryCurrency[0]?.currency}` : ''}
+                              {(countryCurrency[0]?.currency) ? `${countryExchangeRate?.value}` : 'N/A'} {countryCurrency[0]?.currency ? `${countryCurrency[0]?.currency}` : ''}
                             </h6>
                           </div>
                         </div>

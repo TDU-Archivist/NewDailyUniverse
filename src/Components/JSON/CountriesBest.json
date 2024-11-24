@@ -1123,23 +1123,6 @@
         ]
       },
       {
-        "name": "Gabon",
-        "tourist_spots": [
-          {
-            "name": "Libreville",
-            "image": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Libreville_Gabon.jpg"
-          },
-          {
-            "name": "Loango National Park",
-            "image": "https://upload.wikimedia/commons/c/cf/Loango_National_Park.jpg"
-          },
-          {
-            "name": "Port-Gentil",
-            "image": "https://upload.wikimedia.org/wikipedia/commons/5/5f/Port-Gentil_Gabon.jpg"
-          }
-        ]
-      },
-      {
         "name": "Gambia",
         "tourist_spots": [
           {
