@@ -19,7 +19,7 @@ export const MainDataLoadProvider = ({ children }) => {
     const [exchangeRates, setExchangeRates] = useState({});
     const [countryData, setCountryData] = useState(null);
     const [countryDescription, setCountryDescription] = useState(null);
-    const [countryCurrency, setCountryCurrency] = useState(null);
+    const [countryCurrency, setCountryCurrency] = useState([]);
     const [countryThreeTouristSpots, setCountryThreeTouristSpots] = useState([]);
 
     
@@ -28,9 +28,11 @@ export const MainDataLoadProvider = ({ children }) => {
     const [fullMapPickedCountry, setFullMapPickedCountry] = useState(false)
 
     const [viewAllArticles, setViewAllArticles] = useState([])
+    const [viewAllCapitals, setViewAllCapitals] = useState([])
     const [viewAllWriters, setViewAllWriters] = useState([])
 
     const tduFetchAllArticlesAPI = process.env.REACT_APP_TDU_FETCH_ARTICLE_API;
+    const tduFetchAllCapitalsAPI = process.env.REACT_APP_TDU_FETCH_CAPITALS_API;
     const tduFetchAllWrittersAPI = process.env.REACT_APP_TDU_FETCH_WRITERS_LIST_API;
     const FIAT_API_URL = `https://open.er-api.com/v6/latest/USD`; 
 
@@ -40,7 +42,7 @@ export const MainDataLoadProvider = ({ children }) => {
                 const response = await axios.get('https://restcountries.com/v3.1/alpha/AQ');
                 const data = response.data[0];
                 setCountryData(data);
-                setCountryCurrency([0]);
+                setCountryCurrency([]);
             } else if (pickedCountry.toLowerCase() === 'china') {
                 const response = await axios.get('https://restcountries.com/v3.1/alpha/CHN');
                 const data = response.data[0];
@@ -50,7 +52,7 @@ export const MainDataLoadProvider = ({ children }) => {
                     name: info?.name,
                     symbol: info?.symbol,
                 }));
-                setCountryCurrency(formattedData);
+                setCountryCurrency(formattedData || [0]);
                 setCountryData(data);
             } else if (pickedCountry.toLowerCase() === 'ireland') {
                 const response = await axios.get('https://restcountries.com/v3.1/alpha/IRL');
@@ -61,7 +63,7 @@ export const MainDataLoadProvider = ({ children }) => {
                     name: info?.name,
                     symbol: info?.symbol,
                 }));
-                setCountryCurrency(formattedData);
+                setCountryCurrency(formattedData || [0]);
                 setCountryData(data);
             } else if (pickedCountry.toLowerCase() === 'hong kong s.a.r.') {
                 const response = await axios.get('https://restcountries.com/v3.1/alpha/HK');
@@ -72,7 +74,7 @@ export const MainDataLoadProvider = ({ children }) => {
                     name: info?.name,
                     symbol: info?.symbol,
                 }));
-                setCountryCurrency(formattedData);
+                setCountryCurrency(formattedData || [0]);
                 setCountryData(data);
             } else if (pickedCountry.toLowerCase() === 'gabon') {
                 const response = await axios.get('https://restcountries.com/v3.1/alpha/GA');
@@ -83,7 +85,7 @@ export const MainDataLoadProvider = ({ children }) => {
                     name: info?.name,
                     symbol: info?.symbol,
                 }));
-                setCountryCurrency(formattedData);
+                setCountryCurrency(formattedData || [0]);
                 setCountryData(data);
             } else if (pickedCountry.toLowerCase() === 'republic of congo') {
                 const response = await axios.get('https://restcountries.com/v3.1/alpha/CG');
@@ -94,7 +96,7 @@ export const MainDataLoadProvider = ({ children }) => {
                     name: info?.name,
                     symbol: info?.symbol,
                 }));
-                setCountryCurrency(formattedData);
+                setCountryCurrency(formattedData || [0]);
                 setCountryData(data);
             } else if (pickedCountry.toLowerCase() === 'baykonur cosmodrome') {
                 const response = await axios.get('https://restcountries.com/v3.1/alpha/KZ');
@@ -105,7 +107,7 @@ export const MainDataLoadProvider = ({ children }) => {
                     name: info?.name,
                     symbol: info?.symbol,
                 }));
-                setCountryCurrency(formattedData);
+                setCountryCurrency(formattedData || [0]);
                 setCountryData(data);
             } else if (pickedCountry.toLowerCase() === 'siachen glacier') {
                 const response = await axios.get('https://restcountries.com/v3.1/alpha/IN');
@@ -116,7 +118,7 @@ export const MainDataLoadProvider = ({ children }) => {
                     name: info?.name,
                     symbol: info?.symbol,
                 }));
-                setCountryCurrency(formattedData);
+                setCountryCurrency(formattedData || [0]);
                 setCountryData(data);
             } else if (pickedCountry.toLowerCase() === 'british indian ocean territory') {
                 const response = await axios.get('https://restcountries.com/v3.1/alpha/IO');
@@ -127,7 +129,7 @@ export const MainDataLoadProvider = ({ children }) => {
                     name: info?.name,
                     symbol: info?.symbol,
                 }));
-                setCountryCurrency(formattedData);
+                setCountryCurrency(formattedData || [0]);
                 setCountryData(data);
             } else if (pickedCountry.toLowerCase() === 'indian ocean territories') {
                 const response = await axios.get('https://restcountries.com/v3.1/alpha/CCK');
@@ -138,7 +140,7 @@ export const MainDataLoadProvider = ({ children }) => {
                     name: info?.name,
                     symbol: info?.symbol,
                 }));
-                setCountryCurrency(formattedData);
+                setCountryCurrency(formattedData || [0]);
                 setCountryData(data);
             } else if (pickedCountry.toLowerCase() === 'south georgia and south sandwich islands') {
                 const response = await axios.get('https://restcountries.com/v3.1/alpha/GS');
@@ -149,7 +151,7 @@ export const MainDataLoadProvider = ({ children }) => {
                     name: info?.name,
                     symbol: info?.symbol,
                 }));
-                setCountryCurrency(formattedData);
+                setCountryCurrency(formattedData || [0]);
                 setCountryData(data);
             } else if (pickedCountry.toLowerCase() === 'w. sahara') {
                 const response = await axios.get('https://restcountries.com/v3.1/alpha/EH');
@@ -160,7 +162,7 @@ export const MainDataLoadProvider = ({ children }) => {
                     name: info?.name,
                     symbol: info?.symbol,
                 }));
-                setCountryCurrency(formattedData);
+                setCountryCurrency(formattedData || [0]);
                 setCountryData(data);
             } else if (pickedCountry.toLowerCase() === 'solomon is.') {
                 const response = await axios.get('https://restcountries.com/v3.1/alpha/SB');
@@ -171,7 +173,7 @@ export const MainDataLoadProvider = ({ children }) => {
                     name: info?.name,
                     symbol: info?.symbol,
                 }));
-                setCountryCurrency(formattedData);
+                setCountryCurrency(formattedData || [0]);
                 setCountryData(data);
             } else if (pickedCountry.toLowerCase() === 's. sudan') {
                 const response = await axios.get('https://restcountries.com/v3.1/alpha/SSD');
@@ -182,7 +184,7 @@ export const MainDataLoadProvider = ({ children }) => {
                     name: info?.name,
                     symbol: info?.symbol,
                 }));
-                setCountryCurrency(formattedData);
+                setCountryCurrency(formattedData || [0]);
                 setCountryData(data);
             } else if (pickedCountry.toLowerCase() === 'falkland is.') {
                 const response = await axios.get('https://restcountries.com/v3.1/alpha/FK');
@@ -193,7 +195,7 @@ export const MainDataLoadProvider = ({ children }) => {
                     name: info?.name,
                     symbol: info?.symbol,
                 }));
-                setCountryCurrency(formattedData);
+                setCountryCurrency(formattedData || [0]);
                 setCountryData(data);
             } else if (pickedCountry.toLowerCase() === 'central african rep.') {
                 const response = await axios.get('https://restcountries.com/v3.1/alpha/CAF');
@@ -204,7 +206,7 @@ export const MainDataLoadProvider = ({ children }) => {
                     name: info?.name,
                     symbol: info?.symbol,
                 }));
-                setCountryCurrency(formattedData);
+                setCountryCurrency(formattedData || [0]);
                 setCountryData(data);
             } else if (pickedCountry.toLowerCase() === 'dem. rep. congo') {
                 const response = await axios.get('https://restcountries.com/v3.1/alpha/COD');
@@ -215,7 +217,7 @@ export const MainDataLoadProvider = ({ children }) => {
                     name: info?.name,
                     symbol: info?.symbol,
                 }));
-                setCountryCurrency(formattedData);
+                setCountryCurrency(formattedData || [0]);
                 setCountryData(data);
             } else if (pickedCountry.toLowerCase() === 'somaliland') {
                 const response = await axios.get('https://restcountries.com/v3.1/alpha/SO');
@@ -233,7 +235,7 @@ export const MainDataLoadProvider = ({ children }) => {
                     name: info?.name,
                     symbol: info?.symbol,
                 }));
-                setCountryCurrency(formattedData);
+                setCountryCurrency(formattedData || [0]);
                 setCountryData(somalilandData);
             } else if (pickedCountry.toLowerCase() === 'northern cyprus') {
                 const response = await axios.get('https://restcountries.com/v3.1/alpha/TR');
@@ -251,7 +253,7 @@ export const MainDataLoadProvider = ({ children }) => {
                     name: info?.name,
                     symbol: info?.symbol,
                 }));
-                setCountryCurrency(formattedData);
+                setCountryCurrency(formattedData || [0]);
                 setCountryData(somalilandData);
             } else if (pickedCountry.toLowerCase() === 'bosnia and herz.') {
                 const response = await axios.get('https://restcountries.com/v3.1/alpha/BIH');
@@ -262,7 +264,7 @@ export const MainDataLoadProvider = ({ children }) => {
                     name: info?.name,
                     symbol: info?.symbol,
                 }));
-                setCountryCurrency(formattedData);
+                setCountryCurrency(formattedData || [0]);
                 setCountryData(data);
             } else if (pickedCountry.toLowerCase() === 'dominican rep.') {
                 const response = await axios.get('https://restcountries.com/v3.1/alpha/DOM');
@@ -273,7 +275,7 @@ export const MainDataLoadProvider = ({ children }) => {
                     name: info?.name,
                     symbol: info?.symbol,
                 }));
-                setCountryCurrency(formattedData);
+                setCountryCurrency(formattedData || [0]);
                 setCountryData(data);
             } else if (pickedCountry.toLowerCase() === 'oman') {
                 const response = await axios.get('https://restcountries.com/v3.1/alpha/OM');
@@ -284,7 +286,7 @@ export const MainDataLoadProvider = ({ children }) => {
                     name: info?.name,
                     symbol: info?.symbol,
                 }));
-                setCountryCurrency(formattedData);
+                setCountryCurrency(formattedData || [0]);
                 setCountryData(data);
             } else if (pickedCountry.toLowerCase() === 'fr. s. antarctic lands' || pickedCountry.toLowerCase() === 'french southern and antarctic lands') {
                 const response = await axios.get('https://restcountries.com/v3.1/alpha/TF');
@@ -295,7 +297,7 @@ export const MainDataLoadProvider = ({ children }) => {
                     name: info?.name,
                     symbol: info?.symbol,
                 }));
-                setCountryCurrency(formattedData);
+                setCountryCurrency(formattedData || [0]);
                 setCountryData(data);
             } else if (pickedCountry.toLowerCase() === 'guinea') {
                 const response = await axios.get('https://restcountries.com/v3.1/alpha/GN');
@@ -306,7 +308,7 @@ export const MainDataLoadProvider = ({ children }) => {
                     name: info?.name,
                     symbol: info?.symbol,
                 }));
-                setCountryCurrency(formattedData);
+                setCountryCurrency(formattedData || [0]);
                 setCountryData(data);
             } else if (pickedCountry.toLowerCase() === 'niue') {
                 const response = await axios.get('https://restcountries.com/v3.1/alpha/NU');
@@ -317,7 +319,7 @@ export const MainDataLoadProvider = ({ children }) => {
                     name: info?.name,
                     symbol: info?.symbol,
                 }));
-                setCountryCurrency(formattedData);
+                setCountryCurrency(formattedData || [0]);
                 setCountryData(data);
             } else if (pickedCountry.toLowerCase() === 'guinea bissau') {
                 const response = await axios.get('https://restcountries.com/v3.1/alpha/GW');
@@ -328,7 +330,7 @@ export const MainDataLoadProvider = ({ children }) => {
                     name: info?.name,
                     symbol: info?.symbol,
                 }));
-                setCountryCurrency(formattedData);
+                setCountryCurrency(formattedData || [0]);
                 setCountryData(data);
             } else {
                 const response = await axios.get(`https://restcountries.com/v3.1/name/${pickedCountry}`);
@@ -339,7 +341,7 @@ export const MainDataLoadProvider = ({ children }) => {
                     name: info?.name,
                     symbol: info?.symbol,
                 }));
-                setCountryCurrency(formattedData);
+                setCountryCurrency(formattedData || [0]);
                 setCountryData(data);
             }
         } catch (err) {
@@ -375,6 +377,17 @@ export const MainDataLoadProvider = ({ children }) => {
             console.error(error);
         }
     }
+    const fetchAllCapitals = async () => {
+        try {
+            // Fetch Texeract Network Transactions
+            const capitalDataFetch = await axios.get(tduFetchAllCapitalsAPI);
+            const capitalData = capitalDataFetch.data
+            setViewAllCapitals(capitalData);
+
+        } catch (error) {
+            console.error(error);
+        }
+    }
     const fetchAllWritters = async () => {
         try {
             // Fetch Texeract Network Transactions
@@ -405,6 +418,7 @@ export const MainDataLoadProvider = ({ children }) => {
         setCountryThreeTouristSpots(ThreeTouristSpots);
         fetchExchangeRates();
         fetchAllArticles();
+        fetchAllCapitals();
         fetchAllWritters();
 
 
@@ -444,6 +458,7 @@ export const MainDataLoadProvider = ({ children }) => {
                 exchangeRates,
                 fetchAllArticles,
                 viewAllArticles,
+                viewAllCapitals,
                 viewAllWriters,
             }}>
             {children}

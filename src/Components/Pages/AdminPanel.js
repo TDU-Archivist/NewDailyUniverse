@@ -24,6 +24,38 @@ const AdminPanel = () => {
         { week: 'Week 4', value: 0 },
     ];
 
+    // Dashboard Section Change
+
+    const [viewMainDashboard, setViewMainDashboard] = useState(true);
+    const [viewMainUsers, setViewMainUsers] = useState(false);
+    const [viewMainAds, setViewMainAds] = useState(false);
+    const [viewMainPolls, setViewMainPolls] = useState(false);
+    const [viewMainProducts, setViewMainProducts] = useState(false);
+    const [viewMainMap, setViewMainMap] = useState(false);
+
+
+    const handleViewMainDashboard = () => {
+        setViewMainDashboard(true);
+        setViewMainUsers(false);
+        setViewMainAds(false);
+        setViewMainPolls(false);
+        setViewMainProducts(false);
+        setViewMainMap(false);
+    }
+
+
+    const handleViewMainMap = () => {
+        setViewMainDashboard(false);
+        setViewMainUsers(false);
+        setViewMainAds(false);
+        setViewMainPolls(false);
+        setViewMainProducts(false);
+        setViewMainMap(true);
+    }
+
+
+    // Main Section Panel
+
     const [viewFullDashboardSec, setViewFullDashboardSec] = useState(true);
     const [viewAddArticleSec, setViewAddArticleSec] = useState(false);
     const [viewAddMovieReviewSec, setViewAddMovieReviewSec] = useState(false);
@@ -54,6 +86,137 @@ const AdminPanel = () => {
         setViewAddTouristSpotSec(true);
     }
 
+
+
+    // Add Map Details Setup
+
+    const [countryList, setCountryList] = useState([]);
+    const [searchTermCountry, setSearchTermCountry] = useState("");
+    const [suggestionsCountries, setSuggestionsCountries] = useState([]);
+    const [suggestionsCountriesSelection, setSuggestionsCountriesSelection] = useState(false);
+
+    const fetchSearchCountries = async () => {
+        try {
+          const response = await fetch("https://restcountries.com/v3.1/all");
+          const data = await response.json();
+          const countryNames = data.map((country) => country.name.common);
+          setCountryList(countryNames);
+        } catch (error) {
+          console.error("Error fetching countries:", error);
+        }
+    };
+    const handleInputSearchCountry = (e) => {
+        const value = e.target.value;
+        setSearchTermCountry(value);
+        setSuggestionsCountriesSelection(true);
+    
+        if (value) {
+          const filtered = countryList.filter((country) =>
+            country.toLowerCase().startsWith(value.toLowerCase())
+          );
+          setSuggestionsCountries(filtered.slice(0, 10)); // Limit suggestions to 10
+        } else {
+          setSuggestionsCountries([]);
+        }
+    };
+    const handleSuggestionCountry = (suggestion) => {
+        setSearchTermCountry(suggestion);
+        setSuggestionsCountries([]);
+        setSuggestionsCountriesSelection(false);
+    };
+    useEffect(() => {
+        fetchSearchCountries();
+    }, []);
+
+    const [capitalLoader, setCapitaLoader] = useState(false);
+    const [capitalResponse, setCapitaResponse] = useState('');
+    const [addCapitalContinent, setAddCapitalContinent] = useState('');
+    const [addCapitalState, setAddCapitalState] = useState('');
+    const [addCapitalName, setAddCapitalName] = useState('');
+    const [addCapitalLatitude, setAddCapitalLatitude] = useState('');
+    const [addCapitalLongitude, setAddCapitalLongitude] = useState('');
+    const [addCapitalImage1, setAddCapitalImage1] = useState('');
+    const [addCapitalImage2, setAddCapitalImage2] = useState('');
+    const [addCapitalImage3, setAddCapitalImage3] = useState('');
+    
+    const tduAddCapitalAPI = process.env.REACT_APP_TDU_ADD_CAPITAL_API;
+
+
+    const addCountryCapital = async () => {
+        setCapitaLoader(true);
+        if(!addCapitalName || !addCapitalLatitude || !addCapitalLongitude){
+            setArticleLoader(false);
+            setArticleResponse('Please fill up all fields')
+            return;
+        }
+
+        const fullHash = CryptoJS.SHA256(`${addArticleTitle}, ${addArticleWritter}, ${addArticleContent}, ${new Date()}`).toString(CryptoJS.enc.Hex);
+        const shortHash = fullHash.substring(0, 5);
+
+        const cleanSymbols = addArticleTitle.replace(/[^a-zA-Z0-9 ]/g, '');
+        const articleCanonical = cleanSymbols.replace(/\s+/g, '-');
+
+        const formAddCountryCapital = {
+            tdu_code: `TDU_Capital${shortHash}`,
+            tdu_continent: addCapitalContinent,
+            tdu_country: searchTermCountry,
+            tdu_state: addCapitalState,
+            tdu_name: addCapitalName,
+            tdu_latitude: addCapitalLatitude,
+            tdu_longitude: addCapitalLongitude,
+            tdu_image1: addCapitalImage1,
+            tdu_image2: addCapitalImage2,
+            tdu_image3: addCapitalImage3
+        };
+
+
+        try {
+            const submitArticleResponse = await axios.post(tduAddCapitalAPI, formAddCountryCapital);
+            const responseMessage = submitArticleResponse.data;
+    
+            if (responseMessage.success === 'true') {
+                setCapitaLoader(false)
+                setCapitaResponse(responseMessage.message);
+                setSearchTermCountry('');
+                setAddCapitalName('');
+                setAddCapitalState('');
+                setAddCapitalLatitude('');
+                setAddCapitalLongitude();
+                setAddCapitalImage1('');
+                setAddCapitalImage2('');
+                setAddCapitalImage3();
+
+                const timeoutId = setTimeout(() => {
+                    setCapitaResponse('');
+                }, 3000);
+                return () => clearTimeout(timeoutId);
+            } 
+            
+            if (responseMessage.success === 'false') {
+                setCapitaLoader(false)
+                setCapitaResponse(responseMessage.message);
+                setSearchTermCountry('');
+                setAddCapitalName('');
+                setAddCapitalState('');
+                setAddCapitalLatitude('');
+                setAddCapitalLongitude();
+                setAddCapitalImage1('');
+                setAddCapitalImage2('');
+                setAddCapitalImage3();
+
+                const timeoutId = setTimeout(() => {
+                    setCapitaResponse('');
+                }, 3000);
+                return () => clearTimeout(timeoutId);
+            }
+    
+        } catch (error) {
+            console.error(error);
+            setCapitaLoader(false);
+        } finally {
+            setCapitaLoader(false);
+        }
+    };
 
     // Add news article setup
 
@@ -185,6 +348,7 @@ const AdminPanel = () => {
                                 <button className=''><h6>ADD TELECAST CHANNEL</h6></button>
                                 <button className=''><h6>ADD NEWSPAPER</h6></button>
                                 <button className=''><h6>ADD MAGAZINE</h6></button>
+                                <button className=''><h6>ADD RESTAURANT</h6></button>
                                 <button className=''><h6>ADD SPORTS TEAM</h6></button>
                                 <button className=''><h6>ADD AIRLINE</h6></button>
                                 <button className=''><h6>ADD AIRPORT</h6></button>
@@ -197,13 +361,14 @@ const AdminPanel = () => {
                             <h4>DASHBOARD</h4>
                             <p>Welcome to the Admin Panel {StoredUserDataJSON?.username}! By accessing this panel, you agree to adhere to TDU's Content Terms and Conditions and Privacy Policies.</p>
                             <div className="admnpnlcprNavigation">
-                                <button className='active'>OVERVIEW</button>
+                                <button className={viewMainDashboard ? 'active' : ''} onClick={handleViewMainDashboard}>OVERVIEW</button>
                                 <button>USERS</button>
                                 <button>ADS</button>
                                 <button>POLLS</button>
                                 <button>PRODUCTS</button>
+                                <button className={viewMainMap ? 'active' : ''} onClick={handleViewMainMap}>MAP</button>
                             </div>
-                            <div className="admnpnlcprContents">
+                            {viewMainDashboard && <div className="admnpnlcprContents">
                                 <div className="admnpnlcprcNumSummary">
                                     <div>
                                         <h4>0</h4>
@@ -293,7 +458,87 @@ const AdminPanel = () => {
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div>}
+                            {viewMainMap && <div className="admnpnlcprContents">
+                                <div className="admnpnlcprcHeader">
+                                    <h5>INSERT MAP POINT</h5>
+                                </div>
+                                <div className="admnpnlcprc capital">
+                                    <h5>INSERT CAPITAL</h5>
+                                    <div className="admnpnlcprccapitalContainer">
+                                        <div className="admnpnlcprcccContents left">
+                                            <div>
+                                                <label htmlFor=""><h6>CONTINENT</h6></label>
+                                                <select name="" id="" value={addCapitalContinent} onChange={(e) => setAddCapitalContinent(e.target.value)}>
+                                                    <option value="">Select Continent</option>
+                                                    <option value="Africa">Africa</option>
+                                                    <option value="Asia">Asia</option>
+                                                    <option value="Europe">Europe</option>
+                                                    <option value="Ocenia">Ocenia</option>
+                                                    <option value="North America">North America</option>
+                                                    <option value="South America">South America</option>
+                                                </select>
+                                            </div>
+                                            <div className='admnpnlcprcccCountry'>
+                                                <label htmlFor=""><h6>COUNTRY</h6></label>
+                                                <input type="text" placeholder='Search Country here...' value={searchTermCountry} onChange={handleInputSearchCountry}/>
+                                                {suggestionsCountriesSelection && <>
+                                                    {(searchTermCountry.length > 0 || searchTermCountry != '') && 
+                                                        <div className="admnpnlcprcccSuggestions">
+                                                        <ul>
+                                                            {suggestionsCountries.map((suggestion, index) => (
+                                                            <li key={index} onClick={() => handleSuggestionCountry(suggestion)}>{suggestion}</li>
+                                                            ))}
+                                                        </ul>
+                                                        </div>
+                                                    }
+                                                </>}
+                                            </div>
+                                        </div>
+                                        <div className="admnpnlcprcccContents right">
+                                            <div className="admnpnlcprccccr">
+                                                <div>
+                                                    <label htmlFor=""><h6>STATE/CITY</h6></label>
+                                                    <input type="text" placeholder='Ex. Manila City' onChange={(e) => setAddCapitalState(e.target.value)}/>
+                                                </div>
+                                                <div>
+                                                    <label htmlFor=""><h6>CAPITAL NAME</h6></label>
+                                                    <input type="text" placeholder='Ex. Manila' onChange={(e) => setAddCapitalName(e.target.value)}/>
+                                                </div>
+                                                <div>
+                                                    <label htmlFor=""><h6>LATITUDE</h6></label>
+                                                    <input type="text" placeholder='Insert image link only' onChange={(e) => setAddCapitalLatitude(e.target.value)}/>
+                                                </div>
+                                                <div>
+                                                    <label htmlFor=""><h6>LONGTITUDE</h6></label>
+                                                    <input type="text" placeholder='Insert image link only' onChange={(e) => setAddCapitalLongitude(e.target.value)}/>
+                                                </div>
+                                            </div>
+                                            <div className="admnpnlcprccccrImg">
+                                                <div>
+                                                    <label htmlFor=""><h6>IMAGE LINK 1</h6></label>
+                                                    <input type="text" placeholder='Insert image link only' onChange={(e) => setAddCapitalImage1(e.target.value)}/>
+                                                </div>
+                                                <div>
+                                                    <label htmlFor=""><h6>IMAGE LINK 2</h6></label>
+                                                    <input type="text" placeholder='Insert image link only' onChange={(e) => setAddCapitalImage2(e.target.value)}/>
+                                                </div>
+                                                <div>
+                                                    <label htmlFor=""><h6>IMAGE LINK 3</h6></label>
+                                                    <input type="text" placeholder='Insert image link only' onChange={(e) => setAddCapitalImage3(e.target.value)}/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="admnpnlcprccapitalBtn">
+                                        <p>{capitalResponse}</p>
+                                        {capitalLoader ?
+                                            <button><h6>ADDING...</h6></button>:
+                                            <button onClick={addCountryCapital}><h6>ADD CAPITAL</h6></button>
+                                        }
+                                    </div>
+                                </div>
+                            </div>}
                         </div>}
                         {viewAddArticleSec && <div className="admnpnlcprContainer addArticle">
                             <h4>ADD NEWS ARTICLE</h4>

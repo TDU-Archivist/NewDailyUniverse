@@ -315,6 +315,208 @@ section.adminPanelContainerPage{
 
 
 
+.admnpnlcprc.capital{
+    height: auto;
+    width: 100%;
+    margin-top: 3%;
+}
+.admnpnlcprc.capital h5{
+    font-size: 1.2vw;
+}
+.admnpnlcprccapitalContainer{
+    height: auto;
+    width: 100%;
+    margin-top: 1%;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+}
+.admnpnlcprcccContents.left{
+    height: auto;
+    width: 30%;
+}
+.admnpnlcprcccContents.left div{
+    margin-bottom: 1vw;
+}
+.admnpnlcprcccContents.left div h6{
+    margin-left: 2%;
+    margin-bottom: 1%;
+    font-size: 0.7vw;
+    font-weight: 600;
+    color: gray;
+}
+.admnpnlcprcccContents.left div select,
+.admnpnlcprcccContents.left div input{
+    height: auto;
+    width: 100%;
+    padding: 5px 10px;
+    font-size: 0.7vw;
+    border: solid 2px gray;
+    outline: none;
+    background: none;
+    color: white;
+    border-radius: 10px;
+}
+.admnpnlcprcccContents.left div select option{
+    background: black;
+}
+.admnpnlcprcccContents.left div.admnpnlcprcccCountry{
+    height: auto;
+    width: 100%;
+    position: relative;
+}
+.admnpnlcprcccSuggestions{
+    position: absolute;
+    height: 10vw;
+    width: 100%;
+    top: 3.3vw;
+    left: 0;
+    z-index: 5;
+    display: flex;
+    justify-content: space-between;
+    align-items: top;
+    padding: 5px 10px;
+    border-radius: 10px;
+    overflow: hidden;
+    background: rgba(30, 30, 30);
+    overflow-y: scroll;
+}
+.admnpnlcprcccSuggestions ul{
+    height: auto;
+    width: 100%;
+    list-style: none;
+}
+.admnpnlcprcccSuggestions ul li{
+    color: whitesmoke;
+    padding: 4% 5%;
+    font-size: 0.7vw;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.admnpnlcprcccSuggestions ul li:hover{
+    background: rgba(20, 20, 20);
+    transition: 400ms ease;
+}
+
+
+
+
+
+
+
+
+
+.admnpnlcprcccContents.right{
+    height: auto;
+    width: 65%;
+}
+.admnpnlcprccccr{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.admnpnlcprccccr div{
+    width: 49%;
+    margin-bottom: 1vw;
+}
+.admnpnlcprccccr div h6{
+    margin-left: 2%;
+    margin-bottom: 1%;
+    font-size: 0.7vw;
+    font-weight: 600;
+    color: gray;
+}
+.admnpnlcprccccr div input{
+    height: auto;
+    width: 100%;
+    padding: 5px 10px;
+    font-size: 0.7vw;
+    border: solid 2px gray;
+    outline: none;
+    background: none;
+    color: white;
+    border-radius: 10px;
+}
+
+
+.admnpnlcprccccrImg{
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.admnpnlcprccccrImg div{
+    height: auto;
+    width: 32%;
+}
+.admnpnlcprccccrImg div h6{
+    margin-left: 2%;
+    font-size: 0.7vw;
+    font-weight: 600;
+    color: gray;
+    margin-bottom: 0.3vw;
+}
+.admnpnlcprccccrImg div input{
+    height: auto;
+    width: 100%;
+    padding: 5px 10px;
+    font-size: 0.7vw;
+    border: solid 2px gray;
+    outline: none;
+    background: none;
+    color: white;
+    border-radius: 10px;
+}
+.admnpnlcprccapitalBtn{
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 3%;
+}
+.admnpnlcprccapitalBtn p{
+    width: 83%;
+    text-align: center;
+}
+.admnpnlcprccapitalBtn button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    outline: none;
+    border: solid 2px white;
+    color: white;
+    cursor: pointer;
+    padding: 5px 20px;
+    border-radius: 50px;
+    transition: 400ms ease;
+    opacity: 50%;
+    transition: 400ms ease;
+}
+.admnpnlcprccapitalBtn button h6{
+    font-size: 0.9vw;
+    font-weight: 600;
+}
+.admnpnlcprccapitalBtn button:hover{
+    opacity: 100%;
+    transition: 400ms ease;
+    background: red;
+    border: solid 2px red;
+}
+
+
+
+
+
+
+
+
+
 
 
 

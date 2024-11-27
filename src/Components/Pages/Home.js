@@ -189,6 +189,7 @@ const Home = () => {
   const [countryList, setCountryList] = useState([]);
   const [searchTermCountry, setSearchTermCountry] = useState("");
   const [suggestionsCountries, setSuggestionsCountries] = useState([]);
+  const [suggestionsCountriesSelection, setSuggestionsCountriesSelection] = useState(false);
 
 
 
@@ -245,6 +246,7 @@ const Home = () => {
   const handleInputSearchCountry = (e) => {
     const value = e.target.value;
     setSearchTermCountry(value);
+    setSuggestionsCountriesSelection(true);
 
     if (value) {
       const filtered = countryList.filter((country) =>
@@ -271,7 +273,8 @@ const Home = () => {
   }
   const handleSuggestionCountry = (suggestion) => {
     setSearchTermCountry(suggestion);
-    // setSuggestionsCountries([]);
+    setSuggestionsCountries([]);
+    setSuggestionsCountriesSelection(false);
 
     if(suggestion) {
       setPickedCountryModal(false);
@@ -288,7 +291,7 @@ const Home = () => {
   };
 
 
-  // console.log(countryData);
+  // console.log(countryCurrency);
   
 
   return (
@@ -429,15 +432,17 @@ const Home = () => {
                 <input type="text" value={searchTermCountry} onChange={handleInputSearchCountry} placeholder='Search any country here...'/>
                 <h5><FaSearch className='faIcons'/></h5>
               </div>
-              {(searchTermCountry.length > 0 || searchTermCountry != '') && 
-                <div className="mncntntpfSuggestedCountry">
-                  <ul>
-                    {suggestionsCountries.map((suggestion, index) => (
-                      <li key={index} onClick={() => handleSuggestionCountry(suggestion)}>{suggestion}</li>
-                    ))}
-                  </ul>
-                </div>
-              }
+              {suggestionsCountriesSelection && <>
+                {(searchTermCountry.length > 0 || searchTermCountry != '') && 
+                  <div className="mncntntpfSuggestedCountry">
+                    <ul>
+                      {suggestionsCountries.map((suggestion, index) => (
+                        <li key={index} onClick={() => handleSuggestionCountry(suggestion)}>{suggestion}</li>
+                      ))}
+                    </ul>
+                  </div>
+                }
+              </>}
               <div className={(openSuggestedMapTopic) ? "mncntntpfmSuggested active" : "mncntntpfmSuggested hide"}> 
                 {!fullMapPickedCountry ? <>
                   <div className={(openSuggestedMapTopic) ? "mncntntpfmsggstd active" : "mncntntpfmsggstd"}>
