@@ -26,7 +26,10 @@ const WorldMap = () => {
 
     const handleViewCountryCapita = (countryName) => {
         setViewPickCapital(true)
-        const setCapital = viewAllCapitals.find(location => location.country === countryName)
+        const setCapital = viewAllCapitals.find(location => 
+            location.country === countryName || 
+            location.country_sub === countryName
+        )
         setViewCountryCapital(setCapital);
     }
 
