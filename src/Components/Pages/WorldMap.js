@@ -97,12 +97,12 @@ const WorldMap = () => {
                         }
                     </Geographies>
                     {/* Render markers */}
-                    {viewPickCapital  &&
-                        <Marker coordinates={[viewCountryCapital.longitude, viewCountryCapital.latitude]}>
-                            <g 
+                    {viewPickCapital && viewCountryCapital?.longitude !== undefined && viewCountryCapital?.latitude !== undefined && (
+                        <Marker coordinates={[viewCountryCapital?.longitude, viewCountryCapital?.latitude]}>
+                            <g
                                 onClick={() => {
-                                    console.log(`Location: ${viewCountryCapital.capital_name}`);
-                                }} 
+                                    console.log(`Location: ${viewCountryCapital?.capital_name}`);
+                                }}
                                 style={{ cursor: 'pointer' }}
                             >
                                 {/* Star Shape */}
@@ -123,13 +123,13 @@ const WorldMap = () => {
                                     fontWeight: '600',
                                     textTransform: 'uppercase',
                                     fontFamily: '"Oswald", sans-serif',
-                                    textShadow: '0 0 30px gray'
+                                    textShadow: '0 0 30px gray',
                                 }}
                             >
-                                {viewCountryCapital.capital_name}
+                                {viewCountryCapital?.capital_name}
                             </text>
                         </Marker>
-                    }
+                    )}
                 </ZoomableGroup>
             </ComposableMap>
         </div>
