@@ -67,6 +67,8 @@ const Home = () => {
     setPickedCountryModal,
     pickedCountry, 
     setPickedCountry,
+    clickedCountry, 
+    setClickedCountry,
     countryData,
     countryDescription, 
     setCountryDescription,
@@ -78,6 +80,11 @@ const Home = () => {
     setOpenSuggestedMapTopic,
     fullMapPickedCountry, 
     setFullMapPickedCountry,
+    viewAllCapitals,
+    viewPickCapital, 
+    setViewPickCapital,
+    viewCountryCapital, 
+    setViewCountryCapital,
     exchangeRates,
     viewAllArticles,
   } = MainDataLoad(); 
@@ -179,9 +186,17 @@ const Home = () => {
 
   const handleSwitchFullMap = () => {
     setSwitchFullMap(true)
+    setOpenSuggestedMapTopic(false);
+    setFullMapPickedCountry(false);
+    setClickedCountry(false);
+    setPickedCountry('')
   }
   const handleRevertFullMap = () => {
     setSwitchFullMap(false)
+    setOpenSuggestedMapTopic(false);
+    setFullMapPickedCountry(false);
+    setClickedCountry(false);
+    setPickedCountry('')
   }
 
 
@@ -199,7 +214,9 @@ const Home = () => {
   const handleHideSuggestedMapTopic = () => {
     setOpenSuggestedMapTopic(false);
     setFullMapPickedCountry(false);
-    setPickedCountry('')
+    setClickedCountry(false);
+    setPickedCountry('');
+    setViewCountryCapital('');
   };
   
   const fetchRandomCountries = async () => {
@@ -263,6 +280,12 @@ const Home = () => {
       setPickedCountry(clickedCountry);
       setOpenSuggestedMapTopic(false);
       setFullMapPickedCountry(false);
+      setClickedCountry(clickedCountry);
+      
+      setViewPickCapital(true)
+      const setCapital = viewAllCapitals.find(location => location.country === clickedCountry)
+      setViewCountryCapital(setCapital);
+
       const timeoutId = setTimeout(() => {
           setPickedCountryModal(true);
           setOpenSuggestedMapTopic(true);
@@ -276,11 +299,16 @@ const Home = () => {
     setSuggestionsCountries([]);
     setSuggestionsCountriesSelection(false);
 
+    setViewPickCapital(true)
+    const setCapital = viewAllCapitals.find(location => location.country === suggestion)
+    setViewCountryCapital(setCapital);
+
     if(suggestion) {
       setPickedCountryModal(false);
       setPickedCountry(suggestion);
       setOpenSuggestedMapTopic(false);
       setFullMapPickedCountry(false);
+      setClickedCountry(suggestion);
       const timeoutId = setTimeout(() => {
           setPickedCountryModal(true);
           setOpenSuggestedMapTopic(true);

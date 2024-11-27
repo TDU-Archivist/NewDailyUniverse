@@ -22,6 +22,10 @@ export const MainDataLoadProvider = ({ children }) => {
     const [countryCurrency, setCountryCurrency] = useState([]);
     const [countryThreeTouristSpots, setCountryThreeTouristSpots] = useState([]);
 
+    const [clickedCountry, setClickedCountry] = useState(null);
+    const [viewPickCapital, setViewPickCapital] = useState(false);
+    const [viewCountryCapital, setViewCountryCapital] = useState([])
+
     
     const [switchFullMap, setSwitchFullMap] = useState(false)
     const [openSuggestedMapTopic, setOpenSuggestedMapTopic] = useState(true);
@@ -440,6 +444,8 @@ export const MainDataLoadProvider = ({ children }) => {
                 setCreateTDUAccount,
                 loginTDUAccount, 
                 setLoginTDUAccount,
+                clickedCountry, 
+                setClickedCountry,
                 pickedCountryModal, 
                 setPickedCountryModal,
                 pickedCountry, 
@@ -453,6 +459,10 @@ export const MainDataLoadProvider = ({ children }) => {
                 setSwitchFullMap,
                 openSuggestedMapTopic, 
                 setOpenSuggestedMapTopic,
+                viewPickCapital, 
+                setViewPickCapital,
+                viewCountryCapital, 
+                setViewCountryCapital,
                 fullMapPickedCountry, 
                 setFullMapPickedCountry,
                 exchangeRates,
