@@ -87,6 +87,7 @@ const Home = () => {
     setViewCountryCapital,
     exchangeRates,
     viewAllArticles,
+    data,
   } = MainDataLoad(); 
   const [hasScrolled, setHasScrolled] = useState(false);
   const [countryExchangeRate, setCountryExchangeRate] = useState([])
@@ -319,8 +320,6 @@ const Home = () => {
   };
 
 
-  // console.log(countryCurrency);
-  
 
   return (
     <div className='mainContainer home'>
@@ -345,30 +344,14 @@ const Home = () => {
                 <div className="mncntntpt2lBreakingNews">
                   <h5>BREAKING NEWS</h5>
                   <div className="mncntntpt2lbn">
-                    <div className="mncntntpt2lbnContent">
-                      <img src={require('../assets/imgs/TDULandingBG.png')} alt="" />
-                      <div>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, ex earum architecto labor</p>
-                      </div>
-                    </div>
-                    <div className="mncntntpt2lbnContent">
-                      <img src={require('../assets/imgs/TDULandingBG.png')} alt="" />
-                      <div>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, ex earum architecto labor</p>
-                      </div>
-                    </div>
-                    <div className="mncntntpt2lbnContent">
-                      <img src={require('../assets/imgs/TDULandingBG.png')} alt="" />
-                      <div>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, ex earum architecto labor</p>
-                      </div>
-                    </div>
-                    <div className="mncntntpt2lbnContent">
-                      <img src={require('../assets/imgs/TDULandingBG.png')} alt="" />
-                      <div>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, ex earum architecto labor</p>
-                      </div>
-                    </div>
+                    {data?.news.slice(0, 7).map((details, i) => (
+                      <a className="mncntntpt2lbnContent" key={i} href={details?.data?.url} target='blank'>
+                        <img src={details?.data?.thumbnail ? details?.data?.thumbnail : (require('../assets/imgs/TDULandingBG.png'))} alt="" />
+                        <div>
+                          <p>{details?.data?.title}</p>
+                        </div>
+                      </a>
+                    ))}
                   </div>
                 </div>
               </div>
@@ -635,15 +618,29 @@ const Home = () => {
       </section>
       <section className="mainContainerPage mid">
         <div className="mainContentPage mid1">
-          {filterGoodNews.slice(0, 4).map((details, i) => (
-            <Link className="mncntntpm1" key={i} to={`/News/${details?.article_canonical}`}>
-              <img src={details?.article_image ? `https://staging.thedailyuniverse.com/ArticleImages/${details?.article_image}` : (require('../assets/imgs/TDULandingBG.png'))} alt="" />
-              <div className="mncntntpm1Title">
-                <h6><TextSlicer text={`${details?.article_title ? details?.article_title : 'None'}`} maxLength={70} /></h6>
-                <p><TextSlicer text={`${details?.article_subtitle ? details?.article_subtitle : 'None'}`} maxLength={100} /></p>
-              </div>
-            </Link>
-          ))}
+          <h5>THE DAILY UNIVERSE GOOD NEWS</h5>
+          <div className='maincpm1'>
+            {filterGoodNews.slice(0, 4).map((details, i) => (
+              <Link className="mncntntpm1" key={i} to={`/News/${details?.article_canonical}`}>
+                <img src={details?.article_image ? `https://staging.thedailyuniverse.com/ArticleImages/${details?.article_image}` : (require('../assets/imgs/TDULandingBG.png'))} alt="" />
+                <div className="mncntntpm1Title">
+                  <h6><TextSlicer text={`${details?.article_title ? details?.article_title : 'None'}`} maxLength={70} /></h6>
+                  <p><TextSlicer text={`${details?.article_subtitle ? details?.article_subtitle : 'None'}`} maxLength={100} /></p>
+                </div>
+              </Link>
+            ))}
+          </div>
+          <h5>LATEST SHOWBIZZ NEWS</h5>
+          <div className="maincpm1 ent">
+            {data?.entertainment2.slice(0, 5).map((details, i) => (
+              <a className="mncntntpm1 ent" key={i} href={details?.data?.url} target='blank'>
+                <img src={details?.data?.thumbnail ? details?.data?.thumbnail : (require('../assets/imgs/TDULandingBG.png'))} alt="" />
+                <div className="mncntntpm1Title">
+                  <p><TextSlicer text={`${details?.data?.title ? details?.data?.title : 'None'}`} maxLength={100} /></p>
+                </div>
+              </a>
+            ))}
+          </div>
         </div>
         <div className="mainContentPage mid2">
           <div className="mncntntpm2 left">
@@ -687,6 +684,16 @@ const Home = () => {
               </Link>
             ))}
           </div>
+          <div className="mncntntpm4 external">
+            {data?.news.slice(0, 5).map((details, i) => (
+              <a className='mncntntpm4ext' key={i} href="">
+                <img src={details?.data?.thumbnail ? details?.data?.thumbnail : (require('../assets/imgs/TDULandingBG.png'))} alt="" />
+                <div className="mncntntpm4extTitle">
+                  <p><TextSlicer text={`${details?.data?.title ? details?.data?.title : 'None'}`} maxLength={75} /></p>
+                </div>
+              </a>
+            ))}
+          </div>
         </div>
         <div className="mainContentPage mid5">
           <div className="mncntntpm5More">
@@ -700,7 +707,7 @@ const Home = () => {
         <div className="mainContentPage mid6">
           <div className="mncntntpm6Container">
             <div className="mncntntpm6cHeader">
-              <h4>BUSINESS</h4>
+              <h4>FINANCE</h4>
               <Link><h6><FaArrowRight className='faIcons'/></h6></Link>
             </div>
             <div className="mncntntpm6cContent">
@@ -713,6 +720,18 @@ const Home = () => {
                   <p>{details?.article_subtitle}</p>
                 </Link>
               ))}
+            </div>
+            <div className="mncntntpm6c external">
+              {data?.business && <>
+                {data?.business.slice(0, 2).map((details, i) => (
+                  <a className="mncntntpm6cext" key={i} href={details?.data?.url} target='blank'>
+                    <img src={details?.data?.thumbnail ? details?.data?.thumbnail : (require('../assets/imgs/TDULandingBG.png'))} alt="" />
+                    <div className="mncntntpm6ceTitle">
+                      <p><TextSlicer text={`${details?.data?.title ? details?.data?.title : 'None'}`} maxLength={100} /></p>
+                    </div>
+                  </a>
+                ))}
+              </>}
             </div>
           </div>
           <div className="mncntntpm6Container">
@@ -730,6 +749,18 @@ const Home = () => {
                   <p>{details?.article_subtitle}</p>
                 </Link>
               ))}
+            </div>
+            <div className="mncntntpm6c external">
+              {data?.business && <>
+                {data?.sports.slice(1, 3).map((details, i) => (
+                  <a className="mncntntpm6cext" key={i} href={details?.data?.url} target='blank'>
+                    <img src={details?.data?.thumbnail ? details?.data?.thumbnail : (require('../assets/imgs/TDULandingBG.png'))} alt="" />
+                    <div className="mncntntpm6ceTitle">
+                      <p><TextSlicer text={`${details?.data?.title ? details?.data?.title : 'None'}`} maxLength={100} /></p>
+                    </div>
+                  </a>
+                ))}
+              </>}
             </div>
           </div>
         </div>

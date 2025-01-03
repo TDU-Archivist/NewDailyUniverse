@@ -572,7 +572,8 @@ section.mainContainerPage.top{
     position: relative;
 }
 .mncntntpt2lbnContent img{
-    width: 20vw;
+    height: 11.5vw;
+    width: 18vw;
     border-radius: 1vw;
 }
 .mncntntpt2lbnContent div{
@@ -584,6 +585,8 @@ section.mainContainerPage.top{
 }
 .mncntntpt2lbnContent div p{
     color: white;
+    text-shadow: 0 0 10px black;
+    line-height: 1.2vw;
 }
 ::-webkit-scrollbar {
     background: none;
@@ -834,9 +837,17 @@ section.mainContainerPage.mid{
 .mainContentPage.mid1{
     height: auto;
     width: 100%;
+}
+.maincpm1{
+    height: auto;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin: 1vw 0;
+}
+.maincpm1.ent{
+    flex-wrap: wrap;
 }
 .mncntntpm1{
     height: 15vw;
@@ -861,7 +872,7 @@ section.mainContainerPage.mid{
     left: 0;
     height: auto;
     width: 100%;
-    background: rgba(20, 20, 20, 0.5);
+    background: rgba(20, 20, 20, 0.8);
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
     padding: 5%;
@@ -885,6 +896,17 @@ section.mainContainerPage.mid{
     align-items: center;
     color: gray;
 }
+
+.mncntntpm1.ent{
+    height: 10vw;
+    width: 19%;
+    margin-bottom: 1%;
+}
+.mncntntpm1.ent img{
+    width: 100%;
+}
+
+
 .mainContentPage.mid2{
     height: auto;
     width: 100%;
@@ -1064,8 +1086,53 @@ section.mainContainerPage.mid{
     transition: 400ms ease;
 }
 
-
-
+.mncntntpm4.external{
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.mncntntpm4ext{
+    height: 11vw;
+    width: 19%;
+    background: url('../assets/imgs/TDULandingBG.png') no-repeat center;
+    background-size: cover;
+    border-radius: 1vw;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+.mncntntpm4ext img{
+    height: 100%;
+    width: 100%;
+}
+.mncntntpm4extTitle{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: auto;
+    width: 100%;
+    background: rgba(20, 20, 20, 0.8);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    padding: 5%;
+    text-align: center;
+}
+.mncntntpm4extTitle p{
+    height: 2vw;
+    font-size: 0.7vw;
+    line-height: 1vw;
+    margin-top: 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: gray;
+}
 
 
 
@@ -1211,8 +1278,54 @@ section.mainContainerPage.mid{
     padding: 0 5%;
     color: gray;
 }
-
-
+.mncntntpm6c.external{
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2%;
+}
+.mncntntpm6cext{
+    height: 11vw;
+    width: 49%;
+    background: url('../assets/imgs/TDULandingBG.png') no-repeat center;
+    background-size: cover;
+    border-radius: 1vw;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+.mncntntpm6cext img{
+    height: 100%;
+    width: 100%;
+}
+.mncntntpm6ceTitle{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: auto;
+    width: 100%;
+    background: rgba(20, 20, 20, 0.8);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    padding: 5%;
+    text-align: center;
+}
+.mncntntpm6ceTitle p{
+    height: 2vw;
+    font-size: 0.7vw;
+    line-height: 1vw;
+    margin-top: 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: gray;
+}
 
 
 

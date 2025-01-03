@@ -405,25 +405,68 @@ export const MainDataLoadProvider = ({ children }) => {
     }
 
 
-    useEffect(() => {
+    const [data, setData] = useState({
+        news: [],
+        sports: [],
+        entertainment1: [],
+        entertainment2: [],
+    });
+    const [isLoading, setIsLoading] = useState(true);
+
+    const endpoints = {
+        news: "https://www.reddit.com/r/worldnews/new.json",
+        sports: "https://www.reddit.com/r/sports/hot.json",
+        entertainment1: "https://www.reddit.com/r/entertainment/hot.json",
+        entertainment2: "https://www.reddit.com/r/entertainment/new.json",
+        business: "https://www.reddit.com/r/FinanceNews/hot.json",
+    };
+
+    const fetchDataAndUpdateLocalStorage = async (key, url) => {
+        try {
+            const response = await axios.get(url);
+            const fetchedData = response.data.data.children;
+            setData((prevState) => ({ ...prevState, [key]: fetchedData }));
+            localStorage.setItem(key, JSON.stringify(fetchedData));
+        } catch (error) {
+            console.error(`Error fetching data for ${key}:`, error);
+        }
+    };
+
+    const fetchData = async () => {
+        for (const [key, url] of Object.entries(endpoints)) {
+        await fetchDataAndUpdateLocalStorage(key, url);
+        await new Promise((resolve) => setTimeout(resolve, 500)); // Optional delay
+        }
+        setIsLoading(false);
+    };
+
+    const fetchPublicData = async () => {
         setWebLoader(true);
-        const timeoutId = setTimeout(() => {
+
+        try {
+            await Promise.all([
+                fetchData(),
+                fetchExchangeRates(),
+                fetchAllArticles(),
+                fetchAllCapitals(),
+                fetchAllWritters(),
+            ]);
+        } catch (error) {
+            console.error('Error fetching data:', error);
+        } finally {
             setWebLoader(false);
-        }, 3000);
-        return () => clearTimeout(timeoutId);
-    }, []);
+        }
+    };
 
 
+
+    
     useEffect(() => {
         if (pickedCountry) {
             fetchCountryData();
         }
         const ThreeTouristSpots = CountriesBest.countries.find(country => country.name === pickedCountry)
         setCountryThreeTouristSpots(ThreeTouristSpots);
-        fetchExchangeRates();
-        fetchAllArticles();
-        fetchAllCapitals();
-        fetchAllWritters();
 
 
         const interval = setInterval(() => {
@@ -433,6 +476,16 @@ export const MainDataLoadProvider = ({ children }) => {
         return () => clearInterval(interval);
     }, [pickedCountry]);
 
+    useEffect(() => {
+        fetchPublicData();
+
+        const intervalId = setInterval(() => {
+            localStorage.clear();
+            fetchData();
+        }, 6 * 60 * 60 * 1000); // 6 hours
+
+        return () => clearInterval(intervalId); // Clean up on unmount
+    }, []);
 
     return (
         <MainDataContext.Provider value={{ 
@@ -470,6 +523,7 @@ export const MainDataLoadProvider = ({ children }) => {
                 viewAllArticles,
                 viewAllCapitals,
                 viewAllWriters,
+                data,
             }}>
             {children}
         </MainDataContext.Provider>
