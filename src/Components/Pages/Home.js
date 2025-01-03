@@ -344,7 +344,7 @@ const Home = () => {
                 <div className="mncntntpt2lBreakingNews">
                   <h5>BREAKING NEWS</h5>
                   <div className="mncntntpt2lbn">
-                    {data?.news.slice(0, 7).map((details, i) => (
+                    {data?.news.slice(1, 8).map((details, i) => (
                       <a className="mncntntpt2lbnContent" key={i} href={details?.data?.url} target='blank'>
                         <img src={details?.data?.thumbnail ? details?.data?.thumbnail : (require('../assets/imgs/TDULandingBG.png'))} alt="" />
                         <div>
@@ -632,7 +632,7 @@ const Home = () => {
           </div>
           <h5>LATEST SHOWBIZZ NEWS</h5>
           <div className="maincpm1 ent">
-            {data?.entertainment2.slice(0, 5).map((details, i) => (
+            {data?.entertainment2.slice(1, 6).map((details, i) => (
               <a className="mncntntpm1 ent" key={i} href={details?.data?.url} target='blank'>
                 <img src={details?.data?.thumbnail ? details?.data?.thumbnail : (require('../assets/imgs/TDULandingBG.png'))} alt="" />
                 <div className="mncntntpm1Title">
@@ -685,7 +685,7 @@ const Home = () => {
             ))}
           </div>
           <div className="mncntntpm4 external">
-            {data?.news.slice(0, 5).map((details, i) => (
+            {data?.news.slice(1, 6).map((details, i) => (
               <a className='mncntntpm4ext' key={i} href="">
                 <img src={details?.data?.thumbnail ? details?.data?.thumbnail : (require('../assets/imgs/TDULandingBG.png'))} alt="" />
                 <div className="mncntntpm4extTitle">
@@ -723,7 +723,7 @@ const Home = () => {
             </div>
             <div className="mncntntpm6c external">
               {data?.business && <>
-                {data?.business.slice(0, 2).map((details, i) => (
+                {data?.business.slice(1, 3).map((details, i) => (
                   <a className="mncntntpm6cext" key={i} href={details?.data?.url} target='blank'>
                     <img src={details?.data?.thumbnail ? details?.data?.thumbnail : (require('../assets/imgs/TDULandingBG.png'))} alt="" />
                     <div className="mncntntpm6ceTitle">
