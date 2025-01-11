@@ -93,6 +93,7 @@ section.mainContainerPage.top{
     height: auto;
     width: 100%;
     padding: 4vw 5vw;
+    padding-bottom: 2vw;
     background: 
         linear-gradient(whitesmoke 0%, transparent),
         linear-gradient(transparent, white 100%),
@@ -564,7 +565,7 @@ section.mainContainerPage.top{
 
 
 .mainContentPage.top2{
-    height: 38vw;
+    height: 39vw;
     width: 100%;
     background: rgb(30, 30, 30);
     border-radius: 1vw;
@@ -778,7 +779,7 @@ section.mainContainerPage.top{
 section.mainContainerPage.mid{
     height: auto;
     width: 100%;
-    padding: 2vw 5vw;
+    padding: 1vw 5vw;
 }
 .mainContentPage.mid1{
     height: auto;
@@ -833,10 +834,9 @@ section.mainContainerPage.mid{
     align-items: center;
 }
 .mncntntpm1Title p{
-    height: 2vw;
+    height: 3vw;
     font-size: 0.7vw;
     line-height: 1vw;
-    margin-top: 2%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -975,6 +975,126 @@ section.mainContainerPage.mid{
     width: 100%;
     margin: 1vw 0;
 }
+.mncntntpm4Slider{
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5%;
+    margin-bottom: 2vw;
+}
+
+.mncntntpm4s.left{
+    height: auto;
+    width: 45%;
+}
+.mncntntpm4slViewMore{
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+.mncntntpm4slViewMore a{
+    text-decoration: none;
+    opacity: 50%;
+    transition: 400ms ease;
+}
+.mncntntpm4slViewMore a h6{
+    font-weight: 400;
+    font-size: 0.9vw;
+}
+.mncntntpm4slViewMore a:hover{
+    opacity: 100%;
+    transition: 400ms ease;
+}
+.mncntntpm4slHeader{
+    height: auto;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 1vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1vw 0;
+}
+.mncntntpm4slHeader img{
+    width: 100%;
+}
+.mncntntpm4slBody{
+    height: auto;
+    width: 100%;
+    margin-top: 1vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.mncntntpm4slBody a{
+    height: auto;
+    width: 24%;
+    border-radius: 1vw;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    border: solid 0.1vw black;
+}
+.mncntntpm4slBody a img{
+    width: 100%;
+    filter: blur(5px);
+}
+.mncntntpm4slBody a span{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.mncntntpm4slBody a span h5{
+    font-size: 3vw;
+    color: white;
+}
+
+.mncntntpm4s.right{
+    height: 25vw;
+    width: 50%;
+    background: url('../assets/imgs/TDULandingBG.png') no-repeat center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1vw;
+    overflow: hidden;
+    position: relative;
+}
+.mncntntpm4s.right img{
+    height: 100%;
+}
+.mncntntpm4s.right p{
+    position: absolute;
+    bottom: 1vw;
+    left: 1vw;
+    opacity: 50%;
+    font-size: 0.7vw;
+    font-style: italic;
+    color: whitesmoke;
+}
+
+
+
+
+
+
+
+
+
+
 .mncntntpm4Container{
     height: auto;
     width: 100%;
@@ -1039,6 +1159,7 @@ section.mainContainerPage.mid{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-top: 0.5vw;
 }
 .mncntntpm4ext{
     height: 11vw;
@@ -1363,7 +1484,14 @@ section.mainContainerPage.mid{
     width: 30%;
     background: url('../assets/imgs/TDULandingBG.png') no-repeat center;
     background-size: cover;
-    border-radius: 0.5vw;
+    border-radius: 1vw;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.mncntntpm7crc div img{
+    height: 100%;
 }
 .mncntntpm7crc span{
     padding: 1% 3%;

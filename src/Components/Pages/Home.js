@@ -9,7 +9,8 @@ import {
   FaArrowRight,
   FaArrowLeft,
   FaMapMarkedAlt,
-  FaBook    
+  FaBook,
+  FaPlayCircle     
 } from 'react-icons/fa';
 import { 
   TbArrowsMinimize,
@@ -328,7 +329,7 @@ const Home = () => {
       <div className={webLoader ? "allLoaderContainer active" : "allLoaderContainer disable"}>
         <div className="loaderContent">
           <img src={require('../assets/imgs/TheDailyUniverseLogo.png')} alt="" />
-          <p>LOADING LATEST DATA...</p>
+          <p>LOADING UPDATES...</p>
         </div>
       </div>
 
@@ -426,7 +427,7 @@ const Home = () => {
       </section>
       <section className="mainContainerPage mid">
         <div className="mainContentPage mid1">
-          <h5>THE DAILY UNIVERSE GOOD NEWS</h5>
+          <h4>THE DAILY UNIVERSE - GOOD NEWS</h4>
           <div className='maincpm1'>
             {filterGoodNews.slice(0, 4).map((details, i) => (
               <Link className="mncntntpm1" key={i} to={`/News/${details?.article_canonical}`}>
@@ -477,8 +478,40 @@ const Home = () => {
           </div>
         </div>
         <div className="mainContentPage mid4">
+          <div className="mncntntpm4Slider">
+            <div className="mncntntpm4s left">
+              <div className="mncntntpm4slViewMore">
+                <h4>LIVE NEWS CHANNELS</h4>
+                <Link><h6>VIEW MORE</h6></Link>
+              </div>
+              <div className="mncntntpm4slHeader">
+                <img src={require('../assets/imgs/LiveChannelsBG.png')} alt="" />
+              </div>
+              <div className="mncntntpm4slBody">
+                <a href="" target='blank'>
+                  <img src={require('../assets/imgs/Logos/CNN.png')} alt="" />
+                  <span><h5><FaPlayCircle /></h5></span>
+                </a>
+                <a href="" target='blank'>
+                  <img src={require('../assets/imgs/Logos/CBSNews.png')} alt="" />
+                  <span><h5><FaPlayCircle /></h5></span>
+                </a>
+                <a href="" target='blank'>
+                  <img src={require('../assets/imgs/Logos/MSNBC.png')} alt="" />
+                  <span><h5><FaPlayCircle /></h5></span>
+                </a>
+                <a href="" target='blank'>
+                  <img src={require('../assets/imgs/Logos/FOXNews.png')} alt="" />
+                  <span><h5><FaPlayCircle /></h5></span>
+                </a>
+              </div>
+            </div>
+            <div className="mncntntpm4s right">
+
+            </div>
+          </div>
           <div className="mncntntpm4More">
-            <h4>LATEST NEWS</h4>
+            <h4>THE DAILY UNIVERSE - WORLD NEWS</h4>
             <Link><h6>VIEW MORE</h6></Link>
           </div>
           <div className="mncntntpm4Container">
@@ -491,6 +524,10 @@ const Home = () => {
                 <p>{details?.article_subtitle}</p>
               </Link>
             ))}
+          </div>
+          <div className="mncntntpm4More">
+            <h5>BREAKING NEWS</h5>
+            <Link><h6>VIEW MORE</h6></Link>
           </div>
           <div className="mncntntpm4 external">
             {data?.news.slice(1, 6).map((details, i) => (
@@ -529,18 +566,6 @@ const Home = () => {
                 </Link>
               ))}
             </div>
-            {/* <div className="mncntntpm6c external">
-              {data?.business && <>
-                {data?.business.slice(1, 3).map((details, i) => (
-                  <a className="mncntntpm6cext" key={i} href={details?.data?.url} target='blank'>
-                    <img src={details?.data?.thumbnail ? details?.data?.thumbnail : (require('../assets/imgs/TDULandingBG.png'))} alt="" />
-                    <div className="mncntntpm6ceTitle">
-                      <p><TextSlicer text={`${details?.data?.title ? details?.data?.title : 'None'}`} maxLength={100} /></p>
-                    </div>
-                  </a>
-                ))}
-              </>}
-            </div> */}
           </div>
           <div className="mncntntpm6Container">
             <div className="mncntntpm6cHeader">
@@ -558,18 +583,6 @@ const Home = () => {
                 </Link>
               ))}
             </div>
-            {/* <div className="mncntntpm6c external">
-              {data?.business && <>
-                {data?.sports.slice(1, 3).map((details, i) => (
-                  <a className="mncntntpm6cext" key={i} href={details?.data?.url} target='blank'>
-                    <img src={details?.data?.thumbnail ? details?.data?.thumbnail : (require('../assets/imgs/TDULandingBG.png'))} alt="" />
-                    <div className="mncntntpm6ceTitle">
-                      <p><TextSlicer text={`${details?.data?.title ? details?.data?.title : 'None'}`} maxLength={100} /></p>
-                    </div>
-                  </a>
-                ))}
-              </>}
-            </div> */}
           </div>
         </div>
         <div className="mainContentPage mid7">

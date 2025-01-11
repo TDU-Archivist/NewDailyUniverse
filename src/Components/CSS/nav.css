@@ -258,7 +258,83 @@ nav{
 
 
 
-
+.nvcntntrContinent{
+    height: auto;
+    width: 35vw;
+    position: absolute;
+    top: 7.5vh;
+    right: 5vw;
+    padding: 1vw;
+    border-radius: 0.5vw;
+    background: whitesmoke;
+    animation: fade-in-down 400ms ease;
+    box-shadow: 0 0 10px gray;
+}
+.nvcntntrcTitle{
+    height: auto;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 1vw;
+}
+.nvcntntrcContent{
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1vw 0;
+}
+.nvcntntrccOrg{
+    height: auto;
+    margin-right: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nvcntntrccOrg img{
+    height: 6vw;
+    border-radius: 0.5vw;
+}
+.nvcntntrcContent div p{
+    font-size: 0.7vw;
+    line-height: 0.9vw;
+    margin-top: 0.2vw;
+}
+.nvcntntrcPages{
+    height: auto;
+    width: 100%;
+    margin-top: 0.5vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.nvcntntrcPages a{
+    height: auto;
+    width: 24%;
+    margin-bottom: 1%;
+    color: black;
+    text-decoration: none;
+}
+.nvcntntrcPages a h6{
+    color: gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.9vw;
+    font-weight: 600;
+    padding: 0.5vw;
+    border-radius: 0.5vw;
+    transition: 400ms ease;
+}
+.nvcntntrcPages a h6 .faIcons{
+    margin-right: 5%;
+    font-size: 1vw;
+}
+.nvcntntrcPages a h6:hover{
+    background: black;
+    color: white;
+}
 
 
 
@@ -329,7 +405,7 @@ nav{
     align-items: center;
     background: none;
     outline: none;
-    border: solid 3px black;
+    border: solid 0.2vw black;
     color: black;
     cursor: pointer;
     padding: 2px 20px;
