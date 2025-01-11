@@ -1,22 +1,14 @@
-import React, { useRef, useEffect } from "react";
+import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import mapboxgl from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 import { MainDataLoad } from './MainDataContext';
 
 const MapboxMap = () => {
   const mapContainerRef = useRef(null);
+  const { setPickedCountryModal, setPickedCountry } = MainDataLoad();
 
   // Add your Mapbox access token here
-  mapboxgl.accessToken = "YOUR_MAPBOX_ACCESS_TOKEN";
-
-  // Example data: Capital cities with coordinates
-  const capitalCities = [
-    { country: "USA", capital: "Washington, D.C.", coordinates: [-77.0369, 38.9072] },
-    { country: "Canada", capital: "Ottawa", coordinates: [-75.6972, 45.4215] },
-    { country: "France", capital: "Paris", coordinates: [2.3522, 48.8566] },
-    { country: "Japan", capital: "Tokyo", coordinates: [139.6917, 35.6895] },
-    { country: "Australia", capital: "Canberra", coordinates: [149.131, -35.282] },
-  ];
+  mapboxgl.accessToken = "pk.eyJ1IjoibWF5a2lsMDIiLCJhIjoiY2xnM3FyNWVhMDd0aDNncWV4cGN4MzBjeiJ9.3cszlATBcyBTdFfJK-jioA";
 
   useEffect(() => {
     // Initialize map instance
@@ -25,29 +17,59 @@ const MapboxMap = () => {
       style: "mapbox://styles/mapbox/streets-v11", // style URL
       center: [0, 20], // starting position [lng, lat]
       zoom: 2, // starting zoom
+      maxBounds: [
+        [-180, -90], // Southwest corner of the bounds
+        [180, 90],   // Northeast corner of the bounds
+      ], // Prevent map from repeating
     });
 
     // Add navigation controls to the map
     map.addControl(new mapboxgl.NavigationControl(), "top-right");
 
-    // Add markers for each capital city
-    capitalCities.forEach((city) => {
-      new mapboxgl.Marker()
-        .setLngLat(city.coordinates)
-        .setPopup(
-          new mapboxgl.Popup({ offset: 25 }) // Add popups
-            .setHTML(`<h3>${city.capital}</h3><p>${city.country}</p>`)
-        )
-        .addTo(map);
+    // Add a click handler for map features
+    map.on("click", (event) => {
+      const features = map.queryRenderedFeatures(event.point);
+
+      if (features.length > 0) {
+        const geo = features[0];
+
+        // Retrieve English name (if available) or fallback to a generic property
+        const regionName = geo.properties.name_en || geo.properties.name || geo.properties.NAME;
+
+        if (regionName) {
+          setPickedCountryModal(true);
+          setPickedCountry(regionName);
+          console.log(regionName);
+
+          // Use the feature's geometry to zoom and center the map
+          if (geo.geometry && geo.geometry.type === "Polygon") {
+            const [lng, lat] = geo.geometry.coordinates[0][0]; // Get a coordinate from the polygon
+            map.flyTo({
+              center: [lng, lat],
+              zoom: 1, // Set desired zoom level for regions
+              essential: true, // Ensures the animation is smooth
+            });
+          } else if (geo.geometry && geo.geometry.type === "Point") {
+            const [lng, lat] = geo.geometry.coordinates;
+            map.flyTo({
+              center: [lng, lat],
+              zoom: 5, // Set desired zoom level for countries
+              essential: true,
+            });
+          }
+        } else {
+          console.log("Region name not found");
+        }
+      }
     });
 
     return () => map.remove(); // Clean up map instance on component unmount
-  }, []);
+  }, [setPickedCountryModal, setPickedCountry]);
 
   return (
     <div
       ref={mapContainerRef}
-      style={{ width: "100%", height: "500px" }}
+      className="mainMapBox"
     />
   );
 };

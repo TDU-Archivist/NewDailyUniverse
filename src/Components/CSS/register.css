@@ -1,5 +1,5 @@
 h1, h2, h3, h4, h5, h6, p{
-    color: white;
+    color: black;
 }
 h1, h2, h3, h4, h5, h6{
     /* font-family: "Bebas Neue", sans-serif; */
@@ -48,6 +48,7 @@ h6{
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 999;
 }
 .modalContentRegister{
     height: 30vw;

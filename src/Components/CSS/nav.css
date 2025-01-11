@@ -13,8 +13,8 @@ nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: black;
-    z-index: 999;
+    background: whitesmoke;
+    z-index: 998;
 }
 .mainNavContainer{
     height: auto;
@@ -38,31 +38,175 @@ nav{
 }
 .navContent.left{
     height: 100%;
-    width: 20%;
-}
-.navContent.left a{
+    width: 40%;
     display: flex;
     justify-content: left;
     align-items: center;
 }
-.navContent.left img{
+.navContent.left a#navclHome{
+    height: auto;
+    width: 40%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin-right: 2%;
+}
+.navContent.left a#navclHome img{
     height: 2.5vw;
     max-width: 100%;
     margin-right: 5%;
 }
-.navContent.left h4{
+.navContent.left a#navclHome h4{
     font-weight: 400;
     font-size: 1.7vw;
     line-height: 1.5vw;
     margin-top: 0.5vw;
     font-family: "Bebas Neue", sans-serif;
+    color: black;
 }
-.navContent.left p{
+.navContent.left a#navclHome p{
     font-size: 0.7vw;
     line-height: 0.7vw;
     color: gray;
     /* font-family: "Bebas Neue", sans-serif; */
 }
+.navclExtra{
+    height: auto;
+    width: 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    margin-right: 5%;
+}
+.navclExtra a,
+.navclExtra button{
+    border: none;
+    outline: none;
+    font-size: 1.2vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: gray;
+    cursor: pointer;
+    transition: 400ms ease;
+}
+.navclExtra button{
+    opacity: 70%;
+}
+.navclExtra button.active{
+    color: black;
+    transition: 400ms ease;
+    opacity: 100%;
+}
+.navclExtra a:hover,
+.navclExtra button:hover{
+    color: black;
+    transition: 400ms ease;
+    opacity: 100%;
+}
+.navcleMoon{
+    height: auto;
+    position: absolute;
+    top: 6vh;
+    left: -1vw;
+    padding: 0.5vw;
+    border-radius: 0.5vw;
+    background: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fade-in-down 400ms ease;
+    box-shadow: 0 0 10px gray;
+}
+.navclemCurrentMoon{
+    height: auto;
+    width: 100%;
+}
+.navclemCurrentMoon a{
+    height: 20vw;
+    width: 15vw;
+}
+.navclemCurrentMoon a img{
+    height: 100%;
+    width: 100%;
+}
+
+
+.navclSocial{
+    height: auto;
+    width: 10%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    position: relative;
+}
+.navclSocial button{
+    background: none;
+    border: none;
+    outline: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2vw;
+    color: gray;
+    transition: 400ms ease;
+    opacity: 70%;
+    cursor: pointer;
+}
+.navclSocial button.active{
+    color: black;
+    transition: 400ms ease;
+    opacity: 100%;
+}
+.navclSocial button:hover{
+    color: black;
+    transition: 400ms ease;
+    opacity: 100%;
+}
+.navclsContents{
+    height: auto;
+    width: 15vw;
+    position: absolute;
+    top: 6vh;
+    left: -1vw;
+    padding: 0.5vw 1vw;
+    border-radius: 0.5vw;
+    background: whitesmoke;
+    animation: fade-in-down 400ms ease;
+    box-shadow: 0 0 10px gray;
+}
+.navclsContents h6{
+    color: black;
+}
+.navclsc{
+    height: auto;
+    width: 100%;
+    margin-top: 1vw;
+}
+.navclsc a{
+    color: black;
+    text-decoration: none;
+}
+.navclsc a p{
+    color: black;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    font-size: 0.7vw;
+    margin-bottom: 0.5vw;
+}
+.navclsc a p .faIcons{
+    margin-right: 5%;
+    font-size: 1vw;
+}
+
+
+
+
+
+
 .navContent.right{
     height: 100%;
     width: auto;
@@ -72,8 +216,53 @@ nav{
     padding: 5px 10px;
     padding-left: 15px;
     border-radius: 50px;
-    background: rgb(40, 40, 40);
+    background: white;
+    position: relative;
 }
+
+.nvcntntrModal{
+    height: auto;
+    width: 15vw;
+    position: absolute;
+    top: 7.5vh;
+    right: 10vw;
+    padding: 0.5vw;
+    border-radius: 0.5vw;
+    background: whitesmoke;
+    animation: fade-in-down 400ms ease;
+    box-shadow: 0 0 10px gray;
+}
+.nvcntntrModal a{
+    color: black;
+    text-decoration: none;
+}
+.nvcntntrModal a h6{
+    color: gray;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    font-size: 0.9vw;
+    font-weight: 600;
+    padding: 0.5vw 1vw;
+    border-radius: 0.5vw;
+    transition: 400ms ease;
+}
+.nvcntntrModal a h6 .faIcons{
+    margin-right: 5%;
+    font-size: 1vw;
+}
+.nvcntntrModal a h6:hover{
+    background: black;
+    color: white;
+}
+
+
+
+
+
+
+
+
 .nvcntntr.links{
     height: auto;
     display: flex;
@@ -96,9 +285,19 @@ nav{
     align-items: center;
     cursor: pointer;
     transition: 400ms ease;
+    opacity: 70%;
+    transition: 400ms ease;
+}
+.nvcntntr.links button .faIcons{
+    font-size: 1.2vw;
+}
+.nvcntntr.links button.active{
+    opacity: 100%;
+    color: black;
+    transition: 400ms ease;
 }
 .nvcntntr.links button:hover{
-    color: white;
+    color: black;
     transition: 400ms ease;
 }
 .nvcntntr.links a{
@@ -109,9 +308,12 @@ nav{
     font-weight: 400;
     font-family: "Bebas Neue", sans-serif;
     transition: 400ms ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .nvcntntr.links a:hover{
-    color: white;
+    color: black;
     transition: 400ms ease;
 }
 .nvcntntr.user{
@@ -127,8 +329,8 @@ nav{
     align-items: center;
     background: none;
     outline: none;
-    border: solid 2px white;
-    color: white;
+    border: solid 3px black;
+    color: black;
     cursor: pointer;
     padding: 2px 20px;
     border-radius: 50px;
@@ -142,7 +344,7 @@ nav{
     background: none;
     outline: none;
     border: none;
-    color: white;
+    color: black;
     cursor: pointer;
     margin-left: 1vw;
     transition: 400ms ease;
@@ -161,6 +363,7 @@ nav{
     font-weight: 400;
     transition: 400ms ease;
     text-transform: uppercase;
+    color: black;
 }
 .nvcntntr.user button#nvcntntruSignup:hover h6{
     color: black;
@@ -174,7 +377,7 @@ nav{
     background: none;
     outline: none;
     border: none;
-    color: white;
+    color: black;
     cursor: pointer;
     margin-right: 1vw;
     transition: 400ms ease;

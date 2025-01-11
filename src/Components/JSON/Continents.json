@@ -1,0 +1,203 @@
+{
+    "continents": [
+        {
+        "name": "Africa",
+        "sub_regions": [
+            {
+            "name": "Northern Africa",
+            "coordinates": {
+                "latitude": 26.8206,
+                "longitude": 13.199
+            }
+            },
+            {
+            "name": "Western Africa",
+            "coordinates": {
+                "latitude": 11.352692,
+                "longitude": 3.036816
+            }
+            },
+            {
+            "name": "Eastern Africa",
+            "coordinates": {
+                "latitude": 3.027532,
+                "longitude": 39.855044
+            }
+            },
+            {
+            "name": "Central Africa",
+            "coordinates": {
+                "latitude": -2.37828,
+                "longitude": 16.792429
+            }
+            },
+            {
+            "name": "Southern Africa",
+            "coordinates": {
+                "latitude": -26.893936,
+                "longitude": 22.205323
+            }
+            }
+        ]
+        },
+        {
+        "name": "Antarctica",
+        "coordinates": {
+            "latitude": -74.897483,
+            "longitude": 54.734567
+        }
+        },
+        {
+        "name": "Asia",
+        "sub_regions": [
+            {
+            "name": "Central Asia",
+            "coordinates": {
+                "latitude": 46.70263,
+                "longitude": 67.109291
+            }
+            },
+            {
+            "name": "Eastern Asia",
+            "coordinates": {
+                "latitude": 37.650272,
+                "longitude": 107.668678
+            }
+            },
+            {
+            "name": "Southern Asia",
+            "coordinates": {
+                "latitude": 24.758093,
+                "longitude": 77.701847
+            }
+            },
+            {
+            "name": "Southeast Asia",
+            "coordinates": {
+                "latitude": 7.061723,
+                "longitude": 107.543413
+            }
+            },
+
+            {
+            "name": "Western Asia",
+            "coordinates": {
+                "latitude": 30.625149,
+                "longitude": 49.46214
+            }
+            }
+        ]
+        },
+        {
+        "name": "Europe",
+        "sub_regions": [
+            {
+            "name": "Eastern Europe",
+            "coordinates": {
+                "latitude": 63.821803,
+                "longitude": 95.090996
+            }
+            },
+            {
+            "name": "Northern Europe",
+            "coordinates": {
+                "latitude": 67.969113,
+                "longitude": 19.738775
+            }
+            },
+            {
+            "name": "Southern Europe",
+            "coordinates": {
+                "latitude": 41.636085,
+                "longitude": 3.933784
+            }
+            },
+            {
+            "name": "Central Europe",
+            "coordinates": {
+                "latitude": 51.029872,
+                "longitude": 15.45951
+            }
+            },
+            {
+            "name": "Western Europe",
+            "coordinates": {
+                "latitude": 46.899887, 
+                "longitude":  0.993394
+            }
+            }
+        ]
+        },
+        {
+        "name": "America",
+        "sub_regions": [
+            {
+            "name": "Central America",
+            "coordinates": {
+                "latitude": 12.511,
+                "longitude": -85.054
+            }
+            },
+            {
+            "name": "Caribbean",
+            "coordinates": {
+                "latitude": 20.413655,
+                "longitude": -73.186227
+            }
+            },
+            {
+            "name": "North America",
+            "coordinates": {
+                "latitude": 54.526,
+                "longitude": -105.2551
+            }
+            },
+            {
+            "name": "South America",
+            "coordinates": {
+                "latitude": -20.191607,
+                "longitude": -58.028436
+            }
+            }
+        ]
+        },
+        {
+        "name": "Oceania",
+        "coordinates": {
+            "latitude": -27.120158,
+            "longitude": 135.528212
+        },
+        "sub_regions": [
+            {
+            "name": "Australasia",
+            "coordinates": {
+                "latitude": -23.7359,
+                "longitude": 138.0188
+            }
+            },
+            {
+            "name": "Melanesia",
+            "coordinates": {
+                "latitude": -8.5781,
+                "longitude": 143.876
+            }
+            },
+            {
+            "name": "Micronesia",
+            "coordinates": {
+                "latitude": 7.4256,
+                "longitude": 150.5508
+            }
+            },
+            {
+            "name": "Polynesia",
+            "coordinates": {
+                "latitude": -17.6977,
+                "longitude": -149.4068
+            }
+            }
+        ]
+        }
+    ]
+}
+  
