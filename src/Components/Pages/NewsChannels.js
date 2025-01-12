@@ -10,7 +10,8 @@ import {
   FaArrowLeft,
   FaMapMarkedAlt,
   FaBook,
-  FaPlayCircle     
+  FaPlayCircle,     
+  FaYoutube
 } from 'react-icons/fa';
 import { 
   TbArrowsMinimize,
@@ -93,6 +94,18 @@ const NewsChannels = () => {
         data,
     } = MainDataLoad(); 
 
+    const [viewLiveChannels, setViewLiveChannels] = useState(true);
+    const [viewYoutubeChannels, setViewYoutubeChannels] = useState(false);
+
+    const handleViewLiveChannels = () => {
+        setViewLiveChannels(true);
+        setViewYoutubeChannels(false);
+    }
+    const handleViewYoutubeChannels = () => {
+        setViewLiveChannels(false);
+        setViewYoutubeChannels(true);
+    }
+
 
 
     return (
@@ -112,9 +125,10 @@ const NewsChannels = () => {
                 <div className="newsChannelsContentPage top2">
                     <div className="nwschnlcpt2 left">
                         <h4>LIVE TELECAST AND YOUTUBE NEWS CHANNELS</h4>
+                        <p>Stay Informed with Live Telecasts from these Trusted News Channels.</p>
                     </div>
                     <div className="nwschnlcpt2 right">
-                        <input type="text" placeholder='Search keyword, country or news channel here...'/>
+                        <input type="text" placeholder='Search keyword, news channel or youtube channel here...'/>
                         <div className="nwschnlcpt2rBtn">
                             <button><FaSearch className='faIcons'/></button>
                             <button><FaMicrophone className='faIcons'/></button>
@@ -125,9 +139,33 @@ const NewsChannels = () => {
             <section className="newsChannelsContainerPage mid">
                 <div className="newsChannelsContentPage mid1">
                     <div className="nwschnlcpm1Nav">
-                        <button className='active'>LIVE CHANNELS</button>
-                        <button>YOUTUBE CHANNELS</button>
+                        <button className={viewLiveChannels ? 'active' : ''} onClick={handleViewLiveChannels}>LIVE CHANNELS</button>
+                        <button className={viewYoutubeChannels ? 'active' : ''} onClick={handleViewYoutubeChannels}>YOUTUBE CHANNELS</button>
                     </div>
+                </div>
+                <div className="newsChannelsContentPage mid2">
+                    {viewLiveChannels && <div className="nwschnlcpm2Content1">
+                        <Link className="nwschnlcpm2c1">
+                            <div className='nwschnlcpm2c1Img'>
+                                <img id='nwschnlcpm2c1iLogo' src={require('../assets/imgs/Logos/CNN.png')} alt="" />
+                            </div>
+                            <div className='nwschnlcpm2c1Content'>
+                                <h5>CNN LIVE CHANNEL</h5>
+                                <p>United States</p>
+                            </div>
+                        </Link>
+                    </div>}
+                    {viewYoutubeChannels && <div className="nwschnlcpm2Content1">
+                        <Link className="nwschnlcpm2c1">
+                            <div className='nwschnlcpm2c1Img'>
+                                <h5><FaYoutube className='faIcons'/></h5>
+                            </div>
+                            <div className='nwschnlcpm2c1Content'>
+                                <h5>CNN YOUTUBE</h5>
+                                <p>United States</p>
+                            </div>
+                        </Link>
+                    </div>}
                 </div>
             </section>
 

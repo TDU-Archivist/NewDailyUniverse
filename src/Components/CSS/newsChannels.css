@@ -168,8 +168,73 @@ section.newsChannelsContainerPage.mid{
 
 
 
-
-
+.newsChannelsContentPage.mid2{
+    height: auto;
+    width: 100%;
+    margin: 2vw 0;
+}
+.nwschnlcpm2Content1{
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+.nwschnlcpm2c1{
+    height: auto;
+    width: 19%;
+    overflow: hidden;
+    background: rgba(200, 200, 200);
+    border-radius: 1vw;
+    text-decoration: none;
+    text-align: center;
+}
+.nwschnlcpm2c1Img{
+    height: 10vw;
+    width: 100%;
+    border-radius: 1vw;
+    background: url('../assets/imgs/Logos/LiveTelecast.png') no-repeat bottom;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+.nwschnlcpm2c1Img img#nwschnlcpm2c1iLogo{
+    height: 3vw;
+    position: absolute;
+    top: 1vw;
+    left: 1vw;
+    border-radius: 0.5vw;
+    filter: blur(2px);
+}
+.nwschnlcpm2c1Img h5{
+    font-size: 3vw;
+    position: absolute;
+    top: 1vw;
+    left: 1vw;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nwschnlcpm2c1Content{
+    height: auto;
+    width: 100%;
+    padding: 1vw;
+    padding-bottom: 2vw;
+}
+.nwschnlcpm2c1Content h5 {
+    font-size: 1.2vw;
+    line-height: 1.5vw;
+    padding: 0 5%;
+    margin: 2% 0;
+}
+.nwschnlcpm2c1Content p {
+    font-size: 0.7vw;
+    color: gray;
+}
 
 
 
