@@ -531,7 +531,7 @@ const Home = () => {
           </div>
           <div className="mncntntpm4 external">
             {data?.news.slice(1, 6).map((details, i) => (
-              <a className='mncntntpm4ext' key={i} href="">
+              <a className='mncntntpm4ext' key={i} href={details?.data?.url} target='blank'>
                 <img src={details?.data?.thumbnail ? details?.data?.thumbnail : (require('../assets/imgs/TDULandingBG.png'))} alt="" />
                 <div className="mncntntpm4extTitle">
                   <p><TextSlicer text={`${details?.data?.title ? details?.data?.title : 'None'}`} maxLength={75} /></p>
