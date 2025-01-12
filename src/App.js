@@ -15,6 +15,12 @@ import Profile from './Components/Pages/Profile';
 
 import ArticlePage from './Components/Pages/ArticlePage';
 
+import Airlines from './Components/Pages/Airlines';
+import Airports from './Components/Pages/Airports';
+
+import GlobalInfo from './Components/Pages/GlobalInfo';
+import NewsChannels from './Components/Pages/NewsChannels';
+
 
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 
@@ -34,8 +40,14 @@ function App() {
           {(StoredUserData) && <Route path={`/${StoredUserDataJSON?.username}`} element={<Profile/>}/>}
           {(StoredUserDataJSON?.state === 'Admin') && <Route path="/AdminPanel" element={<AdminPanel/>}/>}
 
-
           <Route path="/News/:newsCanonical" element={<ArticlePage/>}/>
+
+
+          <Route path="/Airlines" element={<Airlines/>}/>
+          <Route path="/Airports" element={<Airports/>}/>
+          
+          <Route path="/GlobalInfo" element={<GlobalInfo/>}/>
+          <Route path="/NewsChannels" element={<NewsChannels/>}/>
 
           
           <Route path="*" element={<Home/>}/>

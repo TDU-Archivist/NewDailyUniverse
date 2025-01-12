@@ -1402,7 +1402,8 @@ section.mainContainerPage.mid{
 .mainContentPage.mid7{
     height: auto;
     width: 100%;
-    margin: 5% 0;
+    margin-top: 5%;
+    margin-bottom: 3%;
     display: flex;
     justify-content: space-between;
     align-items: top;
@@ -1501,6 +1502,96 @@ section.mainContainerPage.mid{
 .mncntntpm7crc span h5{
     line-height: 2vw;
 }
+
+
+
+
+.mainContentPage.mid8{
+    height: auto;
+    width: 100%;
+    margin-bottom: 5%;
+}
+.mncntntpm8More{
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+.mncntntpm8More a{
+    text-decoration: none;
+    opacity: 50%;
+    transition: 400ms ease;
+}
+.mncntntpm8More a h6{
+    font-weight: 400;
+    font-size: 0.9vw;
+}
+.mncntntpm8More a:hover{
+    opacity: 100%;
+    transition: 400ms ease;
+}
+.mncntntpm8Container1{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1vw 0;
+}
+.mncntntpm8Container1 a{
+    height: auto;
+    width: 32.5%;
+    margin-bottom: 1%;
+    border-radius: 1vw;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.mncntntpm8Container1 a img{
+    width: 100%;
+}
+
+.mncntntpm8Container2{
+    height: auto;
+    width: 100%;
+    margin-top: 2vw;
+}
+.mncntntpm8Container2 p{
+    text-align: center;
+}
+.mncntntpm8c2{
+    height: auto;
+    width: 100%;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 1vw;
+    margin-top: 1vw;
+}
+.mncntntpm8c2 img{
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

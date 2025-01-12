@@ -273,11 +273,11 @@ const Nav = () => {
           </div>
           <div className="navContent right">
             {viewPages && <div className="nvcntntrModal">
-              <Link><h6><FaPlane className='faIcons'/> AIRLINES</h6></Link>
-              <Link><h6><FaPlane className='faIcons'/> AIRPORTS</h6></Link>
+              <Link to='/Airlines' onClick={handleHideModals}><h6><FaPlane className='faIcons'/> AIRLINES</h6></Link>
+              <Link to='/Airports' onClick={handleHideModals}><h6><FaPlane className='faIcons'/> AIRPORTS</h6></Link>
               <Link><h6><FaBroadcastTower className='faIcons'/> BREAKING NEWS</h6></Link>
-              <Link><h6><FaGlobe className='faIcons'/> GLOBAL INFO</h6></Link>
-              <Link><h6><FaTv className='faIcons'/> LIVE NEWS CHANNELS</h6></Link>
+              <Link to='/GlobalInfo' onClick={handleHideModals}><h6><FaGlobe className='faIcons'/> GLOBAL INFO</h6></Link>
+              <Link to='/NewsChannels' onClick={handleHideModals}><h6><FaTv className='faIcons'/> LIVE NEWS CHANNELS</h6></Link>
               <Link><h6><FaNewspaper className='faIcons'/> MAGAZINES</h6></Link>
               <Link><h6><FaNewspaper className='faIcons'/> NEWSPAPER</h6></Link>
               <Link><h6><FaUtensils className='faIcons'/> RESTAURANTS</h6></Link>

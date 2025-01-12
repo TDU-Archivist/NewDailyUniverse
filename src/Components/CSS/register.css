@@ -42,7 +42,7 @@ h6{
     position: fixed;
     top: 0;
     left: 0;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(200, 200, 200, 0.5);
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
     display: flex;
@@ -53,7 +53,7 @@ h6{
 .modalContentRegister{
     height: 30vw;
     width: 55%;
-    background: rgb(20, 20, 20);
+    background: rgba(200, 200, 200);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -101,7 +101,7 @@ h6{
     font-size: 0.9vw;
     padding: 5px 10px;
     border: solid 2px white;
-    background: black;
+    background: transparent;
     color: white;
     border-radius: 10px;
     transition: 400ms ease;

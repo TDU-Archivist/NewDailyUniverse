@@ -482,7 +482,7 @@ const Home = () => {
             <div className="mncntntpm4s left">
               <div className="mncntntpm4slViewMore">
                 <h4>LIVE NEWS CHANNELS</h4>
-                <Link><h6>VIEW MORE</h6></Link>
+                <Link to='/NewsChannels'><h6>VIEW MORE</h6></Link>
               </div>
               <div className="mncntntpm4slHeader">
                 <img src={require('../assets/imgs/LiveChannelsBG.png')} alt="" />
@@ -632,6 +632,38 @@ const Home = () => {
                 </span>
               </div>
             </div>
+          </div>
+        </div>
+        <div className="mainContentPage mid8">
+          <div className="mncntntpm8More">
+            <h4>FAMOUS AIRLINES AROUND THE WORLD</h4>
+            <Link to='/Airports'><h6>VIEW COUNTRIES AIRPORTS</h6></Link>
+          </div>
+          <div className="mncntntpm8Container1">
+            <Link>
+              <img src={require('../assets/imgs/Airlines/AmericanAirlines.png')} alt="" />
+            </Link>
+            <Link>
+              <img src={require('../assets/imgs/Airlines/EuropeanAirlines.png')} alt="" />
+            </Link>
+            <Link>
+              <img src={require('../assets/imgs/Airlines/AfricanAirlines.png')} alt="" />
+            </Link>
+            <Link>
+              <img src={require('../assets/imgs/Airlines/AsianAirlines.png')} alt="" />
+            </Link>
+            <Link>
+              <img src={require('../assets/imgs/Airlines/OceanianAirlines.png')} alt="" />
+            </Link>
+            <Link>
+              <img src={require('../assets/imgs/Airlines/AntarticaAirlines.png')} alt="" />
+            </Link>
+          </div>
+          <div className="mncntntpm8Container2">
+            <p>Are you planning to travel around the globe? Which country requires a visa? Before planning a visit to any country, check the required documents to obtain a visa. Checkout here.</p>
+            <Link className="mncntntpm8c2">
+              <img src={require('../assets/imgs/VisaGuideBG.png')} alt="" />
+            </Link>
           </div>
         </div>
       </section>

@@ -25,6 +25,7 @@ const formatDateToWordedDate = (numberedDate) => {
 const ArticlePage = () => {
     const { 
         webLoader,
+        setWebLoader,
         userLoggedIn,
         StoredUserID,
         StoredUserDataJSON,
@@ -57,12 +58,15 @@ const ArticlePage = () => {
     const handleViewAnotherArticle = (newsCanonical) => {
         const specification = viewAllArticles.find(article => article.article_canonical === newsCanonical);
         const fetchCountryNewArticle = async () => {
+            setWebLoader(true);
             try {
                 const response = await axios.get(`https://restcountries.com/v3.1/alpha/${specification?.article_country}`);
                 const data = response.data[0];
                 setCountryData(data);
             } catch (error) {
                 console.log(error);
+            } finally {
+                setWebLoader(false);
             }
         }
         fetchCountryNewArticle();
@@ -76,6 +80,7 @@ const ArticlePage = () => {
             <div className={webLoader ? "allLoaderContainer active" : "allLoaderContainer disable"}>
                 <div className="loaderContent">
                     <img src={require('../assets/imgs/TheDailyUniverseLogo.png')} alt="" />
+                    <p>LOADING UPDATES...</p>
                 </div>
             </div>
             {/* <section className="articlePageContainerPage top">

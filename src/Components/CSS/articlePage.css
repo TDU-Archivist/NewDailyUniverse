@@ -31,7 +31,7 @@ h6{
 .mainContainer.articlePage{
     height: auto;
     width: 100%;
-    background: black;
+    background: white;
     padding-bottom: 10vw;
 }
 
@@ -213,7 +213,7 @@ section.articlePageContainerPage.bot{
     text-decoration: none;
     margin: 0.5%;
     overflow: hidden;
-    background: rgb(20, 20, 20);
+    background: rgba(200, 200, 200);
     border-radius: 1vw;
     padding-bottom: 2%;
 }
@@ -221,15 +221,16 @@ section.articlePageContainerPage.bot{
     height: 14vw;
     width: 100%;
     border-radius: 1vw;
-    background: url(http://localhost:3001/static/media/TDULandingBG.c22c905….png) no-repeat center;
+    background: url('../assets/imgs/TDULandingBG.png') no-repeat center;
     background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 5%;
+    overflow: hidden;
 }
 .artclpcba img {
-    width: 100%;
+    height: 100%;
 }
 .artclpcbArticle h5{
     height: 4.3vw;

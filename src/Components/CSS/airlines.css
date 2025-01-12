@@ -1,0 +1,268 @@
+h1, h2, h3, h4, h5, h6, p{
+    color: black;
+}
+h1, h2, h3, h4, h5, h6{
+    /* font-family: "Bebas Neue", sans-serif; */
+    font-family: "Oswald", sans-serif;
+}
+p{
+    font-size: 0.9vw;
+}
+h1{
+    font-size: 10vw;
+}
+h2{
+    font-size: 5vw;
+}
+h3{
+    font-size: 4vw;
+}
+h4{
+    font-size: 2vw;
+}
+h5{
+    font-size: 1.5vw;
+}
+h6{
+    font-size: 1vw;
+}
+
+
+.mainContainer.airlines{
+    height: auto;
+    width: 100%;
+    background: white;
+    padding-bottom: 10vw;
+}
+
+/*----- Landing Section -----*/
+
+
+
+section.airlinesContainerPage.top{
+    height: auto;
+    width: 100%;
+    padding: 4vw 5vw;
+    padding-bottom: 1vw;
+    background: 
+        linear-gradient(whitesmoke 0%, transparent),
+        linear-gradient(transparent, white 100%),
+        url('../assets/imgs/TheDailyUniverseBG.png') no-repeat center;
+    background-size: cover;
+}
+.airlinesContentPage.top1{
+    height: 20vw;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 1vw;
+    position: relative;
+}
+.airlinesContentPage.top1 video{
+    height: auto;
+    width: 100%;
+}
+.airlinesContentPage.top2{
+    height: auto;
+    width: 100%;
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    margin-top: 1vw;
+}
+.airlnscpt2.left{
+    height: auto;
+    width: 50%;
+}
+.airlnscpt2.right{
+    height: auto;
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: solid 2px black;
+    border-radius: 50px;
+    padding: 0.3vw 1.5vw;
+}
+.airlnscpt2.right input{
+    background: none;
+    border: none;
+    outline: none;
+    font-size: 0.8vw;
+    width: 80%;
+}
+.airlnscpt2rBtn{
+    height: auto;
+    width: 20%;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+.airlnscpt2rBtn button{
+    border: none;
+    outline: none;
+    background: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10%;
+    font-size: 0.9vw;
+}
+
+
+
+
+
+
+
+section.airlinesContainerPage.mid{
+    height: auto;
+    width: 100%;
+    padding: 1vw 5vw;
+}
+.airlinesContentPage.mid1{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.airlinesContentPage.mid1 a{
+    height: auto;
+    width: 32.5%;
+    margin-bottom: 1%;
+    border-radius: 1vw;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.airlinesContentPage.mid1 a img{
+    width: 100%;
+}
+.airlinesContentPage.mid1 a div{
+    height: auto;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 1vw;
+    background: rgba(200, 200, 200);
+    text-align: center;
+}
+
+
+
+.airlinesContentPage.mid2{
+    height: auto;
+    width: 100%;
+    margin: 2vw 0;
+}
+.airlnscpm2Header{
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+.airlnscpm2Header a{
+    text-decoration: none;
+    opacity: 50%;
+    transition: 400ms ease;
+}
+.airlnscpm2Header a h6{
+    font-weight: 400;
+    font-size: 0.9vw;
+}
+.airlnscpm2Header a:hover{
+    opacity: 100%;
+    transition: 400ms ease;
+}
+.airlnscpm2Header h5{
+    line-height: 2vw;
+}
+.airlnscpm2Header h5 span{
+    font-size: 2vw;
+    font-style: italic;
+}
+
+
+
+
+.airlnscpm2Content1{
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: top;
+    margin-top: 1vw;
+    margin-bottom: 5%;
+}
+.airlnscpm2c1{
+    height: auto;
+    width: 24%;
+    overflow: hidden;
+    background: rgba(200, 200, 200);
+    border-radius: 1vw;
+    text-decoration: none;
+    text-align: center;
+}
+.airlnscpm2c1Img{
+    height: 14vw;
+    width: 100%;
+    border-radius: 1vw;
+    background: url('../assets/imgs/TDULandingBG.png') no-repeat center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.airlnscpm2c1Img img{
+    height: 100%;
+}
+.airlnscpm2c1Content{
+    height: auto;
+    width: 100%;
+    padding: 1vw;
+    padding-bottom: 2vw;
+}
+.airlnscpm2c1Content h5 {
+    font-size: 1.2vw;
+    line-height: 1.5vw;
+    padding: 0 5%;
+    margin: 2% 0;
+}
+.airlnscpm2c1Content p {
+    font-size: 0.7vw;
+    padding: 0 5%;
+    color: gray;
+}
+
+
+
+.airlnscpm2Content2{
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: top;
+    margin-top: 1vw;
+    margin-bottom: 5%;
+}
+.airlnscpm2c2{
+    height: auto;
+    width: 32.5%;
+    padding: 1vw;
+    border: solid 2px gray;
+    border-radius: 1vw;
+    text-decoration: none;
+}
+.airlnscpm2c2 p{
+    margin-top: 0.5vw;
+}
