@@ -426,6 +426,79 @@ const Home = () => {
         </div>
       </section>
       <section className="mainContainerPage mid">
+        
+        <div className="mainContentPage mid4">
+          <div className="mncntntpm4More">
+            <h4>THE DAILY UNIVERSE - WORLD NEWS</h4>
+            <Link><h6>VIEW MORE</h6></Link>
+          </div>
+          <div className="mncntntpm4Container">
+            {filterLatestNews.slice(0, 4).map((details, i) => (
+              <Link className="mncntntpm4Content" key={i} to={`/News/${details?.article_canonical}`}>
+                <div>
+                  <img src={details?.article_image ? `https://staging.thedailyuniverse.com/ArticleImages/${details?.article_image}` : (require('../assets/imgs/TDULandingBG.png'))} alt="" />
+                </div>
+                <h5>{details?.article_title}</h5>
+                <p>{details?.article_subtitle}</p>
+              </Link>
+            ))}
+          </div>
+          <div className="mncntntpm4More">
+            <h5>BREAKING NEWS</h5>
+            <Link><h6>VIEW MORE</h6></Link>
+          </div>
+          <div className="mncntntpm4 external">
+            {data?.news.slice(1, 6).map((details, i) => (
+              <a className='mncntntpm4ext' key={i} href={details?.data?.url} target='blank'>
+                <img src={details?.data?.thumbnail ? details?.data?.thumbnail : (require('../assets/imgs/TDULandingBG.png'))} alt="" />
+                <div className="mncntntpm4extTitle">
+                  <p><TextSlicer text={`${details?.data?.title ? details?.data?.title : 'None'}`} maxLength={75} /></p>
+                </div>
+              </a>
+            ))}
+          </div>
+          <div className="mncntntpm4Slider">
+            <div className="mncntntpm4s left">
+              <div className="mncntntpm4slViewMore">
+                <h4>LIVE NEWS CHANNELS</h4>
+                <Link to='/NewsChannels'><h6>VIEW MORE</h6></Link>
+              </div>
+              <div className="mncntntpm4slHeader">
+                <img src={require('../assets/imgs/LiveChannelsBG.png')} alt="" />
+              </div>
+              <div className="mncntntpm4slBody">
+                <a href="" target='blank'>
+                  <img src={require('../assets/imgs/Logos/CNN.png')} alt="" />
+                  <span><h5><FaPlayCircle /></h5></span>
+                </a>
+                <a href="" target='blank'>
+                  <img src={require('../assets/imgs/Logos/CBSNews.png')} alt="" />
+                  <span><h5><FaPlayCircle /></h5></span>
+                </a>
+                <a href="" target='blank'>
+                  <img src={require('../assets/imgs/Logos/MSNBC.png')} alt="" />
+                  <span><h5><FaPlayCircle /></h5></span>
+                </a>
+                <a href="" target='blank'>
+                  <img src={require('../assets/imgs/Logos/FOXNews.png')} alt="" />
+                  <span><h5><FaPlayCircle /></h5></span>
+                </a>
+              </div>
+            </div>
+            <div className="mncntntpm4s right">
+
+            </div>
+          </div>
+        </div>
+        <div className="mainContentPage mid5">
+          <div className="mncntntpm5More">
+            <h4>US DOLLAR EXCHANGE RATE</h4>
+            <Link><h6>VIEW MORE</h6></Link>
+          </div>
+          <div className="mncntntpm5Container">
+            <ExchangeRateMarquee exchangeRate={exchangeRates} />
+          </div>
+        </div>
         <div className="mainContentPage mid1">
           <h4>THE DAILY UNIVERSE - GOOD NEWS</h4>
           <div className='maincpm1'>
@@ -477,7 +550,7 @@ const Home = () => {
             <h5>LET'S PLACE ANY TEXT OR GIF ADS HERE</h5>
           </div>
         </div>
-        <div className="mainContentPage mid4">
+        {/* <div className="mainContentPage mid4">
           <div className="mncntntpm4Slider">
             <div className="mncntntpm4s left">
               <div className="mncntntpm4slViewMore">
@@ -539,16 +612,16 @@ const Home = () => {
               </a>
             ))}
           </div>
-        </div>
-        <div className="mainContentPage mid5">
+        </div> */}
+        {/* <div className="mainContentPage mid5">
           <div className="mncntntpm5More">
             <h4>US DOLLAR EXCHANGE RATE</h4>
-            {/* <Link><h6>VIEW MORE</h6></Link> */}
+            <Link><h6>VIEW MORE</h6></Link>
           </div>
           <div className="mncntntpm5Container">
             <ExchangeRateMarquee exchangeRate={exchangeRates} />
           </div>
-        </div>
+        </div> */}
         <div className="mainContentPage mid6">
           <div className="mncntntpm6Container">
             <div className="mncntntpm6cHeader">

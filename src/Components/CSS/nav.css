@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&display=swap');
 /* font-family: 'Bruno Ace SC', cursive; */
-h6{
+/* h6{
     font-family: "Bebas Neue", sans-serif;
-}
+} */
 
 nav{
     height: auto;
@@ -45,7 +45,7 @@ nav{
 }
 .navContent.left a#navclHome{
     height: auto;
-    width: 40%;
+    width: 30%;
     display: flex;
     justify-content: left;
     align-items: center;
@@ -263,7 +263,7 @@ nav{
     width: 35vw;
     position: absolute;
     top: 7.5vh;
-    right: 5vw;
+    right: 9vw;
     padding: 1vw;
     border-radius: 0.5vw;
     background: whitesmoke;
@@ -346,12 +346,13 @@ nav{
     align-items: center;
 }
 .nvcntntr.links button{
-    font-size: 0.9vw;
+    font-size: 0.7vw;
     margin-left: 2vw;
     color: gray;
     text-decoration: none;
-    font-weight: 400;
-    font-family: "Bebas Neue", sans-serif;
+    text-transform: uppercase;
+    font-weight: 600;
+    /* font-family: "Bebas Neue", sans-serif; */
     transition: 400ms ease;
     background: none;
     border: none;

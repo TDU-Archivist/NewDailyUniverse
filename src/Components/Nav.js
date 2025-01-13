@@ -108,7 +108,7 @@ const Nav = () => {
 
     const timeout = setTimeout(() => {
       setViewMoonPhase(false)
-    }, 15000);
+    }, 10000);
     return () => clearTimeout(timeout);
   }
   const handleViewSocialMedia = () => {
@@ -124,7 +124,7 @@ const Nav = () => {
 
     const timeout = setTimeout(() => {
       setViewSocialMedia(false)
-    }, 15000);
+    }, 10000);
     return () => clearTimeout(timeout);
   }
   const handleViewPages = () => {
@@ -140,7 +140,7 @@ const Nav = () => {
 
     const timeout = setTimeout(() => {
       setViewPages(false)
-    }, 20000);
+    }, 15000);
     return () => clearTimeout(timeout);
   }
   const handleHideModals = () => {
@@ -236,11 +236,11 @@ const Nav = () => {
         <div className="navContainer website">
           <div className="navContent left">
             <Link to="/" id='navclHome'>
-              <img src={require('./assets/imgs/TheDailyUniverseLogo.png')} alt="" />
-              <span>
+              <img src={require('./assets/imgs/TheDailyUniverseLogo00.png')} alt="" />
+              {/* <span>
                 <h4>THE DAILY UNIVERSE</h4>
                 <p>READ THE WORLD</p>
-              </span>
+              </span> */}
             </Link>
             <div className="navclSocial">
               {viewSocialMedia && <div className="navclsContents">
