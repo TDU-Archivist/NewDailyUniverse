@@ -8,7 +8,7 @@ const MapboxMap = () => {
   const { setPickedCountryModal, setPickedCountry } = MainDataLoad();
 
   // Add your Mapbox access token here
-  mapboxgl.accessToken = "pk.eyJ1IjoibWF5a2lsMDIiLCJhIjoiY2xnM3FyNWVhMDd0aDNncWV4cGN4MzBjeiJ9.3cszlATBcyBTdFfJK-jioA";
+  mapboxgl.accessToken = "pk.eyJ1IjoidGhlZGFpbHl1bml2ZXJzZSIsImEiOiJjbTV2cjUwOTEwMjE3MmxwaWN0NnM0N3hyIn0.JjaAyn6DJCVj-f7aAg9YEg";
 
   useEffect(() => {
     // Initialize map instance
