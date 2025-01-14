@@ -8,7 +8,7 @@ const MapboxMap = () => {
   const { setPickedCountryModal, setPickedCountry } = MainDataLoad();
 
   // Add your Mapbox access token here
-  mapboxgl.accessToken = "pk.eyJ1IjoidGhlZGFpbHl1bml2ZXJzZSIsImEiOiJjbTV2cjUwOTEwMjE3MmxwaWN0NnM0N3hyIn0.JjaAyn6DJCVj-f7aAg9YEg";
+  mapboxgl.accessToken = process.env.REACT_APP_TDU_MAPBOX_PK_API;
 
   useEffect(() => {
     // Initialize map instance
@@ -23,7 +23,7 @@ const MapboxMap = () => {
       ], // Prevent map from repeating
     });
 
-    
+
     // Add navigation controls to the map
     map.addControl(new mapboxgl.NavigationControl(), "top-right");
 
