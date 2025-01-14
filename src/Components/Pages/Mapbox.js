@@ -23,6 +23,7 @@ const MapboxMap = () => {
       ], // Prevent map from repeating
     });
 
+    
     // Add navigation controls to the map
     map.addControl(new mapboxgl.NavigationControl(), "top-right");
 
