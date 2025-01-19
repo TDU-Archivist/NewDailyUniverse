@@ -20,6 +20,9 @@ import Airports from './Components/Pages/Airports';
 
 import GlobalInfo from './Components/Pages/GlobalInfo';
 import NewsChannels from './Components/Pages/NewsChannels';
+import Magazine from './Components/Pages/Magazine';
+import Newspapers from './Components/Pages/Newspapers';
+import Restaurants from './Components/Pages/Restaurants';
 
 
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
@@ -48,6 +51,9 @@ function App() {
           
           <Route path="/GlobalInfo" element={<GlobalInfo/>}/>
           <Route path="/NewsChannels" element={<NewsChannels/>}/>
+          <Route path="/Magazines" element={<Magazine/>}/>
+          <Route path="/Newspapers" element={<Newspapers/>}/>
+          <Route path="/Restaurants" element={<Restaurants/>}/>
 
           
           <Route path="*" element={<Home/>}/>

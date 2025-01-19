@@ -28,7 +28,7 @@ h6{
 }
 
 
-.mainContainer.globalInfo{
+.mainContainer.newspapers{
     height: auto;
     width: 100%;
     background: white;
@@ -39,7 +39,7 @@ h6{
 
 
 
-section.globalInfoContainerPage.top{
+section.newspapersContainerPage.top{
     height: auto;
     width: 100%;
     padding: 4vw 5vw;
@@ -51,7 +51,8 @@ section.globalInfoContainerPage.top{
     background-size: cover;
 }
 
-.globalInfoContentPage.top1{
+
+.newspapersContentPage.top1{
     height: 20vw;
     width: 100%;
     display: flex;
@@ -62,11 +63,11 @@ section.globalInfoContainerPage.top{
     position: relative;
     background: gray;
 }
-.globalInfoContentPage.top1 img{
+.newspapersContentPage.top1 img{
     height: auto;
     width: 100%;
 }
-.globalInfoContentPage.top2{
+.newspapersContentPage.top2{
     height: auto;
     width: 100%;
     display: flex;
@@ -74,11 +75,11 @@ section.globalInfoContainerPage.top{
     justify-content: space-between;
     margin-top: 1vw;
 }
-.glbinfocpt2.left{
+.nwspprcpt2.left{
     height: auto;
     width: 50%;
 }
-.glbinfocpt2.right{
+.nwspprcpt2.right{
     height: auto;
     width: 40%;
     display: flex;
@@ -88,21 +89,21 @@ section.globalInfoContainerPage.top{
     border-radius: 50px;
     padding: 0.3vw 1.5vw;
 }
-.glbinfocpt2.right input{
+.nwspprcpt2.right input{
     background: none;
     border: none;
     outline: none;
     font-size: 0.8vw;
     width: 80%;
 }
-.glbinfocpt2rBtn{
+.nwspprcpt2rBtn{
     height: auto;
     width: 20%;
     display: flex;
     justify-content: right;
     align-items: center;
 }
-.glbinfocpt2rBtn button{
+.nwspprcpt2rBtn button{
     border: none;
     outline: none;
     background: none;
@@ -118,12 +119,13 @@ section.globalInfoContainerPage.top{
 
 
 
-section.globalInfoContainerPage.mid{
+
+section.newspapersContainerPage.mid{
     height: auto;
     width: 100%;
     padding: 1vw 5vw;
 }
-.globalInfoContentPage.mid1{
+.newspapersContentPage.mid1{
     height: auto;
     width: 100%;
     display: flex;
@@ -131,7 +133,7 @@ section.globalInfoContainerPage.mid{
     justify-content: left;
     align-items: top;
 }
-.glbinfocpm2c1{
+.nwspprcm1{
     height: auto;
     width: 24%;
     overflow: hidden;
@@ -141,7 +143,7 @@ section.globalInfoContainerPage.mid{
     text-align: center;
     margin: 0.5%;
 }
-.glbinfocpm2c1Img{
+.nwspprcpm1Img{
     height: 14vw;
     width: 100%;
     border-radius: 1vw;
@@ -149,32 +151,29 @@ section.globalInfoContainerPage.mid{
     background-size: cover;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: bottom;
     overflow: hidden;
 }
-.glbinfocpm2c1Img img{
+.nwspprcpm1Img img{
     width: 100%;
 }
-.glbinfocpm2c1Content{
+.nwspprcm1Content{
     height: auto;
     width: 100%;
     padding: 1vw;
     padding-bottom: 2vw;
 }
-.glbinfocpm2c1Content h5 {
+.nwspprcm1Content h5 {
     font-size: 1.2vw;
     line-height: 1.5vw;
     padding: 0 5%;
     margin: 2% 0;
 }
-.glbinfocpm2c1Content p {
+.nwspprcm1Content p {
     font-size: 0.7vw;
     padding: 0 5%;
     color: gray;
 }
-
-
-
 
 
 

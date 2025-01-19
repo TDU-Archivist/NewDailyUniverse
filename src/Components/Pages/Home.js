@@ -126,55 +126,55 @@ const Home = () => {
       }
     }
   }, [exchangeRates, countryCurrency]);
-  useEffect(() => {
-    // Get user's location
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        async (position) => {
-          const { latitude, longitude } = position.coords;
+  // useEffect(() => {
+  //   // Get user's location
+  //   if (navigator.geolocation) {
+  //     navigator.geolocation.getCurrentPosition(
+  //       async (position) => {
+  //         const { latitude, longitude } = position.coords;
 
-          // Use a simpler geocoding API for city and country only (replace YOUR_API_KEY)
-          try {
-            const response = await fetch(
-              `https://geocode.xyz/${latitude},${longitude}?geoit=json`
-            );
-            const data = await response.json();
+  //         // Use a simpler geocoding API for city and country only (replace YOUR_API_KEY)
+  //         try {
+  //           const response = await fetch(
+  //             `https://geocode.xyz/${latitude},${longitude}?geoit=json`
+  //           );
+  //           const data = await response.json();
 
-            if (data.city && data.country) {
-              setLocation(`${data.city}, ${data.country}`);
-            } else {
-              setLocation('Location not found');
-            }
-          } catch (error) {
-            setLocation('Error fetching location');
-          }
-        },
-        () => {
-          setLocation('Unable to retrieve location');
-        }
-      );
-    } else {
-      setLocation('Geolocation not supported');
-    }
+  //           if (data.city && data.country) {
+  //             setLocation(`${data.city}, ${data.country}`);
+  //           } else {
+  //             setLocation('Location not found');
+  //           }
+  //         } catch (error) {
+  //           setLocation('Error fetching location');
+  //         }
+  //       },
+  //       () => {
+  //         setLocation('Unable to retrieve location');
+  //       }
+  //     );
+  //   } else {
+  //     setLocation('Geolocation not supported');
+  //   }
 
-    // Update the currentDateTime every second
-    const interval = setInterval(() => {
-      setCurrentDateTime(new Date());
-    }, 1000);
+  //   // Update the currentDateTime every second
+  //   const interval = setInterval(() => {
+  //     setCurrentDateTime(new Date());
+  //   }, 1000);
 
-    // Cleanup interval on component unmount
-    return () => clearInterval(interval);
-  }, []);
-  const formattedTime = currentDateTime.toLocaleTimeString('en-US', {
-    hour: '2-digit',
-    minute: '2-digit',
-    hour12: true,
-  });
-  const formattedDate = currentDateTime.toLocaleDateString('en-US', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-  });
+  //   // Cleanup interval on component unmount
+  //   return () => clearInterval(interval);
+  // }, []);
+  // const formattedTime = currentDateTime.toLocaleTimeString('en-US', {
+  //   hour: '2-digit',
+  //   minute: '2-digit',
+  //   hour12: true,
+  // });
+  // const formattedDate = currentDateTime.toLocaleDateString('en-US', {
+  //   year: 'numeric',
+  //   month: 'long',
+  //   day: 'numeric',
+  // });
 
   const handleHideCountrySummaryModal = () => {
     setPickedCountry(false);
@@ -499,6 +499,42 @@ const Home = () => {
             <ExchangeRateMarquee exchangeRate={exchangeRates} />
           </div>
         </div>
+        <div className="mainContentPage mid6">
+          <div className="mncntntpm6Container">
+            <div className="mncntntpm6cHeader">
+              <h4>FINANCE</h4>
+              <Link><h6><FaArrowRight className='faIcons'/></h6></Link>
+            </div>
+            <div className="mncntntpm6cContent">
+              {filterBusinessNews.slice(0, 2).map((details, i) => (
+                <Link className="mncntntpm6ccArticle" key={i} to={`/News/${details?.article_canonical}`}>
+                  <div>
+                    <img src={details?.article_image ? `https://staging.thedailyuniverse.com/ArticleImages/${details?.article_image}` : (require('../assets/imgs/TDULandingBG.png'))} alt="" />
+                  </div>
+                  <h5>{details?.article_title}</h5>
+                  <p>{details?.article_subtitle}</p>
+                </Link>
+              ))}
+            </div>
+          </div>
+          <div className="mncntntpm6Container">
+            <div className="mncntntpm6cHeader">
+              <h4>SPORTS</h4>
+              <Link><h6><FaArrowRight className='faIcons'/></h6></Link>
+            </div>
+            <div className="mncntntpm6cContent">
+              {filterSportsNews.slice(0, 2).map((details, i) => (
+                <Link className="mncntntpm6ccArticle" key={i} to={`/News/${details?.article_canonical}`}>
+                  <div>
+                    <img src={details?.article_image ? `https://staging.thedailyuniverse.com/ArticleImages/${details?.article_image}` : (require('../assets/imgs/TDULandingBG.png'))} alt="" />
+                  </div>
+                  <h5>{details?.article_title}</h5>
+                  <p>{details?.article_subtitle}</p>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
         <div className="mainContentPage mid1">
           <h4>THE DAILY UNIVERSE - GOOD NEWS</h4>
           <div className='maincpm1'>
@@ -622,7 +658,7 @@ const Home = () => {
             <ExchangeRateMarquee exchangeRate={exchangeRates} />
           </div>
         </div> */}
-        <div className="mainContentPage mid6">
+        {/* <div className="mainContentPage mid6">
           <div className="mncntntpm6Container">
             <div className="mncntntpm6cHeader">
               <h4>FINANCE</h4>
@@ -657,7 +693,7 @@ const Home = () => {
               ))}
             </div>
           </div>
-        </div>
+        </div> */}
         <div className="mainContentPage mid7">
           <div className="mncntntpm7Container left">
             <div className="mncntntpm7cHeader">

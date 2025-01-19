@@ -72,6 +72,8 @@ const Nav = () => {
   const [viewMoonPhase, setViewMoonPhase] = useState(false);
   const [viewSocialMedia, setViewSocialMedia] = useState(false);
   const [viewPages, setViewPages] = useState(false);
+  const [hasMouseEntered, setHasMouseEntered] = useState(false);
+  const [hideTimeout, setHideTimeout] = useState(null);
   const [viewAmericaNav, setViewAmericaNav] = useState(false);
   const [viewEuropeNav, setViewEuropeNav] = useState(false);
   const [viewAfricaNav, setViewAfricaNav] = useState(false);
@@ -138,10 +140,10 @@ const Nav = () => {
     setViewOceniaNav(false);
     setViewAntarticaNav(false);
 
-    const timeout = setTimeout(() => {
-      setViewPages(false)
-    }, 15000);
-    return () => clearTimeout(timeout);
+    // const timeout = setTimeout(() => {
+    //   setViewPages(false)
+    // }, 15000);
+    // return () => clearTimeout(timeout);
   }
   const handleHideModals = () => {
     setViewMoonPhase(false)
@@ -272,22 +274,56 @@ const Nav = () => {
             </div>
           </div>
           <div className="navContent right">
-            {viewPages && <div className="nvcntntrModal">
+            {viewPages && <div className="nvcntntrModal"
+              onMouseEnter={() => {
+                if (hideTimeout) {
+                  clearTimeout(hideTimeout);
+                }
+                setHasMouseEntered(true); 
+                setViewPages(true); 
+              }}
+              onMouseLeave={() => {
+                if (hasMouseEntered) {
+                  const timeout = setTimeout(() => {
+                    setViewPages(false);
+                    setHasMouseEntered(false);
+                  }, 500);
+                  setHideTimeout(timeout);
+                }
+              }}
+            >
               <Link to='/Airlines' onClick={handleHideModals}><h6><FaPlane className='faIcons'/> AIRLINES</h6></Link>
               <Link to='/Airports' onClick={handleHideModals}><h6><FaPlane className='faIcons'/> AIRPORTS</h6></Link>
               <Link><h6><FaBroadcastTower className='faIcons'/> BREAKING NEWS</h6></Link>
               <Link to='/GlobalInfo' onClick={handleHideModals}><h6><FaGlobe className='faIcons'/> GLOBAL INFO</h6></Link>
               <Link to='/NewsChannels' onClick={handleHideModals}><h6><FaTv className='faIcons'/> LIVE NEWS CHANNELS</h6></Link>
-              <Link><h6><FaNewspaper className='faIcons'/> MAGAZINES</h6></Link>
-              <Link><h6><FaNewspaper className='faIcons'/> NEWSPAPER</h6></Link>
-              <Link><h6><FaUtensils className='faIcons'/> RESTAURANTS</h6></Link>
+              <Link to='/Magazines' onClick={handleHideModals}><h6><FaNewspaper className='faIcons'/> MAGAZINES</h6></Link>
+              <Link to='/Newspapers' onClick={handleHideModals}><h6><FaNewspaper className='faIcons'/> NEWSPAPER</h6></Link>
+              <Link to='/Restaurants' onClick={handleHideModals}><h6><FaUtensils className='faIcons'/> RESTAURANTS</h6></Link>
               <Link><h6><FaFootballBall className='faIcons'/> SPORTS</h6></Link>
               <Link><h6><FaMapMarked className='faIcons'/> TRAVEL</h6></Link>
               <Link><h6><FaMapMarkerAlt className='faIcons'/> VISA GUIDE</h6></Link>
               <Link><h6><FaCloudSunRain className='faIcons'/> WEATHER FORECAST</h6></Link>
               <Link><h6><FaClock className='faIcons'/> WORLD CLOCK</h6></Link>
             </div>}
-            {viewAmericaNav && <div className="nvcntntrContinent">
+            {viewAmericaNav && <div className="nvcntntrContinent"
+              onMouseEnter={() => {
+                if (hideTimeout) {
+                  clearTimeout(hideTimeout);
+                }
+                setHasMouseEntered(true); 
+                setViewAmericaNav(true); 
+              }}
+              onMouseLeave={() => {
+                if (hasMouseEntered) {
+                  const timeout = setTimeout(() => {
+                    setViewAmericaNav(false);
+                    setHasMouseEntered(false);
+                  }, 500);
+                  setHideTimeout(timeout);
+                }
+              }}
+            >
               <div className="nvcntntrcTitle">
                 <h6>ALL AMERICAN ARTICLES AND CONTENTS</h6>
               </div>
@@ -311,7 +347,24 @@ const Nav = () => {
                 <Link><h6><FaCloudSunRain className='faIcons'/> WEATHER</h6></Link>
               </div>
             </div>}
-            {viewEuropeNav && <div className="nvcntntrContinent">
+            {viewEuropeNav && <div className="nvcntntrContinent"
+              onMouseEnter={() => {
+                if (hideTimeout) {
+                  clearTimeout(hideTimeout);
+                }
+                setHasMouseEntered(true); 
+                setViewEuropeNav(true); 
+              }}
+              onMouseLeave={() => {
+                if (hasMouseEntered) {
+                  const timeout = setTimeout(() => {
+                    setViewEuropeNav(false);
+                    setHasMouseEntered(false);
+                  }, 500);
+                  setHideTimeout(timeout);
+                }
+              }}
+            >
               <div className="nvcntntrcTitle">
                 <h6>ALL EUROPEAN ARTICLES AND CONTENTS</h6>
               </div>
@@ -335,7 +388,24 @@ const Nav = () => {
                 <Link><h6><FaCloudSunRain className='faIcons'/> WEATHER</h6></Link>
               </div>
             </div>}
-            {viewAfricaNav && <div className="nvcntntrContinent">
+            {viewAfricaNav && <div className="nvcntntrContinent"
+                onMouseEnter={() => {
+                  if (hideTimeout) {
+                    clearTimeout(hideTimeout);
+                  }
+                  setHasMouseEntered(true); 
+                  setViewAfricaNav(true); 
+                }}
+                onMouseLeave={() => {
+                  if (hasMouseEntered) {
+                    const timeout = setTimeout(() => {
+                      setViewAfricaNav(false);
+                      setHasMouseEntered(false);
+                    }, 500);
+                    setHideTimeout(timeout);
+                  }
+                }}
+              >
               <div className="nvcntntrcTitle">
                 <h6>ALL AFRICAN ARTICLES AND CONTENTS</h6>
               </div>
@@ -359,7 +429,24 @@ const Nav = () => {
                 <Link><h6><FaCloudSunRain className='faIcons'/> WEATHER</h6></Link>
               </div>
             </div>}
-            {viewAsiaNav && <div className="nvcntntrContinent">
+            {viewAsiaNav && <div className="nvcntntrContinent"
+                onMouseEnter={() => {
+                  if (hideTimeout) {
+                    clearTimeout(hideTimeout);
+                  }
+                  setHasMouseEntered(true); 
+                  setViewAsiaNav(true); 
+                }}
+                onMouseLeave={() => {
+                  if (hasMouseEntered) {
+                    const timeout = setTimeout(() => {
+                      setViewAsiaNav(false);
+                      setHasMouseEntered(false);
+                    }, 500);
+                    setHideTimeout(timeout);
+                  }
+                }}
+              >
               <div className="nvcntntrcTitle">
                 <h6>ALL ASIAN ARTICLES AND CONTENTS</h6>
               </div>
@@ -383,7 +470,24 @@ const Nav = () => {
                 <Link><h6><FaCloudSunRain className='faIcons'/> WEATHER</h6></Link>
               </div>
             </div>}
-            {viewOceniaNav && <div className="nvcntntrContinent">
+            {viewOceniaNav && <div className="nvcntntrContinent"
+                onMouseEnter={() => {
+                  if (hideTimeout) {
+                    clearTimeout(hideTimeout);
+                  }
+                  setHasMouseEntered(true); 
+                  setViewOceniaNav(true); 
+                }}
+                onMouseLeave={() => {
+                  if (hasMouseEntered) {
+                    const timeout = setTimeout(() => {
+                      setViewOceniaNav(false);
+                      setHasMouseEntered(false);
+                    }, 500);
+                    setHideTimeout(timeout);
+                  }
+                }}
+              >
               <div className="nvcntntrcTitle">
                 <h6>ALL OCEANIA ARTICLES AND CONTENTS</h6>
               </div>
@@ -407,7 +511,24 @@ const Nav = () => {
                 <Link><h6><FaCloudSunRain className='faIcons'/> WEATHER</h6></Link>
               </div>
             </div>}
-            {viewAntarticaNav && <div className="nvcntntrContinent">
+            {viewAntarticaNav && <div className="nvcntntrContinent"
+                onMouseEnter={() => {
+                  if (hideTimeout) {
+                    clearTimeout(hideTimeout);
+                  }
+                  setHasMouseEntered(true); 
+                  setViewAntarticaNav(true); 
+                }}
+                onMouseLeave={() => {
+                  if (hasMouseEntered) {
+                    const timeout = setTimeout(() => {
+                      setViewAntarticaNav(false);
+                      setHasMouseEntered(false);
+                    }, 500);
+                    setHideTimeout(timeout);
+                  }
+                }}
+              >
               <div className="nvcntntrcTitle">
                 <h6>ALL ANTARCTICA ARTICLES AND CONTENTS</h6>
               </div>
