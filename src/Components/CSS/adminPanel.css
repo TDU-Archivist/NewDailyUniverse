@@ -1,5 +1,5 @@
 h1, h2, h3, h4, h5, h6, p{
-    color: white;
+    color: black;
 }
 h1, h2, h3, h4, h5, h6{
     /* font-family: "Bebas Neue", sans-serif; */
@@ -31,8 +31,11 @@ h6{
 .mainContainer.adminPanel{
     height: auto;
     width: 100%;
-    background: black;
-    padding-bottom: 10vw;
+    background: 
+        linear-gradient(whitesmoke 0%, transparent),
+        linear-gradient(transparent, white 100%),
+        url('../assets/imgs/TheDailyUniverseBG.png') no-repeat center;
+    background-size: cover;
 }
 
 
@@ -52,10 +55,10 @@ section.adminPanelContainerPage{
     align-items: start;
 }
 .admnpnlcp.left{
-    height: auto;
+    height: 42.7vw;
     width: 20%;
     padding: 1%;
-    background: rgb(20, 20, 20);
+    background: rgb(230, 230, 230);
     border-radius: 1vw;
 }
 .admnpnlcplHeader{
@@ -109,18 +112,18 @@ section.adminPanelContainerPage{
 }
 .admnpnlcplNavigations button.active{
     opacity: 100%;
-    background: rgb(30, 30, 30);
+    background: rgb(250, 250, 250);
     transition: 400ms ease;
 }
 .admnpnlcplNavigations button:hover{
     opacity: 100%;
-    background: rgb(30, 30, 30);
+    background: rgb(230, 230, 230);
     transition: 400ms ease;
 }
 .admnpnlcplnOthers{
     height: auto;
     width: 100%;
-    background: rgb(25, 25, 25);
+    background: rgb(250, 250, 250);
     border-radius: 0.5vw;
     padding: 3%;
 }
@@ -131,24 +134,28 @@ section.adminPanelContainerPage{
     text-align: left;
     border-radius: 10px;
 }
-
+.admnpnlcplnOthers button.active{
+    background: rgb(230, 230, 230);
+}
 
 
 
 
 .admnpnlcp.right{
-    height: auto;
+    height: 42.7vw;
     width: 75%;
-    background: rgb(20, 20, 20);
+    background: rgb(230, 230, 230);
     border-radius: 1vw;
     padding: 1% 2%;
-    padding-bottom: 5%;
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
 
 
 .admnpnlcprContainer{
     height: auto;
     width: 100%;
+    padding-bottom: 5vw;
 }
 .admnpnlcprContainer h4{
     text-transform: uppercase;
@@ -169,7 +176,7 @@ section.adminPanelContainerPage{
 }
 .admnpnlcprNavigation button{
     background: none;
-    color: white;
+    color: black;
     padding: 5px 10px;
     outline: none;
     border: none;
@@ -183,7 +190,7 @@ section.adminPanelContainerPage{
 }
 .admnpnlcprNavigation button.active{
     opacity: 100%;
-    border-bottom: solid 2px white;
+    border-bottom: solid 2px black;
     transition: 400ms ease;
 }
 .admnpnlcprNavigation button:hover{
@@ -246,7 +253,7 @@ section.adminPanelContainerPage{
     align-items: center;
 }
 .admnpnlcprcgdlHeader div select{
-    background: rgb(20, 20, 20);
+    background: gray;
     border: solid 2px whitesmoke;
     color: white;
     margin-left: 3%;
@@ -269,7 +276,7 @@ section.adminPanelContainerPage{
     display: flex;
     justify-content: center;
     align-items: center;
-    background: rgb(30, 30, 30);
+    background: rgb(250, 250, 250);
     border-radius: 1vw;
 }
 .admnpnlcprcgdrpEmpty span p{
@@ -301,7 +308,7 @@ section.adminPanelContainerPage{
     display: flex;
     justify-content: center;
     align-items: center;
-    background: rgb(30, 30, 30);
+    background: rgb(250, 250, 250);
     border-radius: 1vw;
 }
 .admnpnlcprcsrscEmpty span p{
@@ -354,11 +361,11 @@ section.adminPanelContainerPage{
     border: solid 2px gray;
     outline: none;
     background: none;
-    color: white;
+    color: black;
     border-radius: 10px;
 }
 .admnpnlcprcccContents.left div select option{
-    background: black;
+    background: gray;
 }
 .admnpnlcprcccContents.left div.admnpnlcprcccCountry{
     height: auto;
@@ -558,7 +565,7 @@ section.adminPanelContainerPage{
     border: solid 2px gray;
     outline: none;
     background: none;
-    color: white;
+    color: black;
     border-radius: 10px;
 }
 .admnpnlcprcaa.left div select option{
@@ -609,14 +616,14 @@ section.adminPanelContainerPage{
     margin-top: 2%;
 }
 .admnpnlcprcaarContent textarea{
-    height: 16.5vw;
+    height: 20vw;
     width: 100%;
     padding: 10px;
     font-size: 0.7vw;
     border: solid 2px gray;
     outline: none;
     background: none;
-    color: white;
+    color: black;
     border-radius: 10px;
     resize: none;
 }
@@ -657,4 +664,895 @@ section.adminPanelContainerPage{
     background: red;
     border: solid 2px red;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+.admnpnlcprcAddAirline{
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    margin-top: 3%;
+}
+.admnpnlcprcaairline.left{
+    height: auto;
+    width: 30%;
+}
+.admnpnlcprcaairline.left div{
+    margin-bottom: 1vw;
+}
+.admnpnlcprcaairline.left div h6{
+    margin-left: 2%;
+    margin-bottom: 1%;
+    font-size: 0.7vw;
+    font-weight: 600;
+    color: gray;
+}
+.admnpnlcprcaairline.left div select,
+.admnpnlcprcaairline.left div input{
+    height: auto;
+    width: 100%;
+    padding: 5px 10px;
+    font-size: 0.7vw;
+    border: solid 2px gray;
+    outline: none;
+    background: none;
+    color: black;
+    border-radius: 10px;
+}
+.admnpnlcprcaairline.left div select option{
+    background: gray;
+}
+
+.admnpnlcprcaairlinelImg{
+    height: 12vw;
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1vw;
+    overflow: hidden;
+    background: url('../assets/imgs/TDULandingBG.png') no-repeat center;
+    background-size: cover;
+}
+.admnpnlcprcaairlinelImg img{
+    height: auto;
+    width: 100%;
+}
+
+
+
+
+.admnpnlcprcaairline.right{
+    height: auto;
+    width: 65%;
+}
+.admnpnlcprcaairline.right div h6{
+    margin-left: 2%;
+    margin-bottom: 1%;
+    font-size: 0.7vw;
+    font-weight: 600;
+    color: gray;
+}
+.admnpnlcprcaairlinerHeader{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.admnpnlcprcaairlinerHeader div{
+    width: 49%;
+    margin-bottom: 1vw;
+}
+.admnpnlcprcaairlinerHeader div input{
+    height: auto;
+    width: 100%;
+    padding: 5px 10px;
+    font-size: 0.7vw;
+    border: solid 2px gray;
+    outline: none;
+    background: none;
+    color: black;
+    border-radius: 10px;
+}
+.admnpnlcprcaairlinerContent{
+    height: auto;
+    width: 100%;
+}
+.admnpnlcprcaairlinerContent textarea{
+    height: 19.3vw;
+    width: 100%;
+    padding: 10px;
+    font-size: 0.7vw;
+    border: solid 2px gray;
+    outline: none;
+    background: none;
+    color: black;
+    border-radius: 10px;
+    resize: none;
+}
+
+
+.admnpnlcprcaairlineBtn{
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 3%;
+}
+.admnpnlcprcaairlineBtn p{
+    width: 83%;
+    text-align: center;
+}
+.admnpnlcprcaairlineBtn button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    outline: none;
+    border: solid 2px white;
+    color: white;
+    cursor: pointer;
+    padding: 5px 20px;
+    border-radius: 50px;
+    transition: 400ms ease;
+    opacity: 50%;
+    transition: 400ms ease;
+}
+.admnpnlcprcaairlineBtn button h6{
+    font-size: 0.9vw;
+    font-weight: 600;
+}
+.admnpnlcprcaairlineBtn button:hover{
+    opacity: 100%;
+    transition: 400ms ease;
+    background: red;
+    border: solid 2px red;
+}
+
+
+
+
+
+
+
+
+
+
+.admnpnlcprcAddAirport{
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    margin-top: 3%;
+}
+.admnpnlcprcaairport.left{
+    height: auto;
+    width: 30%;
+}
+.admnpnlcprcaairport.left div{
+    margin-bottom: 1vw;
+}
+.admnpnlcprcaairport.left div h6{
+    margin-left: 2%;
+    margin-bottom: 1%;
+    font-size: 0.7vw;
+    font-weight: 600;
+    color: gray;
+}
+.admnpnlcprcaairport.left div select,
+.admnpnlcprcaairport.left div input{
+    height: auto;
+    width: 100%;
+    padding: 5px 10px;
+    font-size: 0.7vw;
+    border: solid 2px gray;
+    outline: none;
+    background: none;
+    color: black;
+    border-radius: 10px;
+}
+.admnpnlcprcaairport.left div select option{
+    background: gray;
+}
+.admnpnlcprcaairportlImg{
+    height: 12vw;
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1vw;
+    overflow: hidden;
+    background: url('../assets/imgs/TDULandingBG.png') no-repeat center;
+    background-size: cover;
+}
+.admnpnlcprcaairportlImg img{
+    height: auto;
+    width: 100%;
+}
+
+.admnpnlcprcaairport.right{
+    height: auto;
+    width: 65%;
+}
+.admnpnlcprcaairport.right div h6{
+    margin-left: 2%;
+    margin-bottom: 1%;
+    font-size: 0.7vw;
+    font-weight: 600;
+    color: gray;
+}
+.admnpnlcprcaairportrHeader{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.admnpnlcprcaairportrHeader div{
+    width: 49%;
+    margin-bottom: 1vw;
+}
+.admnpnlcprcaairportrHeader div input{
+    height: auto;
+    width: 100%;
+    padding: 5px 10px;
+    font-size: 0.7vw;
+    border: solid 2px gray;
+    outline: none;
+    background: none;
+    color: black;
+    border-radius: 10px;
+}
+.admnpnlcprcaairportrContent{
+    height: auto;
+    width: 100%;
+}
+.admnpnlcprcaairportrContent textarea{
+    height: 19.3vw;
+    width: 100%;
+    padding: 10px;
+    font-size: 0.7vw;
+    border: solid 2px gray;
+    outline: none;
+    background: none;
+    color: black;
+    border-radius: 10px;
+    resize: none;
+}
+
+
+.admnpnlcprcaairportBtn{
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 3%;
+}
+.admnpnlcprcaairportBtn p{
+    width: 83%;
+    text-align: center;
+}
+.admnpnlcprcaairportBtn button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    outline: none;
+    border: solid 2px white;
+    color: white;
+    cursor: pointer;
+    padding: 5px 20px;
+    border-radius: 50px;
+    transition: 400ms ease;
+    opacity: 50%;
+    transition: 400ms ease;
+}
+.admnpnlcprcaairportBtn button h6{
+    font-size: 0.9vw;
+    font-weight: 600;
+}
+.admnpnlcprcaairportBtn button:hover{
+    opacity: 100%;
+    transition: 400ms ease;
+    background: red;
+    border: solid 2px red;
+}
+
+
+
+
+
+
+
+
+
+.admnpnlcprctelecastNav{
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin: 3% 0;
+}
+.admnpnlcprctelecastNav button{
+    background: none;
+    color: black;
+    padding: 5px 10px;
+    outline: none;
+    border: none;
+    border-bottom: solid 2px transparent;
+    margin-right: 3%;
+    opacity: 50%;
+    font-size: 0.9vw;
+    font-family: "Oswald", sans-serif;
+    transition: 400ms ease;
+    cursor: pointer;
+}
+.admnpnlcprctelecastNav button.active{
+    opacity: 100%;
+    border-bottom: solid 2px black;
+    transition: 400ms ease;
+}
+.admnpnlcprctelecastNav button:hover{
+    opacity: 100%;
+    transition: 400ms ease;
+}
+
+.admnpnlcprcAddLiveChannel{
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    margin-top: 3%;
+}
+
+
+.admnpnlcprcalivechannel.left{
+    height: auto;
+    width: 30%;
+}
+.admnpnlcprcalivechannel.left div{
+    margin-bottom: 1vw;
+}
+.admnpnlcprcalivechannel.left div h6{
+    margin-left: 2%;
+    margin-bottom: 1%;
+    font-size: 0.7vw;
+    font-weight: 600;
+    color: gray;
+}
+.admnpnlcprcalivechannel.left div select,
+.admnpnlcprcalivechannel.left div input{
+    height: auto;
+    width: 100%;
+    padding: 5px 10px;
+    font-size: 0.7vw;
+    border: solid 2px gray;
+    outline: none;
+    background: none;
+    color: black;
+    border-radius: 10px;
+}
+.admnpnlcprcalivechannel.left div select option{
+    background: gray;
+}
+
+
+
+.admnpnlcprcalivechannel.right{
+    height: auto;
+    width: 65%;
+}
+.admnpnlcprcalivechannel.right div h6{
+    margin-left: 2%;
+    margin-bottom: 1%;
+    font-size: 0.7vw;
+    font-weight: 600;
+    color: gray;
+}
+.admnpnlcprcalivechannelrHeader{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.admnpnlcprcalivechannelrHeader div{
+    width: 49%;
+    margin-bottom: 1vw;
+}
+.admnpnlcprcalivechannelrHeader div input{
+    height: auto;
+    width: 100%;
+    padding: 5px 10px;
+    font-size: 0.7vw;
+    border: solid 2px gray;
+    outline: none;
+    background: none;
+    color: black;
+    border-radius: 10px;
+}
+.admnpnlcprcalivechannelrContent{
+    height: auto;
+    width: 100%;
+}
+.admnpnlcprcalivechannelrContent textarea{
+    height: 12vw;
+    width: 100%;
+    padding: 10px;
+    font-size: 0.7vw;
+    border: solid 2px gray;
+    outline: none;
+    background: none;
+    color: black;
+    border-radius: 10px;
+    resize: none;
+}
+
+
+.admnpnlcprcalivechannelBtn{
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 3%;
+}
+.admnpnlcprcalivechannelBtn p{
+    width: 83%;
+    text-align: center;
+}
+.admnpnlcprcalivechannelBtn button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    outline: none;
+    border: solid 2px white;
+    color: white;
+    cursor: pointer;
+    padding: 5px 20px;
+    border-radius: 50px;
+    transition: 400ms ease;
+    opacity: 50%;
+    transition: 400ms ease;
+}
+.admnpnlcprcalivechannelBtn button h6{
+    font-size: 0.9vw;
+    font-weight: 600;
+}
+.admnpnlcprcalivechannelBtn button:hover{
+    opacity: 100%;
+    transition: 400ms ease;
+    background: red;
+    border: solid 2px red;
+}
+
+
+
+
+
+.admnpnlcprcAddYoutubeChannel{
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    margin-top: 3%;
+}
+
+
+.admnpnlcprcayoutubechannel.left{
+    height: auto;
+    width: 30%;
+}
+.admnpnlcprcayoutubechannel.left div{
+    margin-bottom: 1vw;
+}
+.admnpnlcprcayoutubechannel.left div h6{
+    margin-left: 2%;
+    margin-bottom: 1%;
+    font-size: 0.7vw;
+    font-weight: 600;
+    color: gray;
+}
+.admnpnlcprcayoutubechannel.left div select,
+.admnpnlcprcayoutubechannel.left div input{
+    height: auto;
+    width: 100%;
+    padding: 5px 10px;
+    font-size: 0.7vw;
+    border: solid 2px gray;
+    outline: none;
+    background: none;
+    color: black;
+    border-radius: 10px;
+}
+.admnpnlcprcayoutubechannel.left div select option{
+    background: gray;
+}
+
+
+
+.admnpnlcprcayoutubechannel.right{
+    height: auto;
+    width: 65%;
+}
+.admnpnlcprcayoutubechannel.right div h6{
+    margin-left: 2%;
+    margin-bottom: 1%;
+    font-size: 0.7vw;
+    font-weight: 600;
+    color: gray;
+}
+.admnpnlcprcayoutubechannelrHeader{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.admnpnlcprcayoutubechannelrHeader div{
+    width: 49%;
+    margin-bottom: 1vw;
+}
+.admnpnlcprcayoutubechannelrHeader div input{
+    height: auto;
+    width: 100%;
+    padding: 5px 10px;
+    font-size: 0.7vw;
+    border: solid 2px gray;
+    outline: none;
+    background: none;
+    color: black;
+    border-radius: 10px;
+}
+.admnpnlcprcayoutubechannelrContent{
+    height: auto;
+    width: 100%;
+}
+.admnpnlcprcayoutubechannelrContent textarea{
+    height: 12vw;
+    width: 100%;
+    padding: 10px;
+    font-size: 0.7vw;
+    border: solid 2px gray;
+    outline: none;
+    background: none;
+    color: black;
+    border-radius: 10px;
+    resize: none;
+}
+
+
+.admnpnlcprcayoutubechannelBtn{
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 3%;
+}
+.admnpnlcprcayoutubechannelBtn p{
+    width: 83%;
+    text-align: center;
+}
+.admnpnlcprcayoutubechannelBtn button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    outline: none;
+    border: solid 2px white;
+    color: white;
+    cursor: pointer;
+    padding: 5px 20px;
+    border-radius: 50px;
+    transition: 400ms ease;
+    opacity: 50%;
+    transition: 400ms ease;
+}
+.admnpnlcprcayoutubechannelBtn button h6{
+    font-size: 0.9vw;
+    font-weight: 600;
+}
+.admnpnlcprcayoutubechannelBtn button:hover{
+    opacity: 100%;
+    transition: 400ms ease;
+    background: red;
+    border: solid 2px red;
+}
+
+
+
+
+.admnpnlcprcAddMagazine{
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    margin-top: 3%;
+}
+.admnpnlcprcamagazine.left{
+    height: auto;
+    width: 30%;
+}
+.admnpnlcprcamagazine.left div{
+    margin-bottom: 1vw;
+}
+.admnpnlcprcamagazine.left div h6{
+    margin-left: 2%;
+    margin-bottom: 1%;
+    font-size: 0.7vw;
+    font-weight: 600;
+    color: gray;
+}
+.admnpnlcprcamagazine.left div select,
+.admnpnlcprcamagazine.left div input{
+    height: auto;
+    width: 100%;
+    padding: 5px 10px;
+    font-size: 0.7vw;
+    border: solid 2px gray;
+    outline: none;
+    background: none;
+    color: black;
+    border-radius: 10px;
+}
+.admnpnlcprcamagazine.left div select option{
+    background: gray;
+}
+
+.admnpnlcprcamagazine.right{
+    height: auto;
+    width: 65%;
+}
+.admnpnlcprcamagazine.right div h6{
+    margin-left: 2%;
+    margin-bottom: 1%;
+    font-size: 0.7vw;
+    font-weight: 600;
+    color: gray;
+}
+.admnpnlcprcamagazinerHeader{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.admnpnlcprcamagazinerHeader div{
+    width: 49%;
+    margin-bottom: 1vw;
+}
+.admnpnlcprcamagazinerHeader div input{
+    height: auto;
+    width: 100%;
+    padding: 5px 10px;
+    font-size: 0.7vw;
+    border: solid 2px gray;
+    outline: none;
+    background: none;
+    color: black;
+    border-radius: 10px;
+}
+.admnpnlcprcamagazinerContent{
+    height: auto;
+    width: 100%;
+}
+.admnpnlcprcamagazinerContent textarea{
+    height: 12vw;
+    width: 100%;
+    padding: 10px;
+    font-size: 0.7vw;
+    border: solid 2px gray;
+    outline: none;
+    background: none;
+    color: black;
+    border-radius: 10px;
+    resize: none;
+}
+
+.admnpnlcprcamagazineBtn{
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 3%;
+}
+.admnpnlcprcamagazineBtn p{
+    width: 83%;
+    text-align: center;
+}
+.admnpnlcprcamagazineBtn button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    outline: none;
+    border: solid 2px white;
+    color: white;
+    cursor: pointer;
+    padding: 5px 20px;
+    border-radius: 50px;
+    transition: 400ms ease;
+    opacity: 50%;
+    transition: 400ms ease;
+}
+.admnpnlcprcamagazineBtn button h6{
+    font-size: 0.9vw;
+    font-weight: 600;
+}
+.admnpnlcprcamagazineBtn button:hover{
+    opacity: 100%;
+    transition: 400ms ease;
+    background: red;
+    border: solid 2px red;
+}
+
+
+
+
+
+
+.admnpnlcprcAddNewspaper{
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    margin-top: 3%;
+}
+.admnpnlcprcanewspaper.left{
+    height: auto;
+    width: 30%;
+}
+.admnpnlcprcanewspaper.left div{
+    margin-bottom: 1vw;
+}
+.admnpnlcprcanewspaper.left div h6{
+    margin-left: 2%;
+    margin-bottom: 1%;
+    font-size: 0.7vw;
+    font-weight: 600;
+    color: gray;
+}
+.admnpnlcprcanewspaper.left div select,
+.admnpnlcprcanewspaper.left div input{
+    height: auto;
+    width: 100%;
+    padding: 5px 10px;
+    font-size: 0.7vw;
+    border: solid 2px gray;
+    outline: none;
+    background: none;
+    color: black;
+    border-radius: 10px;
+}
+.admnpnlcprcanewspaper.left div select option{
+    background: gray;
+}
+
+.admnpnlcprcanewspaper.right{
+    height: auto;
+    width: 65%;
+}
+.admnpnlcprcanewspaper.right div h6{
+    margin-left: 2%;
+    margin-bottom: 1%;
+    font-size: 0.7vw;
+    font-weight: 600;
+    color: gray;
+}
+.admnpnlcprcanewspaperrHeader{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.admnpnlcprcanewspaperrHeader div{
+    width: 49%;
+    margin-bottom: 1vw;
+}
+.admnpnlcprcanewspaperrHeader div input{
+    height: auto;
+    width: 100%;
+    padding: 5px 10px;
+    font-size: 0.7vw;
+    border: solid 2px gray;
+    outline: none;
+    background: none;
+    color: black;
+    border-radius: 10px;
+}
+.admnpnlcprcanewspaperrContent{
+    height: auto;
+    width: 100%;
+}
+.admnpnlcprcanewspaperrContent textarea{
+    height: 12vw;
+    width: 100%;
+    padding: 10px;
+    font-size: 0.7vw;
+    border: solid 2px gray;
+    outline: none;
+    background: none;
+    color: black;
+    border-radius: 10px;
+    resize: none;
+}
+
+.admnpnlcprcanewspaperBtn{
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 3%;
+}
+.admnpnlcprcanewspaperBtn p{
+    width: 83%;
+    text-align: center;
+}
+.admnpnlcprcanewspaperBtn button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    outline: none;
+    border: solid 2px white;
+    color: white;
+    cursor: pointer;
+    padding: 5px 20px;
+    border-radius: 50px;
+    transition: 400ms ease;
+    opacity: 50%;
+    transition: 400ms ease;
+}
+.admnpnlcprcanewspaperBtn button h6{
+    font-size: 0.9vw;
+    font-weight: 600;
+}
+.admnpnlcprcanewspaperBtn button:hover{
+    opacity: 100%;
+    transition: 400ms ease;
+    background: red;
+    border: solid 2px red;
+}
+
+
+
+
+
+
+
+
+
 

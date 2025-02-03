@@ -225,12 +225,15 @@ nav{
     width: 15vw;
     position: absolute;
     top: 7.5vh;
-    right: 10vw;
+    right: 5vw;
     padding: 0.5vw;
     border-radius: 0.5vw;
     background: whitesmoke;
     animation: fade-in-down 400ms ease;
     box-shadow: 0 0 10px gray;
+}
+.nvcntntrModal.logged{
+    right: 11.5vw;
 }
 .nvcntntrModal a{
     color: black;
@@ -269,6 +272,9 @@ nav{
     background: whitesmoke;
     animation: fade-in-down 400ms ease;
     box-shadow: 0 0 10px gray;
+}
+.nvcntntrContinent.logged{
+    right: 17vw;
 }
 .nvcntntrcTitle{
     height: auto;
@@ -468,7 +474,6 @@ nav{
     background: none;
     outline: none;
     border: none;
-    color: white;
     cursor: pointer;
     margin-right: 1vw;
     transition: 400ms ease;
@@ -482,7 +487,7 @@ nav{
     background: none;
     outline: none;
     border: none;
-    color: white;
+    color: black;
     cursor: pointer;
     margin-right: 1vw;
     transition: 400ms ease;

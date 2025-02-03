@@ -274,7 +274,7 @@ const Nav = () => {
             </div>
           </div>
           <div className="navContent right">
-            {viewPages && <div className="nvcntntrModal"
+            {viewPages && <div className={!userLoggedIn ? "nvcntntrModal" : "nvcntntrModal logged"}
               onMouseEnter={() => {
                 if (hideTimeout) {
                   clearTimeout(hideTimeout);
@@ -306,7 +306,7 @@ const Nav = () => {
               <Link><h6><FaCloudSunRain className='faIcons'/> WEATHER FORECAST</h6></Link>
               <Link><h6><FaClock className='faIcons'/> WORLD CLOCK</h6></Link>
             </div>}
-            {viewAmericaNav && <div className="nvcntntrContinent"
+            {viewAmericaNav && <div className={!userLoggedIn ? "nvcntntrContinent" : "nvcntntrContinent logged"}
               onMouseEnter={() => {
                 if (hideTimeout) {
                   clearTimeout(hideTimeout);
@@ -347,7 +347,7 @@ const Nav = () => {
                 <Link><h6><FaCloudSunRain className='faIcons'/> WEATHER</h6></Link>
               </div>
             </div>}
-            {viewEuropeNav && <div className="nvcntntrContinent"
+            {viewEuropeNav && <div className={!userLoggedIn ? "nvcntntrContinent" : "nvcntntrContinent logged"}
               onMouseEnter={() => {
                 if (hideTimeout) {
                   clearTimeout(hideTimeout);
@@ -388,7 +388,7 @@ const Nav = () => {
                 <Link><h6><FaCloudSunRain className='faIcons'/> WEATHER</h6></Link>
               </div>
             </div>}
-            {viewAfricaNav && <div className="nvcntntrContinent"
+            {viewAfricaNav && <div className={!userLoggedIn ? "nvcntntrContinent" : "nvcntntrContinent logged"}
                 onMouseEnter={() => {
                   if (hideTimeout) {
                     clearTimeout(hideTimeout);
@@ -429,7 +429,7 @@ const Nav = () => {
                 <Link><h6><FaCloudSunRain className='faIcons'/> WEATHER</h6></Link>
               </div>
             </div>}
-            {viewAsiaNav && <div className="nvcntntrContinent"
+            {viewAsiaNav && <div className={!userLoggedIn ? "nvcntntrContinent" : "nvcntntrContinent logged"}
                 onMouseEnter={() => {
                   if (hideTimeout) {
                     clearTimeout(hideTimeout);
@@ -470,7 +470,7 @@ const Nav = () => {
                 <Link><h6><FaCloudSunRain className='faIcons'/> WEATHER</h6></Link>
               </div>
             </div>}
-            {viewOceniaNav && <div className="nvcntntrContinent"
+            {viewOceniaNav && <div className={!userLoggedIn ? "nvcntntrContinent" : "nvcntntrContinent logged"}
                 onMouseEnter={() => {
                   if (hideTimeout) {
                     clearTimeout(hideTimeout);
@@ -511,7 +511,7 @@ const Nav = () => {
                 <Link><h6><FaCloudSunRain className='faIcons'/> WEATHER</h6></Link>
               </div>
             </div>}
-            {viewAntarticaNav && <div className="nvcntntrContinent"
+            {viewAntarticaNav && <div className={!userLoggedIn ? "nvcntntrContinent" : "nvcntntrContinent logged"}
                 onMouseEnter={() => {
                   if (hideTimeout) {
                     clearTimeout(hideTimeout);
