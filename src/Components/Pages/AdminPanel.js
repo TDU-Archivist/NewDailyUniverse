@@ -498,7 +498,7 @@ const AdminPanel = () => {
             const submitAirlineResponse = await axios.post(tduAddAirlineAPI, formPublishAirline);
             const responseMessage = submitAirlineResponse.data;
     
-            if (responseMessage.success === 'true') {
+            if (responseMessage.success === true) {
                 setAddAirlineLoader(false)
                 setAddAirlineResponse(responseMessage.message);
                 setAddAirlineContinent('');
@@ -517,7 +517,7 @@ const AdminPanel = () => {
                 return () => clearTimeout(timeoutId);
             } 
             
-            if (responseMessage.success === 'false') {
+            if (responseMessage.success === false) {
                 setAddAirlineLoader(false)
                 setAddAirlineResponse(responseMessage.message);
                 setAddAirlineContinent('');
@@ -544,7 +544,7 @@ const AdminPanel = () => {
     const publishAirportData = async () => {
         setAddAirportLoader(true);
 
-        if(!addAirportName || !addAirportLink || !addAirportDescription){
+        if(!addAirportName || !addAirportLink || !addAirportIATALink){
             setAddAirportLoader(false);
             setAddAirportResponse('Please fill up all fields')
             return;
@@ -566,7 +566,7 @@ const AdminPanel = () => {
             const submitAirportResponse = await axios.post(tduAddAirportAPI, formPublishAirport);
             const responseMessage = submitAirportResponse.data;
     
-            if (responseMessage.success === 'true') {
+            if (responseMessage.success === true) {
                 setAddAirportLoader(false)
                 setAddAirportResponse(responseMessage.message);
                 setAddAirportContinent('');
@@ -585,7 +585,7 @@ const AdminPanel = () => {
                 return () => clearTimeout(timeoutId);
             } 
             
-            if (responseMessage.success === 'false') {
+            if (responseMessage.success === false) {
                 setAddAirportLoader(false)
                 setAddAirportResponse(responseMessage.message);
                 setAddAirportContinent('');
@@ -667,7 +667,7 @@ const AdminPanel = () => {
             const submitLiveChannelResponse = await axios.post(tduAddLiveChannelAPI, formPublishLiveTelecast);
             const responseMessage = submitLiveChannelResponse.data;
     
-            if (responseMessage.success === 'true') {
+            if (responseMessage.success === true) {
                 setAddTelecastLoader(false)
                 setAddTelecastResponse(responseMessage.message);
                 setAddLCContinent('');
@@ -684,7 +684,7 @@ const AdminPanel = () => {
                 return () => clearTimeout(timeoutId);
             } 
             
-            if (responseMessage.success === 'false') {
+            if (responseMessage.success === false) {
                 setAddTelecastLoader(false)
                 setAddTelecastResponse(responseMessage.message);
                 setAddLCContinent('');
@@ -729,7 +729,7 @@ const AdminPanel = () => {
             const submitYoutubeResponse = await axios.post(tduAddYoutubeAPI, formPublishYoutube);
             const responseMessage = submitYoutubeResponse.data;
     
-            if (responseMessage.success === 'true') {
+            if (responseMessage.success === true) {
                 setAddTelecastLoader(false)
                 setAddTelecastResponse(responseMessage.message);
                 setAddYTContinent('');
@@ -746,7 +746,7 @@ const AdminPanel = () => {
                 return () => clearTimeout(timeoutId);
             } 
             
-            if (responseMessage.success === 'false') {
+            if (responseMessage.success === false) {
                 setAddTelecastLoader(false)
                 setAddTelecastResponse(responseMessage.message);
                 setAddYTContinent('');
@@ -802,7 +802,7 @@ const AdminPanel = () => {
             const submitMagazineResponse = await axios.post(tduAddMagazineAPI, formPublishMagazine);
             const responseMessage = submitMagazineResponse.data;
     
-            if (responseMessage.success === 'true') {
+            if (responseMessage.success === true) {
                 setAddMagazineLoader(false)
                 setAddMagazineResponse(responseMessage.message);
                 setAddMagazineContinent('');
@@ -818,7 +818,7 @@ const AdminPanel = () => {
                 return () => clearTimeout(timeoutId);
             } 
             
-            if (responseMessage.success === 'false') {
+            if (responseMessage.success === false) {
                 setAddMagazineLoader(false)
                 setAddMagazineResponse(responseMessage.message);
                 setAddMagazineContinent('');
@@ -873,15 +873,15 @@ const AdminPanel = () => {
             const submitNewspaperResponse = await axios.post(tduAddNewspaperAPI, formPublishNewspaper);
             const responseMessage = submitNewspaperResponse.data;
     
-            if (responseMessage.success === 'true') {
+            if (responseMessage.success === true) {
                 setAddNewspaperLoader(false)
                 setAddNewspaperResponse(responseMessage.message);
-                setAddMagazineContinent('');
-                setAddMagazineCountry('');
-                setAddMagazineCategory('');
-                setAddMagazineName('');
-                setAddMagazineLink('');
-                setAddMagazineDescription('');
+                setAddNewspaperContinent('');
+                setAddNewspaperCountry('');
+                setAddNewspaperCategory('');
+                setAddNewspaperName('');
+                setAddNewspaperLink('');
+                setAddNewspaperDescription('');
 
                 const timeoutId = setTimeout(() => {
                     setAddNewspaperResponse('');
@@ -889,15 +889,15 @@ const AdminPanel = () => {
                 return () => clearTimeout(timeoutId);
             } 
             
-            if (responseMessage.success === 'false') {
+            if (responseMessage.success === false) {
                 setAddNewspaperLoader(false)
                 setAddNewspaperResponse(responseMessage.message);
-                setAddMagazineContinent('');
-                setAddMagazineCountry('');
-                setAddMagazineCategory('');
-                setAddMagazineName('');
-                setAddMagazineLink('');
-                setAddMagazineDescription('');
+                setAddNewspaperContinent('');
+                setAddNewspaperCountry('');
+                setAddNewspaperCategory('');
+                setAddNewspaperName('');
+                setAddNewspaperLink('');
+                setAddNewspaperDescription('');
 
                 const timeoutId = setTimeout(() => {
                     setAddNewspaperResponse('');
@@ -1658,7 +1658,7 @@ const AdminPanel = () => {
                                 <div className="admnpnlcprcaairport left">
                                     <div>
                                         <label htmlFor=""><h6>SELECT CONTINENT</h6></label>
-                                        <select name="" id="" onChange={(e) => setAddAirlineContinent(e.target.value)}>
+                                        <select name="" id="" onChange={(e) => setAddAirportContinent(e.target.value)}>
                                             <option value="">Select Continent</option>
                                             <option value="America">America</option>
                                             <option value="Europe">Europe</option>
@@ -2147,7 +2147,7 @@ const AdminPanel = () => {
                                         <div className="admnpnlcprcalivechannelrContent">
                                             <div>
                                                 <label htmlFor=""><h6>NEWS CHANNEL DESCRIPTION</h6></label>
-                                                <textarea name="" id="" value={addLCDescription} onChange={(e) => setAddLCDescription(e.target.value)} placeholder='Type the news channel description here...' onChange={(e) => setAddArticleContent(e.target.value)}></textarea>
+                                                <textarea name="" id="" value={addLCDescription} onChange={(e) => setAddLCDescription(e.target.value)} placeholder='Type the news channel description here...'></textarea>
                                             </div>
                                         </div>
                                     </div>
@@ -2391,7 +2391,7 @@ const AdminPanel = () => {
                                         <div className="admnpnlcprcayoutubechannelrContent">
                                             <div>
                                                 <label htmlFor=""><h6>NEWS CHANNEL DESCRIPTION</h6></label>
-                                                <textarea name="" id="" value={addYTDescription} onChange={(e) => setAddYTDescription(e.target.value)} placeholder='Type the news channel description here...' onChange={(e) => setAddArticleContent(e.target.value)}></textarea>
+                                                <textarea name="" id="" value={addYTDescription} onChange={(e) => setAddYTDescription(e.target.value)} placeholder='Type the news channel description here...'></textarea>
                                             </div>
                                         </div>
                                     </div>
