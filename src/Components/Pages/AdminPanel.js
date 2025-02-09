@@ -1207,11 +1207,11 @@ const AdminPanel = () => {
                                                 </div>
                                                 <div>
                                                     <label htmlFor=""><h6>LATITUDE</h6></label>
-                                                    <input type="text" placeholder='Insert image link only' onChange={(e) => setAddCapitalLatitude(e.target.value)}/>
+                                                    <input type="text" onChange={(e) => setAddCapitalLatitude(e.target.value)}/>
                                                 </div>
                                                 <div>
                                                     <label htmlFor=""><h6>LONGTITUDE</h6></label>
-                                                    <input type="text" placeholder='Insert image link only' onChange={(e) => setAddCapitalLongitude(e.target.value)}/>
+                                                    <input type="text" onChange={(e) => setAddCapitalLongitude(e.target.value)}/>
                                                 </div>
                                             </div>
                                             <div className="admnpnlcprccccrImg">
