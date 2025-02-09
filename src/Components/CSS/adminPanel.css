@@ -1679,6 +1679,141 @@ section.adminPanelContainerPage{
 
 
 
-
-
+.admnpnlcprContainer.addRestaurant button#restaurantList{
+    position: absolute;
+    top: 1vw;
+    right: 1vw;
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 2vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.admnpnlcprcAddRestaurant{
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    margin-top: 3%;
+}
+.admnpnlcprcarestaurant.left{
+    height: auto;
+    width: 30%;
+}
+.admnpnlcprcarestaurant.left div{
+    margin-bottom: 1vw;
+}
+.admnpnlcprcarestaurant.left div h6{
+    margin-left: 2%;
+    margin-bottom: 1%;
+    font-size: 0.7vw;
+    font-weight: 600;
+    color: gray;
+}
+.admnpnlcprcarestaurant.left div select,
+.admnpnlcprcarestaurant.left div input{
+    height: auto;
+    width: 100%;
+    padding: 5px 10px;
+    font-size: 0.7vw;
+    border: solid 2px gray;
+    outline: none;
+    background: none;
+    color: black;
+    border-radius: 10px;
+}
+.admnpnlcprcarestaurant.left div select option{
+    background: gray;
+}
+.admnpnlcprcarestaurant.right{
+    height: auto;
+    width: 65%;
+}
+.admnpnlcprcarestaurant.right div h6{
+    margin-left: 2%;
+    margin-bottom: 1%;
+    font-size: 0.7vw;
+    font-weight: 600;
+    color: gray;
+}
+.admnpnlcprcarestaurantrHeader{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.admnpnlcprcarestaurantrHeader div{
+    width: 49%;
+    margin-bottom: 1vw;
+}
+.admnpnlcprcarestaurantrHeader div input{
+    height: auto;
+    width: 100%;
+    padding: 5px 10px;
+    font-size: 0.7vw;
+    border: solid 2px gray;
+    outline: none;
+    background: none;
+    color: black;
+    border-radius: 10px;
+}
+.admnpnlcprcarestaurantrContent{
+    height: auto;
+    width: 100%;
+}
+.admnpnlcprcarestaurantrContent textarea{
+    height: 12vw;
+    width: 100%;
+    padding: 10px;
+    font-size: 0.7vw;
+    border: solid 2px gray;
+    outline: none;
+    background: none;
+    color: black;
+    border-radius: 10px;
+    resize: none;
+}
+.admnpnlcprcarestaurantBtn{
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 3%;
+}
+.admnpnlcprcarestaurantBtn p{
+    width: 83%;
+    text-align: center;
+}
+.admnpnlcprcarestaurantBtn button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    outline: none;
+    border: solid 2px white;
+    color: white;
+    cursor: pointer;
+    padding: 5px 20px;
+    border-radius: 50px;
+    transition: 400ms ease;
+    opacity: 50%;
+    transition: 400ms ease;
+}
+.admnpnlcprcarestaurantBtn button h6{
+    font-size: 0.9vw;
+    font-weight: 600;
+}
+.admnpnlcprcarestaurantBtn button:hover{
+    opacity: 100%;
+    transition: 400ms ease;
+    background: red;
+    border: solid 2px red;
+}
 
