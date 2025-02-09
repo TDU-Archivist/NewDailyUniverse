@@ -24,20 +24,32 @@ export const MainDataLoadProvider = ({ children }) => {
 
     const [clickedCountry, setClickedCountry] = useState(null);
     const [viewPickCapital, setViewPickCapital] = useState(false);
-    const [viewCountryCapital, setViewCountryCapital] = useState([])
+    const [viewCountryCapital, setViewCountryCapital] = useState([]);
 
     
-    const [switchFullMap, setSwitchFullMap] = useState(false)
+    const [switchFullMap, setSwitchFullMap] = useState(false);
     const [openSuggestedMapTopic, setOpenSuggestedMapTopic] = useState(true);
-    const [fullMapPickedCountry, setFullMapPickedCountry] = useState(false)
+    const [fullMapPickedCountry, setFullMapPickedCountry] = useState(false);
 
-    const [viewAllArticles, setViewAllArticles] = useState([])
-    const [viewAllCapitals, setViewAllCapitals] = useState([])
-    const [viewAllWriters, setViewAllWriters] = useState([])
+    const [viewAllArticles, setViewAllArticles] = useState([]);
+    const [viewAllCapitals, setViewAllCapitals] = useState([]);
+    const [viewAllWriters, setViewAllWriters] = useState([]);
+    const [viewAllAirlines, setViewAllAirlines] = useState([]);
+    const [viewAllAirports, setViewAllAirports] = useState([]);
+    const [viewAllLiveChannels, setViewAllLiveChannels] = useState([]);
+    const [viewAllYoutubeChannels, setViewAllYoutubeChannels] = useState([]);
+    const [viewAllMagazines, setViewAllMagazines] = useState([]);
+    const [viewAllNewspapers, setViewAllNewspapers] = useState([]);
 
     const tduFetchAllArticlesAPI = process.env.REACT_APP_TDU_FETCH_ARTICLE_API;
     const tduFetchAllCapitalsAPI = process.env.REACT_APP_TDU_FETCH_CAPITALS_API;
     const tduFetchAllWrittersAPI = process.env.REACT_APP_TDU_FETCH_WRITERS_LIST_API;
+    const tduFetchAllAirlinesAPI = process.env.REACT_APP_TDU_FETCH_AIRLINES_API;
+    const tduFetchAllAirportsAPI = process.env.REACT_APP_TDU_FETCH_AIRPORTS_API;
+    const tduFetchAllLiveChannelsAPI = process.env.REACT_APP_TDU_FETCH_LIVECHANNELS_API;
+    const tduFetchAllYoutubeChannelsAPI = process.env.REACT_APP_TDU_FETCH_YOUTUBECHANNELS_API;
+    const tduFetchAllMagazinesAPI = process.env.REACT_APP_TDU_FETCH_MAGAZINES_API;
+    const tduFetchAllNewspapersAPI = process.env.REACT_APP_TDU_FETCH_NEWSPAPERS_API;
     const FIAT_API_URL = `https://open.er-api.com/v6/latest/USD`; 
 
     const fetchCountryData = async () => {
@@ -352,6 +364,17 @@ export const MainDataLoadProvider = ({ children }) => {
             console.log("Could not retrieve country details. Please check the country name and try again.");
         }
     };
+    const fetchAllCapitals = async () => {
+        try {
+            // Fetch Texeract Network Transactions
+            const capitalDataFetch = await axios.get(tduFetchAllCapitalsAPI);
+            const capitalData = capitalDataFetch.data
+            setViewAllCapitals(capitalData);
+
+        } catch (error) {
+            console.error(error);
+        }
+    }
     const fetchExchangeRates = async () => {
         try {
             // Fetch fiat currency rates
@@ -370,39 +393,49 @@ export const MainDataLoadProvider = ({ children }) => {
     };
     const fetchAllArticles = async () => {
         try {
-            // Fetch Texeract Network Transactions
-            const articleData = await axios.get(tduFetchAllArticlesAPI);
-            let sortedArticleData = articleData.data.sort((a, b) => 
+            const [articlesResponse, writersResponse] = await Promise.all([
+                axios.get(tduFetchAllArticlesAPI),
+                axios.get(tduFetchAllWrittersAPI)
+            ]);
+    
+            const sortedArticleData = articlesResponse.data.sort((a, b) => 
                 new Date(b.article_timestamp) - new Date(a.article_timestamp) // Descending order
             );
+    
             setViewAllArticles(sortedArticleData);
-
+            setViewAllWriters(writersResponse.data);
         } catch (error) {
             console.error(error);
         }
-    }
-    const fetchAllCapitals = async () => {
+    };
+    const fetchAllDataList = async () => {
         try {
-            // Fetch Texeract Network Transactions
-            const capitalDataFetch = await axios.get(tduFetchAllCapitalsAPI);
-            const capitalData = capitalDataFetch.data
-            setViewAllCapitals(capitalData);
-
+            const [
+                airlinesResponse, 
+                airportsResponse, 
+                liveChannelsResponse, 
+                youtubeChannelsResponse, 
+                magazinesResponse, 
+                newspaperResponse,
+            ] = await Promise.all([
+                axios.get(tduFetchAllAirlinesAPI),
+                axios.get(tduFetchAllAirportsAPI),
+                axios.get(tduFetchAllLiveChannelsAPI),
+                axios.get(tduFetchAllYoutubeChannelsAPI),
+                axios.get(tduFetchAllMagazinesAPI),
+                axios.get(tduFetchAllNewspapersAPI),
+            ]);
+    
+            setViewAllAirlines(airlinesResponse.data);
+            setViewAllAirports(airportsResponse.data);
+            setViewAllLiveChannels(liveChannelsResponse.data);
+            setViewAllYoutubeChannels(youtubeChannelsResponse.data);
+            setViewAllMagazines(magazinesResponse.data);
+            setViewAllNewspapers(newspaperResponse.data);
         } catch (error) {
             console.error(error);
         }
-    }
-    const fetchAllWritters = async () => {
-        try {
-            // Fetch Texeract Network Transactions
-            const articleData = await axios.get(tduFetchAllWrittersAPI);
-            const articleWriterData = articleData.data
-            setViewAllWriters(articleWriterData);
-
-        } catch (error) {
-            console.error(error);
-        }
-    }
+    };
 
 
     const [data, setData] = useState({
@@ -446,10 +479,10 @@ export const MainDataLoadProvider = ({ children }) => {
         try {
             await Promise.all([
                 fetchData(),
+                fetchAllCapitals(),
                 fetchExchangeRates(),
                 fetchAllArticles(),
-                fetchAllCapitals(),
-                fetchAllWritters(),
+                fetchAllDataList(),
             ]);
         } catch (error) {
             console.error('Error fetching data:', error);
@@ -487,45 +520,60 @@ export const MainDataLoadProvider = ({ children }) => {
         return () => clearInterval(intervalId); // Clean up on unmount
     }, []);
 
+
+    const allDataContext = {
+        userLoggedIn,
+        StoredUserID,
+        StoredUserDataJSON,
+        webLoader,
+        setWebLoader,
+        createTDUAccount, 
+        setCreateTDUAccount,
+        loginTDUAccount, 
+        setLoginTDUAccount,
+        clickedCountry, 
+        setClickedCountry,
+        pickedCountryModal, 
+        setPickedCountryModal,
+        pickedCountry, 
+        setPickedCountry,
+        countryData,
+        countryDescription, 
+        setCountryDescription,
+        countryCurrency,
+        countryThreeTouristSpots,
+        switchFullMap, 
+        setSwitchFullMap,
+        openSuggestedMapTopic, 
+        setOpenSuggestedMapTopic,
+        viewPickCapital, 
+        setViewPickCapital,
+        viewCountryCapital, 
+        setViewCountryCapital,
+        fullMapPickedCountry, 
+        setFullMapPickedCountry,
+        exchangeRates,
+        fetchAllArticles,
+        viewAllArticles,
+        viewAllCapitals,
+        viewAllWriters,
+        data,
+        dataList: {
+            viewAllAirlines,
+            viewAllAirports,
+            viewAllLiveChannels,
+            viewAllYoutubeChannels,
+            viewAllMagazines,
+            viewAllNewspapers,
+            fetchAllDataList
+        }
+    }
+    
+
+
+
     return (
-        <MainDataContext.Provider value={{ 
-                userLoggedIn,
-                StoredUserID,
-                StoredUserDataJSON,
-                webLoader,
-                setWebLoader,
-                createTDUAccount, 
-                setCreateTDUAccount,
-                loginTDUAccount, 
-                setLoginTDUAccount,
-                clickedCountry, 
-                setClickedCountry,
-                pickedCountryModal, 
-                setPickedCountryModal,
-                pickedCountry, 
-                setPickedCountry,
-                countryData,
-                countryDescription, 
-                setCountryDescription,
-                countryCurrency,
-                countryThreeTouristSpots,
-                switchFullMap, 
-                setSwitchFullMap,
-                openSuggestedMapTopic, 
-                setOpenSuggestedMapTopic,
-                viewPickCapital, 
-                setViewPickCapital,
-                viewCountryCapital, 
-                setViewCountryCapital,
-                fullMapPickedCountry, 
-                setFullMapPickedCountry,
-                exchangeRates,
-                fetchAllArticles,
-                viewAllArticles,
-                viewAllCapitals,
-                viewAllWriters,
-                data,
-            }}>
+        <MainDataContext.Provider value={allDataContext}>
             {children}
         </MainDataContext.Provider>
     );

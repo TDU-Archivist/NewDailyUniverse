@@ -180,10 +180,10 @@ const Home = () => {
     setPickedCountry(false);
   }
 
-  const filterGoodNews = viewAllArticles.filter(good => good.article_type === "Good News")
-  const filterLatestNews = viewAllArticles.filter(latest => latest.article_type === "Latest News")
-  const filterBusinessNews = viewAllArticles.filter(business => business.article_type === "Business News")
-  const filterSportsNews = viewAllArticles.filter(sports => sports.article_type === "Sports News")
+  const filterGoodNews = viewAllArticles ? viewAllArticles.filter(good => good.article_type === "Good News") : []
+  const filterLatestNews = viewAllArticles ? viewAllArticles.filter(latest => latest.article_type === "Latest News") : []
+  const filterBusinessNews = viewAllArticles ? viewAllArticles.filter(business => business.article_type === "Business News") : []
+  const filterSportsNews = viewAllArticles ? viewAllArticles.filter(sports => sports.article_type === "Sports News") : []
 
   const [suggestExploreCountry, setSuggestExploreCountry] = useState([]);
 

@@ -155,7 +155,7 @@ section.adminPanelContainerPage{
 .admnpnlcprContainer{
     height: auto;
     width: 100%;
-    padding-bottom: 5vw;
+    position: relative;
 }
 .admnpnlcprContainer h4{
     text-transform: uppercase;
@@ -668,6 +668,61 @@ section.adminPanelContainerPage{
 
 
 
+.admnpnlcprDataList{
+    height: auto;
+    width: 100%;
+    margin-top: 3%;
+}
+.admnpnlcprDataList table{
+    height: auto;
+    width: 100%;
+}
+.admnpnlcprDataList table thead tr th{
+    text-align: center;
+    padding: 0.2vw 0.5vw;
+}
+.admnpnlcprDataTable{
+    height: 32vw;
+    width: 100%;
+    background: rgb(220, 220, 220);
+    border-radius: 0.5vw;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.admnpnlcprDataTable h6{
+    text-align: center;
+    margin: 1vw 0;
+}
+.admnpnlcprDataTable table{
+    height: auto;
+    width: 100%;
+    text-align: center;
+}
+.admnpnlcprDataTable table tbody tr:nth-child(odd) {
+    background: rgb(210, 210, 210);
+}
+.admnpnlcprDataTable table tbody tr:nth-child(even) {
+    background: rgb(200, 200, 200);
+}
+.admnpnlcprDataTable table tbody tr td{
+    padding: 0.5vw 0.2vw;
+}
+.admnpnlcprDataTable table tbody tr td p{
+    font-size: 0.6vw;
+}
+.admnpnlcprDataTable table tbody tr td.tdCenter{
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.admnpnlcprDataTableEmpty{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 
 
@@ -675,6 +730,20 @@ section.adminPanelContainerPage{
 
 
 
+
+.admnpnlcprContainer.addAirline button#airlineList{
+    position: absolute;
+    top: 1vw;
+    right: 1vw;
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 2vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 .admnpnlcprcAddAirline{
     height: auto;
@@ -832,7 +901,19 @@ section.adminPanelContainerPage{
 
 
 
-
+.admnpnlcprContainer.addAirport button#aiportList{
+    position: absolute;
+    top: 1vw;
+    right: 1vw;
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 2vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .admnpnlcprcAddAirport{
     height: auto;
     width: 100%;
@@ -984,7 +1065,19 @@ section.adminPanelContainerPage{
 
 
 
-
+.admnpnlcprContainer.addTelecastChannel button#channelList{
+    position: absolute;
+    top: 1vw;
+    right: 1vw;
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 2vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .admnpnlcprctelecastNav{
     height: auto;
     width: 100%;
@@ -1288,6 +1381,24 @@ section.adminPanelContainerPage{
 
 
 
+
+
+
+
+
+.admnpnlcprContainer.addMagazine button#magazineList{
+    position: absolute;
+    top: 1vw;
+    right: 1vw;
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 2vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .admnpnlcprcAddMagazine{
     height: auto;
     width: 100%;
@@ -1420,6 +1531,21 @@ section.adminPanelContainerPage{
 
 
 
+
+
+.admnpnlcprContainer.addNewspaper button#newspaperList{
+    position: absolute;
+    top: 1vw;
+    right: 1vw;
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 2vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .admnpnlcprcAddNewspaper{
     height: auto;
     width: 100%;
