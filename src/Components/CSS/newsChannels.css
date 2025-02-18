@@ -177,6 +177,7 @@ section.newsChannelsContainerPage.mid{
     height: auto;
     width: 100%;
     display: flex;
+    flex-wrap: wrap;
     justify-content: left;
     align-items: center;
 }
@@ -188,6 +189,7 @@ section.newsChannelsContainerPage.mid{
     border-radius: 1vw;
     text-decoration: none;
     text-align: center;
+    margin: 0.5%;
 }
 .nwschnlcpm2c1Img{
     height: 10vw;
@@ -219,11 +221,20 @@ section.newsChannelsContainerPage.mid{
     justify-content: center;
     align-items: center;
 }
+.nwschnlcpm2c1Img h6{
+    font-size: 1.5vw;
+    position: absolute;
+    top: 1vw;
+    right: 1vw;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .nwschnlcpm2c1Content{
     height: auto;
     width: 100%;
     padding: 1vw;
-    padding-bottom: 2vw;
 }
 .nwschnlcpm2c1Content h5 {
     font-size: 1.2vw;

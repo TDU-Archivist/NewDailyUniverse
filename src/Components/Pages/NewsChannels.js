@@ -92,6 +92,7 @@ const NewsChannels = () => {
         exchangeRates,
         viewAllArticles,
         data,
+        dataList,
     } = MainDataLoad(); 
 
     const [viewLiveChannels, setViewLiveChannels] = useState(true);
@@ -145,26 +146,31 @@ const NewsChannels = () => {
                 </div>
                 <div className="newsChannelsContentPage mid2">
                     {viewLiveChannels && <div className="nwschnlcpm2Content1">
-                        <Link className="nwschnlcpm2c1">
-                            <div className='nwschnlcpm2c1Img'>
-                                <img id='nwschnlcpm2c1iLogo' src={require('../assets/imgs/Logos/CNN.png')} alt="" />
-                            </div>
-                            <div className='nwschnlcpm2c1Content'>
-                                <h5>CNN LIVE CHANNEL</h5>
-                                <p>United States</p>
-                            </div>
-                        </Link>
+                        <>
+                            {dataList?.viewAllLiveChannels?.map((details, i) => (
+                                <Link className="nwschnlcpm2c1" key={i}>
+                                    <div className='nwschnlcpm2c1Img'>
+                                        <img id='nwschnlcpm2c1iLogo' src={details?.channel_logo} alt="" />
+                                        <h6>{details?.country}</h6>
+                                    </div>
+                                    <div className='nwschnlcpm2c1Content'>
+                                        <h5>{details?.channel_name}</h5>
+                                    </div>
+                                </Link>
+                            ))}
+                        </>
                     </div>}
                     {viewYoutubeChannels && <div className="nwschnlcpm2Content1">
-                        <Link className="nwschnlcpm2c1">
-                            <div className='nwschnlcpm2c1Img'>
-                                <h5><FaYoutube className='faIcons'/></h5>
-                            </div>
-                            <div className='nwschnlcpm2c1Content'>
-                                <h5>CNN YOUTUBE</h5>
-                                <p>United States</p>
-                            </div>
-                        </Link>
+                        <>
+                            <Link className="nwschnlcpm2c1">
+                                <div className='nwschnlcpm2c1Img'>
+                                    <h5><FaYoutube className='faIcons'/></h5>
+                                </div>
+                                <div className='nwschnlcpm2c1Content'>
+                                    <h5>CNN YOUTUBE</h5>
+                                </div>
+                            </Link>
+                        </>
                     </div>}
                 </div>
             </section>

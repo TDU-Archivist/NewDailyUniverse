@@ -559,7 +559,7 @@ const Nav = () => {
               <button className={viewAsiaNav ? 'active' : ''} onClick={!viewAsiaNav ? handleViewAsiaNav : handleHideModals}>Asia</button>
               <button className={viewOceniaNav ? 'active' : ''} onClick={!viewOceniaNav ? handleViewOceaniaNav : handleHideModals}>Oceania</button>
               <button className={viewAntarticaNav ? 'active' : ''} onClick={!viewAntarticaNav ? handleViewAntarcticaNav : handleHideModals}>Antarctica</button>
-              <button onClick={!viewPages ? handleViewPages : handleHideModals} className={viewPages ? 'active' : ''}>{!viewPages ? <FaBars className='faIcons'/> : <FaTimes className='faIcons'/>}</button>
+              <button onClick={!viewPages ? handleViewPages : handleHideModals} className={viewPages ? 'active bar' : 'bar'}>{!viewPages ? <FaBars className='faIcons'/> : <FaTimes className='faIcons'/>}</button>
             </div>
             {(!userLoggedIn && !StoredUserID) ? <div className="nvcntntr user">
               <button id='nvcntntruLogin' onClick={handleLoginTDU}><FaRegUserCircle className='faIcons'/></button>

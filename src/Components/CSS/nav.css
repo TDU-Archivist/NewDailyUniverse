@@ -233,7 +233,7 @@ nav{
     box-shadow: 0 0 10px gray;
 }
 .nvcntntrModal.logged{
-    right: 11.5vw;
+    right: 12.5vw;
 }
 .nvcntntrModal a{
     color: black;
@@ -255,7 +255,7 @@ nav{
     font-size: 1vw;
 }
 .nvcntntrModal a h6:hover{
-    background: black;
+    background: rgba(50, 50, 50);
     color: white;
 }
 
@@ -338,7 +338,7 @@ nav{
     font-size: 1vw;
 }
 .nvcntntrcPages a h6:hover{
-    background: black;
+    background: rgba(50, 50, 50);
     color: white;
 }
 
@@ -353,7 +353,6 @@ nav{
 }
 .nvcntntr.links button{
     font-size: 0.7vw;
-    margin-left: 2vw;
     color: gray;
     text-decoration: none;
     text-transform: uppercase;
@@ -370,17 +369,27 @@ nav{
     transition: 400ms ease;
     opacity: 70%;
     transition: 400ms ease;
+    padding: 0.5vw 1vw;
+    border-radius: 50px;
+    margin: 0 0.1vw;
 }
 .nvcntntr.links button .faIcons{
     font-size: 1.2vw;
 }
 .nvcntntr.links button.active{
     opacity: 100%;
+    color: white;
+    background: rgba(50, 50, 50);
+    transition: 400ms ease;
+}
+.nvcntntr.links button.bar{
+    background: none;
     color: black;
     transition: 400ms ease;
 }
-.nvcntntr.links button:hover{
+.nvcntntr.links button.bar:hover{
     color: black;
+    background: none;
     transition: 400ms ease;
 }
 .nvcntntr.links a{

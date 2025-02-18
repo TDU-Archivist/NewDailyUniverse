@@ -258,7 +258,7 @@ const AdminPanel = () => {
     const addCountryCapital = async () => {
         setCapitaLoader(true);
         if(!addCapitalName || !addCapitalLatitude || !addCapitalLongitude){
-            setArticleLoader(false);
+            setCapitaLoader(false);
             setArticleResponse('Please fill up all fields')
             return;
         }
@@ -355,18 +355,19 @@ const AdminPanel = () => {
 
     const publishNewsArticle = async () => {
         setArticleLoader(true);
-        if(!addArticleTitle || !addArticleWritter || !addArticleContent){
+    
+        if (!addArticleTitle || !addArticleWritter || !addArticleContent) {
             setArticleLoader(false);
-            setArticleResponse('Please fill up all fields')
+            setArticleResponse('Please fill up all fields');
             return;
         }
-
+    
         const fullHash = CryptoJS.SHA256(`${addArticleTitle}, ${addArticleWritter}, ${addArticleContent}, ${new Date()}`).toString(CryptoJS.enc.Hex);
         const shortHash = fullHash.substring(0, 20);
-
+    
         const cleanSymbols = addArticleTitle.replace(/[^a-zA-Z0-9 ]/g, '');
         const articleCanonical = cleanSymbols.replace(/\s+/g, '-');
-
+    
         const formPublishNewsArticle = {
             tdu_code: `TDU_Article${shortHash}`,
             tdu_country: addArticleCountry,
@@ -379,49 +380,34 @@ const AdminPanel = () => {
             tdu_copyright: addArticleCopyright,
             tdu_content: addArticleContent
         };
-
-        // const jsonWalletDetails = JSON.stringify(formPublishNewsArticle);
-        // console.log(jsonWalletDetails);
-
+    
         try {
             const submitArticleResponse = await axios.post(tduPublishArticleAPI, formPublishNewsArticle);
             const responseMessage = submitArticleResponse.data;
     
+            setArticleResponse(responseMessage.message);
+    
             if (responseMessage.success === 'true') {
-                setArticleLoader(false)
-                setArticleResponse(responseMessage.message);
                 setAddArticleTitle('');
                 setAddArticleSubtitle('');
                 setAddArticleImage('');
                 setAddArticleContent('');
                 fetchAllArticles();
-
-                const timeoutId = setTimeout(() => {
-                    setArticleResponse('');
-                }, 3000);
-                return () => clearTimeout(timeoutId);
-            } 
-            
-            if (responseMessage.success === 'false') {
-                setArticleLoader(false);
-                setArticleResponse(responseMessage.message);
-                setAddArticleTitle('');
-                setAddArticleSubtitle('');
-                setAddArticleImage('');
-                setAddArticleContent('');
-
-                
-                const timeoutId = setTimeout(() => {
-                    setArticleResponse('');
-                }, 3000);
-                return () => clearTimeout(timeoutId);
             }
+    
+            setTimeout(() => {
+                setArticleLoader(false);
+                setArticleResponse('');
+            }, 3000);
     
         } catch (error) {
             console.error(error);
-            setArticleLoader(false);
+            setArticleResponse('An error occurred while publishing the article.');
+        } finally {
+            setArticleLoader(false); // Ensures loader is turned off in all cases
         }
     };
+    
 
 
     
@@ -528,16 +514,6 @@ const AdminPanel = () => {
             if (responseMessage.success === false) {
                 setAddAirlineLoader(false)
                 setAddAirlineResponse(responseMessage.message);
-                setAddAirlineContinent('');
-                setAddAirlineCountry('');
-                setAddAirlineRegion('');
-                setAddAirlineState('');
-                setAddAirlineName('');
-                setAddAirlineLink('');
-                setAddAirlineLogoLink('');
-                setAddAirlineImageLink('');
-                setAddAirlineDescription('');
-                dataList?.fetchAllDataList();
 
                 const timeoutId = setTimeout(() => {
                     setAddAirlineResponse('');
@@ -547,7 +523,6 @@ const AdminPanel = () => {
     
         } catch (error) {
             console.error(error);
-            setArticleLoader(false);
         }
     };
     const publishAirportData = async () => {
@@ -598,16 +573,6 @@ const AdminPanel = () => {
             if (responseMessage.success === false) {
                 setAddAirportLoader(false)
                 setAddAirportResponse(responseMessage.message);
-                setAddAirportContinent('');
-                setAddAirportCountry('');
-                setAddAirportRegion('');
-                setAddAirportState('');
-                setAddAirportName('');
-                setAddAirportLink('');
-                setAddAirportLogoLink('');
-                setAddAirportIATALink('');
-                setAddAirportDescription('');
-                dataList?.fetchAllDataList();
 
                 const timeoutId = setTimeout(() => {
                     setAddAirportResponse('');
@@ -699,14 +664,6 @@ const AdminPanel = () => {
             if (responseMessage.success === false) {
                 setAddTelecastLoader(false)
                 setAddTelecastResponse(responseMessage.message);
-                setAddLCContinent('');
-                setAddLCCountry('');
-                setAddLCRegion('');
-                setAddLCName('');
-                setAddLCLink('');
-                setAddLCImageLogo('');
-                setAddLCDescription('');
-                dataList?.fetchAllDataList();
 
                 const timeoutId = setTimeout(() => {
                     setAddTelecastResponse('');
@@ -763,14 +720,6 @@ const AdminPanel = () => {
             if (responseMessage.success === false) {
                 setAddTelecastLoader(false)
                 setAddTelecastResponse(responseMessage.message);
-                setAddYTContinent('');
-                setAddYTCountry('');
-                setAddYTRegion('');
-                setAddYTName('');
-                setAddYTLink('');
-                setAddYTImageLogo('');
-                setAddYTDescription('');
-                dataList?.fetchAllDataList();
 
                 const timeoutId = setTimeout(() => {
                     setAddTelecastResponse('');
@@ -837,13 +786,6 @@ const AdminPanel = () => {
             if (responseMessage.success === false) {
                 setAddMagazineLoader(false)
                 setAddMagazineResponse(responseMessage.message);
-                setAddMagazineContinent('');
-                setAddMagazineCountry('');
-                setAddMagazineCategory('');
-                setAddMagazineName('');
-                setAddMagazineLink('');
-                setAddMagazineDescription('');
-                dataList?.fetchAllDataList();
 
                 const timeoutId = setTimeout(() => {
                     setAddMagazineResponse('');
@@ -910,12 +852,6 @@ const AdminPanel = () => {
             if (responseMessage.success === false) {
                 setAddNewspaperLoader(false)
                 setAddNewspaperResponse(responseMessage.message);
-                setAddNewspaperContinent('');
-                setAddNewspaperCountry('');
-                setAddNewspaperCategory('');
-                setAddNewspaperName('');
-                setAddNewspaperLink('');
-                setAddNewspaperDescription('');
                 dataList?.fetchAllDataList();
 
                 const timeoutId = setTimeout(() => {
@@ -983,12 +919,6 @@ const AdminPanel = () => {
             if (responseMessage.success === false) {
                 setAddRestaurantLoader(false)
                 setAddRestaurantResponse(responseMessage.message);
-                setAddRestaurantContinent('');
-                setAddRestaurantCountry('');
-                setAddRestaurantCategory('');
-                setAddRestaurantName('');
-                setAddRestaurantLink('');
-                setAddRestaurantDescription('');
                 dataList?.fetchAllDataList();
 
                 const timeoutId = setTimeout(() => {
@@ -1546,7 +1476,7 @@ const AdminPanel = () => {
                                     <div className="admnpnlcprcaairline left">
                                         <div>
                                             <label htmlFor=""><h6>SELECT CONTINENT</h6></label>
-                                            <select name="" id="" onChange={(e) => setAddAirlineContinent(e.target.value)}>
+                                            <select name="" id="" value={addAirlineContinent} onChange={(e) => setAddAirlineContinent(e.target.value)}>
                                                 <option value="">Select Continent</option>
                                                 <option value="America">America</option>
                                                 <option value="Europe">Europe</option>
@@ -1561,7 +1491,7 @@ const AdminPanel = () => {
                                         </div>
                                         <div>
                                             <label htmlFor=""><h6>COUNTRY</h6></label>
-                                            <select name="" id="" onChange={(e) => setAddAirlineCountry(e.target.value)}>
+                                            <select name="" id="" value={addAirlineCountry} onChange={(e) => setAddAirlineCountry(e.target.value)}>
                                                 <option value="">Select Country</option>
                                                 <option value="AF">Afghanistan</option>
                                                 <option value="AL">Albania</option>
@@ -1848,7 +1778,7 @@ const AdminPanel = () => {
                                     <div className="admnpnlcprcaairport left">
                                         <div>
                                             <label htmlFor=""><h6>SELECT CONTINENT</h6></label>
-                                            <select name="" id="" onChange={(e) => setAddAirportContinent(e.target.value)}>
+                                            <select name="" id="" value={addAirportContinent} onChange={(e) => setAddAirportContinent(e.target.value)}>
                                                 <option value="">Select Continent</option>
                                                 <option value="America">America</option>
                                                 <option value="Europe">Europe</option>
@@ -1863,7 +1793,7 @@ const AdminPanel = () => {
                                         </div>
                                         <div>
                                             <label htmlFor=""><h6>COUNTRY</h6></label>
-                                            <select name="" id="" onChange={(e) => setAddAirportCountry(e.target.value)}>
+                                            <select name="" id="" value={addAirportCountry} onChange={(e) => setAddAirportCountry(e.target.value)}>
                                                 <option value="">Select Country</option>
                                                 <option value="AF">Afghanistan</option>
                                                 <option value="AL">Albania</option>
@@ -2121,7 +2051,7 @@ const AdminPanel = () => {
                                         </thead>
                                     </table>
                                     <div className="admnpnlcprDataTable">
-                                        {(dataList?.viewAllLiveChannels?.length && dataList?.viewAllYoutubeChannels?.length) ? <>
+                                        {(dataList?.viewAllLiveChannels?.length || dataList?.viewAllYoutubeChannels?.length) ? <>
                                             <h6>LIVE TELECAST</h6>
                                             <table>
                                                 <tbody>
@@ -2171,7 +2101,7 @@ const AdminPanel = () => {
                                         <div className="admnpnlcprcalivechannel left">
                                             <div>
                                                 <label htmlFor=""><h6>SELECT CONTINENT</h6></label>
-                                                <select name="" id="" onChange={(e) => setAddLCContinent(e.target.value)}>
+                                                <select name="" id="" value={addLCContinent} onChange={(e) => setAddLCContinent(e.target.value)}>
                                                     <option value="">Select Continent</option>
                                                     <option value="America">America</option>
                                                     <option value="Europe">Europe</option>
@@ -2183,7 +2113,7 @@ const AdminPanel = () => {
                                             </div>
                                             <div>
                                                 <label htmlFor=""><h6>COUNTRY</h6></label>
-                                                <select name="" id="" onChange={(e) => setAddLCCountry(e.target.value)}>
+                                                <select name="" id="" value={addLCCountry} onChange={(e) => setAddLCCountry(e.target.value)}>
                                                     <option value="">Select Country</option>
                                                     <option value="AF">Afghanistan</option>
                                                     <option value="AL">Albania</option>
@@ -2415,7 +2345,7 @@ const AdminPanel = () => {
                                         <div className="admnpnlcprcayoutubechannel left">
                                             <div>
                                                 <label htmlFor=""><h6>SELECT CONTINENT</h6></label>
-                                                <select name="" id="" onChange={(e) => setAddYTContinent(e.target.value)}>
+                                                <select name="" id="" value={addYTContinent} onChange={(e) => setAddYTContinent(e.target.value)}>
                                                     <option value="">Select Continent</option>
                                                     <option value="America">America</option>
                                                     <option value="Europe">Europe</option>
@@ -2427,7 +2357,7 @@ const AdminPanel = () => {
                                             </div>
                                             <div>
                                                 <label htmlFor=""><h6>COUNTRY</h6></label>
-                                                <select name="" id="" onChange={(e) => setAddYTCountry(e.target.value)}>
+                                                <select name="" id="" value={addYTCountry} onChange={(e) => setAddYTCountry(e.target.value)}>
                                                     <option value="">Select Country</option>
                                                     <option value="AF">Afghanistan</option>
                                                     <option value="AL">Albania</option>
@@ -2706,7 +2636,7 @@ const AdminPanel = () => {
                                     <div className="admnpnlcprcamagazine left">
                                         <div>
                                             <label htmlFor=""><h6>SELECT CONTINENT</h6></label>
-                                            <select name="" id="" onChange={(e) => setAddMagazineContinent(e.target.value)}>
+                                            <select name="" id="" value={addMagazineContinent} onChange={(e) => setAddMagazineContinent(e.target.value)}>
                                                 <option value="">Select Continent</option>
                                                 <option value="America">America</option>
                                                 <option value="Europe">Europe</option>
@@ -2718,7 +2648,7 @@ const AdminPanel = () => {
                                         </div>
                                         <div>
                                             <label htmlFor=""><h6>COUNTRY</h6></label>
-                                            <select name="" id="" onChange={(e) => setAddMagazineCountry(e.target.value)}>
+                                            <select name="" id="" value={addMagazineCountry} onChange={(e) => setAddMagazineCountry(e.target.value)}>
                                                 <option value="">Select Country</option>
                                                 <option value="AF">Afghanistan</option>
                                                 <option value="AL">Albania</option>
@@ -2911,7 +2841,7 @@ const AdminPanel = () => {
                                         </div>
                                         <div>
                                             <label htmlFor=""><h6>MAGAZINE CATEGORY</h6></label>
-                                            <select name="" id="" onChange={(e) => setAddMagazineCategory(e.target.value)}>
+                                            <select name="" id="" value={addMagazineCategory} onChange={(e) => setAddMagazineCategory(e.target.value)}>
                                                 <option value="">Select Category</option>
                                                 <option value="Art Magazine">Art Magazine</option>
                                                 <option value="Boat Magazine">Boat Magazine</option>
@@ -3014,7 +2944,7 @@ const AdminPanel = () => {
                                     <div className="admnpnlcprcanewspaper left">
                                         <div>
                                             <label htmlFor=""><h6>SELECT CONTINENT</h6></label>
-                                            <select name="" id="" onChange={(e) => setAddNewspaperContinent(e.target.value)}>
+                                            <select name="" id="" value={addNewspaperContinent} onChange={(e) => setAddNewspaperContinent(e.target.value)}>
                                                 <option value="">Select Continent</option>
                                                 <option value="America">America</option>
                                                 <option value="Europe">Europe</option>
@@ -3026,7 +2956,7 @@ const AdminPanel = () => {
                                         </div>
                                         <div>
                                             <label htmlFor=""><h6>COUNTRY</h6></label>
-                                            <select name="" id="" onChange={(e) => setAddNewspaperCountry(e.target.value)}>
+                                            <select name="" id="" value={addNewspaperCountry} onChange={(e) => setAddNewspaperCountry(e.target.value)}>
                                                 <option value="">Select Country</option>
                                                 <option value="AF">Afghanistan</option>
                                                 <option value="AL">Albania</option>
@@ -3219,7 +3149,7 @@ const AdminPanel = () => {
                                         </div>
                                         <div>
                                             <label htmlFor=""><h6>NEWSPAPER CATEGORY</h6></label>
-                                            <select name="" id="" onChange={(e) => setAddNewspaperCategory(e.target.value)}>
+                                            <select name="" id="" value={addNewspaperCategory} onChange={(e) => setAddNewspaperCategory(e.target.value)}>
                                                 <option value="">Select Category</option>
                                                 <option value="Alternative Newspaper">Alternative Newspaper</option>
                                                 <option value="College Newspaper">College Newspaper</option>
@@ -3306,7 +3236,7 @@ const AdminPanel = () => {
                                     <div className="admnpnlcprcarestaurant left">
                                         <div>
                                             <label htmlFor=""><h6>SELECT CONTINENT</h6></label>
-                                            <select name="" id="" onChange={(e) => setAddRestaurantContinent(e.target.value)}>
+                                            <select name="" id="" value={addRestaurantContinent} onChange={(e) => setAddRestaurantContinent(e.target.value)}>
                                                 <option value="">Select Continent</option>
                                                 <option value="America">America</option>
                                                 <option value="Europe">Europe</option>
@@ -3318,7 +3248,7 @@ const AdminPanel = () => {
                                         </div>
                                         <div>
                                             <label htmlFor=""><h6>COUNTRY</h6></label>
-                                            <select name="" id="" onChange={(e) => setAddRestaurantCountry(e.target.value)}>
+                                            <select name="" id="" value={addRestaurantCountry} onChange={(e) => setAddRestaurantCountry(e.target.value)}>
                                                 <option value="">Select Country</option>
                                                 <option value="AF">Afghanistan</option>
                                                 <option value="AL">Albania</option>
@@ -3511,7 +3441,7 @@ const AdminPanel = () => {
                                         </div>
                                         <div>
                                             <label htmlFor=""><h6>RESTAURANT CATEGORY</h6></label>
-                                            <select name="" id="" onChange={(e) => setAddRestaurantCategory(e.target.value)}>
+                                            <select name="" id="" value={addRestaurantCategory} onChange={(e) => setAddRestaurantCategory(e.target.value)}>
                                                 <option value="">Select Category</option>
                                                 <option value="Expensive Res">Expensive Restaurants</option>
                                                 <option value="Famous Res">Famous Restaurants</option>

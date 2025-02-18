@@ -112,13 +112,11 @@ section.adminPanelContainerPage{
 }
 .admnpnlcplNavigations button.active{
     opacity: 100%;
-    background: rgb(250, 250, 250);
+    background: rgb(50, 50, 50);
     transition: 400ms ease;
 }
-.admnpnlcplNavigations button:hover{
-    opacity: 100%;
-    background: rgb(230, 230, 230);
-    transition: 400ms ease;
+.admnpnlcplNavigations button.active h6{
+    color: whitesmoke;
 }
 .admnpnlcplnOthers{
     height: auto;
@@ -135,9 +133,11 @@ section.adminPanelContainerPage{
     border-radius: 10px;
 }
 .admnpnlcplnOthers button.active{
-    background: rgb(230, 230, 230);
+    background: rgb(50, 50, 50);
 }
-
+.admnpnlcplnOthers button.active h6{
+    color: whitesmoke;
+}
 
 
 
@@ -177,7 +177,7 @@ section.adminPanelContainerPage{
 .admnpnlcprNavigation button{
     background: none;
     color: black;
-    padding: 5px 10px;
+    padding: 5px 1vw;
     outline: none;
     border: none;
     border-bottom: solid 2px transparent;
@@ -187,14 +187,12 @@ section.adminPanelContainerPage{
     font-family: "Oswald", sans-serif;
     transition: 400ms ease;
     cursor: pointer;
+    border-radius: 0.5vw;
 }
 .admnpnlcprNavigation button.active{
     opacity: 100%;
-    border-bottom: solid 2px black;
-    transition: 400ms ease;
-}
-.admnpnlcprNavigation button:hover{
-    opacity: 100%;
+    background: rgb(50, 50, 50);
+    color: whitesmoke;
     transition: 400ms ease;
 }
 
@@ -569,7 +567,7 @@ section.adminPanelContainerPage{
     border-radius: 10px;
 }
 .admnpnlcprcaa.left div select option{
-    background: black;
+    background: gray;
 }
 
 
@@ -606,7 +604,7 @@ section.adminPanelContainerPage{
     border: solid 2px gray;
     outline: none;
     background: none;
-    color: white;
+    color: black;
     border-radius: 10px;
     resize: none;
 }
@@ -691,7 +689,9 @@ section.adminPanelContainerPage{
 }
 .admnpnlcprDataTable h6{
     text-align: center;
-    margin: 1vw 0;
+    margin: 0.5vw 0;
+    font-size: 0.8vw;
+    font-weight: 600;
 }
 .admnpnlcprDataTable table{
     height: auto;
