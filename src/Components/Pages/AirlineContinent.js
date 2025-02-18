@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import "../CSS/newsChannels.css";
+import "../CSS/airlines.css";
+import { useParams } from "react-router-dom";
 import { Link } from 'react-router-dom';
 import { 
   FaTimes,
@@ -10,8 +11,7 @@ import {
   FaArrowLeft,
   FaMapMarkedAlt,
   FaBook,
-  FaPlayCircle,     
-  FaYoutube
+  FaPlayCircle     
 } from 'react-icons/fa';
 import { 
   TbArrowsMinimize,
@@ -28,6 +28,7 @@ import MapboxMap from './Mapbox';
 import CountryFlag from './CountryFlag';
 import ExchangeRateMarquee from './ExchangeRateMarquee';
 import { MainDataLoad } from './MainDataContext';
+
 
 
 const TextSlicer = ({ text = '', maxLength }) => {
@@ -60,7 +61,7 @@ const NumberFormatter = ({ number }) => {
     return <>{number > 0 ? formatNumber(number) : 0}</>;
 };
 
-const NewsChannels = () => {
+const AirlineContinent = () => {
     const { 
         webLoader,
         createTDUAccount, 
@@ -95,25 +96,16 @@ const NewsChannels = () => {
         dataList,
     } = MainDataLoad(); 
 
-    const [viewLiveChannels, setViewLiveChannels] = useState(true);
-    const [viewYoutubeChannels, setViewYoutubeChannels] = useState(false);
-
-    const handleViewLiveChannels = () => {
-        setViewLiveChannels(true);
-        setViewYoutubeChannels(false);
-    }
-    const handleViewYoutubeChannels = () => {
-        setViewLiveChannels(false);
-        setViewYoutubeChannels(true);
-    }
+    const { airlineContinent } = useParams();
+    const americaAirline = dataList?.viewAllAirlines.filter(cont => cont.continent === airlineContinent)
 
     const [countries, setCountries] = useState({});
 
     useEffect(() => {
         const fetchCountryNames = async () => {
-        if (!dataList?.viewAllLiveChannels) return;
+        if (!americaAirline) return;
         
-        const uniqueAlphaCodes = [...new Set(dataList.viewAllLiveChannels.map(channel => channel.country))];
+        const uniqueAlphaCodes = [...new Set(americaAirline.map(channel => channel.country))];
         
         try {
             const responses = await Promise.all(
@@ -139,9 +131,8 @@ const NewsChannels = () => {
     }, [dataList]);
 
 
-
     return (
-        <div className='mainContainer newsChannels'>
+        <div className='mainContainer airlineContinent'>
             <div className={webLoader ? "allLoaderContainer active" : "allLoaderContainer disable"}>
                 <div className="loaderContent">
                 <img src={require('../assets/imgs/TheDailyUniverseLogo.png')} alt="" />
@@ -150,65 +141,52 @@ const NewsChannels = () => {
             </div>
 
 
-            <section className="newsChannelsContainerPage top">
-                <div className="newsChannelsContentPage top1">
-                    <img src={require('../assets/imgs/LiveChannelsBG.png')} alt="" />
+
+            <section className="airlineContContainerPage top">
+                <div className="airlineContContentPage top1">
+                    <img src={require('../assets/imgs/AirlinesBG.png')} alt="" />
                 </div>
-                <div className="newsChannelsContentPage top2">
-                    <div className="nwschnlcpt2 left">
-                        <h4>LIVE TELECAST AND YOUTUBE NEWS CHANNELS</h4>
-                        <p>Stay Informed with Live Telecasts from these Trusted News Channels.</p>
+                <div className="airlineContContentPage top2">
+                    <div className="arlncntntcpt2 left">
+                        <Link to='/Airlines'><MdKeyboardDoubleArrowLeft className='faIcons'/></Link>
+                        <h4>FAMOUS AIRLINES IN <span>{airlineContinent}</span></h4>
                     </div>
-                    <div className="nwschnlcpt2 right">
-                        <input type="text" placeholder='Search keyword, news channel or youtube channel here...'/>
-                        <div className="nwschnlcpt2rBtn">
+                    <div className="arlncntntcpt2 right">
+                        <input type="text" placeholder='Search keyword, country or airline name here...'/>
+                        <div className="arlncntntcpt2rBtn">
                             <button><FaSearch className='faIcons'/></button>
                             <button><FaMicrophone className='faIcons'/></button>
                         </div>
                     </div>
                 </div>
             </section>
-            <section className="newsChannelsContainerPage mid">
-                <div className="newsChannelsContentPage mid1">
-                    <div className="nwschnlcpm1Nav">
-                        <button className={viewLiveChannels ? 'active' : ''} onClick={handleViewLiveChannels}>LIVE CHANNELS</button>
-                        <button className={viewYoutubeChannels ? 'active' : ''} onClick={handleViewYoutubeChannels}>YOUTUBE CHANNELS</button>
-                    </div>
-                </div>
-                <div className="newsChannelsContentPage mid2">
-                    {viewLiveChannels && <div className="nwschnlcpm2Content1">
-                        <>
-                            {dataList?.viewAllLiveChannels?.map((details, i) => (
-                                <a className="nwschnlcpm2c1" href={details?.channel_website} target='blank' key={i}>
-                                    <div className='nwschnlcpm2c1Img'>
-                                        <img id='nwschnlcpm2c1iLogo' src={details?.channel_logo} alt="" />
-                                        <h6>{details?.country}</h6>
-                                    </div>
-                                    <div className='nwschnlcpm2c1Content'>
-                                        <h5>{details?.channel_name}</h5>
-                                        <p>{countries[details?.country] || details?.country}</p>
-                                    </div>
-                                </a>
-                            ))}
-                        </>
-                    </div>}
-                    {viewYoutubeChannels && <div className="nwschnlcpm2Content1">
-                        <>
-                            <a className="nwschnlcpm2c1">
-                                <div className='nwschnlcpm2c1Img'>
-                                    <h5><FaYoutube className='faIcons'/></h5>
+            <section className="airlineContContainerPage mid">
+                <div className="airlineContContentPage mid1">
+                    {americaAirline.map((details, i) => (
+                        <a className='arlncntntcpm1' href={details?.airline_website} target='blank' key={i}>
+                            <div className="arlncntntcpm1Top">
+                                <img src={details?.airline_logo} alt="" />
+                                <h5>{details?.country}</h5>
+                            </div>
+                            <div className="arlncntntcpm1Bottom">
+                                <div>
+                                    <h6>{details?.airline_name}</h6>
+                                    <p>{countries[details?.country] || details?.country}</p>
                                 </div>
-                                <div className='nwschnlcpm2c1Content'>
-                                    <h5>CNN YOUTUBE</h5>
-                                </div>
-                            </a>
-                        </>
-                    </div>}
+                            </div>
+                        </a>
+                    ))}
                 </div>
+
             </section>
+
+
+
+
+
 
         </div>
     )
 }
 
-export default NewsChannels
+export default AirlineContinent

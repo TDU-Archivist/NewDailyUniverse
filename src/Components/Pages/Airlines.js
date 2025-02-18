@@ -125,37 +125,37 @@ const Airlines = () => {
             </section>
             <section className="airlinesContainerPage mid">
                 <div className="airlinesContentPage mid1">
-                    <Link>
+                    <Link to='/Airlines/America'>
                         <img src={require('../assets/imgs/Airlines/AmericanAirlines.png')} alt="" />
                         <div>
                             <h6>AMERICAN AIRLINES</h6>
                         </div>
                     </Link>
-                    <Link>
+                    <Link to='/Airlines/Europe'>
                         <img src={require('../assets/imgs/Airlines/EuropeanAirlines.png')} alt="" />
                         <div>
                             <h6>EUROPEAN AIRLINES</h6>
                         </div>
                     </Link>
-                    <Link>
+                    <Link to='/Airlines/Africa'>
                         <img src={require('../assets/imgs/Airlines/AfricanAirlines.png')} alt="" />
                         <div>
                             <h6>AFRICAN AIRLINES</h6>
                         </div>
                     </Link>
-                    <Link>
+                    <Link to='/Airlines/Asia'>
                         <img src={require('../assets/imgs/Airlines/AsianAirlines.png')} alt="" />
                         <div>
                             <h6>ASIAN AIRLINES</h6>
                         </div>
                     </Link>
-                    <Link>
+                    <Link to='/Airlines/Oceania'>
                         <img src={require('../assets/imgs/Airlines/OceanianAirlines.png')} alt="" />
                         <div>
                             <h6>OCEANIAN AIRLINES</h6>
                         </div>
                     </Link>
-                    <Link>
+                    <Link to='/Airlines/Antarctica'>
                         <img src={require('../assets/imgs/Airlines/AntarticaAirlines.png')} alt="" />
                         <div>
                             <h6>ANTARCTICAN AIRLINES</h6>

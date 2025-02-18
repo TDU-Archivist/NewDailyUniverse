@@ -25,6 +25,10 @@ import Newspapers from './Components/Pages/Newspapers';
 import Restaurants from './Components/Pages/Restaurants';
 
 
+
+import AirlineContinent from './Components/Pages/AirlineContinent';
+
+
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 
 function App() {
@@ -56,6 +60,10 @@ function App() {
           <Route path="/Restaurants" element={<Restaurants/>}/>
 
           
+          <Route path="/Airlines/:airlineContinent" element={<AirlineContinent/>}/>
+
+
+
           <Route path="*" element={<Home/>}/>
         </Routes>
         {/* <Footer /> */}

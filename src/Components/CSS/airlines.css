@@ -35,6 +35,13 @@ h6{
     padding-bottom: 10vw;
 }
 
+.mainContainer.airlineContinent{
+    height: auto;
+    width: 100%;
+    background: white;
+    padding-bottom: 10vw;
+}
+
 /*----- Landing Section -----*/
 
 
@@ -265,4 +272,192 @@ section.airlinesContainerPage.mid{
 }
 .airlnscpm2c2 p{
     margin-top: 0.5vw;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Airline Continent */
+
+section.airlineContContainerPage.top{
+    height: auto;
+    width: 100%;
+    padding: 4vw 5vw;
+    padding-bottom: 1vw;
+    background: 
+        linear-gradient(whitesmoke 0%, transparent),
+        linear-gradient(transparent, white 100%),
+        url('../assets/imgs/TheDailyUniverseBG.png') no-repeat center;
+    background-size: cover;
+}
+.airlineContContentPage.top1{
+    height: 20vw;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 1vw;
+    position: relative;
+}
+.airlineContContentPage.top1 img{
+    height: auto;
+    width: 100%;
+}
+.airlineContContentPage.top2{
+    height: auto;
+    width: 100%;
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    margin-top: 1vw;
+}
+.arlncntntcpt2.left{
+    height: auto;
+    width: 50%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+.arlncntntcpt2.left a{
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-size: 3vw;
+    margin-right: 1vw;
+    color: gray;
+}
+.arlncntntcpt2.left h4{
+    text-transform: uppercase;
+}
+.arlncntntcpt2.left h4 span{
+    color: royalblue;
+    font-family: "Oswald", sans-serif;
+}
+.arlncntntcpt2.right{
+    height: auto;
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: solid 2px black;
+    border-radius: 50px;
+    padding: 0.3vw 1.5vw;
+}
+.arlncntntcpt2.right input{
+    background: none;
+    border: none;
+    outline: none;
+    font-size: 0.8vw;
+    width: 80%;
+}
+.arlncntntcpt2rBtn{
+    height: auto;
+    width: 20%;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+.arlncntntcpt2rBtn button{
+    border: none;
+    outline: none;
+    background: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10%;
+    font-size: 0.9vw;
+}
+
+
+
+
+
+section.airlineContContainerPage.mid{
+    height: auto;
+    width: 100%;
+    padding: 1vw 5vw;
+}
+.airlineContContentPage.mid1{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    align-items: center;
+}
+.arlncntntcpm1{
+    height: 10vw;
+    width: 19%;
+    overflow: hidden;
+    background: rgba(200, 200, 200);
+    border-radius: 1vw;
+    text-decoration: none;
+    text-align: center;
+    margin: 0.5%;
+    position: relative;
+    background: url('../assets/imgs/Airlines/AirlineIcon.png') no-repeat center;
+    background-size: cover;
+}
+.arlncntntcpm1Top{
+    height: auto;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 1.5vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.arlncntntcpm1Top img{
+    width: 4vw;
+}
+.arlncntntcpm1Top h5{
+    text-shadow: 0 0 20px white;
+}
+.arlncntntcpm1Bottom{
+    height: auto;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 1vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.arlncntntcpm1Bottom div{
+    height: auto;
+    width: 100%;
+    padding: 1vw;
+    border-radius: 1vw;
+    background: rgba(200, 200, 200, 0.5);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+.arlncntntcpm1Bottom div h6{
+    font-weight: 600;
+}
+.arlncntntcpm1Bottom div p{
+    font-size: 0.7vw;
 }
