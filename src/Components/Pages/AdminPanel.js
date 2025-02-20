@@ -1493,6 +1493,18 @@ const AdminPanel = () => {
                                             <label htmlFor=""><h6>SELECT CONTINENT</h6></label>
                                             <select name="" id="" value={addAirlineContinent} onChange={(e) => setAddAirlineContinent(e.target.value)}>
                                                 <option value="">Select Continent</option>
+                                                <option value="America">America</option>
+                                                <option value="Europe">Europe</option>
+                                                <option value="Africa">Africa</option>
+                                                <option value="Asia">Asia</option>
+                                                <option value="Oceania">Oceania</option>
+                                                <option value="Antarctica">Antarctica</option>
+                                            </select>
+                                        </div>
+                                        <div>
+                                            <label htmlFor=""><h6>SELECT SUB CONTINENT</h6></label>
+                                            <select name="" id="" value={addAirlineSubContinent} onChange={(e) => setAddAirlineSubContinent(e.target.value)}>
+                                                <option value="">Select Sub-Continent</option>
                                                 <option value="Central">Central</option>
                                                 <option value="Northern">Northern</option>
                                                 <option value="Northwestern">Northwestern</option>
@@ -1502,20 +1514,6 @@ const AdminPanel = () => {
                                                 <option value="Southern">Southern</option>
                                                 <option value="Southwestern">Southwestern</option>
                                                 <option value="Southeastern">Southeastern</option>
-                                            </select>
-                                        </div>
-                                        <div>
-                                            <label htmlFor=""><h6>SELECT SUB CONTINENT</h6></label>
-                                            <select name="" id="" value={addAirlineSubContinent} onChange={(e) => setAddAirlineSubContinent(e.target.value)}>
-                                                <option value="">Select Sub-Continent</option>
-                                                <option value="North">North</option>
-                                                <option value="North-West">North-West</option>
-                                                <option value="North-East">North-East</option>
-                                                <option value="West">West</option>
-                                                <option value="East">East</option>
-                                                <option value="South">South</option>
-                                                <option value="South-West">South-West</option>
-                                                <option value="South-East">South-East</option>
                                             </select>
                                         </div>
                                         {/* <div className="admnpnlcprcaairlinelImg">
