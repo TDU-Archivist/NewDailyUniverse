@@ -1498,8 +1498,8 @@ const AdminPanel = () => {
                                                 <option value="Northwestern">Northwestern</option>
                                                 <option value="Northeastern">Northeastern</option>
                                                 <option value="Western">Western</option>
-                                                <option value="Eastearn">Eastearn</option>
-                                                <option value="Southearn">Southearn</option>
+                                                <option value="Eastern">Eastern</option>
+                                                <option value="Southern">Southern</option>
                                                 <option value="Southwestern">Southwestern</option>
                                                 <option value="Southeastern">Southeastern</option>
                                             </select>
@@ -1829,8 +1829,8 @@ const AdminPanel = () => {
                                                 <option value="Northwestern">Northwestern</option>
                                                 <option value="Northeastern">Northeastern</option>
                                                 <option value="Western">Western</option>
-                                                <option value="Eastearn">Eastearn</option>
-                                                <option value="Southearn">Southearn</option>
+                                                <option value="Eastern">Eastern</option>
+                                                <option value="Southern">Southern</option>
                                                 <option value="Southwestern">Southwestern</option>
                                                 <option value="Southeastern">Southeastern</option>
                                             </select>
@@ -3302,8 +3302,8 @@ const AdminPanel = () => {
                                                 <option value="Northwestern">Northwestern</option>
                                                 <option value="Northeastern">Northeastern</option>
                                                 <option value="Western">Western</option>
-                                                <option value="Eastearn">Eastearn</option>
-                                                <option value="Southearn">Southearn</option>
+                                                <option value="Eastern">Eastern</option>
+                                                <option value="Southern">Southern</option>
                                                 <option value="Southwestern">Southwestern</option>
                                                 <option value="Southeastern">Southeastern</option>
                                             </select>
