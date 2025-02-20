@@ -421,6 +421,7 @@ const AdminPanel = () => {
 
 
     const [addAirlineContinent, setAddAirlineContinent] = useState('');
+    const [addAirlineSubContinent, setAddAirlineSubContinent] = useState('');
     const [addAirlineCountry, setAddAirlineCountry] = useState('');
     const [addAirlineRegion, setAddAirlineRegion] = useState('');
     const [addAirlineState, setAddAirlineState] = useState('');
@@ -433,6 +434,7 @@ const AdminPanel = () => {
     const [addAirlineResponse, setAddAirlineResponse] = useState('');
 
     const [addAirportContinent, setAddAirportContinent] = useState('');
+    const [addAirportSubContinent, setAddAirportSubContinent] = useState('');
     const [addAirportCountry, setAddAirportCountry] = useState('');
     const [addAirportRegion, setAddAirportRegion] = useState('');
     const [addAirportState, setAddAirportState] = useState('');
@@ -477,6 +479,7 @@ const AdminPanel = () => {
 
         const formPublishAirline = {
             continent: addAirlineContinent,
+            subcontinent: `${addAirlineSubContinent} ${addAirlineContinent}`,
             country: addAirlineCountry,
             region: addAirlineRegion,
             city: addAirlineState,
@@ -495,6 +498,7 @@ const AdminPanel = () => {
                 setAddAirlineLoader(false)
                 setAddAirlineResponse(responseMessage.message);
                 setAddAirlineContinent('');
+                setAddAirlineSubContinent('');
                 setAddAirlineCountry('');
                 setAddAirlineRegion('');
                 setAddAirlineState('');
@@ -536,6 +540,7 @@ const AdminPanel = () => {
 
         const formPublishAirport = {
             continent: addAirportContinent,
+            subcontinent: `${addAirportSubContinent} ${addAirportContinent}`,
             country: addAirportCountry,
             region: addAirportRegion,
             city: addAirportState,
@@ -554,6 +559,7 @@ const AdminPanel = () => {
                 setAddAirportLoader(false)
                 setAddAirportResponse(responseMessage.message);
                 setAddAirportContinent('');
+                setAddAirportSubContinent('');
                 setAddAirportCountry('');
                 setAddAirportRegion('');
                 setAddAirportState('');
@@ -869,7 +875,10 @@ const AdminPanel = () => {
 
 
     const [addRestaurantContinent, setAddRestaurantContinent] = useState('');
+    const [addRestaurantSubContinent, setAddRestaurantSubContinent] = useState('');
     const [addRestaurantCountry, setAddRestaurantCountry] = useState('');
+    const [addRestaurantRegion, setAddRestaurantRegion] = useState('');
+    const [addRestaurantCity, setAddRestaurantCity] = useState('');
     const [addRestaurantCategory, setAddRestaurantCategory] = useState('');
     const [addRestaurantName, setAddRestaurantName] = useState('');
     const [addRestaurantLink, setAddRestaurantLink] = useState('');
@@ -888,7 +897,10 @@ const AdminPanel = () => {
 
         const formPublishRestaurant = {
             continent: addRestaurantContinent,
+            subcontinent: `${addRestaurantSubContinent} ${addRestaurantContinent}`,
             country: addRestaurantCountry,
+            region: addRestaurantRegion,
+            city: addRestaurantCity,
             restaurant_category: addRestaurantCategory,
             restaurant_name: addRestaurantName,
             restaurant_website: addRestaurantLink,
@@ -903,7 +915,10 @@ const AdminPanel = () => {
                 setAddRestaurantLoader(false)
                 setAddRestaurantResponse(responseMessage.message);
                 setAddRestaurantContinent('');
+                setAddRestaurantSubContinent('');
                 setAddRestaurantCountry('');
+                setAddRestaurantRegion('');
+                setAddRestaurantCity('');
                 setAddRestaurantCategory('');
                 setAddRestaurantName('');
                 setAddRestaurantLink('');
@@ -1486,9 +1501,23 @@ const AdminPanel = () => {
                                                 <option value="Antarctica">Antarctica</option>
                                             </select>
                                         </div>
-                                        <div className="admnpnlcprcaairlinelImg">
-                                            <img src={imageContent} alt="" />
+                                        <div>
+                                            <label htmlFor=""><h6>SELECT SUB CONTINENT</h6></label>
+                                            <select name="" id="" value={addAirlineSubContinent} onChange={(e) => setAddAirlineSubContinent(e.target.value)}>
+                                                <option value="">Select Sub-Continent</option>
+                                                <option value="North">North</option>
+                                                <option value="North-West">North-West</option>
+                                                <option value="North-East">North-East</option>
+                                                <option value="West">West</option>
+                                                <option value="East">East</option>
+                                                <option value="South">South</option>
+                                                <option value="South-West">South-West</option>
+                                                <option value="South-East">South-East</option>
+                                            </select>
                                         </div>
+                                        {/* <div className="admnpnlcprcaairlinelImg">
+                                            <img src={imageContent} alt="" />
+                                        </div> */}
                                         <div>
                                             <label htmlFor=""><h6>COUNTRY</h6></label>
                                             <select name="" id="" value={addAirlineCountry} onChange={(e) => setAddAirlineCountry(e.target.value)}>
@@ -1788,9 +1817,23 @@ const AdminPanel = () => {
                                                 <option value="Antarctica">Antarctica</option>
                                             </select>
                                         </div>
-                                        <div className="admnpnlcprcaairportlImg">
-                                            <img src={imageContent} alt="" />
+                                        <div>
+                                            <label htmlFor=""><h6>SELECT SUB CONTINENT</h6></label>
+                                            <select name="" id="" value={addAirportSubContinent} onChange={(e) => setAddAirportSubContinent(e.target.value)}>
+                                            <option value="">Select Sub-Continent</option>
+                                                <option value="North">North</option>
+                                                <option value="North-West">North-West</option>
+                                                <option value="North-East">North-East</option>
+                                                <option value="West">West</option>
+                                                <option value="East">East</option>
+                                                <option value="South">South</option>
+                                                <option value="South-West">South-West</option>
+                                                <option value="South-East">South-East</option>
+                                            </select>
                                         </div>
+                                        {/* <div className="admnpnlcprcaairportlImg">
+                                            <img src={imageContent} alt="" />
+                                        </div> */}
                                         <div>
                                             <label htmlFor=""><h6>COUNTRY</h6></label>
                                             <select name="" id="" value={addAirportCountry} onChange={(e) => setAddAirportCountry(e.target.value)}>
@@ -3247,6 +3290,20 @@ const AdminPanel = () => {
                                             </select>
                                         </div>
                                         <div>
+                                            <label htmlFor=""><h6>SELECT SUB CONTINENT</h6></label>
+                                            <select name="" id="" value={addRestaurantSubContinent} onChange={(e) => setAddRestaurantSubContinent(e.target.value)}>
+                                            <option value="">Select Sub-Continent</option>
+                                                <option value="North">North</option>
+                                                <option value="North-West">North-West</option>
+                                                <option value="North-East">North-East</option>
+                                                <option value="West">West</option>
+                                                <option value="East">East</option>
+                                                <option value="South">South</option>
+                                                <option value="South-West">South-West</option>
+                                                <option value="South-East">South-East</option>
+                                            </select>
+                                        </div>
+                                        <div>
                                             <label htmlFor=""><h6>COUNTRY</h6></label>
                                             <select name="" id="" value={addRestaurantCountry} onChange={(e) => setAddRestaurantCountry(e.target.value)}>
                                                 <option value="">Select Country</option>
@@ -3438,6 +3495,14 @@ const AdminPanel = () => {
                                                 <option value="ZM">Zambia</option>
                                                 <option value="ZW">Zimbabwe</option>
                                             </select>
+                                        </div>
+                                        <div>
+                                            <label htmlFor=""><h6>REGION/STATE</h6></label>
+                                            <input type="text" value={addRestaurantRegion} onChange={(e) => setAddRestaurantRegion(e.target.value)} placeholder='Insert here if country was not available'/>
+                                        </div>
+                                        <div>
+                                            <label htmlFor=""><h6>CITY/PROVINCE</h6></label>
+                                            <input type="text" value={addRestaurantCity} onChange={(e) => setAddRestaurantCity(e.target.value)} placeholder='Located City or Province'/>
                                         </div>
                                         <div>
                                             <label htmlFor=""><h6>RESTAURANT CATEGORY</h6></label>
