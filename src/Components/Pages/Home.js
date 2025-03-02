@@ -559,8 +559,18 @@ const Home = () => {
             ))}
           </div>
           <h5>LATEST SHOWBIZZ NEWS</h5>
-          <div className="maincpm1 ent">
+          <div className="maincpm1 ent web">
             {data?.entertainment2.slice(1, 6).map((details, i) => (
+              <a className="mncntntpm1 ent" key={i} href={details?.data?.url} target='blank'>
+                <img src={details?.data?.thumbnail ? details?.data?.thumbnail : (require('../assets/imgs/TDULandingBG.png'))} alt="" />
+                <div className="mncntntpm1Title">
+                  <p><TextSlicer text={`${details?.data?.title ? details?.data?.title : 'None'}`} maxLength={100} /></p>
+                </div>
+              </a>
+            ))}
+          </div>
+          <div className="maincpm1 ent mobile">
+            {data?.entertainment2.slice(1, 5).map((details, i) => (
               <a className="mncntntpm1 ent" key={i} href={details?.data?.url} target='blank'>
                 <img src={details?.data?.thumbnail ? details?.data?.thumbnail : (require('../assets/imgs/TDULandingBG.png'))} alt="" />
                 <div className="mncntntpm1Title">

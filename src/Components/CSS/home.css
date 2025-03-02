@@ -798,6 +798,9 @@ section.mainContainerPage.mid{
 .maincpm1.ent{
     flex-wrap: wrap;
 }
+.maincpm1.ent.mobile{
+    display: none;
+}
 .mncntntpm1{
     height: 15vw;
     width: 24%;
@@ -1789,7 +1792,7 @@ section.mainContainerPage.mid{
 
 
     .mainContentPage.top2{
-        height: 150vw;
+        height: 70vw;
         width: 100%;
         background: rgb(30, 30, 30);
         border-radius: 3vw;
@@ -1948,6 +1951,9 @@ section.mainContainerPage.mid{
     .mainContentPage.mid1 h4{
         font-size: 4vw;
     }
+    .mainContentPage.mid1 h5{
+        font-size: 4vw;
+    }
     .maincpm1{
         margin-top: 2%;
         flex-wrap: wrap;
@@ -1959,12 +1965,160 @@ section.mainContainerPage.mid{
         margin-bottom: 3%;
     }
     .mncntntpm1Title h6{
-        height: auto;
-        font-size: 3vw;
-        line-height: 3vw;
+        display: none;
     }
     .mncntntpm1Title p{
+        height: auto;
+        font-size: 2.5vw;
+        line-height: 3vw;
+    }
+    .maincpm1.ent.web{
         display: none;
+    }
+    .maincpm1.ent.mobile{
+        display: flex;
+    }
+    .mncntntpm1.ent{
+        height: 35vw;
+        width: 49%;
+        margin-bottom: 3%;
+    }
+
+
+    .mainContentPage.mid2{
+        display: block;
+    }
+    .mncntntpm2.left{
+        height: 55vw;
+        width: 100%;
+        border-radius: 3vw;
+    }
+    .mncntntpm2.left p{
+        bottom: 3vw;
+        left: 3vw;
+        opacity: 50%;
+        font-size: 3vw;
+    }
+    .mncntntpm2.right{
+        height: auto;
+        width: 100%;
+        padding: 2% 0;
+    }
+    .mncntntpm2Author h6{
+        font-size: 3vw;
+    }
+    .mncntntpm2Author p{
+        font-size: 2.5vw;
+        opacity: 50%;
+    }
+    .mncntntpm2Title{
+        height: auto;
+    }
+    .mncntntpm2Title h3{
+        font-size: 6vw;
+        line-height: 6vw;
+    }
+    .mncntntpm2SubTitle{
+        height: auto;
+    }
+    .mncntntpm2SubTitle p{
+        font-size: 3vw;
+    }
+    .mncntntpm2More{
+        margin-top: 2%;
+    }
+    .mncntntpm2More a h6{
+        font-size: 3vw;
+    }
+
+
+
+    .mainContentPage.mid3{
+        height: auto;
+        border-radius: 3vw;
+    }
+    .mncntntpm3AdContainer h5{
+        font-size: 5vw;
+    }
+
+
+
+
+
+
+    .mainContentPage.mid7{
+        display: block;
+        margin-top: 10%;
+    }
+    .mncntntpm7Container{
+        height: auto;
+        width: 100%;
+    }
+    .mncntntpm7cHeader h4{
+        font-size: 4vw;
+        line-height: 3vw;
+    }
+    .mncntntpm7clContent{
+        height: 40vw;
+        width: 100%;
+        border-radius: 3vw;
+    }
+    .mncntntpm7clcTitle{
+        padding: 4vw;
+    }
+    .mncntntpm7clcTitle h4{
+        font-size: 3vw;
+    }
+    .mncntntpm7clcTitle p{
+        font-size: 2.5vw;
+    }
+
+
+    .mncntntpm7cHeader{
+        width: 100%;
+        margin-top: 3%;
+    }
+    .mncntntpm7cHeader h5{
+        font-size: 4vw;
+        line-height: 4vw;
+    }
+    .mncntntpm7cHeader a h6{
+        font-size: 3vw;
+    }
+    .mncntntpm7crc div{
+        height: 20vw;
+        width: 30%;
+        border-radius: 3vw;
+    }
+    .mncntntpm7crc span h5{
+        font-size: 4vw;
+        line-height: 4vw;
+    }
+    .mncntntpm7crc span p{
+        font-size: 2.5vw;
+    }
+
+
+    .mainContentPage.mid8{
+        margin-top: 5%;
+    }
+    .mncntntpm8More h4{
+        font-size: 4vw;
+    }
+    .mncntntpm8More a{
+        display: none;
+    }
+
+    .mncntntpm8Container1 a{
+        height: auto;
+        width: 49%;
+        margin-bottom: 2%;
+        border-radius: 3vw;
+    }
+
+
+    .mncntntpm8Container2 p{
+        font-size: 3;
     }
 
 
