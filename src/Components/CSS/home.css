@@ -56,9 +56,11 @@ h6{
 .allLoaderContainer.active{
     top: 0;
     left: 0;
+    opacity: 1;
     transition: 600ms ease;
 }
 .allLoaderContainer.disable{
+    opacity: 0;
     top: -100%;
     left: 0;
     transition: 800ms ease;
@@ -1744,7 +1746,7 @@ section.mainContainerPage.mid{
         height: 40vw;
     }
     .loaderContent p{
-        font-size: 5vw;
+        font-size: 4vw;
     }
 
 

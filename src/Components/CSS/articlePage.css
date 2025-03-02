@@ -28,6 +28,7 @@ h6{
 }
 
 
+
 .mainContainer.articlePage{
     height: auto;
     width: 100%;
@@ -70,7 +71,7 @@ section.articlePageContainerPage.top{
 section.articlePageContainerPage.mid{
     height: auto;
     width: 100%;
-    padding: 8vw 5vw;
+    padding: 7vw 5vw;
     padding-bottom: 2vw;
     display: flex;
     justify-content: space-between;
@@ -252,3 +253,104 @@ section.articlePageContainerPage.bot{
 
 
 
+@media screen and (max-width: 500px){
+
+    section.articlePageContainerPage.mid{
+        padding: 15vw 5vw;
+        padding-bottom: 2vw;
+        display: block;
+    }
+    .articlePageContentMid.left{
+        height: auto;
+        width: 100%;
+    }
+    .artclpcpmlImg{
+        height: 50vw;
+        width: 100%;
+        border-radius: 3vw;
+    }
+    .artclpcpmlTitle h4{
+        font-size: 4vw;
+        line-height: 4vw;
+        text-align: center;
+    }
+    .artclpcpmlAuthor span{
+        height: 15vw;
+        width: 15vw;
+        margin-right: 3%;
+    }
+    .artclpcpmlAuthor div h5{
+        font-size: 4vw;
+        line-height: 4vw;
+    }
+    .artclpcpmlAuthor div p{
+        font-size: 3vw;
+    }
+
+
+
+
+    .articlePageContentMid.right{
+        height: auto;
+        width: 100%;
+        margin-top: 10%;
+    }
+    .artclpcpmrCountry span{
+        height: 10vw;
+        width: 13vw;
+        border-radius: 5px;
+    }
+    .artclpcpmrCountry h5{
+        font-size: 4vw;
+    }
+    .artclpcpmrSubtitle h5{
+        font-size: 3vw;
+        line-height: 4vw;
+    }
+    .artclpcpmrContent p{
+        white-space: pre-line;
+        font-size: 2.5vw;
+    }
+
+
+
+
+    .articlePageContentBot h4{
+        font-size: 4vw;
+    }
+    .artclpcbArticle{
+        height: auto;
+        width: 49%;
+        margin: 0.5%;
+        margin-bottom: 1%;
+        border-radius: 3vw;
+    }
+    .artclpcba{
+        height: 35vw;
+    }
+    .artclpcbArticle h5{
+        height: auto;
+        font-size: 3vw;
+        line-height: 3vw;
+    }
+    .artclpcbArticle p{
+        display: none;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
