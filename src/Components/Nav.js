@@ -338,7 +338,7 @@ const Nav = () => {
                 </div>
               </div>
               <div className="nvcntntrcPages">
-                <Link><h6><FaPlane className='faIcons'/> AIRLINES</h6></Link>
+                <Link to='/Airlines/America'><h6><FaPlane className='faIcons'/> AIRLINES</h6></Link>
                 <Link><h6><FaPlane className='faIcons'/> AIRPORTS</h6></Link>
                 <Link><h6><FaNewspaper className='faIcons'/> NEWSPAPER</h6></Link>
                 <Link><h6><FaUtensils className='faIcons'/> RESTAURANTS</h6></Link>
@@ -379,7 +379,7 @@ const Nav = () => {
                 </div>
               </div>
               <div className="nvcntntrcPages">
-                <Link><h6><FaPlane className='faIcons'/> AIRLINES</h6></Link>
+                <Link to='/Airlines/Europe'><h6><FaPlane className='faIcons'/> AIRLINES</h6></Link>
                 <Link><h6><FaPlane className='faIcons'/> AIRPORTS</h6></Link>
                 <Link><h6><FaNewspaper className='faIcons'/> NEWSPAPER</h6></Link>
                 <Link><h6><FaUtensils className='faIcons'/> RESTAURANTS</h6></Link>
@@ -420,7 +420,7 @@ const Nav = () => {
                 </div>
               </div>
               <div className="nvcntntrcPages">
-                <Link><h6><FaPlane className='faIcons'/> AIRLINES</h6></Link>
+                <Link to='/Airlines/Africa'><h6><FaPlane className='faIcons'/> AIRLINES</h6></Link>
                 <Link><h6><FaPlane className='faIcons'/> AIRPORTS</h6></Link>
                 <Link><h6><FaNewspaper className='faIcons'/> NEWSPAPER</h6></Link>
                 <Link><h6><FaUtensils className='faIcons'/> RESTAURANTS</h6></Link>
@@ -461,7 +461,7 @@ const Nav = () => {
                 </div>
               </div>
               <div className="nvcntntrcPages">
-                <Link><h6><FaPlane className='faIcons'/> AIRLINES</h6></Link>
+                <Link to='/Airlines/Asia'><h6><FaPlane className='faIcons'/> AIRLINES</h6></Link>
                 <Link><h6><FaPlane className='faIcons'/> AIRPORTS</h6></Link>
                 <Link><h6><FaNewspaper className='faIcons'/> NEWSPAPER</h6></Link>
                 <Link><h6><FaUtensils className='faIcons'/> RESTAURANTS</h6></Link>
@@ -502,7 +502,7 @@ const Nav = () => {
                 </div>
               </div>
               <div className="nvcntntrcPages">
-                <Link><h6><FaPlane className='faIcons'/> AIRLINES</h6></Link>
+                <Link to='/Airlines/Oceania'><h6><FaPlane className='faIcons'/> AIRLINES</h6></Link>
                 <Link><h6><FaPlane className='faIcons'/> AIRPORTS</h6></Link>
                 <Link><h6><FaNewspaper className='faIcons'/> NEWSPAPER</h6></Link>
                 <Link><h6><FaUtensils className='faIcons'/> RESTAURANTS</h6></Link>
@@ -543,7 +543,7 @@ const Nav = () => {
                 </div>
               </div>
               <div className="nvcntntrcPages">
-                <Link><h6><FaPlane className='faIcons'/> AIRLINES</h6></Link>
+                <Link to='/Airlines/Antarctica'><h6><FaPlane className='faIcons'/> AIRLINES</h6></Link>
                 <Link><h6><FaPlane className='faIcons'/> AIRPORTS</h6></Link>
                 <Link><h6><FaNewspaper className='faIcons'/> NEWSPAPER</h6></Link>
                 <Link><h6><FaUtensils className='faIcons'/> RESTAURANTS</h6></Link>

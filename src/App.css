@@ -8,19 +8,18 @@ html, body {
   scroll-behavior: smooth;
 }
 body{
-  background: white;
+  background: gray;
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
 ::-webkit-scrollbar{
   background: none;
   height: .5vw;
-  width: 0.5vw;
+  width: 0.8vw;
   cursor: pointer;
 }
 ::-webkit-scrollbar-thumb{
-  background: white;
-  border-radius: .5vw;
+  background: black;
   cursor: pointer;
 }
 ::-webkit-scrollbar-track{
