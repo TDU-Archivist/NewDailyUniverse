@@ -40,6 +40,7 @@ h6{
 
 
 
+
 .allLoaderContainer{
     height: 100vh;
     width: 100%;
@@ -1162,6 +1163,9 @@ section.mainContainerPage.mid{
     align-items: center;
     margin-top: 0.5vw;
 }
+.mncntntpm4.external.mobile{
+    display: none;
+}
 .mncntntpm4ext{
     height: 11vw;
     width: 19%;
@@ -1716,3 +1720,277 @@ section.mainContainerPage.mid{
       transform: translateX(-100%);
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 500px){
+    .loaderContent img{
+        height: 40vw;
+    }
+    .loaderContent p{
+        font-size: 5vw;
+    }
+
+
+
+    section.mainContainerPage.top{
+        padding: 15vw 5vw;
+        padding-bottom: 2vw;
+    }
+    .mainContentPage.top1{
+        padding: 2vw 0;
+        display: block;
+    }
+    .mncntntpt1.left{
+        width: 100%;
+    }
+    .mncntntpt1.left h6{
+        font-size: 3.3vw;
+        text-align: center;
+    }
+    .mncntntpt1.left p{
+        font-size: 2.5vw;
+        text-align: center;
+    }
+    .mncntntpt1.right{
+        height: auto;
+        width: 100%;
+        margin-top: 2vw;
+    }
+    .mncntntpt1.right input{
+        font-size: 3.5vw;
+        padding: 1% 3%;
+        width: 80%;
+    }
+    .mncntntpt1rBtn{
+        height: auto;
+        width: 20%;
+        display: flex;
+        justify-content: right;
+        align-items: center;
+    }
+    .mncntntpt1rBtn button{
+        margin-right: 10%;
+        font-size: 4vw;
+    }
+
+
+    .mainContentPage.top2{
+        height: 150vw;
+        width: 100%;
+        background: rgb(30, 30, 30);
+        border-radius: 3vw;
+        margin-top: 2vw;
+    }
+
+
+
+    section.mainContainerPage.mid{
+        padding: 3vw 5vw;
+    }
+    .mncntntpm4More h4{
+        font-size: 4vw;
+    }
+    .mncntntpm4More h5{
+        font-size: 4vw;
+    }
+    .mncntntpm4More a h6{
+        font-weight: 400;
+        font-size: 3vw;
+    }
+    .mainContentPage.mid4{
+        height: auto;
+        width: 100%;
+        margin: 2vw 0;
+    }
+    .mncntntpm4Container{
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin: 3vw 0;
+    }
+    .mncntntpm4Content{
+        width: 48%;
+        margin: 0.5%;
+        margin-bottom: 5%;
+    }
+    .mncntntpm4Content div{
+        height: 30vw;
+        width: 100%;
+        border-radius: 2vw;
+    }
+    .mncntntpm4Content h5{
+        font-size: 4vw;
+        line-height: 4.5vw;
+        margin: 3% 0;
+    }
+    .mncntntpm4Content p{
+        font-size: 2.5vw;
+        color: gray;
+    }
+    .mncntntpm4.external.web{
+        display: none;
+    }
+    .mncntntpm4.external.mobile{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .mncntntpm4ext{
+        height: 40vw;
+        width: 48%;
+        border-radius: 3vw;
+        margin-bottom: 5%;
+    }
+    .mncntntpm4extTitle p{
+        height: auto;
+        font-size: 2.5vw;
+        line-height: 3vw;
+    }
+
+    .mncntntpm4Slider{
+        height: auto;
+        width: 100%;
+        display: block;
+    }
+    .mncntntpm4s.left{
+        height: auto;
+        width: 100%;
+    }
+    .mncntntpm4s.right{
+        display: none;
+    }
+    .mncntntpm4slViewMore h4{
+        font-size: 4vw;
+    }
+    .mncntntpm4slViewMore a h6{
+        font-size: 3vw;
+    }
+    .mncntntpm4slHeader{
+        border-radius: 3vw;
+    }
+    .mncntntpm4slBody{
+        display: none;
+    }
+
+
+    .mainContentPage.mid5{
+        margin: 5vw 0;
+    }
+    .mncntntpm5More h4{
+        font-size: 4vw;
+    }
+    .mncntntpm5More a h6{
+        font-size: 3vw;
+    }
+    .mncntntpm5Container .marquee-item{
+        padding: 2vw 4vw;
+        margin: 0 3px;
+    }
+    .mncntntpm5Container .marquee-item h6{
+        font-size: 3vw;
+    }
+
+
+
+
+
+
+    .mainContentPage.mid6{
+        margin: 3vw 0;
+        display: block;
+    }
+    .mncntntpm6Container{
+        height: auto;
+        width: 100%;
+    }
+    .mncntntpm6cHeader{
+        margin-top: 3vw;
+        padding-right: 0%;
+    }
+    .mncntntpm6cHeader h4{
+        font-size: 4vw;
+    }
+    .mncntntpm6cHeader a h6{
+        font-size: 3vw;
+    }
+    .mncntntpm6ccArticle{
+        border-radius: 3vw;
+        padding-bottom: 3%;
+    }
+    .mncntntpm6ccArticle div{
+        height: 35vw;
+        width: 100%;
+        border-radius: 3vw;
+    }
+    .mncntntpm6ccArticle h5 {
+        height: auto;
+        font-size: 3vw;
+        line-height: 4vw;
+    }
+    .mncntntpm6ccArticle p {
+        display: none;
+    }
+
+
+
+    .mainContentPage.mid1 h4{
+        font-size: 4vw;
+    }
+    .maincpm1{
+        margin-top: 2%;
+        flex-wrap: wrap;
+    }
+    .mncntntpm1{
+        height: 35vw;
+        width: 49%;
+        border-radius: 3vw;
+        margin-bottom: 3%;
+    }
+    .mncntntpm1Title h6{
+        height: auto;
+        font-size: 3vw;
+        line-height: 3vw;
+    }
+    .mncntntpm1Title p{
+        display: none;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+

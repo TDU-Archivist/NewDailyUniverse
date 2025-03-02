@@ -238,7 +238,8 @@ const Nav = () => {
         <div className="navContainer website">
           <div className="navContent left">
             <Link to="/" id='navclHome'>
-              <img src={require('./assets/imgs/TheDailyUniverseLogo00.png')} alt="" />
+              <img id='navclhWeb' src={require('./assets/imgs/TheDailyUniverseLogo00.png')} alt="" />
+              <img id='navclhMobile' src={require('./assets/imgs/TheDailyUniverseLogo.png')} alt="" />
               {/* <span>
                 <h4>THE DAILY UNIVERSE</h4>
                 <p>READ THE WORLD</p>

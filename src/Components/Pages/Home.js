@@ -447,8 +447,18 @@ const Home = () => {
             <h5>BREAKING NEWS</h5>
             <Link><h6>VIEW MORE</h6></Link>
           </div>
-          <div className="mncntntpm4 external">
+          <div className="mncntntpm4 external web">
             {data?.news.slice(1, 6).map((details, i) => (
+              <a className='mncntntpm4ext' key={i} href={details?.data?.url} target='blank'>
+                <img src={details?.data?.thumbnail ? details?.data?.thumbnail : (require('../assets/imgs/TDULandingBG.png'))} alt="" />
+                <div className="mncntntpm4extTitle">
+                  <p><TextSlicer text={`${details?.data?.title ? details?.data?.title : 'None'}`} maxLength={75} /></p>
+                </div>
+              </a>
+            ))}
+          </div>
+          <div className="mncntntpm4 external mobile">
+            {data?.news.slice(1, 5).map((details, i) => (
               <a className='mncntntpm4ext' key={i} href={details?.data?.url} target='blank'>
                 <img src={details?.data?.thumbnail ? details?.data?.thumbnail : (require('../assets/imgs/TDULandingBG.png'))} alt="" />
                 <div className="mncntntpm4extTitle">

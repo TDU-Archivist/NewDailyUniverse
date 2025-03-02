@@ -92,6 +92,7 @@ const LoginTDU = () => {
         <div className='modalContainer login'>
             <div className="modalContentLogin">
                 <div className="mdlcntntLog left">
+                <button id='modalContainerClose' onClick={handleCloseModalLogin}><FaTimes className='faIcons'/></button>
                     <div className="mdlcntntllHeader">
                         <h5>WELCOME TO <br />THE DAILY UNIVERSE</h5>
                         <h6>LOGIN ACCOUNT</h6>

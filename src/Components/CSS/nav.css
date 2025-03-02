@@ -51,10 +51,13 @@ nav{
     align-items: center;
     margin-right: 2%;
 }
-.navContent.left a#navclHome img{
+.navContent.left a#navclHome img#navclhWeb{
     height: 2.5vw;
     max-width: 100%;
     margin-right: 5%;
+}
+.navContent.left a#navclHome img#navclhMobile{
+    display: none;
 }
 .navContent.left a#navclHome h4{
     font-weight: 400;
@@ -540,3 +543,136 @@ nav{
 
 
 
+@media screen and (max-width: 500px){
+    nav{
+        padding: 1vw 5vw;
+    }
+    .navContent.left a#navclHome img#navclhWeb{
+        display: none;
+    }
+    .navContent.left a#navclHome img#navclhMobile{
+        display: block;
+        height: 10vw;
+    }
+    .navContent.left{
+        width: 50%;
+    }
+    .navclSocial{
+        width: 20%;
+    }
+    .navclSocial button{
+        font-size: 5vw;
+    }
+    .navclExtra{
+        width: 30%;
+    }
+    .navclExtra a,
+    .navclExtra button{
+        font-size: 5vw;
+    }
+
+
+    .navclsContents{
+        width: 70vw;
+        top: 4.5vh;
+        left: -5vw;
+        padding: 3vw 5vw;
+        border-radius: 2vw;
+    }
+    .navclsContents h6{
+        font-size: 5vw;
+    }
+    .navclsc{
+        margin-top: 4vw;
+    }
+    .navclsc a p{
+        font-weight: 400;
+        font-size: 3vw;
+        margin-bottom: 2vw;
+    }
+    .navclsc a p .faIcons{
+        margin-right: 5%;
+        font-size: 3vw;
+    }
+
+    .navcleMoon{
+        height: auto;
+        position: absolute;
+        top: 4.5vh;
+        left: -15vw;
+        padding: 2vw;
+        border-radius: 2vw;
+    }
+    .navclemCurrentMoon a{
+        height: 100vw;
+        width: 70vw;
+    }
+
+
+
+
+
+
+
+
+
+
+    .navContent.right{
+        width: 50%;
+        background: none;
+    }
+    .nvcntntrModal{
+        height: auto;
+        width: 73vw;
+        top: 5.5vh;
+        right: 8vw;
+        padding: 3vw;
+        border-radius: 2vw;
+    }
+    .nvcntntrModal a h6{
+        font-size: 4.5vw;
+        padding: 2vw 5vw;
+        border-radius: 1vw;
+    }
+    .nvcntntrModal a h6 .faIcons{
+        margin-right: 4%;
+        font-size: 4vw;
+    }
+    .nvcntntr.links button{
+        display: none;
+    }
+    .nvcntntr.links button.bar{
+        display: block;
+    }
+    .nvcntntr.links button .faIcons{
+        font-size: 5vw;
+    }
+    .nvcntntr.user button#nvcntntruSignup{
+        border: solid 0.5vw black;
+    }
+    .nvcntntr.user button#nvcntntruSignup h6{
+        font-size: 3vw;
+    }
+    .nvcntntr.user button#nvcntntruLogin{
+        font-size: 5vw;
+        margin-right: 3vw;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

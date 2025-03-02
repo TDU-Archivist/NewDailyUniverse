@@ -68,6 +68,20 @@ h6{
     height: 100%;
     width: 45%;
     padding: 4% 5%;
+    position: relative;
+}
+.mdlcntntLog.left button#modalContainerClose{
+    display: none;
+    position: absolute;
+    top: 3vw;
+    right: 3vw;
+    font-size: 1.5vw;
+    background: none;
+    border: none;
+    outline: none;
+    color: white;
+    cursor: pointer;
+    transition: 400ms ease;
 }
 .mdlcntntllHeader h5{
     text-align: center;
@@ -211,4 +225,91 @@ h6{
     outline: none;
     font-size: 0.7vw;
     cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 500px){
+    .modalContentLogin{
+        height: auto;
+        width: 90%;
+        border-radius: 2vw;
+        display: block;
+    }
+    .mdlcntntLog.left{
+        height: 100%;
+        width: 100%;
+        padding: 5%;
+    }
+    .mdlcntntLog.left button#modalContainerClose{
+        display: block;
+        font-size: 5vw;
+    }
+    .mdlcntntllHeader h5{
+        font-size: 6vw;
+        line-height: 6vw;
+    }
+    .mdlcntntllHeader h6{
+        margin-top: 0;
+        font-size: 4vw;
+    }
+    .mdlcntntllContent div label p{
+        font-size: 3vw;
+    }
+    .mdlcntntllContent div input{
+        font-size: 3vw;
+    }
+    .mdlcntntllContent div button{
+        font-size: 4vw;
+    }
+    .mdlcntntllTerms p {
+        font-size: 2.5vw;
+    }
+    .mdlcntntllSubmit button,
+    .mdlcntntllGoogle button{
+        font-size: 4vw;
+    }
+
+
+    .mdlcntntLog.right{
+        height: auto;
+        padding-bottom: 5vw;
+        width: 100%;
+        border-radius: 0;
+        background: none;
+    }
+    .mdlcntntLog.right button#modalContainerClose{
+        display: none;
+    }
+    .mdlcntntLog.right button#modalContainerLoginBtn{
+        font-size: 3vw;
+        cursor: pointer;
+        position: relative;
+        margin-top: 5vw;
+        bottom: 0;
+    }
+
+
+
+
+
+
+
 }

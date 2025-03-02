@@ -112,6 +112,7 @@ const RegisterTDU = () => {
         <div className='modalContainer register'>
             <div className="modalContentRegister">
                 <div className="mdlcntntReg left">
+                    <button id='modalContainerClose' onClick={handleCloseModalRegister}><FaTimes className='faIcons'/></button>
                     <div className="mdlcntntrlHeader">
                         <h5>WELCOME TO <br />THE DAILY UNIVERSE</h5>
                         <h6>CREATE AN ACCOUNT</h6>
