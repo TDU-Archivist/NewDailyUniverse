@@ -97,38 +97,51 @@ const AirlineContinent = () => {
     } = MainDataLoad(); 
 
     const { airlineContinent } = useParams();
-    const americaAirline = dataList?.viewAllAirlines.filter(cont => cont.continent === airlineContinent)
+    const currentAirline = dataList?.viewAllAirlines.filter(cont => cont.continent === airlineContinent) || [];
 
     const [countries, setCountries] = useState({});
 
     useEffect(() => {
         const fetchCountryNames = async () => {
-        if (!americaAirline) return;
-        
-        const uniqueAlphaCodes = [...new Set(americaAirline.map(channel => channel.country))];
-        
-        try {
-            const responses = await Promise.all(
-            uniqueAlphaCodes.map(code => 
-                fetch(`https://restcountries.com/v3.1/alpha/${code}`).then(res => res.json())
-            )
-            );
-            
-            const countryMap = {};
-            responses.forEach((data, index) => {
-            if (data && data[0]?.name?.common) {
-                countryMap[uniqueAlphaCodes[index]] = data[0].name.common;
+            if (!currentAirline.length) return;
+            const uniqueAlphaCodes = [...new Set(currentAirline.map(channel => channel.country))];
+            try {
+                const responses = await Promise.all(
+                    uniqueAlphaCodes.map(async (code) => {
+                        const res = await fetch(`https://restcountries.com/v3.1/alpha/${code}`);
+                        if (!res.ok) return null;
+                        return res.json();
+                    })
+                );
+                const countryMap = {};
+                responses.forEach((data, index) => {
+                    if (data && data[0]?.name?.common) {
+                        countryMap[uniqueAlphaCodes[index]] = data[0].name.common;
+                    }
+                });
+                setCountries(countryMap);
+            } catch (error) {
+                console.error("Error fetching country names:", error);
             }
-            });
-            
-            setCountries(countryMap);
-        } catch (error) {
-            console.error("Error fetching country names:", error);
-        }
         };
-        
         fetchCountryNames();
-    }, [dataList]);
+    }, [dataList, currentAirline]);
+
+    const groupedByContinent = currentAirline.reduce((acc, airline) => {
+        const { subcontinent, country } = airline;
+
+        if (!acc[subcontinent]) {
+            acc[subcontinent] = [];
+        }
+
+        const countryName = countries[country] || country;
+        if (!acc[subcontinent].includes(countryName)) {
+            acc[subcontinent].push(countryName);
+        }
+
+        return acc;
+    }, {});
+    
 
 
     return (
@@ -162,19 +175,16 @@ const AirlineContinent = () => {
             </section>
             <section className="airlineContContainerPage mid">
                 <div className="airlineContContentPage mid1">
-                    {americaAirline.map((details, i) => (
-                        <a className='arlncntntcpm1' href={details?.airline_website} target='blank' key={i}>
-                            <div className="arlncntntcpm1Top">
-                                <img src={details?.airline_logo} alt="" />
-                                <h5>{details?.country}</h5>
-                            </div>
-                            <div className="arlncntntcpm1Bottom">
-                                <div>
-                                    <h6>{details?.airline_name}</h6>
-                                    <p>{countries[details?.country] || details?.country}</p>
-                                </div>
-                            </div>
-                        </a>
+                    {Object.keys(groupedByContinent).map((subcontinent) => (
+                        <div className="arlncntntcpm1" key={subcontinent}>
+                            <h4>{subcontinent}</h4>
+                            <h6>All {subcontinent} Airlines</h6>
+                            <ul>
+                                {groupedByContinent[subcontinent].map((country, i) => (
+                                    <li key={i}><button>{country}</button></li>
+                                ))}
+                            </ul>
+                        </div>
                     ))}
                 </div>
 

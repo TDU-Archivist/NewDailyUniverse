@@ -379,6 +379,12 @@ nav{
 .nvcntntr.links button .faIcons{
     font-size: 1.2vw;
 }
+.nvcntntr.links button:hover{
+    opacity: 100%;
+    color: white;
+    background: rgba(50, 50, 50);
+    transition: 400ms ease;
+}
 .nvcntntr.links button.active{
     opacity: 100%;
     color: white;

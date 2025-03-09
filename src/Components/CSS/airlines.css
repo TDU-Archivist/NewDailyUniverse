@@ -403,61 +403,50 @@ section.airlineContContainerPage.mid{
     display: flex;
     flex-wrap: wrap;
     justify-content: left;
-    align-items: center;
+    align-items: top;
 }
 .arlncntntcpm1{
-    height: 10vw;
-    width: 19%;
+    height: auto;
+    width: 24%;
     overflow: hidden;
-    background: rgba(200, 200, 200);
+    border: solid 0.2vw rgba(200, 200, 200);
     border-radius: 1vw;
     text-decoration: none;
     text-align: center;
+    padding: 1vw 1.5vw;
     margin: 0.5%;
     position: relative;
-    background: url('../assets/imgs/Airlines/AirlineIcon.png') no-repeat center;
-    background-size: cover;
 }
-.arlncntntcpm1Top{
-    height: auto;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding: 1.5vw;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.arlncntntcpm1 ul{
+    margin-top: 1vw;
+    text-align: left;
+    list-style: none;
+    padding-bottom: 1vw;
 }
-.arlncntntcpm1Top img{
-    width: 4vw;
+.arlncntntcpm1 ul li button{
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 0.5vw;
+    font-size: 0.9vw;
 }
-.arlncntntcpm1Top h5{
-    text-shadow: 0 0 20px white;
-}
-.arlncntntcpm1Bottom{
-    height: auto;
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    padding: 1vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.arlncntntcpm1Bottom div{
-    height: auto;
-    width: 100%;
-    padding: 1vw;
-    border-radius: 1vw;
-    background: rgba(200, 200, 200, 0.5);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-}
-.arlncntntcpm1Bottom div h6{
-    font-weight: 600;
-}
-.arlncntntcpm1Bottom div p{
-    font-size: 0.7vw;
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
