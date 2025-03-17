@@ -61,8 +61,8 @@ const MapViewer = () => {
                         source-layer="country_boundaries"
                         type="fill"
                         paint={{
-                            "fill-color": "#0080ff",
-                            "fill-opacity": 0.4,
+                            "fill-color": "gray",
+                            "fill-opacity": 0.6,
                         }}
                         filter={["!=", "iso_3166_1", countryCode]}
                     />
@@ -72,8 +72,8 @@ const MapViewer = () => {
                         source-layer="country_boundaries"
                         type="line"
                         paint={{
-                            "line-color": "#FF0000",
-                            "line-width": 1,
+                            "line-color": "gray",
+                            "line-width": 0.3,
                         }}
                         filter={["==", "iso_3166_1", countryCode]}
                     />
