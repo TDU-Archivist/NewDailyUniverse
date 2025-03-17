@@ -601,14 +601,23 @@ section.mainContainerPage.top{
     align-items: center;
 }
 
+.mncntntpt2Modals{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    padding: 1.5vw;
+    z-index: 5;
+    background: rgba(200, 200, 200, 0.5);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+}
 
 .mncntntpt2rSelected{
-    position: absolute;
-    top: 1.5vw;
-    left: 1.5vw;
-    height: 35vw;
+    height: 100%;
     width: 25%;
-    z-index: 5;
     background: rgba(200, 200, 200, 0.5);
     box-shadow: 0 0 10px gray;
     backdrop-filter: blur(15px);
@@ -773,6 +782,56 @@ section.mainContainerPage.top{
     font-size: 0.9vw;
     font-weight: 400;
 }
+
+
+
+
+.mncntntpt2rMapViewver{
+    height: 100%;
+    width: 73%;
+    position: relative;
+    box-shadow: 0 0 10px gray;
+    overflow: hidden;
+    border-radius: 1vw;
+    transition: 400ms ease;
+}
+.mncntntpt2rMapViewver button#closeCountry{
+    position: absolute;
+    top: 1vw;
+    right: 1vw;
+    padding: 0.4vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: whitesmoke;
+    font-size: 0.9vw;
+    transition: 400ms ease;
+    z-index: 2;
+}
+.mncntntpt2rMapViewver button#closeCountry:hover{
+    background: red;
+    color: white;
+    transition: 400ms ease;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

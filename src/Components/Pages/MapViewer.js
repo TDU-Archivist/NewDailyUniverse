@@ -1,60 +1,86 @@
-import React from 'react';
-import { ComposableMap, Geographies, Geography, ZoomableGroup } from 'react-simple-maps';
-import { MainDataLoad } from './MainDataContext';
+import React, { useState, useEffect } from "react";
+import Map, { Source, Layer } from "react-map-gl";
+import "mapbox-gl/dist/mapbox-gl.css";
+import { MainDataLoad } from "./MainDataContext";
+
+const MAPBOX_TOKEN = process.env.REACT_APP_TDU_MAPBOX_PK_API;
 
 const MapViewer = () => {
-    const { setPickedCountryModal, setPickedCountry } = MainDataLoad();
-    const geoUrl = 'https://raw.githubusercontent.com/deldersveld/topojson/master/countries/PHL/PHL-admin1.json';
+    const {
+        pickedCountryModal,
+        setPickedCountryModal,
+        pickedCountry,
+        setPickedCountry,
+    } = MainDataLoad();
+    
+    const [viewport, setViewport] = useState({
+        longitude: -0.09,
+        latitude: 51.505,
+        zoom: 5,
+    });
+    const [geoData, setGeoData] = useState(null);
+    const [countryCode, setCountryCode] = useState(null);
+
+    useEffect(() => {
+        if (pickedCountry) {
+            fetch(`https://restcountries.com/v3.1/name/${pickedCountry}?fullText=true`)
+                .then((res) => res.json())
+                .then((data) => {
+                    if (data.length > 0) {
+                        setViewport((prev) => ({
+                            ...prev,
+                            longitude: data[0].latlng[1],
+                            latitude: data[0].latlng[0],
+                            zoom: 5,
+                        }));
+
+                        setCountryCode(data[0].cca2); // Use ISO alpha-2 country code
+                        setGeoData({
+                            type: "vector",
+                            url: "mapbox://mapbox.country-boundaries-v1"
+                        });
+                    }
+                })
+                .catch((error) => console.error("Error fetching country data:", error));
+        }
+    }, [pickedCountry]);
 
     return (
-        <div className="country-container" style={{ width: '100%', height: '500px' }}>
-            <ComposableMap
-                projectionConfig={{ scale: 200 }} // Adjust scale as needed
-                width={800}
-                height={500}
-                style={{ width: '100%', height: 'auto' }}
-            >
-                <ZoomableGroup zoom={1} minZoom={1} maxZoom={10} center={[0, 0]}>
-                    <Geographies geography={geoUrl}>
-                        {({ geographies }) =>
-                            geographies.map((geo) => (
-                                <Geography
-                                    key={geo.rsmKey}
-                                    geography={geo}
-                                    onClick={() => {
-                                        const regionName = geo.properties.name || geo.properties.NAME;
-                                        if (regionName) {
-                                            setPickedCountryModal(true);
-                                            setPickedCountry(regionName);
-                                        } else {
-                                            console.log('Region name not found');
-                                        }
-                                    }}
-                                    style={{
-                                        default: {
-                                            fill: '#d3d3d3',
-                                            outline: 'none',
-                                        },
-                                        hover: {
-                                            fill: 'red',
-                                            outline: 'none',
-                                            cursor: 'pointer',
-                                        },
-                                        pressed: {
-                                            fill: 'red',
-                                            outline: 'none',
-                                            cursor: 'pointer',
-                                        },
-                                    }}
-                                />
-                            ))
-                        }
-                    </Geographies>
-                </ZoomableGroup>
-            </ComposableMap>
-        </div>
+        <Map
+            {...viewport}
+            onMove={evt => setViewport(evt.viewState)}
+            mapStyle="mapbox://styles/mapbox/outdoors-v12"
+            mapboxAccessToken={MAPBOX_TOKEN}
+            style={{ height: "100vh", width: "100%" }}
+        >
+            {geoData && countryCode && (
+                <Source id="country-boundaries" type="vector" url={geoData.url}>
+                    {/* Highlight all countries except the picked one */}
+                    <Layer
+                        id="neighboring-countries"
+                        source-layer="country_boundaries"
+                        type="fill"
+                        paint={{
+                            "fill-color": "#0080ff",
+                            "fill-opacity": 0.4,
+                        }}
+                        filter={["!=", "iso_3166_1", countryCode]}
+                    />
+                    {/* Border for the picked country */}
+                    <Layer
+                        id="country-border"
+                        source-layer="country_boundaries"
+                        type="line"
+                        paint={{
+                            "line-color": "#FF0000",
+                            "line-width": 1,
+                        }}
+                        filter={["==", "iso_3166_1", countryCode]}
+                    />
+                </Source>
+            )}
+        </Map>
     );
 };
-
 
 export default MapViewer;

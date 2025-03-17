@@ -352,72 +352,78 @@ const Home = () => {
         <div className="mainContentPage top2">
           <div className="mncntntpt2 right">
             {(pickedCountryModal && pickedCountry) && 
-              <div className={(pickedCountryModal && pickedCountry) ? "mncntntpt2rSelected active" : "mncntntpt2rSelected"}>
-                <button id='closeCountry' onClick={handleHideCountrySummaryModal}><FaTimes className='faIcons'/></button>
-                <div className="mncntntpt2rsCountryName">
-                  <div className='mncntntpt2rscnName'>
-                    <h5>{pickedCountry}</h5>
-                    <h6>{countryData?.name?.official}</h6>
+              <div className='mncntntpt2Modals'>
+                <div className={(pickedCountryModal && pickedCountry) ? "mncntntpt2rSelected active" : "mncntntpt2rSelected"}>
+                  {/* <button id='closeCountry' onClick={handleHideCountrySummaryModal}><FaTimes className='faIcons'/></button> */}
+                  <div className="mncntntpt2rsCountryName">
+                    <div className='mncntntpt2rscnName'>
+                      <h5>{pickedCountry}</h5>
+                      <h6>{countryData?.name?.official}</h6>
+                    </div>
+                    <div className='mncntntpt2rscnFlag'>
+                      {(pickedCountry || !countryData?.flags?.png) ?
+                        <CountryFlag countryName={`${pickedCountry}`} />:
+                        <img src={(countryData?.flags?.png) ? `${countryData?.flags?.png}` : require('../assets/imgs/TDULandingBG.png')} alt="" />
+                      }
+                    </div>
                   </div>
-                  <div className='mncntntpt2rscnFlag'>
-                    {(pickedCountry || !countryData?.flags?.png) ?
-                      <CountryFlag countryName={`${pickedCountry}`} />:
-                      <img src={(countryData?.flags?.png) ? `${countryData?.flags?.png}` : require('../assets/imgs/TDULandingBG.png')} alt="" />
-                    }
+                  <div className="mncntntpt2rsSubHeader">
+                    <span>
+                      <p>Area : <br /><NumberFormatter number={countryData?.area}/> km^2</p>
+                    </span>
+                    <span>
+                      <p>Population : <br /><NumberFormatter number={countryData?.population}/> </p>
+                    </span>
+                    <span id='mncntntpt2rsCapital'>
+                      <p>Capital : <br /><TextSlicer text={`${countryData?.capital ? countryData?.capital[0] : 'None'}`} maxLength={20} /> </p>   
+                    </span>
                   </div>
-                </div>
-                <div className="mncntntpt2rsSubHeader">
-                  <span>
-                    <p>Area : <br /><NumberFormatter number={countryData?.area}/> km^2</p>
-                  </span>
-                  <span>
-                    <p>Population : <br /><NumberFormatter number={countryData?.population}/> </p>
-                  </span>
-                  <span id='mncntntpt2rsCapital'>
-                    <p>Capital : <br /><TextSlicer text={`${countryData?.capital ? countryData?.capital[0] : 'None'}`} maxLength={20} /> </p>   
-                  </span>
-                </div>
-                <div className="mncntntpt2rsTourist">
-                  <div className="mncntntpt2rstHeader">
-                    <h6>RECOMMENDED TOURIST SPOTS</h6>
-                    <Link><FaExternalLinkAlt /></Link>
-                  </div>
-                  <div className="mncntntpt2rst">
-                    {countryThreeTouristSpots?.tourist_spots.length > 0 ?
-                      <>
-                        {countryThreeTouristSpots?.tourist_spots.map((data, i) => (
-                          <a className="mncntntpt2rstContent" key={i}>
-                            {showImages[i] ? (
-                              data.image ? (
-                                <>
-                                  <p>{data.name}</p>
-                                  <img src={data.image} alt={data.name} />
-                                </>
+                  <div className="mncntntpt2rsTourist">
+                    <div className="mncntntpt2rstHeader">
+                      <h6>RECOMMENDED TOURIST SPOTS</h6>
+                      <Link><FaExternalLinkAlt /></Link>
+                    </div>
+                    <div className="mncntntpt2rst">
+                      {countryThreeTouristSpots?.tourist_spots.length > 0 ?
+                        <>
+                          {countryThreeTouristSpots?.tourist_spots.map((data, i) => (
+                            <a className="mncntntpt2rstContent" key={i}>
+                              {showImages[i] ? (
+                                data.image ? (
+                                  <>
+                                    <p>{data.name}</p>
+                                    <img src={data.image} alt={data.name} />
+                                  </>
+                                ) : (
+                                  <img src={require('../assets/imgs/TDULandingBG.png')} alt="Default" />
+                                )
                               ) : (
-                                <img src={require('../assets/imgs/TDULandingBG.png')} alt="Default" />
-                              )
-                            ) : (
-                              <img src={require('../assets/imgs/TDULandingBG.png')} alt="Loading..." />
-                            )}
+                                <img src={require('../assets/imgs/TDULandingBG.png')} alt="Loading..." />
+                              )}
+                            </a>
+                          ))}
+                        </>:<>
+                          <a className="mncntntpt2rstContent">
+                            <img src={require('../assets/imgs/TDULandingBG.png')} alt="" />
                           </a>
-                        ))}
-                      </>:<>
-                        <a className="mncntntpt2rstContent">
-                          <img src={require('../assets/imgs/TDULandingBG.png')} alt="" />
-                        </a>
-                        <a className="mncntntpt2rstContent">
-                          <img src={require('../assets/imgs/TDULandingBG.png')} alt="" />
-                        </a>
-                        <a className="mncntntpt2rstContent">
-                          <img src={require('../assets/imgs/TDULandingBG.png')} alt="" />
-                        </a>
-                      </>
-                    }
+                          <a className="mncntntpt2rstContent">
+                            <img src={require('../assets/imgs/TDULandingBG.png')} alt="" />
+                          </a>
+                          <a className="mncntntpt2rstContent">
+                            <img src={require('../assets/imgs/TDULandingBG.png')} alt="" />
+                          </a>
+                        </>
+                      }
+                    </div>
+                  </div>
+                  <div className="mncntntpt2rsExchange">
+                    <h6>US DOLLAR EXCHANGE</h6>
+                    <h6>{(countryExchangeRate.value) ? `${countryExchangeRate.value} ${countryCurrency[0]?.currency}` : 0}</h6>
                   </div>
                 </div>
-                <div className="mncntntpt2rsExchange">
-                  <h6>US DOLLAR EXCHANGE</h6>
-                  <h6>{(countryExchangeRate.value) ? `${countryExchangeRate.value} ${countryCurrency[0]?.currency}` : 0}</h6>
+                <div className="mncntntpt2rMapViewver">
+                  <button id='closeCountry' onClick={handleHideCountrySummaryModal}><FaTimes className='faIcons'/></button>
+                  <MapViewer />
                 </div>
               </div>
             }
