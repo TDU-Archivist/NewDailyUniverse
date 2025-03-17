@@ -15,11 +15,10 @@ const MapboxMap = () => {
     "Northern Asia": ["RU"],
     "Central Asia": ["KZ", "KG", "TJ", "TM", "UZ"],
     "Western Asia": ["AM", "AZ", "BH", "CY", "GE", "IQ", "IL", "JO", "KW", "LB", "OM", "PS", "QA", "SA", "SY", "TR", "AE", "YE"],
-    "South America": ["GY", "SR", "GF"],
     "South Asia": ["AF", "BD", "BT", "IN", "IR", "MV", "NP", "PK", "LK"],
     "East Asia": ["CN", "HK", "JP", "KP", "KR", "MN", "MO", "TW"],
     "Southeast Asia": ["BN", "KH", "ID", "LA", "MY", "MM", "PH", "SG", "TH", "TL", "VN"],
-    "Northern Europe": ["DK", "EE", "FI", "IS", "IE", "LV", "LT", "NO", "SE", "GB"],
+    "Northern Europe": ["DK", "EE", "FI", "IS", "IE", "LV", "LT", "NO", "SE", "GB", "SJ"],
     "Western Europe": ["AT", "BE", "FR", "DE", "LI", "LU", "MC", "NL", "CH"],
     "Eastern Europe": ["BY", "BG", "CZ", "HU", "MD", "PL", "RO", "RU", "SK", "UA"],
     "Southern Europe": ["AL", "AD", "BA", "HR", "GR", "IT", "MT", "ME", "MK", "PT", "SM", "RS", "SI", "ES", "VA"],
@@ -29,6 +28,7 @@ const MapboxMap = () => {
     "Andean States": ["BO", "CO", "EC", "PE", "VE"],
     "Southern Cone": ["AR", "CL", "PY", "UY"],
     "Brazil": ["BR"],
+    "The Guianas": ["GY", "SR", "GF"],
     "Australasia": ["AU", "NZ"],
     "Melanesia": ["FJ", "NC", "PG", "SB", "VU"],
     "Micronesia": ["FM", "GU", "KI", "MH", "NR", "MP", "PW"],
@@ -54,6 +54,7 @@ const MapboxMap = () => {
     "Andean States": "#8A2BE2",
     "Southern Cone": "#9370DB",
     "Brazil": "#BA55D3",
+    "The Guianas": "#DA75D9",
     "Australasia": "#DA70D6",
     "Melanesia": "#EE82EE",
     "Micronesia": "#DDA0DD",
@@ -63,13 +64,17 @@ const MapboxMap = () => {
   useEffect(() => {
     const map = new mapboxgl.Map({
       container: mapContainerRef.current,
-      style: "mapbox://styles/mapbox/light-v10",
+      style: "mapbox://styles/mapbox/streets-v11",
       center: [0, 20],
       zoom: 2,
       maxBounds: [[-180, -90], [180, 90]],
       renderWorldCopies: false
     });
 
+    // Add navigation controls
+    map.addControl(new mapboxgl.NavigationControl(), "top-right");
+
+    // Add region coloring
     map.on("load", () => {
       Object.entries(subregions).forEach(([subregion, countries]) => {
         map.addLayer({
@@ -78,14 +83,71 @@ const MapboxMap = () => {
           source: { type: "vector", url: "mapbox://mapbox.country-boundaries-v1" },
           "source-layer": "country_boundaries",
           filter: ["in", "iso_3166_1", ...countries],
-          paint: { "fill-color": subregionColors[subregion], "fill-opacity": 0.5 }
+          paint: { 
+            "fill-color": subregionColors[subregion], 
+            "fill-opacity": 0.6,  
+            "fill-outline-color": "#000000" 
+          }
         });
       });
-      map.addControl(new mapboxgl.ScaleControl(), "bottom-right");
+
+      // Ensure country labels stay visible
+      map.moveLayer("country-label");
+    });
+
+    // Click handler for countries
+    map.on("click", (event) => {
+      const features = map.queryRenderedFeatures(event.point);
+
+      if (features.length > 0) {
+        const geo = features[0];
+
+        const regionName = geo.properties.name_en || geo.properties.name || geo.properties.NAME;
+        const countryCode = geo.properties.iso_3166_1; // Get ISO country code
+        
+        if (countryCode) {
+          // Find the subregion of the clicked country
+          let subregionName = "Unknown Subregion";
+          for (const [subregion, countries] of Object.entries(subregions)) {
+            if (countries.includes(countryCode)) {
+              subregionName = subregion;
+              break;
+            }
+          }
+
+          if (regionName) {
+            setPickedCountryModal(true);
+            setPickedCountry(regionName);
+            console.log(`Country: ${regionName}, Subregion: ${subregionName}`);
+
+            if (geo.geometry && geo.geometry.type === "Polygon") {
+              const [lng, lat] = geo.geometry.coordinates[0][0];
+              map.flyTo({
+                center: [lng, lat],
+                zoom: 3,
+                essential: true,
+              });
+            } else if (geo.geometry && geo.geometry.type === "Point") {
+              const [lng, lat] = geo.geometry.coordinates;
+              map.flyTo({
+                center: [lng, lat],
+                zoom: 5,
+                essential: true,
+              });
+            }
+          } else {
+            console.log("Region name not found");
+            setPickedCountryModal(false);
+          }
+          
+        } else {
+          setPickedCountryModal(false);
+        }
+      }
     });
 
     return () => map.remove();
-  }, []);
+  }, [setPickedCountryModal, setPickedCountry]);
 
   return <div ref={mapContainerRef} className="mainMapBox" />;
 };

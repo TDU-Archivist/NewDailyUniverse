@@ -7,7 +7,7 @@ const ExchangeRateMarquee = ({ exchangeRate }) => {
             {Array.isArray(exchangeRate) ? (
                 exchangeRate.map((rate, index) => (
                 <div key={index} className="marquee-item">
-                    <h6>1 USD : {rate?.value} {rate?.currency}</h6>
+                    <h6>1 : {rate?.value} {rate?.currency}</h6>
                 </div>
                 ))
             ) : (

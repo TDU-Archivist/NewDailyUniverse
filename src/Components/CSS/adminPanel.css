@@ -45,7 +45,7 @@ section.adminPanelContainerPage{
     height: auto;
     width: 100%;
     padding: 5vw;
-    padding-bottom: 0;
+    padding-bottom: 1.5vw;
 }
 .adminPanelContentPage{
     height: auto;

@@ -162,7 +162,7 @@ const AirlineContinent = () => {
                 <div className="airlineContContentPage top2">
                     <div className="arlncntntcpt2 left">
                         <Link to='/Airlines'><MdKeyboardDoubleArrowLeft className='faIcons'/></Link>
-                        <h4>FAMOUS AIRLINES IN <span>{airlineContinent}</span></h4>
+                        <h4>FAMOUS AIRLINES IN ALL <span>{airlineContinent}S</span></h4>
                     </div>
                     <div className="arlncntntcpt2 right">
                         <input type="text" placeholder='Search keyword, country or airline name here...'/>

@@ -177,7 +177,7 @@ const Home = () => {
   // });
 
   const handleHideCountrySummaryModal = () => {
-    setPickedCountry(false);
+    setPickedCountryModal(false);
   }
 
   const filterGoodNews = viewAllArticles ? viewAllArticles.filter(good => good.article_type === "Good News") : []

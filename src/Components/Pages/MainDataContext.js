@@ -350,6 +350,50 @@ export const MainDataLoadProvider = ({ children }) => {
                 }));
                 setCountryCurrency(formattedData || [0]);
                 setCountryData(data);
+            } else if (pickedCountry.toLowerCase() === 'myanmar (burma)') {
+                const response = await axios.get('https://restcountries.com/v3.1/alpha/MM');
+                const data = response.data[0];
+                const countryCurrency = data?.currencies;
+                const formattedData = Object.entries(countryCurrency).map(([currency, info]) => ({
+                    currency,
+                    name: info?.name,
+                    symbol: info?.symbol,
+                }));
+                setCountryCurrency(formattedData || [0]);
+                setCountryData(data);
+            } else if (pickedCountry.toLowerCase() === 'falkland islands (islas malvinas)') {
+                const response = await axios.get('https://restcountries.com/v3.1/alpha/FK');
+                const data = response.data[0];
+                const countryCurrency = data?.currencies;
+                const formattedData = Object.entries(countryCurrency).map(([currency, info]) => ({
+                    currency,
+                    name: info?.name,
+                    symbol: info?.symbol,
+                }));
+                setCountryCurrency(formattedData || [0]);
+                setCountryData(data);
+            } else if (pickedCountry.toLowerCase() === 'west bank') {
+                const response = await axios.get('https://restcountries.com/v3.1/alpha/PS');
+                const data = response.data[0];
+                const countryCurrency = data?.currencies;
+                const formattedData = Object.entries(countryCurrency).map(([currency, info]) => ({
+                    currency,
+                    name: info?.name,
+                    symbol: info?.symbol,
+                }));
+                setCountryCurrency(formattedData || [0]);
+                setCountryData(data);
+            } else if (pickedCountry.toLowerCase() === 'gaza strip') {
+                const response = await axios.get('https://restcountries.com/v3.1/alpha/PS');
+                const data = response.data[0];
+                const countryCurrency = data?.currencies;
+                const formattedData = Object.entries(countryCurrency).map(([currency, info]) => ({
+                    currency,
+                    name: info?.name,
+                    symbol: info?.symbol,
+                }));
+                setCountryCurrency(formattedData || [0]);
+                setCountryData(data);
             } else {
                 const response = await axios.get(`https://restcountries.com/v3.1/name/${pickedCountry}`);
                 const data = response.data[0];
@@ -361,9 +405,10 @@ export const MainDataLoadProvider = ({ children }) => {
                 }));
                 setCountryCurrency(formattedData || [0]);
                 setCountryData(data);
-            }
+            } 
         } catch (err) {
-            console.log("Could not retrieve country details. Please check the country name and try again.");
+            setPickedCountryModal(false);
+            setPickedCountry('')
         }
     };
     const fetchAllCapitals = async () => {
