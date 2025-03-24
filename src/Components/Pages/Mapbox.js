@@ -91,9 +91,82 @@ const MapboxMap = () => {
         });
       });
 
+      map.addLayer({
+        id: "country-fills",
+        type: "fill",
+        source: { type: "vector", url: "mapbox://mapbox.country-boundaries-v1" },
+        "source-layer": "country_boundaries",
+        paint: {
+          "fill-color": "transparent",
+          "fill-opacity": 0.6,
+          "fill-outline-color": "#000000"
+        }
+      });
+
+      map.addLayer({
+        id: "country-borders",
+        type: "line",
+        source: { type: "vector", url: "mapbox://mapbox.country-boundaries-v1" },
+        "source-layer": "country_boundaries",
+        paint: {
+          "line-color": "gray",
+          "line-width": 0.5
+        }
+      });
       // Ensure country labels stay visible
       map.moveLayer("country-label");
     });
+
+
+    let hoveredCountryId = null;
+    
+    map.on("mousemove", (event) => {
+      const features = map.queryRenderedFeatures(event.point, { layers: ["country-fills"] });
+      if (features.length > 0) {
+        const countryName = features[0].properties.name_en;
+        const countryCode = features[0].properties.iso_3166_1;
+        map.getCanvas().style.cursor = "pointer";
+
+        map.setPaintProperty("country-fills", "fill-opacity", [
+          "case",
+          ["==", ["get", "iso_3166_1"], countryCode],
+          1,
+          0.6
+        ]);
+
+        if (hoveredCountryId !== countryCode) {
+          hoveredCountryId = countryCode;
+          map.setLayoutProperty("country-label", "text-field", [
+            "case",
+            ["==", ["get", "iso_3166_1"], countryCode],
+            ["concat", ["get", "name_en"]],
+            ["get", "name_en"]
+          ]);
+          map.setLayoutProperty("country-label", "text-size", [
+            "case",
+            ["==", ["get", "iso_3166_1"], countryCode],
+            20,
+            14
+          ]);
+        }
+      }
+    });
+
+    map.on("mouseleave", "country-fills", () => {
+      map.getCanvas().style.cursor = "";
+      map.setPaintProperty("country-fills", "fill-opacity", 0.5);
+      map.setLayoutProperty("country-label", "text-field", ["get", "name_en"]);
+      map.setLayoutProperty("country-label", "text-size", 14);
+      hoveredCountryId = null;
+    });
+
+
+
+
+
+
+
+
 
     // Click handler for countries
     map.on("click", (event) => {

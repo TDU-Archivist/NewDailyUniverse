@@ -488,26 +488,30 @@ export const MainDataLoadProvider = ({ children }) => {
     };
 
 
-    const [data, setData] = useState({
-        news: [],
-        sports: [],
-        entertainment1: [],
-        entertainment2: [],
-    });
+    const [data, setData] = useState({});
     const [isLoading, setIsLoading] = useState(true);
+    const [url, setUrl] = useState("");
+    const [thumbnail, setThumbnail] = useState(null);
 
-    const endpoints = {
-        news: "https://www.reddit.com/r/worldnews/new.json",
-        sports: "https://www.reddit.com/r/sports/hot.json",
-        entertainment1: "https://www.reddit.com/r/entertainment/hot.json",
-        entertainment2: "https://www.reddit.com/r/entertainment/new.json",
-        business: "https://www.reddit.com/r/FinanceNews/hot.json",
-    };
+    const endpoints = [
+        { key: "news", url: "https://www.reddit.com/r/worldnews/new.json" },
+        { key: "sports", url: "https://www.reddit.com/r/sports/hot.json" },
+        { key: "entertainment1", url: "https://www.reddit.com/r/entertainment/hot.json" },
+        { key: "entertainment2", url: "https://www.reddit.com/r/entertainment/new.json" },
+        { key: "business", url: "https://www.reddit.com/r/FinanceNews/hot.json" }
+    ];
 
-    const fetchDataAndUpdateLocalStorage = async (key, url) => {
+    const fetchDataAndUpdateLocalStorage = async ({ key, url }) => {
         try {
-            const response = await axios.get(url);
-            const fetchedData = response.data.data.children;
+            const response = await fetch(url);
+            const json = await response.json();
+            const fetchedData = json.data?.children.map(item => ({
+                subreddit: item.data.subreddit,
+                thumbnail: item.data.thumbnail,
+                title: item.data.title,
+                url: item.data.url
+            })) || []; // Extract only the required fields
+    
             setData((prevState) => ({ ...prevState, [key]: fetchedData }));
             localStorage.setItem(key, JSON.stringify(fetchedData));
         } catch (error) {
@@ -516,10 +520,8 @@ export const MainDataLoadProvider = ({ children }) => {
     };
 
     const fetchData = async () => {
-        for (const [key, url] of Object.entries(endpoints)) {
-        await fetchDataAndUpdateLocalStorage(key, url);
-        await new Promise((resolve) => setTimeout(resolve, 500)); // Optional delay
-        }
+        setIsLoading(true);
+        await Promise.all(endpoints.map(fetchDataAndUpdateLocalStorage));
         setIsLoading(false);
     };
 

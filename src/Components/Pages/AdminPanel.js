@@ -1493,7 +1493,8 @@ const AdminPanel = () => {
                                             <label htmlFor=""><h6>SELECT CONTINENT</h6></label>
                                             <select name="" id="" value={addAirlineContinent} onChange={(e) => setAddAirlineContinent(e.target.value)}>
                                                 <option value="">Select Continent</option>
-                                                <option value="America">America</option>
+                                                <option value="N.America">N.America</option>
+                                                <option value="S.America">S.America</option>
                                                 <option value="Europe">Europe</option>
                                                 <option value="Africa">Africa</option>
                                                 <option value="Asia">Asia</option>
@@ -1505,15 +1506,29 @@ const AdminPanel = () => {
                                             <label htmlFor=""><h6>SELECT SUB CONTINENT</h6></label>
                                             <select name="" id="" value={addAirlineSubContinent} onChange={(e) => setAddAirlineSubContinent(e.target.value)}>
                                                 <option value="">Select Sub-Continent</option>
-                                                <option value="Central">Central</option>
-                                                <option value="Northern">Northern</option>
-                                                <option value="Northwestern">Northwestern</option>
-                                                <option value="Northeastern">Northeastern</option>
-                                                <option value="Western">Western</option>
-                                                <option value="Eastern">Eastern</option>
-                                                <option value="Southern">Southern</option>
-                                                <option value="Southwestern">Southwestern</option>
-                                                <option value="Southeastern">Southeastern</option>
+                                                <option value="Northern Africa">Northern Africa</option>
+                                                <option value="Sub-Saharan Africa">Sub-Saharan Africa</option>
+                                                <option value="Northern Asia">Northern Asia</option>
+                                                <option value="Central Asia">Central Asia</option>
+                                                <option value="Western Asia">Western Asia</option>
+                                                <option value="South Asia">South Asia</option>
+                                                <option value="East Asia">East Asia</option>
+                                                <option value="Southeast Asia">Southeast Asia</option>
+                                                <option value="Northern Europe">Northern Europe</option>
+                                                <option value="Western Europe">Western Europe</option>
+                                                <option value="Eastern Europe">Eastern Europe</option>
+                                                <option value="Southern Europe">Southern Europe</option>
+                                                <option value="Northern America">Northern America</option>
+                                                <option value="Central America">Central America</option>
+                                                <option value="The Caribbean">The Caribbean</option>
+                                                <option value="Andean States">Andean States</option>
+                                                <option value="Southern Cone">Southern Cone</option>
+                                                <option value="Brazil">Brazil</option>
+                                                <option value="The Guianas">The Guianas</option>
+                                                <option value="Australasia">Australasia</option>
+                                                <option value="Melanesia">Melanesia</option>
+                                                <option value="Micronesia">Micronesia</option>
+                                                <option value="Polynesia">Polynesia</option>
                                             </select>
                                         </div>
                                         {/* <div className="admnpnlcprcaairlinelImg">
@@ -1810,7 +1825,8 @@ const AdminPanel = () => {
                                             <label htmlFor=""><h6>SELECT CONTINENT</h6></label>
                                             <select name="" id="" value={addAirportContinent} onChange={(e) => setAddAirportContinent(e.target.value)}>
                                                 <option value="">Select Continent</option>
-                                                <option value="America">America</option>
+                                                <option value="N.America">N.America</option>
+                                                <option value="S.America">S.America</option>
                                                 <option value="Europe">Europe</option>
                                                 <option value="Africa">Africa</option>
                                                 <option value="Asia">Asia</option>
@@ -1822,15 +1838,29 @@ const AdminPanel = () => {
                                             <label htmlFor=""><h6>SELECT SUB CONTINENT</h6></label>
                                             <select name="" id="" value={addAirportSubContinent} onChange={(e) => setAddAirportSubContinent(e.target.value)}>
                                                 <option value="">Select Sub-Continent</option>
-                                                <option value="Central">Central</option>
-                                                <option value="Northern">Northern</option>
-                                                <option value="Northwestern">Northwestern</option>
-                                                <option value="Northeastern">Northeastern</option>
-                                                <option value="Western">Western</option>
-                                                <option value="Eastern">Eastern</option>
-                                                <option value="Southern">Southern</option>
-                                                <option value="Southwestern">Southwestern</option>
-                                                <option value="Southeastern">Southeastern</option>
+                                                <option value="Northern Africa">Northern Africa</option>
+                                                <option value="Sub-Saharan Africa">Sub-Saharan Africa</option>
+                                                <option value="Northern Asia">Northern Asia</option>
+                                                <option value="Central Asia">Central Asia</option>
+                                                <option value="Western Asia">Western Asia</option>
+                                                <option value="South Asia">South Asia</option>
+                                                <option value="East Asia">East Asia</option>
+                                                <option value="Southeast Asia">Southeast Asia</option>
+                                                <option value="Northern Europe">Northern Europe</option>
+                                                <option value="Western Europe">Western Europe</option>
+                                                <option value="Eastern Europe">Eastern Europe</option>
+                                                <option value="Southern Europe">Southern Europe</option>
+                                                <option value="Northern America">Northern America</option>
+                                                <option value="Central America">Central America</option>
+                                                <option value="The Caribbean">The Caribbean</option>
+                                                <option value="Andean States">Andean States</option>
+                                                <option value="Southern Cone">Southern Cone</option>
+                                                <option value="Brazil">Brazil</option>
+                                                <option value="The Guianas">The Guianas</option>
+                                                <option value="Australasia">Australasia</option>
+                                                <option value="Melanesia">Melanesia</option>
+                                                <option value="Micronesia">Micronesia</option>
+                                                <option value="Polynesia">Polynesia</option>
                                             </select>
                                         </div>
                                         {/* <div className="admnpnlcprcaairportlImg">
@@ -2148,7 +2178,8 @@ const AdminPanel = () => {
                                                 <label htmlFor=""><h6>SELECT CONTINENT</h6></label>
                                                 <select name="" id="" value={addLCContinent} onChange={(e) => setAddLCContinent(e.target.value)}>
                                                     <option value="">Select Continent</option>
-                                                    <option value="America">America</option>
+                                                    <option value="N.America">N.America</option>
+                                                    <option value="S.America">S.America</option>
                                                     <option value="Europe">Europe</option>
                                                     <option value="Africa">Africa</option>
                                                     <option value="Asia">Asia</option>
@@ -2392,7 +2423,8 @@ const AdminPanel = () => {
                                                 <label htmlFor=""><h6>SELECT CONTINENT</h6></label>
                                                 <select name="" id="" value={addYTContinent} onChange={(e) => setAddYTContinent(e.target.value)}>
                                                     <option value="">Select Continent</option>
-                                                    <option value="America">America</option>
+                                                    <option value="N.America">N.America</option>
+                                                    <option value="S.America">S.America</option>
                                                     <option value="Europe">Europe</option>
                                                     <option value="Africa">Africa</option>
                                                     <option value="Asia">Asia</option>
@@ -2683,12 +2715,13 @@ const AdminPanel = () => {
                                             <label htmlFor=""><h6>SELECT CONTINENT</h6></label>
                                             <select name="" id="" value={addMagazineContinent} onChange={(e) => setAddMagazineContinent(e.target.value)}>
                                                 <option value="">Select Continent</option>
-                                                <option value="America">America</option>
+                                                <option value="N.America">N.America</option>
+                                                <option value="S.America">S.America</option>
                                                 <option value="Europe">Europe</option>
                                                 <option value="Africa">Africa</option>
                                                 <option value="Asia">Asia</option>
                                                 <option value="Oceania">Oceania</option>
-                                                <option value="Antarctica">Antarctica</option>
+                                                <option value="Antarctica">Antarctica</option>  
                                             </select>
                                         </div>
                                         <div>
@@ -2991,7 +3024,8 @@ const AdminPanel = () => {
                                             <label htmlFor=""><h6>SELECT CONTINENT</h6></label>
                                             <select name="" id="" value={addNewspaperContinent} onChange={(e) => setAddNewspaperContinent(e.target.value)}>
                                                 <option value="">Select Continent</option>
-                                                <option value="America">America</option>
+                                                <option value="N.America">N.America</option>
+                                                <option value="S.America">S.America</option>
                                                 <option value="Europe">Europe</option>
                                                 <option value="Africa">Africa</option>
                                                 <option value="Asia">Asia</option>
@@ -3283,7 +3317,8 @@ const AdminPanel = () => {
                                             <label htmlFor=""><h6>SELECT CONTINENT</h6></label>
                                             <select name="" id="" value={addRestaurantContinent} onChange={(e) => setAddRestaurantContinent(e.target.value)}>
                                                 <option value="">Select Continent</option>
-                                                <option value="America">America</option>
+                                                <option value="N.America">N.America</option>
+                                                <option value="S.America">S.America</option>
                                                 <option value="Europe">Europe</option>
                                                 <option value="Africa">Africa</option>
                                                 <option value="Asia">Asia</option>
@@ -3294,16 +3329,30 @@ const AdminPanel = () => {
                                         <div>
                                             <label htmlFor=""><h6>SELECT SUB CONTINENT</h6></label>
                                             <select name="" id="" value={addRestaurantSubContinent} onChange={(e) => setAddRestaurantSubContinent(e.target.value)}>
-                                                <option value="">Select Sub-Continent</option>
-                                                <option value="Central">Central</option>
-                                                <option value="Northern">Northern</option>
-                                                <option value="Northwestern">Northwestern</option>
-                                                <option value="Northeastern">Northeastern</option>
-                                                <option value="Western">Western</option>
-                                                <option value="Eastern">Eastern</option>
-                                                <option value="Southern">Southern</option>
-                                                <option value="Southwestern">Southwestern</option>
-                                                <option value="Southeastern">Southeastern</option>
+                                            <option value="">Select Sub-Continent</option>
+                                                <option value="Northern Africa">Northern Africa</option>
+                                                <option value="Sub-Saharan Africa">Sub-Saharan Africa</option>
+                                                <option value="Northern Asia">Northern Asia</option>
+                                                <option value="Central Asia">Central Asia</option>
+                                                <option value="Western Asia">Western Asia</option>
+                                                <option value="South Asia">South Asia</option>
+                                                <option value="East Asia">East Asia</option>
+                                                <option value="Southeast Asia">Southeast Asia</option>
+                                                <option value="Northern Europe">Northern Europe</option>
+                                                <option value="Western Europe">Western Europe</option>
+                                                <option value="Eastern Europe">Eastern Europe</option>
+                                                <option value="Southern Europe">Southern Europe</option>
+                                                <option value="Northern America">Northern America</option>
+                                                <option value="Central America">Central America</option>
+                                                <option value="The Caribbean">The Caribbean</option>
+                                                <option value="Andean States">Andean States</option>
+                                                <option value="Southern Cone">Southern Cone</option>
+                                                <option value="Brazil">Brazil</option>
+                                                <option value="The Guianas">The Guianas</option>
+                                                <option value="Australasia">Australasia</option>
+                                                <option value="Melanesia">Melanesia</option>
+                                                <option value="Micronesia">Micronesia</option>
+                                                <option value="Polynesia">Polynesia</option>
                                             </select>
                                         </div>
                                         <div>

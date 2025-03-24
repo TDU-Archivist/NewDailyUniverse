@@ -74,7 +74,8 @@ const Nav = () => {
   const [viewPages, setViewPages] = useState(false);
   const [hasMouseEntered, setHasMouseEntered] = useState(false);
   const [hideTimeout, setHideTimeout] = useState(null);
-  const [viewAmericaNav, setViewAmericaNav] = useState(false);
+  const [viewNAmericaNav, setViewNAmericaNav] = useState(false);
+  const [viewSAmericaNav, setViewSAmericaNav] = useState(false);
   const [viewEuropeNav, setViewEuropeNav] = useState(false);
   const [viewAfricaNav, setViewAfricaNav] = useState(false);
   const [viewAsiaNav, setViewAsiaNav] = useState(false);
@@ -101,7 +102,8 @@ const Nav = () => {
     setViewMoonPhase(true);
     setViewSocialMedia(false);
     setViewPages(false);
-    setViewAmericaNav(false);
+    setViewNAmericaNav(false);
+    setViewSAmericaNav(false);
     setViewEuropeNav(false);
     setViewAfricaNav(false);
     setViewAsiaNav(false);
@@ -117,7 +119,7 @@ const Nav = () => {
     setViewSocialMedia(true);
     setViewMoonPhase(false);
     setViewPages(false);
-    setViewAmericaNav(false);
+    setViewNAmericaNav(false);
     setViewEuropeNav(false);
     setViewAfricaNav(false);
     setViewAsiaNav(false);
@@ -133,7 +135,7 @@ const Nav = () => {
     setViewPages(true)
     setViewSocialMedia(false);
     setViewMoonPhase(false);
-    setViewAmericaNav(false);
+    setViewNAmericaNav(false);
     setViewEuropeNav(false);
     setViewAfricaNav(false);
     setViewAsiaNav(false);
@@ -142,14 +144,14 @@ const Nav = () => {
 
     // const timeout = setTimeout(() => {
     //   setViewPages(false)
-    // }, 15000);
+    // }, 5000);
     // return () => clearTimeout(timeout);
   }
   const handleHideModals = () => {
     setViewMoonPhase(false)
     setViewSocialMedia(false);
     setViewPages(false);
-    setViewAmericaNav(false);
+    setViewNAmericaNav(false);
     setViewEuropeNav(false);
     setViewAfricaNav(false);
     setViewAsiaNav(false);
@@ -158,8 +160,9 @@ const Nav = () => {
   }
 
 
-  const handleViewAmericaNav = () => {
-    setViewAmericaNav(true);
+  const handleViewNAmericaNav = () => {
+    setViewNAmericaNav(true);
+    setViewSAmericaNav(false);
     setViewEuropeNav(false);
     setViewAfricaNav(false);
     setViewAsiaNav(false);
@@ -168,9 +171,32 @@ const Nav = () => {
     setViewMoonPhase(false);
     setViewSocialMedia(false);
     setViewPages(false);
+
+    const timeout = setTimeout(() => {
+      setViewNAmericaNav(false)
+    }, 8000);
+    return () => clearTimeout(timeout);
+  }
+  const handleViewSAmericaNav = () => {
+    setViewNAmericaNav(false);
+    setViewSAmericaNav(true);
+    setViewEuropeNav(false);
+    setViewAfricaNav(false);
+    setViewAsiaNav(false);
+    setViewOceniaNav(false);
+    setViewAntarticaNav(false);
+    setViewMoonPhase(false);
+    setViewSocialMedia(false);
+    setViewPages(false);
+    
+    const timeout = setTimeout(() => {
+      setViewSAmericaNav(false)
+    }, 8000);
+    return () => clearTimeout(timeout);
   }
   const handleViewEuropeNav = () => {
-    setViewAmericaNav(false);
+    setViewNAmericaNav(false);
+    setViewSAmericaNav(false);
     setViewEuropeNav(true);
     setViewAfricaNav(false);
     setViewAsiaNav(false);
@@ -179,9 +205,15 @@ const Nav = () => {
     setViewMoonPhase(false);
     setViewSocialMedia(false);
     setViewPages(false);
+    
+    const timeout = setTimeout(() => {
+      setViewEuropeNav(false)
+    }, 8000);
+    return () => clearTimeout(timeout);
   }
   const handleViewAfricaNav = () => {
-    setViewAmericaNav(false);
+    setViewNAmericaNav(false);
+    setViewSAmericaNav(false);
     setViewEuropeNav(false);
     setViewAfricaNav(true);
     setViewAsiaNav(false);
@@ -190,9 +222,15 @@ const Nav = () => {
     setViewMoonPhase(false);
     setViewSocialMedia(false);
     setViewPages(false);
+    
+    const timeout = setTimeout(() => {
+      setViewAfricaNav(false)
+    }, 8000);
+    return () => clearTimeout(timeout);
   }
   const handleViewAsiaNav = () => {
-    setViewAmericaNav(false);
+    setViewNAmericaNav(false);
+    setViewSAmericaNav(false);
     setViewEuropeNav(false);
     setViewAfricaNav(false);
     setViewAsiaNav(true);
@@ -201,9 +239,15 @@ const Nav = () => {
     setViewMoonPhase(false);
     setViewSocialMedia(false);
     setViewPages(false);
+    
+    const timeout = setTimeout(() => {
+      setViewAsiaNav(false)
+    }, 8000);
+    return () => clearTimeout(timeout);
   }
   const handleViewOceaniaNav = () => {
-    setViewAmericaNav(false);
+    setViewNAmericaNav(false);
+    setViewSAmericaNav(false);
     setViewEuropeNav(false);
     setViewAfricaNav(false);
     setViewAsiaNav(false);
@@ -212,9 +256,15 @@ const Nav = () => {
     setViewMoonPhase(false);
     setViewSocialMedia(false);
     setViewPages(false);
+    
+    const timeout = setTimeout(() => {
+      setViewOceniaNav(false)
+    }, 8000);
+    return () => clearTimeout(timeout);
   }
   const handleViewAntarcticaNav = () => {
-    setViewAmericaNav(false);
+    setViewNAmericaNav(false);
+    setViewSAmericaNav(false);
     setViewEuropeNav(false);
     setViewAfricaNav(false);
     setViewAsiaNav(false);
@@ -223,6 +273,11 @@ const Nav = () => {
     setViewMoonPhase(false);
     setViewSocialMedia(false);
     setViewPages(false);
+    
+    const timeout = setTimeout(() => {
+      setViewAntarticaNav(false)
+    }, 8000);
+    return () => clearTimeout(timeout);
   }
 
 
@@ -276,22 +331,22 @@ const Nav = () => {
           </div>
           <div className="navContent right">
             {viewPages && <div className={!userLoggedIn ? "nvcntntrModal" : "nvcntntrModal logged"}
-              onMouseEnter={() => {
-                if (hideTimeout) {
-                  clearTimeout(hideTimeout);
-                }
-                setHasMouseEntered(true); 
-                setViewPages(true); 
-              }}
-              onMouseLeave={() => {
-                if (hasMouseEntered) {
-                  const timeout = setTimeout(() => {
-                    setViewPages(false);
-                    setHasMouseEntered(false);
-                  }, 500);
-                  setHideTimeout(timeout);
-                }
-              }}
+              // onMouseEnter={() => {
+              //   if (hideTimeout) {
+              //     clearTimeout(hideTimeout);
+              //   }
+              //   setHasMouseEntered(true); 
+              //   setViewPages(true); 
+              // }}
+              // onMouseLeave={() => {
+              //   if (hasMouseEntered) {
+              //     const timeout = setTimeout(() => {
+              //       setViewPages(false);
+              //       setHasMouseEntered(false);
+              //     }, 500);
+              //     setHideTimeout(timeout);
+              //   }
+              // }}
             >
               <Link to='/Airlines' onClick={handleHideModals}><h6><FaPlane className='faIcons'/> AIRLINES</h6></Link>
               <Link to='/Airports' onClick={handleHideModals}><h6><FaPlane className='faIcons'/> AIRPORTS</h6></Link>
@@ -307,18 +362,18 @@ const Nav = () => {
               <Link><h6><FaCloudSunRain className='faIcons'/> WEATHER FORECAST</h6></Link>
               <Link><h6><FaClock className='faIcons'/> WORLD CLOCK</h6></Link>
             </div>}
-            {viewAmericaNav && <div className={!userLoggedIn ? "nvcntntrContinent" : "nvcntntrContinent logged"}
+            {viewNAmericaNav && <div className={!userLoggedIn ? "nvcntntrContinent" : "nvcntntrContinent logged"}
               onMouseEnter={() => {
                 if (hideTimeout) {
                   clearTimeout(hideTimeout);
                 }
                 setHasMouseEntered(true); 
-                setViewAmericaNav(true); 
+                setViewNAmericaNav(true); 
               }}
               onMouseLeave={() => {
                 if (hasMouseEntered) {
                   const timeout = setTimeout(() => {
-                    setViewAmericaNav(false);
+                    setViewNAmericaNav(false);
                     setHasMouseEntered(false);
                   }, 500);
                   setHideTimeout(timeout);
@@ -326,7 +381,7 @@ const Nav = () => {
               }}
             >
               <div className="nvcntntrcTitle">
-                <h6>ALL AMERICAN ARTICLES AND CONTENTS</h6>
+                <h6>ALL NORTH AMERICAN ARTICLES AND CONTENTS</h6>
               </div>
               <div className="nvcntntrcContent">
                 <div className='nvcntntrccOrg'>
@@ -335,6 +390,47 @@ const Nav = () => {
                 <div>
                   <h6>Organization of American States</h6>
                   <p>The Organization of American States (OAS or OEA) is an international organization founded on 30 April 1948 to promote cooperation among its member states within the Americas.</p>
+                </div>
+              </div>
+              <div className="nvcntntrcPages">
+                <Link to='/Airlines/America'><h6><FaPlane className='faIcons'/> AIRLINES</h6></Link>
+                <Link><h6><FaPlane className='faIcons'/> AIRPORTS</h6></Link>
+                <Link><h6><FaNewspaper className='faIcons'/> NEWSPAPER</h6></Link>
+                <Link><h6><FaUtensils className='faIcons'/> RESTAURANTS</h6></Link>
+                <Link><h6><FaFootballBall className='faIcons'/> SPORTS</h6></Link>
+                <Link><h6><FaMapMarked className='faIcons'/> TRAVEL</h6></Link>
+                <Link><h6><FaMapMarkerAlt className='faIcons'/> VISA GUIDE</h6></Link>
+                <Link><h6><FaCloudSunRain className='faIcons'/> WEATHER</h6></Link>
+              </div>
+            </div>}
+            {viewSAmericaNav && <div className={!userLoggedIn ? "nvcntntrContinent" : "nvcntntrContinent logged"}
+              onMouseEnter={() => {
+                if (hideTimeout) {
+                  clearTimeout(hideTimeout);
+                }
+                setHasMouseEntered(true); 
+                setViewSAmericaNav(true); 
+              }}
+              onMouseLeave={() => {
+                if (hasMouseEntered) {
+                  const timeout = setTimeout(() => {
+                    setViewSAmericaNav(false);
+                    setHasMouseEntered(false);
+                  }, 500);
+                  setHideTimeout(timeout);
+                }
+              }}
+            >
+              <div className="nvcntntrcTitle">
+                <h6>ALL SOUTH AMERICAN ARTICLES AND CONTENTS</h6>
+              </div>
+              <div className="nvcntntrcContent">
+                <div className='nvcntntrccOrg'>
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Flag_of_UNASUR.svg/800px-Flag_of_UNASUR.svg.png" alt="" />
+                </div>
+                <div>
+                  <h6>Union of South American Nations</h6>
+                  <p>The Union of South American Nations (USAN), sometimes also referred to as the South American Union, abbreviated in Spanish as UNASUR and in Portuguese as UNASUL, is an intergovernmental regional organization.</p>
                 </div>
               </div>
               <div className="nvcntntrcPages">
@@ -554,12 +650,13 @@ const Nav = () => {
               </div>
             </div>}
             <div className="nvcntntr links">
-              <button className={viewAmericaNav ? 'active' : ''} onClick={!viewAmericaNav ? handleViewAmericaNav : handleHideModals}>America</button>
-              <button className={viewEuropeNav ? 'active' : ''} onClick={!viewEuropeNav ? handleViewEuropeNav : handleHideModals}>Europe</button>
-              <button className={viewAfricaNav ? 'active' : ''} onClick={!viewAfricaNav ? handleViewAfricaNav : handleHideModals}>Africa</button>
-              <button className={viewAsiaNav ? 'active' : ''} onClick={!viewAsiaNav ? handleViewAsiaNav : handleHideModals}>Asia</button>
-              <button className={viewOceniaNav ? 'active' : ''} onClick={!viewOceniaNav ? handleViewOceaniaNav : handleHideModals}>Oceania</button>
-              <button className={viewAntarticaNav ? 'active' : ''} onClick={!viewAntarticaNav ? handleViewAntarcticaNav : handleHideModals}>Antarctica</button>
+              <button className={viewNAmericaNav ? 'active' : ''} onMouseEnter={!viewNAmericaNav ? handleViewNAmericaNav : handleHideModals}>N.America</button>
+              <button className={viewSAmericaNav ? 'active' : ''} onMouseEnter={!viewSAmericaNav ? handleViewSAmericaNav : handleHideModals}>S.America</button>
+              <button className={viewEuropeNav ? 'active' : ''} onMouseEnter={!viewEuropeNav ? handleViewEuropeNav : handleHideModals}>Europe</button>
+              <button className={viewAfricaNav ? 'active' : ''} onMouseEnter={!viewAfricaNav ? handleViewAfricaNav : handleHideModals}>Africa</button>
+              <button className={viewAsiaNav ? 'active' : ''} onMouseEnter={!viewAsiaNav ? handleViewAsiaNav : handleHideModals}>Asia</button>
+              <button className={viewOceniaNav ? 'active' : ''} onMouseEnter={!viewOceniaNav ? handleViewOceaniaNav : handleHideModals}>Oceania</button>
+              <button className={viewAntarticaNav ? 'active' : ''} onMouseEnter={!viewAntarticaNav ? handleViewAntarcticaNav : handleHideModals}>Antarctica</button>
               <button onClick={!viewPages ? handleViewPages : handleHideModals} className={viewPages ? 'active bar' : 'bar'}>{!viewPages ? <FaBars className='faIcons'/> : <FaTimes className='faIcons'/>}</button>
             </div>
             {(!userLoggedIn && !StoredUserID) ? <div className="nvcntntr user">

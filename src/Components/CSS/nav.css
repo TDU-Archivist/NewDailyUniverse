@@ -269,7 +269,7 @@ nav{
     width: 35vw;
     position: absolute;
     top: 7.5vh;
-    right: 9vw;
+    right: 15.1vw;
     padding: 1vw;
     border-radius: 0.5vw;
     background: whitesmoke;
@@ -277,7 +277,7 @@ nav{
     box-shadow: 0 0 10px gray;
 }
 .nvcntntrContinent.logged{
-    right: 17vw;
+    right: 22.5vw;
 }
 .nvcntntrcTitle{
     height: auto;
@@ -326,7 +326,7 @@ nav{
     text-decoration: none;
 }
 .nvcntntrcPages a h6{
-    color: gray;
+    color: black;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -356,7 +356,7 @@ nav{
 }
 .nvcntntr.links button{
     font-size: 0.7vw;
-    color: gray;
+    color: black;
     text-decoration: none;
     text-transform: uppercase;
     font-weight: 600;
