@@ -107,27 +107,28 @@ const Newspapers = () => {
             </div>
             
             <section className="newspapersContainerPage top">
-                <div className="newspapersContentPage top1">
-                    <img src={require('../assets/imgs/NewspaperBG.png')} alt="" />
-                </div>
-                <div className="newspapersContentPage top2">
-                    <div className="nwspprcpt2 left">
-                        <h4>NEWSPAPERS AROUND THE WORLD BY CATEGORY</h4>
-                        <p>Stay Informed in traditional reading like before, checkout everyday's edition here.</p>
-                    </div>
-                    <div className="nwspprcpt2 right">
-                        <input type="text" placeholder='Search keyword, article or topic here...'/>
-                        <div className="nwspprcpt2rBtn">
-                            <button><FaSearch className='faIcons'/></button>
-                            <button><FaMicrophone className='faIcons'/></button>
-                        </div>
-                    </div>
-                </div>
+              {/* <div className="newspapersContentPage top1">
+                  <img src={require('../assets/imgs/NewspaperBG.png')} alt="" />
+              </div> */}
+              <div className="newspapersContentPage top2">
+                  <div className="nwspprcpt2 left">
+                    <h3>NEWSPAPERS</h3>
+                    <h5>NEWSPAPERS AROUND THE WORLD BY CATEGORY</h5>
+                    {/* <p>Stay Informed in traditional reading like before, checkout everyday's edition here.</p> */}
+                  </div>
+                  <div className="nwspprcpt2 right">
+                      <input type="text" placeholder='Search keyword, article or topic here...'/>
+                      <div className="nwspprcpt2rBtn">
+                          <button><FaSearch className='faIcons'/></button>
+                          <button><FaMicrophone className='faIcons'/></button>
+                      </div>
+                  </div>
+              </div><hr />
             </section>
 
             <section className="newspapersContainerPage mid">
               <div className="newspapersContentPage mid1">
-                <Link className="nwspprcm1">
+                <Link className="nwspprcm1" to='/Newspapers/AlternativeNewspaper'>
                   <div className='nwspprcpm1Img'>
                     <img src={require('../assets/imgs/Newspaper/00.AltNewspaper.png')} alt="" />
                   </div>
@@ -136,7 +137,7 @@ const Newspapers = () => {
                     <p>Find the most interesting issues, hot topics and breakings news. Read the the latest daily news from the list of Alternative Newspapers around the world!</p>
                   </div>
                 </Link>
-                <Link className="nwspprcm1">
+                <Link className="nwspprcm1" to='/Newspapers/CollegeNewspaper'>
                   <div className='nwspprcpm1Img'>
                     <img src={require('../assets/imgs/Newspaper/00.CollegeNewspaper.png')} alt="" />
                   </div>
@@ -145,7 +146,7 @@ const Newspapers = () => {
                     <p>The list of student newspapers (College Newspapers and University Newspapers) from the best colleges and universities around the world.</p>
                   </div>
                 </Link>
-                <Link className="nwspprcm1">
+                <Link className="nwspprcm1" to='/Newspapers/LocalCountryNewspaper'>
                   <div className='nwspprcpm1Img'>
                     <img src={require('../assets/imgs/Newspaper/00.LocalNewspaper.png')} alt="" />
                   </div>
@@ -154,7 +155,7 @@ const Newspapers = () => {
                     <p>Get the latest news today! Find thousands of online newspapers from around the world. All newspapers are carefully sorted by region, country, and state.</p>
                   </div>
                 </Link>
-                <Link className="nwspprcm1">
+                <Link className="nwspprcm1" to='/Newspapers/WorldNewspaper'>
                   <div className='nwspprcpm1Img'>
                     <img src={require('../assets/imgs/Newspaper/00.WorldNewspaper.png')} alt="" />
                   </div>

@@ -2933,7 +2933,7 @@ const AdminPanel = () => {
                                                 <option value="Entertainment Magazine">Entertainment Magazine</option>
                                                 <option value="Fashion Magazine">Fashion Magazine</option>
                                                 <option value="Finance and Money Magazine">Finance and Money Magazine</option>
-                                                <option value="Healthar Magazine">Health Magazine</option>
+                                                <option value="Health Magazine">Health Magazine</option>
                                                 <option value="History Magazine">History Magazine</option>
                                                 <option value="Home Magazine">Home Magazine</option>
                                                 <option value="Music Magazine">Music Magazine</option>

@@ -34,7 +34,12 @@ h6{
     background: white;
     padding-bottom: 10vw;
 }
-
+.mainContainer.newsCategory{
+    height: auto;
+    width: 100%;
+    background: white;
+    padding-bottom: 10vw;
+}
 
 
 
@@ -42,13 +47,18 @@ h6{
 section.newspapersContainerPage.top{
     height: auto;
     width: 100%;
-    padding: 4vw 5vw;
+    padding: 5vw;
     padding-bottom: 1vw;
     background: 
         linear-gradient(whitesmoke 0%, transparent),
         linear-gradient(transparent, white 100%),
         url('../assets/imgs/TheDailyUniverseBG.png') no-repeat center;
     background-size: cover;
+}
+section.newspapersContainerPage.top hr{
+    height: 0.5vw;
+    background: black;
+    width: 100%;
 }
 
 
@@ -73,11 +83,14 @@ section.newspapersContainerPage.top{
     display: flex;
     align-items: end;
     justify-content: space-between;
-    margin-top: 1vw;
+    margin-bottom: 0.5vw;
 }
 .nwspprcpt2.left{
     height: auto;
     width: 50%;
+}
+.nwspprcpt2.left h3{
+    line-height: 3.5vw;
 }
 .nwspprcpt2.right{
     height: auto;
@@ -88,6 +101,7 @@ section.newspapersContainerPage.top{
     border: solid 2px black;
     border-radius: 50px;
     padding: 0.3vw 1.5vw;
+    margin-bottom: 0.3vw;
 }
 .nwspprcpt2.right input{
     background: none;
@@ -121,7 +135,7 @@ section.newspapersContainerPage.top{
 
 
 section.newspapersContainerPage.mid{
-    height: auto;
+    height: 40vw;
     width: 100%;
     padding: 1vw 5vw;
 }
@@ -178,3 +192,149 @@ section.newspapersContainerPage.mid{
 
 
 
+/* Newspaper By Category */
+
+section.newspaperCatContainerPage.top{
+    height: auto;
+    width: 100%;
+    padding: 5vw;
+    padding-bottom: 1vw;
+    background: 
+        linear-gradient(whitesmoke 0%, transparent),
+        linear-gradient(transparent, white 100%),
+        url('../assets/imgs/TheDailyUniverseBG.png') no-repeat center;
+    background-size: cover;
+}
+.newspaperCatContentPage.top2{
+    height: auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* margin-top: 1vw; */
+}
+.nwspprcatntcpt2.left{
+    height: auto;
+    width: 60%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+.nwspprcatntcpt2.left a{
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-size: 3vw;
+    margin-right: 1vw;
+    color: gray;
+}
+.nwspprcatntcpt2.left h4{
+    text-transform: uppercase;
+}
+.nwspprcatntcpt2.left h4 span{
+    color: royalblue;
+    font-family: "Oswald", sans-serif;
+}
+.nwspprcatntcpt2.right{
+    height: auto;
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: solid 2px black;
+    border-radius: 50px;
+    padding: 0.3vw 1.5vw;
+}
+.nwspprcatntcpt2.right input{
+    background: none;
+    border: none;
+    outline: none;
+    font-size: 0.8vw;
+    width: 80%;
+}
+.nwspprcatntcpt2rBtn{
+    height: auto;
+    width: 20%;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+.nwspprcatntcpt2rBtn button{
+    border: none;
+    outline: none;
+    background: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10%;
+    font-size: 0.9vw;
+}
+
+
+section.newspaperCatContainerPage.mid{
+    height: auto;
+    width: 100%;
+    padding: 1vw 5vw;
+}
+.newspaperCatContentPage.mid1{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    align-items: top;
+}
+
+
+
+.newspaperCatContentPage.mid1 a{
+    height: auto;
+    width: 24%;
+    overflow: hidden;
+    background: rgba(200, 200, 200);
+    border-radius: 1vw;
+    text-decoration: none;
+    text-align: center;
+    margin: 0.5%;
+} 
+.nwspprctcpm2Img{
+    height: 14vw;
+    width: 100%;
+    border-radius: 1vw;
+    background: url('../assets/imgs/TheDailyUniverseBG.png') no-repeat center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.nwspprctcpm2Img img{
+    width: 100%;
+}
+.nwspprctccpm2Dets{
+    padding: 1vw;
+}
+.nwspprctccpm2Dets h6{
+    font-size: 1vw;
+    line-height: 1.2vw;
+    margin: 2% 0;
+}
+.nwspprctccpm2Dets p{
+    font-size: 0.7vw;
+    padding: 0 5%;
+    color: gray;
+}
+.nwspprctccpm2Empty{
+    height: 30vw;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.nwspprctccpm2Empty span p{
+    color: gray;
+}

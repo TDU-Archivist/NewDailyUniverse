@@ -105,14 +105,15 @@ const Airlines = () => {
             </div>
 
             <section className="airlinesContainerPage top">
-                <div className="airlinesContentPage top1">
+                {/* <div className="airlinesContentPage top1">
                     <video autoPlay muted loop>
                         <source src={videoBanner} type="video/mp4" />
                     </video>
-                </div>
+                </div> */}
                 <div className="airlinesContentPage top2">
                     <div className="airlnscpt2 left">
-                        <h4>FAMOUS AIRLINES AROUND THE WORLD</h4>
+                        <h3>AIRLINES</h3>
+                        <h5>FAMOUS AIRLINES AROUND THE WORLD</h5>
                     </div>
                     <div className="airlnscpt2 right">
                         <input type="text" placeholder='Search airline or keywords here...'/>
@@ -122,6 +123,7 @@ const Airlines = () => {
                         </div>
                     </div>
                 </div>
+                <hr />
             </section>
             <section className="airlinesContainerPage mid">
                 <div className="airlinesContentPage mid1">
@@ -162,7 +164,7 @@ const Airlines = () => {
                         </div>
                     </Link>
                 </div>
-                <div className="airlinesContentPage mid2">
+                {/* <div className="airlinesContentPage mid2">
                     <div className="airlnscpm2Header">
                         <h5>RECOMMENDED AIRLINES</h5>
                         <Link><h6>VIEW ALL AIRLINES</h6></Link>
@@ -223,7 +225,7 @@ const Airlines = () => {
                             <p>Description of sports culture, popular sports, famous athletes, and significant sporting events in the country.</p>
                         </Link>
                     </div>
-                </div>
+                </div> */}
             </section>
 
 

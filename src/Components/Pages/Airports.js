@@ -106,14 +106,15 @@ const Airports = () => {
             </div>
 
             <section className="airportsContainerPage top">
-                <div className="airportsContentPage top1">
+                {/* <div className="airportsContentPage top1">
                     <video autoPlay muted loop>
                         <source src={videoBanner} type="video/mp4" />
                     </video>
-                </div>
+                </div> */}
                 <div className="airportsContentPage top2">
                     <div className="airprtscpt2 left">
-                        <h4>LIST OF AIRPORTS AROUND THE WORLD - IATA CODES</h4>
+                        <h3>AIRPORTS</h3>
+                        <h5>AIRPORTS AROUND THE WORLD - IATA CODES</h5>
                     </div>
                     <div className="airprtscpt2 right">
                         <input type="text" placeholder='Search country, airports or keywords here...'/>
@@ -122,7 +123,7 @@ const Airports = () => {
                             <button><FaMicrophone className='faIcons'/></button>
                         </div>
                     </div>
-                </div>
+                </div><hr />
                 <div className="airportsContentPage top3">
                     <p>List of busiest airports and biggest airlines with scheduled flights. Below you will find the list of IATA airport codes, number of airlines and destinations in every airports. Wondering where to travel? You can visit the top tourist spots from the most visited countries in the world. Most of the travelers visited these amazing countries: France, Spain, USA, China, Italy, Turkey, Mexico, Thailand, Germany and United Kingdom.</p>
                 </div>

@@ -1224,51 +1224,45 @@ section.mainContainerPage.mid{
     width: 100%;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    margin-top: 0.5vw;
-}
-.mncntntpm4.external.mobile{
-    display: none;
+    align-items: top;
+    margin-top: 1vw;
 }
 .mncntntpm4ext{
-    height: 11vw;
-    width: 19%;
-    background: url('../assets/imgs/TDULandingBG.png') no-repeat center;
-    background-size: cover;
+    height: auto;
+    width: 24%;
+    margin: 0 0.5%;
     border-radius: 1vw;
     overflow: hidden;
     position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     text-decoration: none;
     cursor: pointer;
 }
-.mncntntpm4ext img{
+.mncntntpm4extImg{
+    height: 12vw;
+    width: 100%;
+    background: url('../assets/imgs/BreakingNewsBG04.png') no-repeat center;
+    background-size: cover;
+}
+.mncntntpm4extImg img{
     height: 100%;
     width: 100%;
 }
 .mncntntpm4extTitle{
-    position: absolute;
-    bottom: 0;
-    left: 0;
     height: auto;
     width: 100%;
     background: rgba(200, 200, 200, 0.8);
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
-    padding: 5%;
+    padding: 1vw;
     text-align: center;
 }
-.mncntntpm4extTitle p{
-    height: 2vw;
-    font-size: 0.7vw;
-    line-height: 1vw;
-    margin-top: 2%;
+.mncntntpm4extTitle h6{
+    height: 3vw;
+    line-height: 1.2vw;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: gray;
+    color: black;
 }
 
 
@@ -1905,17 +1899,26 @@ section.mainContainerPage.mid{
         color: gray;
     }
     .mncntntpm4.external.web{
-        display: none;
-    }
-    .mncntntpm4.external.mobile{
         display: flex;
         flex-wrap: wrap;
     }
     .mncntntpm4ext{
-        height: 40vw;
+        height: 35vw;
         width: 48%;
         border-radius: 3vw;
         margin-bottom: 5%;
+    }
+    .mncntntpm4extTitle{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: auto;
+        width: 100%;
+        background: rgba(200, 200, 200, 0.8);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        padding: 4%;
+        text-align: center;
     }
     .mncntntpm4extTitle p{
         height: auto;

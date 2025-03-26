@@ -350,7 +350,7 @@ const Nav = () => {
             >
               <Link to='/Airlines' onClick={handleHideModals}><h6><FaPlane className='faIcons'/> AIRLINES</h6></Link>
               <Link to='/Airports' onClick={handleHideModals}><h6><FaPlane className='faIcons'/> AIRPORTS</h6></Link>
-              <Link><h6><FaBroadcastTower className='faIcons'/> BREAKING NEWS</h6></Link>
+              <Link to='/BreakingNews' onClick={handleHideModals}><h6><FaBroadcastTower className='faIcons'/> BREAKING NEWS</h6></Link>
               <Link to='/GlobalInfo' onClick={handleHideModals}><h6><FaGlobe className='faIcons'/> GLOBAL INFO</h6></Link>
               <Link to='/NewsChannels' onClick={handleHideModals}><h6><FaTv className='faIcons'/> LIVE NEWS CHANNELS</h6></Link>
               <Link to='/Magazines' onClick={handleHideModals}><h6><FaNewspaper className='faIcons'/> MAGAZINES</h6></Link>

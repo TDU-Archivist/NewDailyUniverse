@@ -156,13 +156,13 @@ const AirlineContinent = () => {
 
 
             <section className="airlineContContainerPage top">
-                <div className="airlineContContentPage top1">
+                {/* <div className="airlineContContentPage top1">
                     <img src={require('../assets/imgs/AirlinesBG.png')} alt="" />
-                </div>
+                </div> */}
                 <div className="airlineContContentPage top2">
                     <div className="arlncntntcpt2 left">
                         <Link to='/Airlines'><MdKeyboardDoubleArrowLeft className='faIcons'/></Link>
-                        <h4>FAMOUS AIRLINES IN ALL <span>{airlineContinent}S</span></h4>
+                        <h4>FAMOUS AIRLINES IN <span>{airlineContinent}</span></h4>
                     </div>
                     <div className="arlncntntcpt2 right">
                         <input type="text" placeholder='Search keyword, country or airline name here...'/>
@@ -175,17 +175,25 @@ const AirlineContinent = () => {
             </section>
             <section className="airlineContContainerPage mid">
                 <div className="airlineContContentPage mid1">
-                    {Object.keys(groupedByContinent).map((subcontinent) => (
-                        <div className="arlncntntcpm1" key={subcontinent}>
-                            <h4>{subcontinent}</h4>
-                            <h6>All {subcontinent} Airlines</h6>
-                            <ul>
-                                {groupedByContinent[subcontinent].map((country, i) => (
-                                    <li key={i}><button>{country}</button></li>
-                                ))}
-                            </ul>
+                    {currentAirline.length ? <>
+                        {Object.keys(groupedByContinent).map((subcontinent) => (
+                            <div className="arlncntntcpm1" key={subcontinent}>
+                                <h4>{subcontinent}</h4>
+                                <h6>All {subcontinent} Airlines</h6>
+                                <ul>
+                                    {groupedByContinent[subcontinent].map((country, i) => (
+                                        <li key={i}><button>{country}</button></li>
+                                    ))}
+                                </ul>
+                            </div>
+                        ))}
+                    </>:<>
+                        <div className="arlncntntcpm1Empty">
+                            <span>
+                                <p>No Airline/s data yet.</p>
+                            </span>
                         </div>
-                    ))}
+                    </>}
                 </div>
 
             </section>

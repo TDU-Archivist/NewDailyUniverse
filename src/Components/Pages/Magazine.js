@@ -91,7 +91,34 @@ const Magazine = () => {
         exchangeRates,
         viewAllArticles,
         data,
+        dataList,
     } = MainDataLoad(); 
+
+    const ArtMagazine = dataList?.viewAllMagazines.filter(category => category.magazine_category === "Art Magazine").length
+    const BoatMagazine = dataList?.viewAllMagazines.filter(category => category.magazine_category === "Boat Magazine").length
+    const BusinessMagazine = dataList?.viewAllMagazines.filter(category => category.magazine_category === "Business Magazine").length
+    const CarMagazine = dataList?.viewAllMagazines.filter(category => category.magazine_category === "Car Magazine").length
+    const ChildrensMagazine = dataList?.viewAllMagazines.filter(category => category.magazine_category === "Children Magazine").length
+    const ComputerMagazine = dataList?.viewAllMagazines.filter(category => category.magazine_category === "Computer Magazine").length
+    const CookingMagazine = dataList?.viewAllMagazines.filter(category => category.magazine_category === "Cooking Magazine").length
+    const CruiseMagazine = dataList?.viewAllMagazines.filter(category => category.magazine_category === "Cruise Magazine").length
+    const EducationMagazine = dataList?.viewAllMagazines.filter(category => category.magazine_category === "Education Magazine").length
+    const EntertainmentMagazine = dataList?.viewAllMagazines.filter(category => category.magazine_category === "Entertainment Magazine").length
+    const FashionMagazine = dataList?.viewAllMagazines.filter(category => category.magazine_category === "Fashion Magazine").length
+    const FinanceAndMoneyMagazine = dataList?.viewAllMagazines.filter(category => category.magazine_category === "Finance and Money Magazine").length
+    const HealthMagazine = dataList?.viewAllMagazines.filter(category => category.magazine_category === "Health Magazine").length
+    const HistoryMagazine = dataList?.viewAllMagazines.filter(category => category.magazine_category === "History Magazine").length
+    const HomeMagazine = dataList?.viewAllMagazines.filter(category => category.magazine_category === "Home Magazine").length
+    const MusicMagazine = dataList?.viewAllMagazines.filter(category => category.magazine_category === "Music Magazine").length
+    const PetMagazine = dataList?.viewAllMagazines.filter(category => category.magazine_category === "Pet Magazine").length
+    const PhotographyMagazine = dataList?.viewAllMagazines.filter(category => category.magazine_category === "Photography Magazine").length
+    const SportsMagazine = dataList?.viewAllMagazines.filter(category => category.magazine_category === "Sports Magazine").length
+    const TravelMagazine = dataList?.viewAllMagazines.filter(category => category.magazine_category === "Travel Magazine").length
+    
+    
+    
+
+
 
     return (
         <div className='mainContainer magazine'>
@@ -103,13 +130,13 @@ const Magazine = () => {
             </div>
 
             <section className="magazineContainerPage top">
-              <div className="magazineContentPage top1">
+              {/* <div className="magazineContentPage top1">
                 <img src={require('../assets/imgs/MagazinesBG.png')} alt="" />
-              </div>
+              </div> */}
               <div className="magazineContentPage top2">
                 <div className="mgzncpt2 left">
-                  <h4>MAGAZINES AROUND THE WORLD BY CATEGORY</h4>
-                  <p>List of Best Magazines in the World - Major Magazines online by Topic</p>
+                  <h3>MAGAZINES</h3>
+                  <h5>MAGAZINES AROUND THE WORLD BY CATEGORY</h5>
                 </div>
                 <div className="mgzncpt2 right">
                   <input type="text" placeholder='Search keyword, article or topic here...'/>
@@ -118,188 +145,188 @@ const Magazine = () => {
                     <button><FaMicrophone className='faIcons'/></button>
                   </div>
                 </div>
-              </div>
+              </div><hr />
             </section>
             <section className="magazineContainerPage mid">
               <div className="magazineContentPage mid1">
-                <Link className="mgzncpm1">
+                <Link className="mgzncpm1" to='/Magazines/ArtMagazines'>
                   <div className='mgzncpm1Img'>
                     <img src={require('../assets/imgs/Magazine/artMagazines.png')} alt="" />
                   </div>
                   <div className='mgzncpm1Content'>
                     <h5>ART MAGAZINES</h5>
-                    <p>20 Online Sources</p>
+                    <p>{ArtMagazine || 0} Online Sources</p>
                   </div>
                 </Link>
-                <Link className="mgzncpm1">
+                <Link className="mgzncpm1" to='/Magazines/BoatMagazines'>
                   <div className='mgzncpm1Img'>
                     <img src={require('../assets/imgs/Magazine/boatMagazines.png')} alt="" />
                   </div>
                   <div className='mgzncpm1Content'>
                     <h5>BOAT MAGAZINES</h5>
-                    <p>10 Online Sources</p>
+                    <p>{BoatMagazine || 0} Online Sources</p>
                   </div>
                 </Link>
-                <Link className="mgzncpm1">
+                <Link className="mgzncpm1" to='/Magazines/BusinessMagazines'>
                   <div className='mgzncpm1Img'>
                     <img src={require('../assets/imgs/Magazine/businessMagazines.png')} alt="" />
                   </div>
                   <div className='mgzncpm1Content'>
                     <h5>BUSINESS MAGAZINES</h5>
-                    <p>25 Online Sources</p>
+                    <p>{BusinessMagazine || 0} Online Sources</p>
                   </div>
                 </Link>
-                <Link className="mgzncpm1">
+                <Link className="mgzncpm1" to='/Magazines/CarMagazines'>
                   <div className='mgzncpm1Img'>
                     <img src={require('../assets/imgs/Magazine/carMagazines.png')} alt="" />
                   </div>
                   <div className='mgzncpm1Content'>
                     <h5>CAR MAGAZINES</h5>
-                    <p>18 Online Sources</p>
+                    <p>{CarMagazine || 0} Online Sources</p>
                   </div>
                 </Link>
-                <Link className="mgzncpm1">
+                <Link className="mgzncpm1" to='/Magazines/ChildrenMagazines'>
                   <div className='mgzncpm1Img'>
                     <img src={require('../assets/imgs/Magazine/childrensMagazines.png')} alt="" />
                   </div>
                   <div className='mgzncpm1Content'>
                     <h5>CHILDREN MAGAZINES</h5>
-                    <p>7 Online Sources</p>
+                    <p>{ChildrensMagazine || 0} Online Sources</p>
                   </div>
                 </Link>
-                <Link className="mgzncpm1">
+                <Link className="mgzncpm1" to='/Magazines/ComputerMagazines'>
                   <div className='mgzncpm1Img'>
                     <img src={require('../assets/imgs/Magazine/computerMagazines.png')} alt="" />
                   </div>
                   <div className='mgzncpm1Content'>
                     <h5>COMPUTER MAGAZINES</h5>
-                    <p>1 Online Sources</p>
+                    <p>{ComputerMagazine || 0} Online Sources</p>
                   </div>
                 </Link>
-                <Link className="mgzncpm1">
+                <Link className="mgzncpm1" to='/Magazines/CookingMagazines'>
                   <div className='mgzncpm1Img'>
                     <img src={require('../assets/imgs/Magazine/cookingMagazines.png')} alt="" />
                   </div>
                   <div className='mgzncpm1Content'>
                     <h5>COOKING MAGAZINES</h5>
-                    <p>1 Online Sources</p>
+                    <p>{CookingMagazine || 0} Online Sources</p>
                   </div>
                 </Link>
-                <Link className="mgzncpm1">
+                <Link className="mgzncpm1" to='/Magazines/CruiseMagazines'>
                   <div className='mgzncpm1Img'>
                     <img src={require('../assets/imgs/Magazine/cruiseMagazines.png')} alt="" />
                   </div>
                   <div className='mgzncpm1Content'>
                     <h5>CRUISE MAGAZINES</h5>
-                    <p>0 Online Sources</p>
+                    <p>{CruiseMagazine || 0} Online Sources</p>
                   </div>
                 </Link>
-                <Link className="mgzncpm1">
+                <Link className="mgzncpm1" to='/Magazines/EducationMagazines'>
                   <div className='mgzncpm1Img'>
                     <img src={require('../assets/imgs/Magazine/educationMagazines.png')} alt="" />
                   </div>
                   <div className='mgzncpm1Content'>
                     <h5>EDUCATION MAGAZINES</h5>
-                    <p>1 Online Sources</p>
+                    <p>{EducationMagazine || 0} Online Sources</p>
                   </div>
                 </Link>
-                <Link className="mgzncpm1">
+                <Link className="mgzncpm1" to='/Magazines/EntertainmentMagazines'>
                   <div className='mgzncpm1Img'>
                     <img src={require('../assets/imgs/Magazine/entertainmentMagazines.png')} alt="" />
                   </div>
                   <div className='mgzncpm1Content'>
                     <h5>ENTERTAINMENT MAGAZINES</h5>
-                    <p>0 Online Sources</p>
+                    <p>{EntertainmentMagazine || 0} Online Sources</p>
                   </div>
                 </Link>
-                <Link className="mgzncpm1">
+                <Link className="mgzncpm1" to='/Magazines/FashionMagazines'>
                   <div className='mgzncpm1Img'>
                     <img src={require('../assets/imgs/Magazine/fashionMagazines.png')} alt="" />
                   </div>
                   <div className='mgzncpm1Content'>
                     <h5>FASHION MAGAZINES</h5>
-                    <p>20 Online Sources</p>
+                    <p>{FashionMagazine || 0} Online Sources</p>
                   </div>
                 </Link>
-                <Link className="mgzncpm1">
+                <Link className="mgzncpm1" to='/Magazines/FinanceAndMoneyMagazines'>
                   <div className='mgzncpm1Img'>
                     <img src={require('../assets/imgs/Magazine/financeMagazines.png')} alt="" />
                   </div>
                   <div className='mgzncpm1Content'>
                     <h5>FINANCE AND MONEY MAGAZINES</h5>
-                    <p>0 Online Sources</p>
+                    <p>{FinanceAndMoneyMagazine || 0} Online Sources</p>
                   </div>
                 </Link>
-                <Link className="mgzncpm1">
+                <Link className="mgzncpm1" to='/Magazines/HealthMagazines'>
                   <div className='mgzncpm1Img'>
                     <img src={require('../assets/imgs/Magazine/healthMagazines.png')} alt="" />
                   </div>
                   <div className='mgzncpm1Content'>
                     <h5>HEALTH MAGAZINES</h5>
-                    <p>0 Online Sources</p>
+                    <p>{HealthMagazine || 0} Online Sources</p>
                   </div>
                 </Link>
-                <Link className="mgzncpm1">
+                <Link className="mgzncpm1" to='/Magazines/HistoryMagazines'>
                   <div className='mgzncpm1Img'>
                     <img src={require('../assets/imgs/Magazine/historyMagazines.png')} alt="" />
                   </div>
                   <div className='mgzncpm1Content'>
                     <h5>HISTORY MAGAZINES</h5>
-                    <p>0 Online Sources</p>
+                    <p>{HistoryMagazine || 0} Online Sources</p>
                   </div>
                 </Link>
-                <Link className="mgzncpm1">
+                <Link className="mgzncpm1" to='/Magazines/HomeMagazines'>
                   <div className='mgzncpm1Img'>
                     <img src={require('../assets/imgs/Magazine/homeMagazines.png')} alt="" />
                   </div>
                   <div className='mgzncpm1Content'>
                     <h5>HOME AND TUTORIAL MAGAZINES</h5>
-                    <p>0 Online Sources</p>
+                    <p>{HomeMagazine || 0} Online Sources</p>
                   </div>
                 </Link>
-                <Link className="mgzncpm1">
+                <Link className="mgzncpm1" to='/Magazines/MusicMagazines'>
                   <div className='mgzncpm1Img'>
                     <img src={require('../assets/imgs/Magazine/musicMagazines.png')} alt="" />
                   </div>
                   <div className='mgzncpm1Content'>
                     <h5>MUSIC MAGAZINES</h5>
-                    <p>0 Online Sources</p>
+                    <p>{MusicMagazine || 0} Online Sources</p>
                   </div>
                 </Link>
-                <Link className="mgzncpm1">
+                <Link className="mgzncpm1" to='/Magazines/PetMagazines'>
                   <div className='mgzncpm1Img'>
                     <img src={require('../assets/imgs/Magazine/petMagazines.png')} alt="" />
                   </div>
                   <div className='mgzncpm1Content'>
                     <h5>PET MAGAZINES</h5>
-                    <p>0 Online Sources</p>
+                    <p>{PetMagazine || 0} Online Sources</p>
                   </div>
                 </Link>
-                <Link className="mgzncpm1">
+                <Link className="mgzncpm1" to='/Magazines/PhotographyMagazines'>
                   <div className='mgzncpm1Img'>
                     <img src={require('../assets/imgs/Magazine/photographyMagazines.png')} alt="" />
                   </div>
                   <div className='mgzncpm1Content'>
                     <h5>PHOTOGRAPHY MAGAZINES</h5>
-                    <p>0 Online Sources</p>
+                    <p>{PhotographyMagazine || 0} Online Sources</p>
                   </div>
                 </Link>
-                <Link className="mgzncpm1">
+                <Link className="mgzncpm1" to='/Magazines/SportsMagazines'>
                   <div className='mgzncpm1Img'>
                     <img src={require('../assets/imgs/Magazine/sportsMagazines.png')} alt="" />
                   </div>
                   <div className='mgzncpm1Content'>
                     <h5>SPORTS MAGAZINES</h5>
-                    <p>0 Online Sources</p>
+                    <p>{SportsMagazine || 0} Online Sources</p>
                   </div>
                 </Link>
-                <Link className="mgzncpm1">
+                <Link className="mgzncpm1" to='/Magazines/TravelMagazines'>
                   <div className='mgzncpm1Img'>
                     <img src={require('../assets/imgs/Magazine/travelMagazines.png')} alt="" />
                   </div>
                   <div className='mgzncpm1Content'>
                     <h5>TRAVEL MAGAZINES</h5>
-                    <p>0 Online Sources</p>
+                    <p>{TravelMagazine || 0} Online Sources</p>
                   </div>
                 </Link>
               </div>

@@ -98,6 +98,8 @@ const Home = () => {
   const [currentDateTime, setCurrentDateTime] = useState(new Date());
   const [location, setLocation] = useState('Fetching location...');
   
+  const thumbnailProxy = process.env.REACT_APP_THUMBNAIL_PROXY;
+  
   useEffect(() => {
     if (countryThreeTouristSpots?.tourist_spots) {
       const initialImageStates = countryThreeTouristSpots.tourist_spots.map(() => false);
@@ -179,6 +181,7 @@ const Home = () => {
   const handleHideCountrySummaryModal = () => {
     setPickedCountryModal(false);
   }
+
 
   const filterGoodNews = viewAllArticles ? viewAllArticles.filter(good => good.article_type === "Good News") : []
   const filterLatestNews = viewAllArticles ? viewAllArticles.filter(latest => latest.article_type === "Latest News") : []
@@ -322,6 +325,42 @@ const Home = () => {
     }
   };
 
+  const defaultImage = require("../assets/imgs/BreakingNewsBG04.png"); // Default fallback image
+  const [bnThumbnails, setBNThumbnails] = useState({}); // Store fetched thumbnails
+
+  useEffect(() => {
+    const fetchThumbnails = async () => {
+        const newThumbnails = {};
+
+        await Promise.all(
+            data?.news?.map(async (details) => {
+                try {
+                    const response = await axios.get(
+                        `${thumbnailProxy}?url=${encodeURIComponent(details?.url)}`
+                    );
+
+                    // If the response contains a valid image, use it
+                    if (response.data.image) {
+                        newThumbnails[details?.url] = response.data.image;
+                    } else {
+                        // If the response fails, use details?.thumbnail
+                        newThumbnails[details?.url] = details?.thumbnail;
+                    }
+                } catch (error) {
+                    // If API fails, use details?.thumbnail (or defaultImage if it's also missing)
+                    newThumbnails[details?.url] = details?.thumbnail;
+                }
+            })
+        );
+
+        setBNThumbnails(newThumbnails);
+    };
+
+    if (data?.news?.length) {
+        fetchThumbnails();
+    }
+  }, [data]);
+
   
 
   return (
@@ -451,32 +490,28 @@ const Home = () => {
           </div>
           <div className="mncntntpm4More">
             <h5>BREAKING NEWS</h5>
-            <Link><h6>VIEW MORE</h6></Link>
+            <Link to='/BreakingNews'><h6>VIEW MORE</h6></Link>
           </div>
           <div className="mncntntpm4 external web">
-            {data?.news?.slice(1, 6).map((details, i) => (
-              <a className='mncntntpm4ext' key={i} href={details?.url} target='_blank' rel='noopener noreferrer'>
-                <img 
-                  src={details?.thumbnail || require('../assets/imgs/TDULandingBG.png')} 
-                  alt="" 
-                />
-                <div className="mncntntpm4extTitle">
-                  <p>{details?.title ? details.title.slice(0, 75) : 'None'}</p>
-                </div>
-              </a>
-            ))}
-          </div>
-          <div className="mncntntpm4 external mobile">
             {data?.news?.slice(1, 5).map((details, i) => (
-              <a className='mncntntpm4ext' key={i} href={details?.url} target='blank'>
-                <img src={details?.thumbnail || (require('../assets/imgs/TDULandingBG.png'))} alt="" />
+              <a className='mncntntpm4ext' key={i} href={details?.url} target='_blank' rel='noopener noreferrer'>
+                <div className="mncntntpm4extImg">
+                  <img
+                    src={bnThumbnails[details?.url] || details?.thumbnail}
+                    alt=''
+                    onError={(e) => {
+                      e.target.onerror = null; // Prevent infinite loop
+                      e.target.src = details?.thumbnail; // Use `details?.thumbnail` as fallback, then `defaultImage`
+                    }}
+                  />
+                </div>
                 <div className="mncntntpm4extTitle">
-                  <p><TextSlicer text={`${details?.title ? details?.title : 'None'}`} maxLength={75} /></p>
+                  <h6>{details?.title}</h6>
                 </div>
               </a>
             ))}
           </div>
-          <div className="mncntntpm4Slider">
+          {/* <div className="mncntntpm4Slider">
             <div className="mncntntpm4s left">
               <div className="mncntntpm4slViewMore">
                 <h4>LIVE NEWS CHANNELS</h4>
@@ -507,12 +542,12 @@ const Home = () => {
             <div className="mncntntpm4s right">
 
             </div>
-          </div>
+          </div> */}
         </div>
         <div className="mainContentPage mid5">
           <div className="mncntntpm5More">
             <h4>US DOLLAR EXCHANGE RATE</h4>
-            <Link><h6>VIEW MORE</h6></Link>
+            {/* <Link><h6>VIEW MORE</h6></Link> */}
           </div>
           <div className="mncntntpm5Container">
             <ExchangeRateMarquee exchangeRate={exchangeRates} />

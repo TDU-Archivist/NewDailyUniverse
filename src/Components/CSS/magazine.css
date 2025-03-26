@@ -34,7 +34,12 @@ h6{
     background: white;
     padding-bottom: 10vw;
 }
-
+.mainContainer.magazineCategory{
+    height: auto;
+    width: 100%;
+    background: white;
+    padding-bottom: 10vw;
+}
 
 
 
@@ -42,13 +47,18 @@ h6{
 section.magazineContainerPage.top{
     height: auto;
     width: 100%;
-    padding: 4vw 5vw;
+    padding: 5vw;
     padding-bottom: 1vw;
     background: 
         linear-gradient(whitesmoke 0%, transparent),
         linear-gradient(transparent, white 100%),
         url('../assets/imgs/TheDailyUniverseBG.png') no-repeat center;
     background-size: cover;
+}
+section.magazineContainerPage.top hr{
+    height: 0.5vw;
+    background: black;
+    width: 100%;
 }
 
 
@@ -73,11 +83,14 @@ section.magazineContainerPage.top{
     display: flex;
     align-items: end;
     justify-content: space-between;
-    margin-top: 1vw;
+    margin-bottom: 0.5vw;
 }
 .mgzncpt2.left{
     height: auto;
     width: 50%;
+}
+.mgzncpt2.left h3{
+    line-height: 3.5vw;
 }
 .mgzncpt2.right{
     height: auto;
@@ -88,6 +101,7 @@ section.magazineContainerPage.top{
     border: solid 2px black;
     border-radius: 50px;
     padding: 0.3vw 1.5vw;
+    margin-bottom: 0.3vw;
 }
 .mgzncpt2.right input{
     background: none;
@@ -172,6 +186,164 @@ section.magazineContainerPage.mid{
     padding: 0 5%;
     color: gray;
 }
+
+
+
+
+
+
+
+
+
+/* Magazine By Category */
+
+section.magazinCatContainerPage.top{
+    height: auto;
+    width: 100%;
+    padding: 5vw;
+    padding-bottom: 1vw;
+    background: 
+        linear-gradient(whitesmoke 0%, transparent),
+        linear-gradient(transparent, white 100%),
+        url('../assets/imgs/TheDailyUniverseBG.png') no-repeat center;
+    background-size: cover;
+}
+.magazinCatContentPage.top2{
+    height: auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* margin-top: 1vw; */
+}
+.mgzncatntcpt2.left{
+    height: auto;
+    width: 60%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+.mgzncatntcpt2.left a{
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-size: 3vw;
+    margin-right: 1vw;
+    color: gray;
+}
+.mgzncatntcpt2.left h4{
+    text-transform: uppercase;
+}
+.mgzncatntcpt2.left h4 span{
+    color: royalblue;
+    font-family: "Oswald", sans-serif;
+}
+.mgzncatntcpt2.right{
+    height: auto;
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: solid 2px black;
+    border-radius: 50px;
+    padding: 0.3vw 1.5vw;
+}
+.mgzncatntcpt2.right input{
+    background: none;
+    border: none;
+    outline: none;
+    font-size: 0.8vw;
+    width: 80%;
+}
+.mgzncatntcpt2rBtn{
+    height: auto;
+    width: 20%;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+.mgzncatntcpt2rBtn button{
+    border: none;
+    outline: none;
+    background: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10%;
+    font-size: 0.9vw;
+}
+
+
+section.magazinCatContainerPage.mid{
+    height: auto;
+    width: 100%;
+    padding: 1vw 5vw;
+}
+.magazinCatContentPage.mid1{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    align-items: top;
+}
+
+
+
+.magazinCatContentPage.mid1 a{
+    height: auto;
+    width: 24%;
+    overflow: hidden;
+    background: rgba(200, 200, 200);
+    border-radius: 1vw;
+    text-decoration: none;
+    text-align: center;
+    margin: 0.5%;
+} 
+.mgznctcpm2Img{
+    height: 14vw;
+    width: 100%;
+    border-radius: 1vw;
+    background: url('../assets/imgs/TheDailyUniverseBG.png') no-repeat center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.mgznctcpm2Img img{
+    width: 100%;
+}
+.mgznctccpm2Dets{
+    padding: 1vw;
+}
+.mgznctccpm2Dets h6{
+    font-size: 1vw;
+    line-height: 1.2vw;
+    margin: 2% 0;
+}
+.mgznctccpm2Dets p{
+    font-size: 0.7vw;
+    padding: 0 5%;
+    color: gray;
+}
+.mgznctccpm2Empty{
+    height: 30vw;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.mgznctccpm2Empty span p{
+    color: gray;
+}
+
+
+
 
 
 

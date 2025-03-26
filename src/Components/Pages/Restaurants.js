@@ -106,13 +106,14 @@ const Restaurants = () => {
 
 
             <section className="restaurantsContainerPage top">
-              <div className="restaurantsContentPage top1">
+              {/* <div className="restaurantsContentPage top1">
                 <img src={require('../assets/imgs/RestaurantsBG.png')} alt="" />
-              </div>
+              </div> */}
               <div className="restaurantsContentPage top2">
                 <div className="rstrntscpt2 left">
-                  <h4>RESTAURANTS AROUND THE WORLD BY CATEGORY</h4>
-                  <p>The must visit restaurants and recommended food and drinks around the world.</p>
+                  <h3>RESTAURANTS</h3>
+                  <h5>RESTAURANTS AROUND THE WORLD BY CATEGORY</h5>
+                  {/* <p>The must visit restaurants and recommended food and drinks around the world.</p> */}
                 </div>
                 <div className="rstrntscpt2 right">
                   <input type="text" placeholder='Search keyword, article or topic here...'/>
@@ -121,11 +122,11 @@ const Restaurants = () => {
                     <button><FaMicrophone className='faIcons'/></button>
                   </div>
                 </div>
-              </div>
+              </div><hr />
             </section>
             <section className="restaurantsContainerPage mid">
                 <div className="restaurantsContentPage mid1">
-                    <Link className="rstrntscm1">
+                    <Link className="rstrntscm1" to='/Restaurants/ExpensiveRestaurants'>
                         <div className='rstrntscm1Img'>
                             <img src={require('../assets/imgs/Restaurants/expensive-restaurants.jpg')} alt="" />
                         </div>
@@ -134,7 +135,7 @@ const Restaurants = () => {
                             <p>What is most expensive food in the world? Find the list of Expensive Restaurants in the World. Traveling soon? Try and taste the best food in these restaurants.</p>
                         </div>
                     </Link>
-                    <Link className="rstrntscm1">
+                    <Link className="rstrntscm1" to='/Restaurants/FamousRestaurants'>
                         <div className='rstrntscm1Img'>
                             <img src={require('../assets/imgs/Restaurants/famous-restaurants.jpg')} alt="" />
                         </div>
@@ -143,7 +144,7 @@ const Restaurants = () => {
                             <p>Find the list of Famous Restaurants in the World. Traveling soon? Try and taste the best food in these restaurants.</p>
                         </div>
                     </Link>
-                    <Link className="rstrntscm1">
+                    <Link className="rstrntscm1" to='/Restaurants/OldestRestaurants'>
                         <div className='rstrntscm1Img'>
                             <img src={require('../assets/imgs/Restaurants/oldest-restaurants.jpg')} alt="" />
                         </div>
@@ -152,7 +153,7 @@ const Restaurants = () => {
                             <p>Find the list of Oldest Restaurants in the World. Traveling soon? Try and taste the best food in these restaurants.</p>
                         </div>
                     </Link>
-                    <Link className="rstrntscm1">
+                    <Link className="rstrntscm1" to='/Restaurants/UniqueRestaurants'>
                         <div className='rstrntscm1Img'>
                             <img src={require('../assets/imgs/Restaurants/unique-restaurant.jpg')} alt="" />
                         </div>

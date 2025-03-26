@@ -1,0 +1,252 @@
+h1, h2, h3, h4, h5, h6, p{
+    color: black;
+}
+h1, h2, h3, h4, h5, h6{
+    /* font-family: "Bebas Neue", sans-serif; */
+    font-family: "Oswald", sans-serif;
+}
+p{
+    font-size: 0.9vw;
+}
+h1{
+    font-size: 10vw;
+}
+h2{
+    font-size: 5vw;
+}
+h3{
+    font-size: 4vw;
+}
+h4{
+    font-size: 2vw;
+}
+h5{
+    font-size: 1.5vw;
+}
+h6{
+    font-size: 1vw;
+}
+
+
+.mainContainer.breakingNews{
+    height: auto;
+    width: 100%;
+    background: white;
+    padding-bottom: 10vw;
+}
+
+
+
+
+
+
+
+section.breakinNewsContainerPage.top{
+    height: auto;
+    width: 100%;
+    padding: 5vw;
+    padding-bottom: 1vw;
+    background: 
+        linear-gradient(whitesmoke 0%, transparent),
+        linear-gradient(transparent, white 100%),
+        url('../assets/imgs/TheDailyUniverseBG.png') no-repeat center;
+    background-size: cover;
+}
+section.breakinNewsContainerPage.top hr{
+    height: 0.5vw;
+    background: black;
+    width: 100%;
+}
+.breakinNewsContentPage.top1{
+    height: auto;
+    width: 100%;
+}
+.breakinNewsContentPage.top1 h3{
+    line-height: 3.5vw;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+section.breakinNewsContainerPage.mid{
+    height: auto;
+    width: 100%;
+    padding: 0 5vw;
+}
+
+.breakinNewsContentPage{
+    height: auto;
+    width: 100%;
+    margin-bottom: 0.5vw;
+}
+
+
+
+
+
+.breakinNewsContentPage.mid1{
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: top;
+}
+.brknwscpm1.left{
+    height: 27vw;
+    width: 49.5%;
+    border: solid 2px black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 1vw;
+    position: relative;
+}
+.brknwscpm1.left a{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    position: relative;
+    background: url('../assets/imgs/BreakingNewsBG04.png') no-repeat center;
+    background-size: cover;
+}
+.brknwscpm1.left a img{
+    height: 100%;
+    width: 100%;
+}
+.brknwscpm1.left a div{
+    height: auto;
+    width: 100%;
+    padding: 1.5vw;
+    position: absolute;
+    background: rgba(50, 50, 50, 0.8);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    bottom: 0;
+    left: 0;
+}
+.brknwscpm1.left a div h6{
+    color: white;
+    font-size: 1.5vw;
+    line-height: 1.5vw;
+}
+
+
+
+.brknwscpm1.right{
+    height: auto;
+    width: 49.5%;
+    border-radius: 1vw;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: top;
+}
+.brknwscpm1.right a{
+    height: 13.1vw;
+    width: 49%;
+    margin-bottom: 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    position: relative;
+    background: url('../assets/imgs/BreakingNewsBG04.png') no-repeat center;
+    background-size: cover;
+    overflow: hidden;
+    border-radius: 1vw;
+    border: solid 2px black;
+}
+.brknwscpm1.right a img{
+    height: 100%;
+    width: 100%;
+}
+.brknwscpm1.right a div{
+    height: auto;
+    width: 100%;
+    padding: 1vw;
+    position: absolute;
+    background: rgba(50, 50, 50, 0.8);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    bottom: 0;
+    left: 0;
+}
+.brknwscpm1.right a div h6{
+    color: white;
+    font-size: 0.9vw;
+    line-height: 1.1vw;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.breakinNewsContentPage.mid2{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: top;
+}
+.breakinNewsContentPage.mid2 a{
+    height: auto;
+    width: 24.5%;
+    overflow: hidden;
+    margin-bottom: 0.5%;
+    text-decoration: none;
+    background: rgba(200, 200, 200, 0.8);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-radius: 1vw;
+}
+.brknwscpm2Img{
+    height: 12vw;
+    width: 100%;
+    border-radius: 1vw;
+    overflow: hidden;
+}
+.brknwscpm2Img img{
+    height: 100%;
+    width: 100%;
+    background: url('../assets/imgs/BreakingNewsBG04.png') no-repeat center;
+    background-size: cover;
+}
+.brknwscpm2Dets{
+    padding: 1vw;
+}
+.brknwscpm2Dets h6{
+    font-size: 1vw;
+    line-height: 1.2vw;
+}
+
+
+
+
+
+
+
+
+

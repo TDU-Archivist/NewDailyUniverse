@@ -17,7 +17,7 @@ import ArticlePage from './Components/Pages/ArticlePage';
 
 import Airlines from './Components/Pages/Airlines';
 import Airports from './Components/Pages/Airports';
-
+import BreakingNews from './Components/Pages/BreakingNews';
 import GlobalInfo from './Components/Pages/GlobalInfo';
 import NewsChannels from './Components/Pages/NewsChannels';
 import Magazine from './Components/Pages/Magazine';
@@ -27,6 +27,12 @@ import Restaurants from './Components/Pages/Restaurants';
 
 
 import AirlineContinent from './Components/Pages/AirlineContinent';
+
+
+
+import MagazineCategory from './Components/Pages/MagazineCategory';
+import NewspaperCategory from './Components/Pages/NewspaperCategory';
+import RestaurantCategory from './Components/Pages/RestaurantCategory';
 
 
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
@@ -52,7 +58,7 @@ function App() {
 
           <Route path="/Airlines" element={<Airlines/>}/>
           <Route path="/Airports" element={<Airports/>}/>
-          
+          <Route path="/BreakingNews" element={<BreakingNews/>}/>
           <Route path="/GlobalInfo" element={<GlobalInfo/>}/>
           <Route path="/NewsChannels" element={<NewsChannels/>}/>
           <Route path="/Magazines" element={<Magazine/>}/>
@@ -63,6 +69,9 @@ function App() {
           <Route path="/Airlines/:airlineContinent" element={<AirlineContinent/>}/>
 
 
+          <Route path="/Magazines/:magazineCategory" element={<MagazineCategory/>}/>
+          <Route path="/Newspapers/:newspaperCategory" element={<NewspaperCategory/>}/>
+          <Route path="/Restaurants/:restaurantCategory" element={<RestaurantCategory/>}/>
 
           <Route path="*" element={<Home/>}/>
         </Routes>

@@ -8,14 +8,14 @@ html, body {
   scroll-behavior: smooth;
 }
 body{
-  background: gray;
+  background: white;
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
 ::-webkit-scrollbar{
   background: none;
-  height: .5vw;
-  width: 0.8vw;
+  height: 0.5vw;
+  width: 0.5vw;
   cursor: pointer;
 }
 ::-webkit-scrollbar-thumb{

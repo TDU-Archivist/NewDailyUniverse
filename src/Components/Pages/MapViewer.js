@@ -16,7 +16,7 @@ const MapViewer = () => {
     const [viewport, setViewport] = useState({
         longitude: -0.09,
         latitude: 51.505,
-        zoom: 5,
+        zoom: 2,
     });
     const [geoData, setGeoData] = useState(null);
     const [countryCode, setCountryCode] = useState(null);

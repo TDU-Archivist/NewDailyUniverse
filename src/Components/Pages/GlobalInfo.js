@@ -107,21 +107,22 @@ const GlobalInfo = () => {
 
 
             <section className="globalInfoContainerPage top">
-                <div className="globalInfoContentPage top1">
+                {/* <div className="globalInfoContentPage top1">
                     <img src={require('../assets/imgs/GlobalInfoBG.png')} alt="" />
-                </div>
+                </div> */}
                 <div className="globalInfoContentPage top2">
                     <div className="glbinfocpt2 left">
-                        <h4>EARTH'S CURRENT STATE AND INFORMATION</h4>
+                        <h3>GLOBAL INFORMATION</h3>
+                        <h5>EARTH'S CURRENT STATE AND INFORMATION</h5>
                     </div>
-                    <div className="glbinfocpt2 right">
+                    {/* <div className="glbinfocpt2 right">
                         <input type="text" placeholder='Search keyword, article or topic here...'/>
                         <div className="glbinfocpt2rBtn">
                             <button><FaSearch className='faIcons'/></button>
                             <button><FaMicrophone className='faIcons'/></button>
                         </div>
-                    </div>
-                </div>
+                    </div> */}
+                </div><hr />
             </section>
             <section className="globalInfoContainerPage mid">
                 <div className="globalInfoContentPage mid1">

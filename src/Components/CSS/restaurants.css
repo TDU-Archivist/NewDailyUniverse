@@ -34,6 +34,12 @@ h6{
     background: white;
     padding-bottom: 10vw;
 }
+.mainContainer.restaurantCategory{
+    height: auto;
+    width: 100%;
+    background: white;
+    padding-bottom: 10vw;
+}
 
 
 
@@ -42,13 +48,18 @@ h6{
 section.restaurantsContainerPage.top{
     height: auto;
     width: 100%;
-    padding: 4vw 5vw;
+    padding: 5vw;
     padding-bottom: 1vw;
     background: 
         linear-gradient(whitesmoke 0%, transparent),
         linear-gradient(transparent, white 100%),
         url('../assets/imgs/TheDailyUniverseBG.png') no-repeat center;
     background-size: cover;
+}
+section.restaurantsContainerPage.top hr{
+    height: 0.5vw;
+    background: black;
+    width: 100%;
 }
 
 
@@ -73,11 +84,14 @@ section.restaurantsContainerPage.top{
     display: flex;
     align-items: end;
     justify-content: space-between;
-    margin-top: 1vw;
+    margin-bottom: 0.5vw;
 }
 .rstrntscpt2.left{
     height: auto;
     width: 50%;
+}
+.rstrntscpt2.left h3{
+    line-height: 3.5vw;
 }
 .rstrntscpt2.right{
     height: auto;
@@ -88,6 +102,7 @@ section.restaurantsContainerPage.top{
     border: solid 2px black;
     border-radius: 50px;
     padding: 0.3vw 1.5vw;
+    margin-bottom: 0.3vw;
 }
 .rstrntscpt2.right input{
     background: none;
@@ -119,7 +134,7 @@ section.restaurantsContainerPage.top{
 
 
 section.restaurantsContainerPage.mid{
-    height: auto;
+    height: 40vw;
     width: 100%;
     padding: 1vw 5vw;
 }
@@ -181,7 +196,152 @@ section.restaurantsContainerPage.mid{
 
 
 
+/* Newspaper By Category */
 
+section.restaurantCatContainerPage.top{
+    height: auto;
+    width: 100%;
+    padding: 5vw;
+    padding-bottom: 1vw;
+    background: 
+        linear-gradient(whitesmoke 0%, transparent),
+        linear-gradient(transparent, white 100%),
+        url('../assets/imgs/TheDailyUniverseBG.png') no-repeat center;
+    background-size: cover;
+}
+.restaurantCatContentPage.top2{
+    height: auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* margin-top: 1vw; */
+}
+.rstrntcatntcpt2.left{
+    height: auto;
+    width: 60%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+.rstrntcatntcpt2.left a{
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-size: 3vw;
+    margin-right: 1vw;
+    color: gray;
+}
+.rstrntcatntcpt2.left h4{
+    text-transform: uppercase;
+}
+.rstrntcatntcpt2.left h4 span{
+    color: royalblue;
+    font-family: "Oswald", sans-serif;
+}
+.rstrntcatntcpt2.right{
+    height: auto;
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: solid 2px black;
+    border-radius: 50px;
+    padding: 0.3vw 1.5vw;
+}
+.rstrntcatntcpt2.right input{
+    background: none;
+    border: none;
+    outline: none;
+    font-size: 0.8vw;
+    width: 80%;
+}
+.rstrntcatntcpt2rBtn{
+    height: auto;
+    width: 20%;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+.rstrntcatntcpt2rBtn button{
+    border: none;
+    outline: none;
+    background: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10%;
+    font-size: 0.9vw;
+}
+
+
+section.restaurantCatContainerPage.mid{
+    height: auto;
+    width: 100%;
+    padding: 1vw 5vw;
+}
+.restaurantCatContentPage.mid1{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    align-items: top;
+}
+
+
+
+.restaurantCatContentPage.mid1 a{
+    height: auto;
+    width: 24%;
+    overflow: hidden;
+    background: rgba(200, 200, 200);
+    border-radius: 1vw;
+    text-decoration: none;
+    text-align: center;
+    margin: 0.5%;
+} 
+.rstrntctcpm2Img{
+    height: 14vw;
+    width: 100%;
+    border-radius: 1vw;
+    background: url('../assets/imgs/TheDailyUniverseBG.png') no-repeat center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.rstrntctcpm2Img img{
+    width: 100%;
+}
+.rstrntctccpm2Dets{
+    padding: 1vw;
+}
+.rstrntctccpm2Dets h6{
+    font-size: 1vw;
+    line-height: 1.2vw;
+    margin: 2% 0;
+}
+.rstrntctccpm2Dets p{
+    font-size: 0.7vw;
+    padding: 0 5%;
+    color: gray;
+}
+.rstrntctccpm2Empty{
+    height: 30vw;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.rstrntctccpm2Empty span p{
+    color: gray;
+}
 
 
 
