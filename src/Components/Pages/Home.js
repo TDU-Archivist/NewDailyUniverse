@@ -506,7 +506,7 @@ const Home = () => {
                   />
                 </div>
                 <div className="mncntntpm4extTitle">
-                  <h6>{details?.title}</h6>
+                  <h6>{details?.title?.slice(0, 100)}</h6>
                 </div>
               </a>
             ))}

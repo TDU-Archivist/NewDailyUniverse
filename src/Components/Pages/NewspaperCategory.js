@@ -189,7 +189,7 @@ const NewspaperCategory = () => {
             </>:<>
                 <div className="nwspprctccpm2Empty">
                     <span>
-                        <p>No {newspaper} listed yet.</p>
+                        <p>No {newspaper}s listed yet.</p>
                     </span>
                 </div>
             </>}

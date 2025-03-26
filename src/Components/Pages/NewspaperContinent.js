@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import "../CSS/magazine.css";
+import "../CSS/newspapers.css";
 import { useParams } from "react-router-dom";
 import { Link } from 'react-router-dom';
 import { 
@@ -28,7 +28,6 @@ import MapboxMap from './Mapbox';
 import CountryFlag from './CountryFlag';
 import ExchangeRateMarquee from './ExchangeRateMarquee';
 import { MainDataLoad } from './MainDataContext';
-
 
 
 const TextSlicer = ({ text = '', maxLength }) => {
@@ -62,7 +61,8 @@ const NumberFormatter = ({ number }) => {
 };
 
 
-const MagazineCategory = () => {
+
+const NewspaperContinent = () => {
     const { 
         webLoader,
         createTDUAccount, 
@@ -96,75 +96,46 @@ const MagazineCategory = () => {
         data,
         dataList,
     } = MainDataLoad(); 
-
     const webLogoProxy = process.env.REACT_APP_WEBLOGO_PROXY;
-    const defaultImage = require("../assets/imgs/MagazinesBG.png");
-    const { magazineCategory } = useParams();
-    const [magazine, setMagazine] = useState('');
+    const { newspaperContinent } = useParams();
+    const [newspaper, setNewspaper] = useState('');
     const [thumbnails, setThumbnails] = useState({}); // Store fetched thumbnails
 
     useEffect(() => {
-        if (magazineCategory === 'ArtMagazines'){
-            setMagazine('Art Magazine');
-        } else if (magazineCategory === 'BoatMagazines'){
-            setMagazine('Boat Magazine');
-        } else if (magazineCategory === 'BusinessMagazines'){
-            setMagazine('Business Magazine');
-        } else if (magazineCategory === 'CarMagazines'){
-            setMagazine('Car Magazine');
-        } else if (magazineCategory === 'ChildrenMagazines'){
-            setMagazine('Children Magazine');
-        } else if (magazineCategory === 'ComputerMagazines'){
-            setMagazine('Computer Magazine');
-        } else if (magazineCategory === 'CookingMagazines'){
-            setMagazine('Cooking Magazine');
-        } else if (magazineCategory === 'CruiseMagazines'){
-            setMagazine('Cruise Magazine');
-        } else if (magazineCategory === 'EducationMagazines'){
-            setMagazine('Education Magazine');
-        } else if (magazineCategory === 'EntertainmentMagazines'){
-            setMagazine('Entertainment Magazine');
-        } else if (magazineCategory === 'FashionMagazines'){
-            setMagazine('Fashion Magazine');
-        } else if (magazineCategory === 'FinanceAndMoneyMagazines'){
-            setMagazine('Finance and Money Magazine');
-        } else if (magazineCategory === 'HealthMagazines'){
-            setMagazine('Health Magazine');
-        } else if (magazineCategory === 'HistoryMagazines'){
-            setMagazine('History Magazine');
-        } else if (magazineCategory === 'HomeMagazines'){
-            setMagazine('Home Magazine');
-        } else if (magazineCategory === 'MusicMagazines'){
-            setMagazine('Music Magazine');
-        } else if (magazineCategory === 'PetMagazines'){
-            setMagazine('Pet Magazine');
-        } else if (magazineCategory === 'PhotographyMagazines'){
-            setMagazine('Photography Magazine');
-        } else if (magazineCategory === 'SportsMagazines'){
-            setMagazine('Sports Magazine');
-        } else if (magazineCategory === 'TravelMagazines'){
-            setMagazine('Travel Magazine');
+        if (newspaperContinent === 'NorthAmerica'){
+            setNewspaper('N.America');
+        } else if (newspaperContinent === 'SouthAmerica'){
+            setNewspaper('S.America');
+        } else if (newspaperContinent === 'Europe'){
+            setNewspaper('Europe');
+        } else if (newspaperContinent === 'Africa'){
+            setNewspaper('Africa');
+        } else if (newspaperContinent === 'Asia'){
+            setNewspaper('Asia');
+        } else if (newspaperContinent === 'Oceania'){
+            setNewspaper('Oceania');
+        } else if (newspaperContinent === 'Antarctica'){
+            setNewspaper('Antarctica');
         } else {
-            setMagazine('')
+            setNewspaper('')
         }
+    }, [newspaperContinent, setNewspaper]);
 
-    }, [setMagazine]);
-
-    const currentMagazine = dataList?.viewAllMagazines.filter(category => category.magazine_category === magazine) || [];
+    const currentNewspapers = dataList?.viewAllNewspapers.filter(continent => continent.continent === newspaper) || [];
     useEffect(() => {
         const fetchThumbnails = async () => {
             const newThumbnails = {};
     
             await Promise.all(
-                currentMagazine?.map(async (details) => {
+                currentNewspapers?.map(async (details) => {
                     try {
                         const response = await axios.get(
-                            `${webLogoProxy}?url=${encodeURIComponent(details?.magazine_website)}`
+                            `${webLogoProxy}?url=${encodeURIComponent(details?.newspaper_website)}`
                         );
     
                         // Ensure the response is valid
                         if (response.data.image && response.data.image !== "No image found") {
-                            newThumbnails[details?.magazine_website] = response.data.image;
+                            newThumbnails[details?.newspaper_website] = response.data.image;
                         } else {
                             // newThumbnails[details?.magazine_website] = defaultImage;
                         }
@@ -178,18 +149,14 @@ const MagazineCategory = () => {
             setThumbnails(newThumbnails);
         };
     
-        if (currentMagazine?.length) {
+        if (currentNewspapers?.length) {
             fetchThumbnails();
         }
-    }, [currentMagazine]);
-
-    // console.log(currentMagazine);
-    
-
+    }, [currentNewspapers]);
 
 
     return (
-        <div className='mainContainer magazineCategory'>
+        <div className='mainContainer newspaperContinent'>
             <div className={webLoader ? "allLoaderContainer active" : "allLoaderContainer disable"}>
                 <div className="loaderContent">
                 <img src={require('../assets/imgs/TheDailyUniverseLogo.png')} alt="" />
@@ -197,48 +164,46 @@ const MagazineCategory = () => {
                 </div>
             </div>
 
-            <section className="magazinCatContainerPage top">
-                <div className="magazinCatContentPage top2">
-                    <div className="mgzncatntcpt2 left">
-                        <Link to='/Magazines'><MdKeyboardDoubleArrowLeft className='faIcons'/></Link>
-                        <h4><span>{magazine}S</span> AROUND THE WORLD</h4>
+            <section className="newspaperCatContainerPage top">
+                <div className="newspaperCatContentPage top2">
+                    <div className="nwspprcatntcpt2 left">
+                        <Link to='/Newspapers'><MdKeyboardDoubleArrowLeft className='faIcons'/></Link>
+                        <h4>ALL NEWSPAPERS IN <span>{newspaper}</span></h4>
                     </div>
-                    <div className="mgzncatntcpt2 right">
+                    <div className="nwspprcatntcpt2 right">
                         <input type="text" placeholder='Search keyword, country or airline name here...'/>
-                        <div className="mgzncatntcpt2rBtn">
+                        <div className="nwspprcatntcpt2rBtn">
                             <button><FaSearch className='faIcons'/></button>
                             <button><FaMicrophone className='faIcons'/></button>
                         </div>
                     </div>
                 </div>
             </section>
-            <section className="magazinCatContainerPage mid">
-                <div className="magazinCatContentPage mid1">
-                    {currentMagazine.length ? <>
-                        {currentMagazine?.map((details, i) => (
+            <section className="newspaperCatContainerPage mid">
+                <div className="newspaperCatContentPage mid1">
+                    {currentNewspapers.length ? <>
+                        {currentNewspapers?.map((details, i) => (
                             <a key={i} href={details?.magazine_website} target="_blank" rel="noopener noreferrer">
-                                <div className='mgznctcpm2Img'>
+                                <div className='nwspprctcpm2Img'>
                                     <img src={thumbnails[details?.magazine_website]} alt='' />
                                 </div>
-                                <div className='mgznctccpm2Dets'>
+                                <div className='nwspprctccpm2Dets'>
                                     <h6>{details?.magazine_name}</h6>
                                     <p>{details?.magazine_description}</p>
                                 </div>
                             </a>
                         ))}
                     </>:<>
-                        <div className="mgznctccpm2Empty">
+                        <div className="nwspprctccpm2Empty">
                             <span>
-                                <p>No {magazine}s listed yet.</p>
+                                <p>No Newspapers listed yet.</p>
                             </span>
                         </div>
                     </>}
                 </div>
             </section>
-
-
         </div>
     )
 }
 
-export default MagazineCategory
+export default NewspaperContinent

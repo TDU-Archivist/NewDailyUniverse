@@ -40,6 +40,12 @@ h6{
     background: white;
     padding-bottom: 10vw;
 }
+.mainContainer.restaurantContinent{
+    height: auto;
+    width: 100%;
+    background: white;
+    padding-bottom: 10vw;
+}
 
 
 

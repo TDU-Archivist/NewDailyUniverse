@@ -32,7 +32,9 @@ import AirlineContinent from './Components/Pages/AirlineContinent';
 
 import MagazineCategory from './Components/Pages/MagazineCategory';
 import NewspaperCategory from './Components/Pages/NewspaperCategory';
+import NewspaperContinent from './Components/Pages/NewspaperContinent';
 import RestaurantCategory from './Components/Pages/RestaurantCategory';
+import RestaurantContinent from './Components/Pages/RestaurantContinent';
 
 
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
@@ -66,12 +68,14 @@ function App() {
           <Route path="/Restaurants" element={<Restaurants/>}/>
 
           
-          <Route path="/Airlines/:airlineContinent" element={<AirlineContinent/>}/>
+          <Route path="/Airlines/Continent/:airlineContinent" element={<AirlineContinent/>}/>
 
 
           <Route path="/Magazines/:magazineCategory" element={<MagazineCategory/>}/>
           <Route path="/Newspapers/:newspaperCategory" element={<NewspaperCategory/>}/>
+          <Route path="/Newspapers/Continent/:newspaperContinent" element={<NewspaperContinent/>}/>
           <Route path="/Restaurants/:restaurantCategory" element={<RestaurantCategory/>}/>
+          <Route path="/Restaurants/Continent/:restaurantContinent" element={<RestaurantContinent/>}/>
 
           <Route path="*" element={<Home/>}/>
         </Routes>
