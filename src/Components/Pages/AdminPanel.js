@@ -3038,7 +3038,7 @@ const AdminPanel = () => {
                                         </div>
                                         <div>
                                             <label htmlFor=""><h6>SELECT SUB CONTINENT</h6></label>
-                                            <select name="" id="" value={addNewspaperSubContinent} onChange={(e) => addNewspaperSubContinent(e.target.value)}>
+                                            <select name="" id="" value={addNewspaperSubContinent} onChange={(e) => setAddNewspaperSubContinent(e.target.value)}>
                                                 <option value="">Select Sub-Continent</option>
                                                 <option value="Northern Africa">Northern Africa</option>
                                                 <option value="Sub-Saharan Africa">Sub-Saharan Africa</option>
