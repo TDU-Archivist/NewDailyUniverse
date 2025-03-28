@@ -808,6 +808,7 @@ const AdminPanel = () => {
 
 
     const [addNewspaperContinent, setAddNewspaperContinent] = useState('');
+    const [addNewspaperSubContinent, setAddNewspaperSubContinent] = useState('');
     const [addNewspaperCountry, setAddNewspaperCountry] = useState('');
     const [addNewspaperCategory, setAddNewspaperCategory] = useState('');
     const [addNewspaperName, setAddNewspaperName] = useState('');
@@ -827,6 +828,7 @@ const AdminPanel = () => {
 
         const formPublishNewspaper = {
             continent: addNewspaperContinent,
+            subcontinent: addNewspaperSubContinent,
             country: addNewspaperCountry,
             newspaper_category: addNewspaperCategory,
             newspaper_name: addNewspaperName,
@@ -842,6 +844,7 @@ const AdminPanel = () => {
                 setAddNewspaperLoader(false)
                 setAddNewspaperResponse(responseMessage.message);
                 setAddNewspaperContinent('');
+                setAddNewspaperSubContinent('');
                 setAddNewspaperCountry('');
                 setAddNewspaperCategory('');
                 setAddNewspaperName('');
@@ -3031,6 +3034,35 @@ const AdminPanel = () => {
                                                 <option value="Asia">Asia</option>
                                                 <option value="Oceania">Oceania</option>
                                                 <option value="Antarctica">Antarctica</option>
+                                            </select>
+                                        </div>
+                                        <div>
+                                            <label htmlFor=""><h6>SELECT SUB CONTINENT</h6></label>
+                                            <select name="" id="" value={addNewspaperSubContinent} onChange={(e) => addNewspaperSubContinent(e.target.value)}>
+                                                <option value="">Select Sub-Continent</option>
+                                                <option value="Northern Africa">Northern Africa</option>
+                                                <option value="Sub-Saharan Africa">Sub-Saharan Africa</option>
+                                                <option value="Northern Asia">Northern Asia</option>
+                                                <option value="Central Asia">Central Asia</option>
+                                                <option value="Western Asia">Western Asia</option>
+                                                <option value="South Asia">South Asia</option>
+                                                <option value="East Asia">East Asia</option>
+                                                <option value="Southeast Asia">Southeast Asia</option>
+                                                <option value="Northern Europe">Northern Europe</option>
+                                                <option value="Western Europe">Western Europe</option>
+                                                <option value="Eastern Europe">Eastern Europe</option>
+                                                <option value="Southern Europe">Southern Europe</option>
+                                                <option value="Northern America">Northern America</option>
+                                                <option value="Central America">Central America</option>
+                                                <option value="The Caribbean">The Caribbean</option>
+                                                <option value="Andean States">Andean States</option>
+                                                <option value="Southern Cone">Southern Cone</option>
+                                                <option value="Brazil">Brazil</option>
+                                                <option value="The Guianas">The Guianas</option>
+                                                <option value="Australasia">Australasia</option>
+                                                <option value="Melanesia">Melanesia</option>
+                                                <option value="Micronesia">Micronesia</option>
+                                                <option value="Polynesia">Polynesia</option>
                                             </select>
                                         </div>
                                         <div>

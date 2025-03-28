@@ -176,13 +176,13 @@ const NewspaperCategory = () => {
         <div className="newspaperCatContentPage mid1">
             {currentNewspapers.length ? <>
                 {currentNewspapers?.map((details, i) => (
-                    <a key={i} href={details?.magazine_website} target="_blank" rel="noopener noreferrer">
+                    <a key={i} href={details?.newspaper_website} target="_blank" rel="noopener noreferrer">
                         <div className='nwspprctcpm2Img'>
-                            <img src={thumbnails[details?.magazine_website]} alt='' />
+                            <img src={thumbnails[details?.newspaper_website]} alt='' />
                         </div>
                         <div className='nwspprctccpm2Dets'>
-                            <h6>{details?.magazine_name}</h6>
-                            <p>{details?.magazine_description}</p>
+                            <h6>{details?.newspaper_name}</h6>
+                            <p>{details?.newspaper_description}</p>
                         </div>
                     </a>
                 ))}
