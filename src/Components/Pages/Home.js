@@ -705,22 +705,22 @@ const Home = () => {
             <Link to='/Airports'><h6>VIEW COUNTRIES AIRPORTS</h6></Link>
           </div>
           <div className="mncntntpm8Container1">
-            <Link>
+            <Link to='/Airlines/Continent/America'>
               <img src={require('../assets/imgs/Airlines/AmericanAirlines.png')} alt="" />
             </Link>
-            <Link>
+            <Link to='/Airlines/Continent/Europe'>
               <img src={require('../assets/imgs/Airlines/EuropeanAirlines.png')} alt="" />
             </Link>
-            <Link>
+            <Link to='/Airlines/Continent/Africa'>
               <img src={require('../assets/imgs/Airlines/AfricanAirlines.png')} alt="" />
             </Link>
-            <Link>
+            <Link to='/Airlines/Continent/Asia'>
               <img src={require('../assets/imgs/Airlines/AsianAirlines.png')} alt="" />
             </Link>
-            <Link>
+            <Link to='/Airlines/Continent/Oceania'>
               <img src={require('../assets/imgs/Airlines/OceanianAirlines.png')} alt="" />
             </Link>
-            <Link>
+            <Link to='/Airlines/Continent/Antarctica'>
               <img src={require('../assets/imgs/Airlines/AntarticaAirlines.png')} alt="" />
             </Link>
           </div>

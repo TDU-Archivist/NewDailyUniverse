@@ -135,7 +135,7 @@ section.sportsContainerPage.top hr{
 
 
 section.sportsContainerPage.mid{
-    height: 40vw;
+    height: auto;
     width: 100%;
     padding: 1vw 5vw;
 }
@@ -146,4 +146,45 @@ section.sportsContainerPage.mid{
     flex-wrap: wrap;
     justify-content: left;
     align-items: top;
+}
+.sprtscm1{
+    height: auto;
+    width: 24%;
+    overflow: hidden;
+    background: rgba(200, 200, 200);
+    border-radius: 1vw;
+    text-decoration: none;
+    text-align: center;
+    margin: 0.5%;
+}
+.sprtscm1Img{
+    height: 14vw;
+    width: 100%;
+    border-radius: 1vw;
+    background: url('../assets/imgs/TDULandingBG.png') no-repeat center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.sprtscm1Img img{
+    width: 100%;
+}
+.sprtscm1Content{
+    height: auto;
+    width: 100%;
+    padding: 1vw;
+    padding-bottom: 2vw;
+}
+.sprtscm1Content h5 {
+    font-size: 1.2vw;
+    line-height: 1.5vw;
+    padding: 0 5%;
+    margin: 2% 0;
+}
+.sprtscm1Content p {
+    font-size: 0.7vw;
+    padding: 0 5%;
+    color: gray;
 }

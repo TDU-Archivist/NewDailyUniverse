@@ -110,7 +110,7 @@ const Sports = () => {
                 <div className="sportsContentPage top2">
                     <div className="sprtscpt2 left">
                         <h3>SPORTS</h3>
-                        <h5>SPORTS AROUND THE WORLD BY CATEGORY</h5>
+                        <h5>SPORTS AROUND THE WORLD BY CONTINENTS</h5>
                         {/* <p>The must visit restaurants and recommended food and drinks around the world.</p> */}
                     </div>
                     <div className="sprtscpt2 right">
@@ -124,7 +124,60 @@ const Sports = () => {
             </section>
             <section className="sportsContainerPage mid">
                 <div className="sportsContentPage mid1">
-                    
+                    <Link className="sprtscm1" to='/Sports/Continent/America'>
+                        <div className='sprtscm1Img'>
+                            <img src={require('../assets/imgs/Sports/AmericaSports.png')} alt="" />
+                        </div>
+                        <div className='sprtscm1Content'>
+                            <h5>ALL AMERICA SPORTS TEAM</h5>
+                            <p>Recognizing the most famous sports teams across North and South America.</p>
+                        </div>
+                    </Link>
+                    <Link className="sprtscm1" to='/Sports/Continent/Europe'>
+                        <div className='sprtscm1Img'>
+                            <img src={require('../assets/imgs/Sports/EuropeSports.png')} alt="" />
+                        </div>
+                        <div className='sprtscm1Content'>
+                            <h5>ALL EUROPE SPORTS TEAM</h5>
+                            <p>Recognizing the most famous sports teams across Europe.</p>
+                        </div>
+                    </Link>
+                    <Link className="sprtscm1" to='/Sports/Continent/Africa'>
+                        <div className='sprtscm1Img'>
+                            <img src={require('../assets/imgs/Sports/AfricaSports.png')} alt="" />
+                        </div>
+                        <div className='sprtscm1Content'>
+                            <h5>ALL AFRICA SPORTS TEAM</h5>
+                            <p>Recognizing the most famous sports teams across Africa.</p>
+                        </div>
+                    </Link>
+                    <Link className="sprtscm1" to='/Sports/Continent/Asia'>
+                        <div className='sprtscm1Img'>
+                            <img src={require('../assets/imgs/Sports/AsiaSports.png')} alt="" />
+                        </div>
+                        <div className='sprtscm1Content'>
+                            <h5>ALL ASIA SPORTS TEAM</h5>
+                            <p>Recognizing the most famous sports teams across Asia.</p>
+                        </div>
+                    </Link>
+                    <Link className="sprtscm1" to='/Sports/Continent/Oceania'>
+                        <div className='sprtscm1Img'>
+                            <img src={require('../assets/imgs/Sports/OceaniaSports.png')} alt="" />
+                        </div>
+                        <div className='sprtscm1Content'>
+                            <h5>ALL OCEANIA SPORTS TEAM</h5>
+                            <p>Recognizing the most famous sports teams across Oceania.</p>
+                        </div>
+                    </Link>
+                    <Link className="sprtscm1" to='/Sports/Continent/Antarctica'>
+                        <div className='sprtscm1Img'>
+                            <img src={require('../assets/imgs/Sports/AntarcticaSports.png')} alt="" />
+                        </div>
+                        <div className='sprtscm1Content'>
+                            <h5>ALL ANTARCTICA SPORTS TEAM</h5>
+                            <p>Recognizing the most famous sports teams across Antarctica.</p>
+                        </div>
+                    </Link>
                 </div>
             </section>
 
