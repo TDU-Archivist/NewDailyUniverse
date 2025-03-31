@@ -127,37 +127,37 @@ const Airlines = () => {
             </section>
             <section className="airlinesContainerPage mid">
                 <div className="airlinesContentPage mid1">
-                    <Link to='/Airlines/America'>
+                    <Link to='/Airlines/Continent/America'>
                         <img src={require('../assets/imgs/Airlines/AmericanAirlines.png')} alt="" />
                         <div>
                             <h6>AMERICAN AIRLINES</h6>
                         </div>
                     </Link>
-                    <Link to='/Airlines/Europe'>
+                    <Link to='/Airlines/Continent/Europe'>
                         <img src={require('../assets/imgs/Airlines/EuropeanAirlines.png')} alt="" />
                         <div>
                             <h6>EUROPEAN AIRLINES</h6>
                         </div>
                     </Link>
-                    <Link to='/Airlines/Africa'>
+                    <Link to='/Airlines/Continent/Africa'>
                         <img src={require('../assets/imgs/Airlines/AfricanAirlines.png')} alt="" />
                         <div>
                             <h6>AFRICAN AIRLINES</h6>
                         </div>
                     </Link>
-                    <Link to='/Airlines/Asia'>
+                    <Link to='/Airlines/Continent/Asia'>
                         <img src={require('../assets/imgs/Airlines/AsianAirlines.png')} alt="" />
                         <div>
                             <h6>ASIAN AIRLINES</h6>
                         </div>
                     </Link>
-                    <Link to='/Airlines/Oceania'>
+                    <Link to='/Airlines/Continent/Oceania'>
                         <img src={require('../assets/imgs/Airlines/OceanianAirlines.png')} alt="" />
                         <div>
                             <h6>OCEANIAN AIRLINES</h6>
                         </div>
                     </Link>
-                    <Link to='/Airlines/Antarctica'>
+                    <Link to='/Airlines/Continent/Antarctica'>
                         <img src={require('../assets/imgs/Airlines/AntarticaAirlines.png')} alt="" />
                         <div>
                             <h6>ANTARCTICAN AIRLINES</h6>

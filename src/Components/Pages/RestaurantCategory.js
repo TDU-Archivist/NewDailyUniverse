@@ -180,7 +180,8 @@ const RestaurantCategory = () => {
                         {currentRestaurants?.map((details, i) => (
                             <a key={i} href={details?.restaurant_website} target="_blank" rel="noopener noreferrer">
                                 <div className='rstrntctcpm2Img'>
-                                    <img src={thumbnails[details?.restaurant_website]} alt='' />
+                                    <img src={details?.country ? `https://flagcdn.com/w320/${(details?.country).toLowerCase()}.png` : require('../assets/imgs/TDULandingBG.png')} alt="" id="rstrntctcpm2iFlag" />
+                                    <img src={thumbnails[details?.restaurant_website]} alt='' id='rstrntctcpm2iLogo' />
                                 </div>
                                 <div className='rstrntctccpm2Dets'>
                                     <h6>{details?.restaurant_name}</h6>

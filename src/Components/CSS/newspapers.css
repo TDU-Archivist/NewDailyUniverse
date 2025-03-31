@@ -316,8 +316,19 @@ section.newspaperCatContainerPage.mid{
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    position: relative;
 }
-.nwspprctcpm2Img img{
+.nwspprctcpm2Img img#nwspprctcpm2iFlag{
+    position: absolute;
+    top: 1vw;
+    left: 1vw;
+    height: 2vw;
+    width: 3.5vw;
+    border-radius: 0.2vw;
+    border: solid 0.1px black;
+    box-shadow: 0 0 10px gray;
+}
+.nwspprctcpm2Img img#nwspprctcpm2iLogo{
     width: 100%;
 }
 .nwspprctccpm2Dets{

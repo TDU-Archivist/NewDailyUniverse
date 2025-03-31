@@ -8,20 +8,9 @@ html, body {
   scroll-behavior: smooth;
 }
 body{
-  background: white;
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
-::-webkit-scrollbar{
-  background: none;
-  height: 0.5vw;
-  width: 0.5vw;
-  cursor: pointer;
-}
-::-webkit-scrollbar-thumb{
-  background: black;
-  cursor: pointer;
-}
-::-webkit-scrollbar-track{
-  background: none;
+body::-webkit-scrollbar {
+  display: none;
 }

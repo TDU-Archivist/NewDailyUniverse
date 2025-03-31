@@ -102,9 +102,9 @@ const AirlineContinent = () => {
     const [countries, setCountries] = useState({});
 
     useEffect(() => {
-        const fetchCountryNames = async () => {
+        const fetchCountryDetails = async () => {
             if (!currentAirline.length) return;
-            const uniqueAlphaCodes = [...new Set(currentAirline.map(channel => channel.country))];
+            const uniqueAlphaCodes = [...new Set(currentAirline.map(airline => airline.country))];
             try {
                 const responses = await Promise.all(
                     uniqueAlphaCodes.map(async (code) => {
@@ -115,32 +115,35 @@ const AirlineContinent = () => {
                 );
                 const countryMap = {};
                 responses.forEach((data, index) => {
-                    if (data && data[0]?.name?.common) {
-                        countryMap[uniqueAlphaCodes[index]] = data[0].name.common;
+                    if (data && data[0]) {
+                        countryMap[uniqueAlphaCodes[index]] = {
+                            name: data[0]?.name?.common || uniqueAlphaCodes[index],
+                            code: uniqueAlphaCodes[index],
+                            subcontinent: data[0]?.subregion || "Unknown"
+                        };
                     }
                 });
                 setCountries(countryMap);
             } catch (error) {
-                console.error("Error fetching country names:", error);
+                console.error("Error fetching country details:", error);
             }
         };
-        fetchCountryNames();
+        fetchCountryDetails();
     }, [dataList, currentAirline]);
 
-    const groupedByContinent = currentAirline.reduce((acc, airline) => {
+    const groupedBySubcontinent = currentAirline.reduce((acc, airline) => {
         const { subcontinent, country } = airline;
-
         if (!acc[subcontinent]) {
             acc[subcontinent] = [];
         }
-
-        const countryName = countries[country] || country;
-        if (!acc[subcontinent].includes(countryName)) {
-            acc[subcontinent].push(countryName);
+        const countryDetails = countries[country] || { name: country, code: country, subcontinent };
+        if (!acc[subcontinent].some(c => c.code === countryDetails.code)) {
+            acc[subcontinent].push(countryDetails);
         }
-
         return acc;
     }, {});
+
+    
     
 
 
@@ -176,13 +179,16 @@ const AirlineContinent = () => {
             <section className="airlineContContainerPage mid">
                 <div className="airlineContContentPage mid1">
                     {currentAirline.length ? <>
-                        {Object.keys(groupedByContinent).map((subcontinent) => (
+                        {Object.keys(groupedBySubcontinent).map((subcontinent) => (
                             <div className="arlncntntcpm1" key={subcontinent}>
                                 <h4>{subcontinent}</h4>
                                 <h6>All {subcontinent} Airlines</h6>
                                 <ul>
-                                    {groupedByContinent[subcontinent].map((country, i) => (
-                                        <li key={i}><button>{country}</button></li>
+                                    {groupedBySubcontinent[subcontinent].map(({ name, code }) => (
+                                        <li key={code}>
+                                            <img src={`https://flagcdn.com/w320/${code.toLowerCase()}.png`} alt={name} />
+                                            <button>{name}</button>
+                                        </li>
                                     ))}
                                 </ul>
                             </div>

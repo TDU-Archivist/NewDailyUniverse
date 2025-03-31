@@ -23,6 +23,7 @@ import NewsChannels from './Components/Pages/NewsChannels';
 import Magazine from './Components/Pages/Magazine';
 import Newspapers from './Components/Pages/Newspapers';
 import Restaurants from './Components/Pages/Restaurants';
+import Sports from './Components/Pages/Sports';
 
 
 
@@ -66,6 +67,7 @@ function App() {
           <Route path="/Magazines" element={<Magazine/>}/>
           <Route path="/Newspapers" element={<Newspapers/>}/>
           <Route path="/Restaurants" element={<Restaurants/>}/>
+          <Route path="/Sports" element={<Sports/>}/>
 
           
           <Route path="/Airlines/Continent/:airlineContinent" element={<AirlineContinent/>}/>

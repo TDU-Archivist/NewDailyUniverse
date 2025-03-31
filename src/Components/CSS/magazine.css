@@ -313,8 +313,19 @@ section.magazinCatContainerPage.mid{
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    position: relative;
 }
-.mgznctcpm2Img img{
+.mgznctcpm2Img img#mgznctcpm2iFlag{
+    position: absolute;
+    top: 1vw;
+    left: 1vw;
+    height: 2vw;
+    width: 3.5vw;
+    border-radius: 0.2vw;
+    border: solid 0.1px black;
+    box-shadow: 0 0 10px gray;
+}
+.mgznctcpm2Img img#mgznctcpm2iLogo{
     width: 100%;
 }
 .mgznctccpm2Dets{

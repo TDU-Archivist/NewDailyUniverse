@@ -432,6 +432,17 @@ section.airlineContContainerPage.mid{
     list-style: none;
     padding-bottom: 1vw;
 }
+.arlncntntcpm1 ul li{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+.arlncntntcpm1 ul li img{
+    height: 1.5vw;
+    width: 2.5vw;
+    border-radius: 0.2vw;
+    border: solid 0.1vw black;
+}
 .arlncntntcpm1 ul li button{
     background: none;
     border: none;

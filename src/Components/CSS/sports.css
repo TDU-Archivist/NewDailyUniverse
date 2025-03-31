@@ -1,0 +1,149 @@
+h1, h2, h3, h4, h5, h6, p{
+    color: black;
+}
+h1, h2, h3, h4, h5, h6{
+    /* font-family: "Bebas Neue", sans-serif; */
+    font-family: "Oswald", sans-serif;
+}
+p{
+    font-size: 0.9vw;
+}
+h1{
+    font-size: 10vw;
+}
+h2{
+    font-size: 5vw;
+}
+h3{
+    font-size: 4vw;
+}
+h4{
+    font-size: 2vw;
+}
+h5{
+    font-size: 1.5vw;
+}
+h6{
+    font-size: 1vw;
+}
+
+
+.mainContainer.sports{
+    height: auto;
+    width: 100%;
+    background: white;
+    padding-bottom: 10vw;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+section.sportsContainerPage.top{
+    height: auto;
+    width: 100%;
+    padding: 5vw;
+    padding-bottom: 1vw;
+    background: 
+        linear-gradient(whitesmoke 0%, transparent),
+        linear-gradient(transparent, white 100%),
+        url('../assets/imgs/TheDailyUniverseBG.png') no-repeat center;
+    background-size: cover;
+}
+section.sportsContainerPage.top hr{
+    height: 0.5vw;
+    background: black;
+    width: 100%;
+}
+
+
+.sportsContentPage.top1{
+    height: 20vw;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 1vw;
+    position: relative;
+    background: gray;
+}
+.sportsContentPage.top1 img{
+    height: auto;
+    width: 100%;
+}
+.sportsContentPage.top2{
+    height: auto;
+    width: 100%;
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    margin-bottom: 0.5vw;
+}
+.sprtscpt2.left{
+    height: auto;
+    width: 50%;
+}
+.sprtscpt2.left h3{
+    line-height: 3.5vw;
+}
+.sprtscpt2.right{
+    height: auto;
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: solid 2px black;
+    border-radius: 50px;
+    padding: 0.3vw 1.5vw;
+    margin-bottom: 0.3vw;
+}
+.sprtscpt2.right input{
+    background: none;
+    border: none;
+    outline: none;
+    font-size: 0.8vw;
+    width: 80%;
+}
+.sprtscpt2rBtn{
+    height: auto;
+    width: 20%;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+.sprtscpt2rBtn button{
+    border: none;
+    outline: none;
+    background: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10%;
+    font-size: 0.9vw;
+}
+
+
+
+
+section.sportsContainerPage.mid{
+    height: 40vw;
+    width: 100%;
+    padding: 1vw 5vw;
+}
+.sportsContentPage.mid1{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    align-items: top;
+}

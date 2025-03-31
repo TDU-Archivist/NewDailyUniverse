@@ -218,7 +218,8 @@ const MagazineCategory = () => {
                         {currentMagazine?.map((details, i) => (
                             <a key={i} href={details?.magazine_website} target="_blank" rel="noopener noreferrer">
                                 <div className='mgznctcpm2Img'>
-                                    <img src={thumbnails[details?.magazine_website]} alt='' />
+                                    <img src={details?.country ? `https://flagcdn.com/w320/${(details?.country).toLowerCase()}.png` : require('../assets/imgs/TDULandingBG.png')} alt="" id="mgznctcpm2iFlag" />
+                                    <img src={thumbnails[details?.magazine_website]} alt='' id='mgznctcpm2iLogo' />
                                 </div>
                                 <div className='mgznctccpm2Dets'>
                                     <h6>{details?.magazine_name}</h6>

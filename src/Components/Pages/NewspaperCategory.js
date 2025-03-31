@@ -178,7 +178,8 @@ const NewspaperCategory = () => {
                 {currentNewspapers?.map((details, i) => (
                     <a key={i} href={details?.newspaper_website} target="_blank" rel="noopener noreferrer">
                         <div className='nwspprctcpm2Img'>
-                            <img src={thumbnails[details?.newspaper_website]} alt='' />
+                          <img src={`https://flagcdn.com/w320/${(details?.country).toLowerCase()}.png`} alt="" id="nwspprctcpm2iFlag" />
+                          <img id='nwspprctcpm2iLogo' src={thumbnails[details?.newspaper_website]} alt='' />
                         </div>
                         <div className='nwspprctccpm2Dets'>
                             <h6>{details?.newspaper_name}</h6>
