@@ -473,7 +473,7 @@ const Home = () => {
       <section className="mainContainerPage mid">
         
         <div className="mainContentPage mid4">
-          <div className="mncntntpm4More">
+          <div className="mncntntpm4More world">
             <h4>THE DAILY UNIVERSE - WORLD NEWS</h4>
             <Link><h6>VIEW MORE</h6></Link>
           </div>

@@ -629,11 +629,14 @@ nav{
     }
     .nvcntntrModal{
         height: auto;
-        width: 73vw;
+        width: 90vw;
         top: 5.5vh;
-        right: 8vw;
+        right: 0;
         padding: 3vw;
         border-radius: 2vw;
+    }
+    .nvcntntrModal.logged {
+        right: 0;
     }
     .nvcntntrModal a h6{
         font-size: 4.5vw;
@@ -652,6 +655,17 @@ nav{
     }
     .nvcntntr.links button .faIcons{
         font-size: 5vw;
+    }
+    .nvcntntr.user a#nvcntntruAdmin,
+    .nvcntntr.user a#nvcntntruUser{
+        display: none;
+    }
+    .nvcntntr.user button#nvcntntruNotification{
+        display: none;
+    }
+    .nvcntntr.user button#nvcntntruLogout{
+        font-size: 5vw;
+        margin-right: 0;
     }
     .nvcntntr.user button#nvcntntruSignup{
         border: solid 0.5vw black;

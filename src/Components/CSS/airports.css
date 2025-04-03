@@ -181,3 +181,120 @@ section.airportsContainerPage.mid{
     font-size: 0.7vw;
     color: gray;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 500px){
+    section.airportsContainerPage.top{
+        padding: 15vw 5vw;
+        padding-bottom: 2vw;
+    }
+    section.airportsContainerPage.top hr{
+        margin-top: 5vw;
+        height: 1vw;
+    }
+    .airportsContentPage.top2{
+        height: auto;
+        width: 100%;
+        display: block;
+        margin-bottom: 2vw;
+    }
+    .airprtscpt2.left{
+        height: auto;
+        width: 100%;
+        text-align: center;
+    }
+    .airprtscpt2.left h3{
+        font-size: 10vw;
+        line-height: 10vw;
+    }
+    .airprtscpt2.left h5{
+        font-size: 4vw;
+    }
+    .airprtscpt2.right{
+        height: auto;
+        width: 100%;
+        margin-top: 2vw;
+    }
+    .airprtscpt2.right input{
+        font-size: 3.5vw;
+        padding: 1% 3%;
+        width: 80%;
+    }
+    .airprtscpt2rBtn {
+        height: auto;
+        width: 20%;
+        display: flex;
+        justify-content: right;
+        align-items: center;
+    }
+    .airprtscpt2rBtn button {
+        margin-right: 10%;
+        font-size: 4vw;
+    }
+    .airportsContentPage.top3{
+        display: none;
+    }
+
+
+
+    
+    section.airportsContainerPage.mid{
+        padding: 5vw;
+    }
+    .airprtscpm2c1{
+        height: auto;
+        width: 49%;
+        margin-bottom: 2%;
+        border-radius: 3vw;
+    }
+    .airprtscpm2c1Img{
+        height: 22.5vw;
+    }
+    .airprtscpm2c1Content h5 {
+        font-size: 3vw;
+        font-weight: 400;
+        line-height: 3vw;
+        padding: 0;
+        margin: 3% 0;
+    }
+    .airprtscpm2c1Content p {
+        font-size: 2.5vw;
+        color: gray;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

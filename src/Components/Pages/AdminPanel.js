@@ -74,6 +74,7 @@ const AdminPanel = () => {
     const [viewAddMagazineSec, setViewAddMagazineSec] = useState(false);
     const [viewAddNewspaperSec, setViewAddNewspaperSec] = useState(false);
     const [viewAddRestaurantSec, setViewAddRestaurantSec] = useState(false);
+    const [viewAddSportSec, setViewAddSportSec] = useState(false);
 
 
 
@@ -138,6 +139,7 @@ const AdminPanel = () => {
         setViewAddMagazineSec(false);
         setViewAddNewspaperSec(false);
         setViewAddRestaurantSec(false);
+        setViewAddSportSec(false);
     }
     const handleViewAirportSection = () => {
         setViewFullDashboardSec(false);
@@ -150,6 +152,7 @@ const AdminPanel = () => {
         setViewAddMagazineSec(false);
         setViewAddNewspaperSec(false);
         setViewAddRestaurantSec(false);
+        setViewAddSportSec(false);
     }
     const handleViewTelecastSection = () => {
         setViewFullDashboardSec(false);
@@ -162,6 +165,7 @@ const AdminPanel = () => {
         setViewAddMagazineSec(false);
         setViewAddNewspaperSec(false);
         setViewAddRestaurantSec(false);
+        setViewAddSportSec(false);
     }
     const handleViewMagazineSection = () => {
         setViewFullDashboardSec(false);
@@ -174,6 +178,7 @@ const AdminPanel = () => {
         setViewAddMagazineSec(true);
         setViewAddNewspaperSec(false);
         setViewAddRestaurantSec(false);
+        setViewAddSportSec(false);
     }
     const handleViewNewspaperSection = () => {
         setViewFullDashboardSec(false);
@@ -186,6 +191,7 @@ const AdminPanel = () => {
         setViewAddMagazineSec(false);
         setViewAddNewspaperSec(true);
         setViewAddRestaurantSec(false);
+        setViewAddSportSec(false);
     }
     const handleViewRestaurantSection = () => {
         setViewFullDashboardSec(false);
@@ -198,6 +204,20 @@ const AdminPanel = () => {
         setViewAddMagazineSec(false);
         setViewAddNewspaperSec(false);
         setViewAddRestaurantSec(true);
+        setViewAddSportSec(false);
+    }
+    const handleViewSportSection = () => {
+        setViewFullDashboardSec(false);
+        setViewAddArticleSec(false);
+        setViewAddMovieReviewSec(false);
+        setViewAddTouristSpotSec(false);
+        setViewAddAirlineSec(false);
+        setViewAddAirportSec(false);
+        setViewAddTelecastSec(false);
+        setViewAddMagazineSec(false);
+        setViewAddNewspaperSec(false);
+        setViewAddRestaurantSec(false);
+        setViewAddSportSec(true);
     }
 
 
@@ -963,6 +983,7 @@ const AdminPanel = () => {
     const [viewMagazineList, setViewMagazineList] = useState(false);
     const [viewNewspaperList, setViewNewspaperList] = useState(false);
     const [viewRestaurantList, setViewRestaurantList] = useState(false);
+    const [viewSportList, setViewSportList] = useState(false);
 
 
 
@@ -999,7 +1020,7 @@ const AdminPanel = () => {
                                 <button className={viewAddMagazineSec ? "active" : ""} onClick={handleViewMagazineSection}><h6>ADD MAGAZINE</h6></button>
                                 <button className={viewAddNewspaperSec ? "active" : ""} onClick={handleViewNewspaperSection}><h6>ADD NEWSPAPER</h6></button>
                                 <button className={viewAddRestaurantSec ? "active" : ""} onClick={handleViewRestaurantSection}><h6>ADD RESTAURANT</h6></button>
-                                <button className=''><h6>ADD SPORTS TEAM</h6></button>
+                                <button className={viewAddSportSec ? "active" : ""} onClick={handleViewSportSection}><h6>ADD SPORTS TEAM</h6></button>
                                 <button className=''><h6>ADD VISA GUIDE</h6></button>
                             </div>
                         </div>
@@ -3628,7 +3649,403 @@ const AdminPanel = () => {
                             </>}
                         </div>}
 
+                        {viewAddSportSec && <div className="admnpnlcprContainer addSport">
+                            {!viewSportList ?
+                                <button id="sportList" onClick={() => setViewSportList(true)}><FaListAlt /></button>:
+                                <button id="sportList" onClick={() => setViewSportList(false)}><FaTimes /></button>
+                            }
+                            <h4>ADD SPORTS</h4>
+                            <p>Here, you can simultaneously add sport from local to international sports around the world.</p>
+                            <div className="admnpnlcprcAddSport">
+                                <div className="admnpnlcprcasport left">
+                                    <div>
+                                        <label htmlFor=""><h6>SELECT CONTINENT</h6></label>
+                                        <select name="" id="">
+                                            <option value="">Select Continent</option>
+                                            <option value="N.America">N.America</option>
+                                            <option value="S.America">S.America</option>
+                                            <option value="Europe">Europe</option>
+                                            <option value="Africa">Africa</option>
+                                            <option value="Asia">Asia</option>
+                                            <option value="Oceania">Oceania</option>
+                                            <option value="Antarctica">Antarctica</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label htmlFor=""><h6>SELECT SUB CONTINENT</h6></label>
+                                        <select name="" id="">
+                                            <option value="">Select Sub-Continent</option>
+                                            <option value="Northern Africa">Northern Africa</option>
+                                            <option value="Sub-Saharan Africa">Sub-Saharan Africa</option>
+                                            <option value="Northern Asia">Northern Asia</option>
+                                            <option value="Central Asia">Central Asia</option>
+                                            <option value="Western Asia">Western Asia</option>
+                                            <option value="South Asia">South Asia</option>
+                                            <option value="East Asia">East Asia</option>
+                                            <option value="Southeast Asia">Southeast Asia</option>
+                                            <option value="Northern Europe">Northern Europe</option>
+                                            <option value="Western Europe">Western Europe</option>
+                                            <option value="Eastern Europe">Eastern Europe</option>
+                                            <option value="Southern Europe">Southern Europe</option>
+                                            <option value="Northern America">Northern America</option>
+                                            <option value="Central America">Central America</option>
+                                            <option value="The Caribbean">The Caribbean</option>
+                                            <option value="Andean States">Andean States</option>
+                                            <option value="Southern Cone">Southern Cone</option>
+                                            <option value="Brazil">Brazil</option>
+                                            <option value="The Guianas">The Guianas</option>
+                                            <option value="Australasia">Australasia</option>
+                                            <option value="Melanesia">Melanesia</option>
+                                            <option value="Micronesia">Micronesia</option>
+                                            <option value="Polynesia">Polynesia</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label htmlFor=""><h6>COUNTRY</h6></label>
+                                        <select name="" id="">
+                                            <option value="">Select Country</option>
+                                            <option value="AF">Afghanistan</option>
+                                            <option value="AL">Albania</option>
+                                            <option value="DZ">Algeria</option>
+                                            <option value="AD">Andorra</option>
+                                            <option value="AO">Angola</option>
+                                            <option value="AG">Antigua and Barbuda</option>
+                                            <option value="AR">Argentina</option>
+                                            <option value="AM">Armenia</option>
+                                            <option value="AU">Australia</option>
+                                            <option value="AT">Austria</option>
+                                            <option value="AZ">Azerbaijan</option>
+                                            <option value="BS">Bahamas</option>
+                                            <option value="BH">Bahrain</option>
+                                            <option value="BD">Bangladesh</option>
+                                            <option value="BB">Barbados</option>
+                                            <option value="BY">Belarus</option>
+                                            <option value="BE">Belgium</option>
+                                            <option value="BZ">Belize</option>
+                                            <option value="BJ">Benin</option>
+                                            <option value="BT">Bhutan</option>
+                                            <option value="BO">Bolivia</option>
+                                            <option value="BA">Bosnia and Herzegovina</option>
+                                            <option value="BW">Botswana</option>
+                                            <option value="BR">Brazil</option>
+                                            <option value="BN">Brunei</option>
+                                            <option value="BG">Bulgaria</option>
+                                            <option value="BF">Burkina Faso</option>
+                                            <option value="BI">Burundi</option>
+                                            <option value="CV">Cabo Verde</option>
+                                            <option value="KH">Cambodia</option>
+                                            <option value="CM">Cameroon</option>
+                                            <option value="CA">Canada</option>
+                                            <option value="CF">Central African Republic</option>
+                                            <option value="TD">Chad</option>
+                                            <option value="CL">Chile</option>
+                                            <option value="CN">China</option>
+                                            <option value="CO">Colombia</option>
+                                            <option value="KM">Comoros</option>
+                                            <option value="CD">Congo (Democratic Republic)</option>
+                                            <option value="CG">Congo (Republic)</option>
+                                            <option value="CR">Costa Rica</option>
+                                            <option value="CI">Côte d'Ivoire</option>
+                                            <option value="HR">Croatia</option>
+                                            <option value="CU">Cuba</option>
+                                            <option value="CY">Cyprus</option>
+                                            <option value="CZ">Czechia</option>
+                                            <option value="DK">Denmark</option>
+                                            <option value="DJ">Djibouti</option>
+                                            <option value="DM">Dominica</option>
+                                            <option value="DO">Dominican Republic</option>
+                                            <option value="EC">Ecuador</option>
+                                            <option value="EG">Egypt</option>
+                                            <option value="SV">El Salvador</option>
+                                            <option value="GQ">Equatorial Guinea</option>
+                                            <option value="ER">Eritrea</option>
+                                            <option value="EE">Estonia</option>
+                                            <option value="SZ">Eswatini</option>
+                                            <option value="ET">Ethiopia</option>
+                                            <option value="FJ">Fiji</option>
+                                            <option value="FI">Finland</option>
+                                            <option value="FR">France</option>
+                                            <option value="GA">Gabon</option>
+                                            <option value="GM">Gambia</option>
+                                            <option value="GE">Georgia</option>
+                                            <option value="DE">Germany</option>
+                                            <option value="GH">Ghana</option>
+                                            <option value="GR">Greece</option>
+                                            <option value="GD">Grenada</option>
+                                            <option value="GT">Guatemala</option>
+                                            <option value="GN">Guinea</option>
+                                            <option value="GW">Guinea-Bissau</option>
+                                            <option value="GY">Guyana</option>
+                                            <option value="HT">Haiti</option>
+                                            <option value="HN">Honduras</option>
+                                            <option value="HU">Hungary</option>
+                                            <option value="IS">Iceland</option>
+                                            <option value="IN">India</option>
+                                            <option value="ID">Indonesia</option>
+                                            <option value="IR">Iran</option>
+                                            <option value="IQ">Iraq</option>
+                                            <option value="IE">Ireland</option>
+                                            <option value="IL">Israel</option>
+                                            <option value="IT">Italy</option>
+                                            <option value="JM">Jamaica</option>
+                                            <option value="JP">Japan</option>
+                                            <option value="JO">Jordan</option>
+                                            <option value="KZ">Kazakhstan</option>
+                                            <option value="KE">Kenya</option>
+                                            <option value="KI">Kiribati</option>
+                                            <option value="KP">Korea (North)</option>
+                                            <option value="KR">Korea (South)</option>
+                                            <option value="KW">Kuwait</option>
+                                            <option value="KG">Kyrgyzstan</option>
+                                            <option value="LA">Laos</option>
+                                            <option value="LV">Latvia</option>
+                                            <option value="LB">Lebanon</option>
+                                            <option value="LS">Lesotho</option>
+                                            <option value="LR">Liberia</option>
+                                            <option value="LY">Libya</option>
+                                            <option value="LI">Liechtenstein</option>
+                                            <option value="LT">Lithuania</option>
+                                            <option value="LU">Luxembourg</option>
+                                            <option value="MG">Madagascar</option>
+                                            <option value="MW">Malawi</option>
+                                            <option value="MY">Malaysia</option>
+                                            <option value="MV">Maldives</option>
+                                            <option value="ML">Mali</option>
+                                            <option value="MT">Malta</option>
+                                            <option value="MH">Marshall Islands</option>
+                                            <option value="MR">Mauritania</option>
+                                            <option value="MU">Mauritius</option>
+                                            <option value="MX">Mexico</option>
+                                            <option value="FM">Micronesia</option>
+                                            <option value="MD">Moldova</option>
+                                            <option value="MC">Monaco</option>
+                                            <option value="MN">Mongolia</option>
+                                            <option value="ME">Montenegro</option>
+                                            <option value="MA">Morocco</option>
+                                            <option value="MZ">Mozambique</option>
+                                            <option value="MM">Myanmar</option>
+                                            <option value="NA">Namibia</option>
+                                            <option value="NR">Nauru</option>
+                                            <option value="NP">Nepal</option>
+                                            <option value="NL">Netherlands</option>
+                                            <option value="NZ">New Zealand</option>
+                                            <option value="NI">Nicaragua</option>
+                                            <option value="NE">Niger</option>
+                                            <option value="NG">Nigeria</option>
+                                            <option value="NO">Norway</option>
+                                            <option value="OM">Oman</option>
+                                            <option value="PK">Pakistan</option>
+                                            <option value="PW">Palau</option>
+                                            <option value="PA">Panama</option>
+                                            <option value="PG">Papua New Guinea</option>
+                                            <option value="PY">Paraguay</option>
+                                            <option value="PE">Peru</option>
+                                            <option value="PH">Philippines</option>
+                                            <option value="PL">Poland</option>
+                                            <option value="PT">Portugal</option>
+                                            <option value="QA">Qatar</option>
+                                            <option value="RO">Romania</option>
+                                            <option value="RU">Russia</option>
+                                            <option value="RW">Rwanda</option>
+                                            <option value="WS">Samoa</option>
+                                            <option value="SM">San Marino</option>
+                                            <option value="SA">Saudi Arabia</option>
+                                            <option value="SN">Senegal</option>
+                                            <option value="RS">Serbia</option>
+                                            <option value="SC">Seychelles</option>
+                                            <option value="SL">Sierra Leone</option>
+                                            <option value="SG">Singapore</option>
+                                            <option value="SK">Slovakia</option>
+                                            <option value="SI">Slovenia</option>
+                                            <option value="SB">Solomon Islands</option>
+                                            <option value="SO">Somalia</option>
+                                            <option value="ZA">South Africa</option>
+                                            <option value="ES">Spain</option>
+                                            <option value="LK">Sri Lanka</option>
+                                            <option value="SD">Sudan</option>
+                                            <option value="SR">Suriname</option>
+                                            <option value="SE">Sweden</option>
+                                            <option value="CH">Switzerland</option>
+                                            <option value="SY">Syria</option>
+                                            <option value="TW">Taiwan</option>
+                                            <option value="TJ">Tajikistan</option>
+                                            <option value="TZ">Tanzania</option>
+                                            <option value="TH">Thailand</option>
+                                            <option value="TL">Timor-Leste</option>
+                                            <option value="TG">Togo</option>
+                                            <option value="TO">Tonga</option>
+                                            <option value="TT">Trinidad and Tobago</option>
+                                            <option value="TN">Tunisia</option>
+                                            <option value="TR">Turkey</option>
+                                            <option value="TM">Turkmenistan</option>
+                                            <option value="UG">Uganda</option>
+                                            <option value="UA">Ukraine</option>
+                                            <option value="AE">United Arab Emirates</option>
+                                            <option value="GB">United Kingdom</option>
+                                            <option value="US">United States</option>
+                                            <option value="UY">Uruguay</option>
+                                            <option value="UZ">Uzbekistan</option>
+                                            <option value="VU">Vanuatu</option>
+                                            <option value="VE">Venezuela</option>
+                                            <option value="VN">Vietnam</option>
+                                            <option value="YE">Yemen</option>
+                                            <option value="ZM">Zambia</option>
+                                            <option value="ZW">Zimbabwe</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label htmlFor=""><h6>REGION/STATE</h6></label>
+                                        <input type="text" placeholder='Insert Region/State here'/>
+                                    </div>
+                                </div>
+                                <div className="admnpnlcprcasport right">
+                                    <div className="admnpnlcprcasportrHeader">
+                                        <div>
+                                            <label htmlFor=""><h6>SPORTS CATEGORY</h6></label>
+                                            <select name="" id="">
+                                                <option value="">Select Category</option>
+                                                <option value="Ball Sports">Ball Sports</option>
+                                                <option value="Combat Sports">Combat Sports</option>
+                                                <option value="Water Sports">Water Sports</option>
+                                                <option value="Winter Sports">Winter Sports</option>
+                                                <option value="Motor Sports">Motor Sports</option>
+                                                <option value="Athletics/Track and Field">Athletics/Track and Field</option>
+                                                <option value="Cycling">Cycling</option>
+                                                <option value="Strength Sports">Strength Sports</option>
+                                                <option value="Adventure Sports">Adventure Sports</option>
+                                                <option value="Target Sports">Target Sports</option>
+                                                <option value="Mind Sports">Mind Sports</option>
+                                            </select>
+                                        </div>
+                                        <div>
+                                            <label htmlFor=""><h6>SPORTS GAME</h6></label>
+                                            <select name="sports">
+                                                <option value="">Select Game</option>
+                                                <optgroup label="Ball Sports">
+                                                    <option value="soccer">Football (Soccer)</option>
+                                                    <option value="basketball">Basketball</option>
+                                                    <option value="volleyball">Volleyball</option>
+                                                    <option value="tennis">Tennis</option>
+                                                    <option value="table_tennis">Table Tennis</option>
+                                                    <option value="baseball">Baseball</option>
+                                                    <option value="american_football">American Football</option>
+                                                    <option value="rugby">Rugby</option>
+                                                    <option value="cricket">Cricket</option>
+                                                    <option value="golf">Golf</option>
+                                                    <option value="handball">Handball</option>
+                                                    <option value="hockey">Hockey (Field and Ice)</option>
+                                                    <option value="softball">Softball</option>
+                                                </optgroup>
+                                                <optgroup label="Combat Sports">
+                                                    <option value="boxing">Boxing</option>
+                                                    <option value="mma">Mixed Martial Arts (MMA)</option>
+                                                    <option value="wrestling">Wrestling</option>
+                                                    <option value="judo">Judo</option>
+                                                    <option value="taekwondo">Taekwondo</option>
+                                                    <option value="karate">Karate</option>
+                                                    <option value="kickboxing">Kickboxing</option>
+                                                    <option value="bjj">Brazilian Jiu-Jitsu (BJJ)</option>
+                                                    <option value="fencing">Fencing</option>
+                                                    <option value="muay_thai">Muay Thai</option>
+                                                </optgroup>
+                                                <optgroup label="Water Sports">
+                                                    <option value="swimming">Swimming</option>
+                                                    <option value="surfing">Surfing</option>
+                                                    <option value="water_polo">Water Polo</option>
+                                                    <option value="sailing">Sailing</option>
+                                                    <option value="rowing">Rowing</option>
+                                                    <option value="canoeing">Canoeing/Kayaking</option>
+                                                    <option value="diving">Diving</option>
+                                                    <option value="snorkeling">Snorkeling</option>
+                                                </optgroup>
+                                                <optgroup label="Winter Sports">
+                                                    <option value="skiing">Skiing</option>
+                                                    <option value="snowboarding">Snowboarding</option>
+                                                    <option value="ice_hockey">Ice Hockey</option>
+                                                    <option value="figure_skating">Figure Skating</option>
+                                                    <option value="bobsleigh">Bobsleigh</option>
+                                                    <option value="luge">Luge</option>
+                                                    <option value="curling">Curling</option>
+                                                </optgroup>
+                                                <optgroup label="Motor Sports">
+                                                    <option value="f1">Formula 1 (F1)</option>
+                                                    <option value="motogp">MotoGP</option>
+                                                    <option value="rally_racing">Rally Racing</option>
+                                                    <option value="indycar">IndyCar</option>
+                                                    <option value="nascar">NASCAR</option>
+                                                    <option value="motorcycle_racing">Motorcycle Racing</option>
+                                                    <option value="drag_racing">Drag Racing</option>
+                                                </optgroup>
+                                                <optgroup label="Athletics / Track and Field">
+                                                    <option value="running">Running</option>
+                                                    <option value="marathon">Marathon</option>
+                                                    <option value="high_jump">High Jump</option>
+                                                    <option value="pole_vault">Pole Vault</option>
+                                                    <option value="long_jump">Long Jump</option>
+                                                    <option value="shot_put">Shot Put</option>
+                                                    <option value="discus_throw">Discus Throw</option>
+                                                    <option value="javelin_throw">Javelin Throw</option>
+                                                </optgroup>
+                                                <optgroup label="Cycling">
+                                                    <option value="road_cycling">Road Cycling</option>
+                                                    <option value="mountain_biking">Mountain Biking</option>
+                                                    <option value="track_cycling">Track Cycling</option>
+                                                    <option value="bmx_racing">BMX Racing</option>
+                                                </optgroup>
+                                                <optgroup label="Strength Sports">
+                                                    <option value="powerlifting">Powerlifting</option>
+                                                    <option value="weightlifting">Weightlifting</option>
+                                                    <option value="strongman">Strongman Competitions</option>
+                                                </optgroup>
+                                                <optgroup label="Equestrian Sports">
+                                                    <option value="horse_racing">Horse Racing</option>
+                                                    <option value="show_jumping">Show Jumping</option>
+                                                    <option value="dressage">Dressage</option>
+                                                    <option value="eventing">Eventing</option>
+                                                </optgroup>
+                                                <optgroup label="Adventure Sports">
+                                                    <option value="rock_climbing">Rock Climbing</option>
+                                                    <option value="skydiving">Skydiving</option>
+                                                    <option value="bungee_jumping">Bungee Jumping</option>
+                                                    <option value="parkour">Parkour</option>
+                                                </optgroup>
+                                                <optgroup label="Target Sports">
+                                                    <option value="archery">Archery</option>
+                                                    <option value="shooting">Shooting</option>
+                                                    <option value="darts">Darts</option>
+                                                </optgroup>
+                                                <optgroup label="Mind Sports">
+                                                    <option value="chess">Chess</option>
+                                                    <option value="esports">Esports</option>
+                                                    <option value="poker">Poker</option>
+                                                    <option value="bridge">Bridge</option>
+                                                    <option value="go">Go</option>
+                                                    <option value="checkers">Checkers</option>
+                                                </optgroup>
+                                            </select>
+                                        </div>
+                                        <div>
+                                            <label htmlFor=""><h6>SPORT'S TEAM NAME</h6></label>
+                                            <input type="text" placeholder='Ex. Los Angeles Lakers'/>
+                                        </div>
+                                        <div>
+                                            <label htmlFor=""><h6>SPORT'S WEBSITE DIRECT LINK</h6></label>
+                                            <input type="text" placeholder='Insert link only.'/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="admnpnlcprcasportBtn">
+                                <p>{addRestaurantResponse}</p>
+                                {addRestaurantLoader ?
+                                    <button><h6>ADDING...</h6></button>:
+                                    <button><h6>ADD SPORT</h6></button>
+                                }
+                            </div>
 
+
+
+                        </div>}
 
 
                     </div>

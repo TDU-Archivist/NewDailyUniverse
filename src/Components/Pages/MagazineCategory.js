@@ -204,7 +204,7 @@ const MagazineCategory = () => {
                         <h4><span>{magazine}S</span> AROUND THE WORLD</h4>
                     </div>
                     <div className="mgzncatntcpt2 right">
-                        <input type="text" placeholder='Search keyword, country or airline name here...'/>
+                        <input type="text" placeholder='Search keyword, country or magazine name here...'/>
                         <div className="mgzncatntcpt2rBtn">
                             <button><FaSearch className='faIcons'/></button>
                             <button><FaMicrophone className='faIcons'/></button>

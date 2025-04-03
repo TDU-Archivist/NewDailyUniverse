@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import "../CSS/restaurants.css";
+import "../CSS/sports.css";
 import { useParams } from "react-router-dom";
 import { Link } from 'react-router-dom';
 import { 
@@ -28,7 +28,6 @@ import MapboxMap from './Mapbox';
 import CountryFlag from './CountryFlag';
 import ExchangeRateMarquee from './ExchangeRateMarquee';
 import { MainDataLoad } from './MainDataContext';
-
 
 
 const TextSlicer = ({ text = '', maxLength }) => {
@@ -61,7 +60,7 @@ const NumberFormatter = ({ number }) => {
     return <>{number > 0 ? formatNumber(number) : 0}</>;
 };
 
-const RestaurantCategory = () => {
+const SportContinent = () => {
     const { 
         webLoader,
         createTDUAccount, 
@@ -95,113 +94,117 @@ const RestaurantCategory = () => {
         data,
         dataList,
     } = MainDataLoad(); 
-
     const webLogoProxy = process.env.REACT_APP_WEBLOGO_PROXY;
-    const { restaurantCategory } = useParams();
-    const [restaurant, setRestaurant] = useState('');
+    const { sportContinent } = useParams();
+    const [sports, setSportspaper] = useState('');
     const [thumbnails, setThumbnails] = useState({}); // Store fetched thumbnails
 
     useEffect(() => {
-        if (restaurantCategory === 'ExpensiveRestaurants'){
-            setRestaurant('Expensive Res');
-        } else if (restaurantCategory === 'FamousRestaurants'){
-            setRestaurant('Famous Res');
-        } else if (restaurantCategory === 'OldestRestaurants'){
-            setRestaurant('Classic Res');
-        } else if (restaurantCategory === 'UniqueRestaurants'){
-            setRestaurant('Unique Res');
+        if (sportContinent === 'NorthAmerica'){
+            setSportspaper('N.America');
+        } else if (sportContinent === 'SouthAmerica'){
+            setSportspaper('S.America');
+        } else if (sportContinent === 'Europe'){
+            setSportspaper('Europe');
+        } else if (sportContinent === 'Africa'){
+            setSportspaper('Africa');
+        } else if (sportContinent === 'Asia'){
+            setSportspaper('Asia');
+        } else if (sportContinent === 'Oceania'){
+            setSportspaper('Oceania');
+        } else if (sportContinent === 'Antarctica'){
+            setSportspaper('Antarctica');
         } else {
-            setRestaurant('')
+            setSportspaper('')
         }
-    }, [setRestaurant]);
+    }, [sportContinent, setSportspaper]);
 
-    const currentRestaurants = dataList?.viewAllRestaurants.filter(category => category.restaurant_category === restaurant) || [];
+    const currentSports = dataList?.viewAllSports.filter(continent => continent.continent === sports) || [];
     useEffect(() => {
         const fetchThumbnails = async () => {
             const newThumbnails = {};
     
             await Promise.all(
-                currentRestaurants?.map(async (details) => {
-                  try {
-                      const response = await axios.get(
-                          `${webLogoProxy}?url=${encodeURIComponent(details?.newspaper_website)}`
-                      );
+                currentSports?.map(async (details) => {
+                    try {
+                        const response = await axios.get(
+                            `${webLogoProxy}?url=${encodeURIComponent(details?.sports_website)}`
+                        );
     
-                      // Ensure the response is valid
-                      if (response.data.image && response.data.image !== "No image found") {
-                          newThumbnails[details?.restaurant_website] = response.data.image;
-                      } else {
-                          // newThumbnails[details?.magazine_website] = defaultImage;
-                      }
-                  } catch (error) {
-                      // Don't fetch the image if there's an error
-                      // newThumbnails[details?.magazine_website] = defaultImage;
-                  }
-              })
+                        // Ensure the response is valid
+                        if (response.data.image && response.data.image !== "No image found") {
+                            newThumbnails[details?.sports_website] = response.data.image;
+                        } else {
+                            // newThumbnails[details?.magazine_website] = defaultImage;
+                        }
+                    } catch (error) {
+                        // Don't fetch the image if there's an error
+                        // newThumbnails[details?.magazine_website] = defaultImage;
+                    }
+                })
             );
     
             setThumbnails(newThumbnails);
         };
     
-        if (currentRestaurants?.length) {
+        if (currentSports?.length) {
             fetchThumbnails();
         }
-    }, [currentRestaurants]);
-    
+    }, [currentSports]);
 
 
     return (
-        <div className='mainContainer restaurantCategory'>
+        <div className='mainContainer sportContinent'>
             <div className={webLoader ? "allLoaderContainer active" : "allLoaderContainer disable"}>
                 <div className="loaderContent">
-                    <img src={require('../assets/imgs/TheDailyUniverseLogo.png')} alt="" />
-                    <p>LOADING UPDATES...</p>
+                <img src={require('../assets/imgs/TheDailyUniverseLogo.png')} alt="" />
+                <p>LOADING UPDATES...</p>
                 </div>
             </div>
 
-            <section className="restaurantCatContainerPage top">
-                <div className="restaurantCatContentPage top2">
-                    <div className="rstrntcatntcpt2 left">
-                        <Link to='/Restaurants'><MdKeyboardDoubleArrowLeft className='faIcons'/></Link>
-                        <h4><span>{restaurant}TAURANTS</span> AROUND THE WORLD</h4>
+
+            <section className="sportCatContainerPage top">
+                <div className="sportCatContentPage top2">
+                    <div className="sprtcatntcpt2 left">
+                        <Link to='/Sports'><MdKeyboardDoubleArrowLeft className='faIcons'/></Link>
+                        <h4>ALL SPORTS IN <span>{sports}</span> BY CATEGORY</h4>
                     </div>
-                    <div className="rstrntcatntcpt2 right">
-                        <input type="text" placeholder='Search keyword, country or restaurant name here...'/>
-                        <div className="rstrntcatntcpt2rBtn">
+                    <div className="sprtcatntcpt2 right">
+                        <input type="text" placeholder='Search keyword, country or sports name here...'/>
+                        <div className="sprtcatntcpt2rBtn">
                             <button><FaSearch className='faIcons'/></button>
                             <button><FaMicrophone className='faIcons'/></button>
                         </div>
                     </div>
                 </div>
             </section>
-            <section className="restaurantCatContainerPage mid">
-                <div className="restaurantCatContentPage mid1">
-                    {currentRestaurants.length ? <>
-                        {currentRestaurants?.map((details, i) => (
-                            <a key={i} href={details?.restaurant_website} target="_blank" rel="noopener noreferrer">
-                                <div className='rstrntctcpm2Img'>
-                                    <img src={details?.country ? `https://flagcdn.com/w320/${(details?.country).toLowerCase()}.png` : require('../assets/imgs/TDULandingBG.png')} alt="" id="rstrntctcpm2iFlag" />
-                                    <img src={thumbnails[details?.restaurant_website]} alt='' id='rstrntctcpm2iLogo' />
+            <section className="sportCatContainerPage mid">
+                <div className="sportCatContainerPage mid1">
+                    {currentSports.length ? <>
+                        {currentSports?.map((details, i) => (
+                            <a key={i} href={details?.sports_website} target="_blank" rel="noopener noreferrer">
+                                <div className='sprtctcpm2Img'>
+                                    <img src={`https://flagcdn.com/w320/${(details?.country).toLowerCase()}.png`} alt="" id="nwspprctcpm2iFlag" />
+                                    <img id='sprtctcpm2iLogo' src={thumbnails[details?.sports_website]} alt='' />
                                 </div>
-                                <div className='rstrntctccpm2Dets'>
-                                    <h6>{details?.restaurant_name}</h6>
-                                    <p>{details?.restaurant_description}</p>
+                                <div className='sprtctccpm2Dets'>
+                                    <h6>{details?.sports_name}</h6>
+                                    <p>{details?.sports_description}</p>
                                 </div>
                             </a>
                         ))}
                     </>:<>
-                        <div className="rstrntctccpm2Empty">
+                        <div className="sprtctccpm2Empty">
                             <span>
-                                <p>No {restaurant}taurants listed yet.</p>
+                                <p>No Sports listed yet.</p>
                             </span>
                         </div>
                     </>}
                 </div>
             </section>
 
-
         </div>
     )
 }
 
-export default RestaurantCategory
+export default SportContinent

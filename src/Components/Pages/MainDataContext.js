@@ -41,6 +41,7 @@ export const MainDataLoadProvider = ({ children }) => {
     const [viewAllMagazines, setViewAllMagazines] = useState([]);
     const [viewAllNewspapers, setViewAllNewspapers] = useState([]);
     const [viewAllRestaurants, setViewAllRestaurants] = useState([]);
+    const [viewAllSports, setViewAllSports] = useState([]);
 
     const tduFetchAllArticlesAPI = process.env.REACT_APP_TDU_FETCH_ARTICLE_API;
     const tduFetchAllCapitalsAPI = process.env.REACT_APP_TDU_FETCH_CAPITALS_API;
@@ -52,6 +53,7 @@ export const MainDataLoadProvider = ({ children }) => {
     const tduFetchAllMagazinesAPI = process.env.REACT_APP_TDU_FETCH_MAGAZINES_API;
     const tduFetchAllNewspapersAPI = process.env.REACT_APP_TDU_FETCH_NEWSPAPERS_API;
     const tduFetchAllRestaurantsAPI = process.env.REACT_APP_TDU_FETCH_RESTAURANTS_API;
+    const tduFetchAllSportsAPI = process.env.REACT_APP_TDU_FETCH_SPORTS_API;
     const FIAT_API_URL = `https://open.er-api.com/v6/latest/USD`; 
 
     const fetchCountryData = async () => {
@@ -465,6 +467,7 @@ export const MainDataLoadProvider = ({ children }) => {
                 magazinesResponse, 
                 newspaperResponse,
                 restaurantResponse,
+                sportResponse,
             ] = await Promise.all([
                 axios.get(tduFetchAllAirlinesAPI),
                 axios.get(tduFetchAllAirportsAPI),
@@ -473,6 +476,7 @@ export const MainDataLoadProvider = ({ children }) => {
                 axios.get(tduFetchAllMagazinesAPI),
                 axios.get(tduFetchAllNewspapersAPI),
                 axios.get(tduFetchAllRestaurantsAPI),
+                axios.get(tduFetchAllSportsAPI),
             ]);
     
             setViewAllAirlines(airlinesResponse.data);
@@ -482,6 +486,7 @@ export const MainDataLoadProvider = ({ children }) => {
             setViewAllMagazines(magazinesResponse.data);
             setViewAllNewspapers(newspaperResponse.data);
             setViewAllRestaurants(restaurantResponse.data);
+            setViewAllSports(sportResponse.data);
         } catch (error) {
             console.error(error);
         }
@@ -618,6 +623,7 @@ export const MainDataLoadProvider = ({ children }) => {
             viewAllMagazines,
             viewAllNewspapers,
             viewAllRestaurants,
+            viewAllSports,
             fetchAllDataList
         }
     }

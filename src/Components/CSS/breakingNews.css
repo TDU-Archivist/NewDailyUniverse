@@ -82,7 +82,7 @@ section.breakinNewsContainerPage.mid{
     padding: 0 5vw;
 }
 
-.breakinNewsContentPage{
+.breakinNewsContentPage.title{
     height: auto;
     width: 100%;
     margin-bottom: 0.5vw;
@@ -248,5 +248,109 @@ section.breakinNewsContainerPage.mid{
 
 
 
+@media screen and (max-width: 500px){
+    section.breakinNewsContainerPage.top{
+        padding: 15vw 5vw;
+        padding-bottom: 2vw;
+    }
+    section.breakinNewsContainerPage.top hr{
+        margin-top: 5vw;
+        height: 1vw;
+    }
+    .breakinNewsContentPage.top1{
+        text-align: center;
+    }
+    .breakinNewsContentPage.top1 h3{
+        font-size: 10vw;
+        line-height: 10vw;
+    }
+    .breakinNewsContentPage.top1 h5{
+        font-size: 4vw;
+    }
 
+
+
+    section.breakinNewsContainerPage.mid{
+        padding: 5vw;
+    }
+    
+    .breakinNewsContentPage.title{
+        margin-bottom: 1vw;
+    }
+    .breakinNewsContentPage.title h4{
+        font-size: 4vw;
+    }
+
+    .breakinNewsContentPage.mid1{
+        display: block;
+    }
+    .brknwscpm1.left{
+        height: 50vw;
+        width: 100%;
+        border-radius: 3vw;
+        margin-bottom: 2vw;
+    }
+    .brknwscpm1.left a div{
+        padding: 3vw;
+    }
+    .brknwscpm1.left a div h6{
+        font-size: 3vw;
+        line-height: 4vw;
+        font-weight: 400;
+    }
+    .brknwscpm1.right{
+        width: 100%;
+        border-radius: 1vw;
+        margin-bottom: 3vw;
+    }
+    .brknwscpm1.right a{
+        height: 35vw;
+        width: 49%;
+        margin-bottom: 2%;
+        border-radius: 3vw;
+    }
+    .brknwscpm1.right a div{
+        padding: 3vw;
+    }
+    .brknwscpm1.right a div h6{
+        font-size: 3vw;
+        line-height: 4vw;
+        font-weight: 400;
+    }
+
+
+
+    .breakinNewsContentPage.mid2 a{
+        height: 35vw;
+        width: 49%;
+        margin-bottom: 2%;
+        border-radius: 3vw;
+    }
+    .brknwscpm2Img{
+        height: 35vw;
+    }
+    .brknwscpm2Dets{
+        width: 100%;
+        position: absolute;
+        background: rgba(200, 200, 200, 0.8);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        bottom: 0;
+        left: 0;
+        padding: 3vw;
+    }
+    .brknwscpm2Dets h6{
+        font-size: 3vw;
+        line-height: 4vw;
+        font-weight: 400;
+    }
+
+
+
+
+
+
+
+
+}
 

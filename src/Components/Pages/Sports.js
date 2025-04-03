@@ -124,13 +124,22 @@ const Sports = () => {
             </section>
             <section className="sportsContainerPage mid">
                 <div className="sportsContentPage mid1">
-                    <Link className="sprtscm1" to='/Sports/Continent/America'>
+                    <Link className="sprtscm1" to='/Sports/Continent/NorthAmerica'>
                         <div className='sprtscm1Img'>
-                            <img src={require('../assets/imgs/Sports/AmericaSports.png')} alt="" />
+                            <img src={require('../assets/imgs/Sports/NAmericaSports.png')} alt="" />
                         </div>
                         <div className='sprtscm1Content'>
-                            <h5>ALL AMERICA SPORTS TEAM</h5>
-                            <p>Recognizing the most famous sports teams across North and South America.</p>
+                            <h5>ALL N.AMERICA SPORTS TEAM</h5>
+                            <p>Recognizing the most famous sports teams across North America.</p>
+                        </div>
+                    </Link>
+                    <Link className="sprtscm1" to='/Sports/Continent/SouthAmerica'>
+                        <div className='sprtscm1Img'>
+                            <img src={require('../assets/imgs/Sports/SAmericaSports.png')} alt="" />
+                        </div>
+                        <div className='sprtscm1Content'>
+                            <h5>ALL S.AMERICA SPORTS TEAM</h5>
+                            <p>Recognizing the most famous sports teams across South America.</p>
                         </div>
                     </Link>
                     <Link className="sprtscm1" to='/Sports/Continent/Europe'>

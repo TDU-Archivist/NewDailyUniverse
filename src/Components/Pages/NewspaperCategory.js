@@ -164,7 +164,7 @@ const NewspaperCategory = () => {
                 <h4><span>{newspaper}S</span> AROUND THE WORLD</h4>
             </div>
             <div className="nwspprcatntcpt2 right">
-                <input type="text" placeholder='Search keyword, country or airline name here...'/>
+                <input type="text" placeholder='Search keyword, country or newspaper name here...'/>
                 <div className="nwspprcatntcpt2rBtn">
                     <button><FaSearch className='faIcons'/></button>
                     <button><FaMicrophone className='faIcons'/></button>

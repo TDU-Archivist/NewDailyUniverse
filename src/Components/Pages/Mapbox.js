@@ -66,7 +66,7 @@ const MapboxMap = () => {
       container: mapContainerRef.current,
       style: "mapbox://styles/mapbox/streets-v11",
       center: [0, 20],
-      zoom: 2,
+      zoom: 1,
       maxBounds: [[-180, -90], [180, 90]],
       renderWorldCopies: false
     });

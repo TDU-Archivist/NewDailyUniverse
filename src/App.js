@@ -36,6 +36,7 @@ import NewspaperCategory from './Components/Pages/NewspaperCategory';
 import NewspaperContinent from './Components/Pages/NewspaperContinent';
 import RestaurantCategory from './Components/Pages/RestaurantCategory';
 import RestaurantContinent from './Components/Pages/RestaurantContinent';
+import SportContinent from './Components/Pages/SportContinent';
 
 
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
@@ -78,6 +79,7 @@ function App() {
           <Route path="/Newspapers/Continent/:newspaperContinent" element={<NewspaperContinent/>}/>
           <Route path="/Restaurants/:restaurantCategory" element={<RestaurantCategory/>}/>
           <Route path="/Restaurants/Continent/:restaurantContinent" element={<RestaurantContinent/>}/>
+          <Route path="/Sports/Continent/:sportContinent" element={<SportContinent/>}/>
 
           <Route path="*" element={<Home/>}/>
         </Routes>

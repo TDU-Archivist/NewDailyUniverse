@@ -171,7 +171,7 @@ const RestaurantContinent = () => {
                         <h4>ALL RESTAURANTS IN <span>{restaurant}</span></h4>
                     </div>
                     <div className="rstrntcatntcpt2 right">
-                        <input type="text" placeholder='Search keyword, country or airline name here...'/>
+                        <input type="text" placeholder='Search keyword, country or restaurant name here...'/>
                         <div className="rstrntcatntcpt2rBtn">
                             <button><FaSearch className='faIcons'/></button>
                             <button><FaMicrophone className='faIcons'/></button>

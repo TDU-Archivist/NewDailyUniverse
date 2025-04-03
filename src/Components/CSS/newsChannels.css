@@ -254,3 +254,137 @@ section.newsChannelsContainerPage.mid{
 
 
 
+@media screen and (max-width: 500px){
+    section.newsChannelsContainerPage.top{
+        padding: 15vw 5vw;
+        padding-bottom: 2vw;
+    }
+    .newsChannelsContentPage.top2{
+        height: auto;
+        width: 100%;
+        display: block;
+        margin-bottom: 2vw;
+    }
+    .nwschnlcpt2.left{
+        height: auto;
+        width: 100%;
+        text-align: center;
+        margin: 3vw 0;
+    }
+    .nwschnlcpt2.left h4{
+        font-size: 4.5vw;
+        line-height: 5.5vw;
+    }
+    .nwschnlcpt2.left p{
+        font-size: 2.5vw;
+    }
+    .nwschnlcpt2.right{
+        height: auto;
+        width: 100%;
+        margin-top: 2vw;
+    }
+    .nwschnlcpt2.right input{
+        font-size: 3.5vw;
+        padding: 1% 3%;
+        width: 80%;
+    }
+    .nwschnlcpt2rBtn {
+        height: auto;
+        width: 20%;
+        display: flex;
+        justify-content: right;
+        align-items: center;
+    }
+    .nwschnlcpt2rBtn button {
+        margin-right: 10%;
+        font-size: 4vw;
+    }
+
+
+
+
+
+
+    section.newsChannelsContainerPage.mid{
+        height: auto;
+        width: 100%;
+        padding: 1vw 5vw;
+    }
+    .nwschnlcpm1Nav{
+        justify-content: center;
+    }
+    .nwschnlcpm1Nav button{
+        margin: 0 1vw;
+        opacity: 70%;
+        padding: 2vw 5vw;
+        font-size: 3vw;
+    }
+
+
+
+
+
+    .newsChannelsContentPage.mid2{
+        margin-top: 5vw;
+    }
+    .nwschnlcpm2Content1 {
+        height: auto;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .nwschnlcpm2c1{
+        width: 49%;
+        border-radius: 3vw;
+        margin: 0;
+        margin-bottom: 2%;
+    }
+    .nwschnlcpm2c1Img{
+        height: 29vw;
+        border-radius: 1vw;
+    }
+    .nwschnlcpm2c1Img img#nwschnlcpm2c1iLogo{
+        height: 10vw;
+        top: 2vw;
+        left: 2vw;
+        border-radius: 2vw;
+    }
+    .nwschnlcpm2c1Img h5{
+        font-size: 5vw;
+        top: 2vw;
+        left: 2vw;
+    }
+    .nwschnlcpm2c1Img h6{
+        font-size: 3vw;
+        top: 2vw;
+        right: 2vw;
+    }
+    .nwschnlcpm2c1Content h5{
+        font-size: 3vw;
+        font-weight: 400;
+        line-height: 3vw;
+        padding: 0;
+        margin: 3% 0;
+    }
+    .nwschnlcpm2c1Content p{
+        font-size: 2.5vw;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

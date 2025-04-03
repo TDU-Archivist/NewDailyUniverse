@@ -1859,6 +1859,9 @@ section.mainContainerPage.mid{
     section.mainContainerPage.mid{
         padding: 3vw 5vw;
     }
+    .mncntntpm4More.world{
+        display: none;
+    }
     .mncntntpm4More h4{
         font-size: 4vw;
     }
@@ -1872,12 +1875,9 @@ section.mainContainerPage.mid{
     .mainContentPage.mid4{
         height: auto;
         width: 100%;
-        margin: 2vw 0;
     }
     .mncntntpm4Container{
-        flex-wrap: wrap;
-        justify-content: space-between;
-        margin: 3vw 0;
+        display: none;
     }
     .mncntntpm4Content{
         width: 48%;
@@ -1902,11 +1902,15 @@ section.mainContainerPage.mid{
         display: flex;
         flex-wrap: wrap;
     }
+    .mncntntpm4extImg{
+        height: 35vw;
+        width: 100%;
+    }
     .mncntntpm4ext{
         height: 35vw;
-        width: 48%;
+        width: 48.5%;
         border-radius: 3vw;
-        margin-bottom: 5%;
+        margin-bottom: 2.5%;
     }
     .mncntntpm4extTitle{
         position: absolute;
@@ -1919,6 +1923,12 @@ section.mainContainerPage.mid{
         -webkit-backdrop-filter: blur(15px);
         padding: 4%;
         text-align: center;
+    }
+    .mncntntpm4extTitle h6{
+        height: auto;
+        font-size: 3vw;
+        font-weight: 400;
+        line-height: 4vw;
     }
     .mncntntpm4extTitle p{
         height: auto;
@@ -2004,6 +2014,7 @@ section.mainContainerPage.mid{
     .mncntntpm6ccArticle h5 {
         height: auto;
         font-size: 3vw;
+        font-weight: 400;
         line-height: 4vw;
     }
     .mncntntpm6ccArticle p {
@@ -2182,7 +2193,7 @@ section.mainContainerPage.mid{
 
 
     .mncntntpm8Container2 p{
-        font-size: 3;
+        font-size: 3vw;
     }
 
 

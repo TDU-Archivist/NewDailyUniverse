@@ -171,7 +171,7 @@ const NewspaperContinent = () => {
                         <h4>ALL NEWSPAPERS IN <span>{newspaper}</span></h4>
                     </div>
                     <div className="nwspprcatntcpt2 right">
-                        <input type="text" placeholder='Search keyword, country or airline name here...'/>
+                        <input type="text" placeholder='Search keyword, country or newspaper name here...'/>
                         <div className="nwspprcatntcpt2rBtn">
                             <button><FaSearch className='faIcons'/></button>
                             <button><FaMicrophone className='faIcons'/></button>

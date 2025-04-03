@@ -34,7 +34,12 @@ h6{
     background: white;
     padding-bottom: 10vw;
 }
-
+.mainContainer.sportContinent{
+    height: auto;
+    width: 100%;
+    background: white;
+    padding-bottom: 10vw;
+}
 
 
 
@@ -188,3 +193,306 @@ section.sportsContainerPage.mid{
     padding: 0 5%;
     color: gray;
 }
+
+
+
+
+
+
+
+
+/* Sports By Continent and Category */
+
+section.sportCatContainerPage.top{
+    height: auto;
+    width: 100%;
+    padding: 5vw;
+    padding-bottom: 1vw;
+    background: 
+        linear-gradient(whitesmoke 0%, transparent),
+        linear-gradient(transparent, white 100%),
+        url('../assets/imgs/TheDailyUniverseBG.png') no-repeat center;
+    background-size: cover;
+}
+.sportCatContentPage.top2{
+    height: auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* margin-top: 1vw; */
+}
+.sprtcatntcpt2.left{
+    height: auto;
+    width: 60%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+.sprtcatntcpt2.left a{
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-size: 3vw;
+    margin-right: 1vw;
+    color: gray;
+}
+.sprtcatntcpt2.left h4{
+    text-transform: uppercase;
+}
+.sprtcatntcpt2.left h4 span{
+    color: royalblue;
+    font-family: "Oswald", sans-serif;
+}
+.sprtcatntcpt2.right{
+    height: auto;
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: solid 2px black;
+    border-radius: 50px;
+    padding: 0.3vw 1.5vw;
+}
+.sprtcatntcpt2.right input{
+    background: none;
+    border: none;
+    outline: none;
+    font-size: 0.8vw;
+    width: 80%;
+}
+.sprtcatntcpt2rBtn{
+    height: auto;
+    width: 20%;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+.sprtcatntcpt2rBtn button{
+    border: none;
+    outline: none;
+    background: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10%;
+    font-size: 0.9vw;
+}
+
+
+
+section.sportCatContainerPage.mid{
+    height: auto;
+    width: 100%;
+    padding: 1vw 5vw;
+}
+.sportCatContainerPage.mid1{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    align-items: top;
+}
+
+
+
+.sportCatContainerPage.mid1 a{
+    height: auto;
+    width: 24%;
+    overflow: hidden;
+    background: rgba(200, 200, 200);
+    border-radius: 1vw;
+    text-decoration: none;
+    text-align: center;
+    margin: 0.5%;
+} 
+.sprtctcpm2Img{
+    height: 14vw;
+    width: 100%;
+    border-radius: 1vw;
+    background: url('../assets/imgs/TheDailyUniverseBG.png') no-repeat center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+.sprtctcpm2Img img#nwspprctcpm2iFlag{
+    position: absolute;
+    top: 1vw;
+    left: 1vw;
+    height: 2vw;
+    width: 3.5vw;
+    border-radius: 0.2vw;
+    border: solid 0.1px black;
+    box-shadow: 0 0 10px gray;
+}
+.sprtctcpm2Img img#nwspprctcpm2iLogo{
+    width: 100%;
+}
+.sprtctccpm2Dets{
+    padding: 1vw;
+}
+.sprtctccpm2Dets h6{
+    font-size: 1vw;
+    line-height: 1.2vw;
+    margin: 2% 0;
+}
+.sprtctccpm2Dets p{
+    font-size: 0.7vw;
+    padding: 0 5%;
+    color: gray;
+}
+.sprtctccpm2Empty{
+    height: 30vw;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.sprtctccpm2Empty span p{
+    color: gray;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 500px){
+    section.sportsContainerPage.top{
+        padding: 15vw 5vw;
+        padding-bottom: 2vw;
+    }
+    section.sportsContainerPage.top hr{
+        margin-top: 5vw;
+        height: 1vw;
+    }
+    .sportsContentPage.top2{
+        height: auto;
+        width: 100%;
+        display: block;
+        margin-bottom: 2vw;
+    }
+    .sprtscpt2.left{
+        height: auto;
+        width: 100%;
+        text-align: center;
+    }
+    .sprtscpt2.left h3{
+        font-size: 10vw;
+        line-height: 10vw;
+    }
+    .sprtscpt2.left h5{
+        font-size: 4vw;
+    }
+    .sprtscpt2.right{
+        height: auto;
+        width: 100%;
+        margin-top: 2vw;
+    }
+    .sprtscpt2.right input{
+        font-size: 3.5vw;
+        padding: 1% 3%;
+        width: 80%;
+    }
+    .sprtscpt2rBtn {
+        height: auto;
+        width: 20%;
+        display: flex;
+        justify-content: right;
+        align-items: center;
+    }
+    .sprtscpt2rBtn button {
+        margin-right: 10%;
+        font-size: 4vw;
+    }
+
+
+
+
+    section.sportsContainerPage.mid{
+        padding: 5vw;
+    }
+    .sportsContentPage.mid1 {
+        justify-content: space-between;
+    }
+    .sprtscm1{
+        height: auto;
+        width: 49%;
+        margin: 0;
+        margin-bottom: 2%;
+        border-radius: 3vw;
+    }
+    .sprtscm1Img{
+        height: 29vw;
+        width: 100%;
+        border-radius: 0vw;
+    }
+    .sprtscm1Content h5{
+        font-size: 3vw;
+        font-weight: 400;
+        line-height: 3vw;
+        padding: 0;
+        margin: 3% 0;
+    }
+    .sprtscm1Content p {
+        font-size: 2.5vw;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+

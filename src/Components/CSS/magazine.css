@@ -366,5 +366,189 @@ section.magazinCatContainerPage.mid{
 
 
 
+@media screen and (max-width: 500px){
+    section.magazineContainerPage.top{
+        padding: 15vw 5vw;
+        padding-bottom: 2vw;
+    }
+    section.magazineContainerPage.top hr{
+        margin-top: 5vw;
+        height: 1vw;
+    }
+    .magazineContentPage.top2{
+        height: auto;
+        width: 100%;
+        display: block;
+        margin-bottom: 2vw;
+    }
+    .mgzncpt2.left{
+        height: auto;
+        width: 100%;
+        text-align: center;
+    }
+    .mgzncpt2.left h3{
+        font-size: 10vw;
+        line-height: 10vw;
+    }
+    .mgzncpt2.left h5{
+        font-size: 4vw;
+    }
+    .mgzncpt2.right{
+        height: auto;
+        width: 100%;
+        margin-top: 2vw;
+    }
+    .mgzncpt2.right input{
+        font-size: 3.5vw;
+        padding: 1% 3%;
+        width: 80%;
+    }
+    .mgzncpt2rBtn {
+        height: auto;
+        width: 20%;
+        display: flex;
+        justify-content: right;
+        align-items: center;
+    }
+    .mgzncpt2rBtn button {
+        margin-right: 10%;
+        font-size: 4vw;
+    }
 
+
+
+
+    section.magazineContainerPage.mid{
+        padding: 5vw;
+    }
+    .magazineContentPage.mid1 {
+        justify-content: space-between;
+    }
+    .mgzncpm1{
+        height: auto;
+        width: 49%;
+        margin: 0;
+        margin-bottom: 2%;
+        border-radius: 3vw;
+    }
+    .mgzncpm1Img{
+        height: 29vw;
+        width: 100%;
+        border-radius: 0vw;
+    }
+    .mgzncpm1Content h5{
+        font-size: 3vw;
+        font-weight: 400;
+        line-height: 3vw;
+        padding: 0;
+        margin: 3% 0;
+    }
+    .mgzncpm1Content p {
+        font-size: 2.5vw;
+    }
+
+
+
+
+
+
+
+    
+    section.magazinCatContainerPage.top{
+        padding: 15vw 5vw;
+        padding-bottom: 2vw;
+    }
+    .magazinCatContentPage.top2{
+        display: block;
+    }
+    .mgzncatntcpt2.left{
+        height: auto;
+        width: 100%;
+        justify-content: space-between;
+        text-align: center;
+    }
+    .mgzncatntcpt2.left a{
+        font-size: 8vw;
+    }
+    .mgzncatntcpt2.left h4{
+        width: 90%;
+        font-size: 4vw;
+    }
+    .mgzncatntcpt2.right{
+        height: auto;
+        width: 100%;
+        margin-top: 2vw;
+    }
+    .mgzncatntcpt2.right input{
+        font-size: 3.5vw;
+        padding: 1% 3%;
+        width: 80%;
+    }
+    .mgzncatntcpt2rBtn{
+        height: auto;
+        width: 20%;
+        display: flex;
+        justify-content: right;
+        align-items: center;
+    }
+    .mgzncatntcpt2rBtn button{
+        margin-right: 10%;
+        font-size: 4vw;
+    }
+
+
+    section.magazinCatContainerPage.mid{
+        padding: 5vw;
+    }
+    .magazinCatContentPage.mid1 {
+        justify-content: space-between;
+    }
+    .magazinCatContentPage.mid1 a{
+        height: auto;
+        width: 49%;
+        margin: 0;
+        margin-bottom: 2%;
+        border-radius: 3vw;
+    }
+    .mgznctcpm2Img{
+        height: 29vw;
+        width: 100%;
+        border-radius: 0vw;
+    }
+    .mgznctcpm2Img img#mgznctcpm2iFlag{
+        top: 3vw;
+        left: 3vw;
+        height: 5vw;
+        width: 8vw;
+        border-radius: 1vw;
+    }
+    .mgznctccpm2Dets {
+        padding: 2vw;
+    }
+    .mgznctccpm2Dets h6{
+        font-size: 3vw;
+        font-weight: 400;
+        line-height: 3vw;
+        padding: 0;
+        margin: 3% 0;
+    }
+    .mgznctccpm2Dets p {
+        font-size: 2.5vw;
+        padding: 0;
+    }
+    .mgznctccpm2Empty{
+        height: 100vw;
+    }
+    .mgznctccpm2Empty span p{
+        font-size: 3vw;
+    }
+
+
+
+
+
+
+
+
+}
 
