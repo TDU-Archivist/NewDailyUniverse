@@ -154,8 +154,8 @@ const TravelContinent = () => {
         fetchCountryDetails();
     }, [dataList, currentTravel]);
 
-    const groupedBySubcontinent = currentTravel.reduce((acc, airline) => {
-        const { subcontinent, country } = airline;
+    const groupedBySubcontinent = currentTravel.reduce((acc, destination) => {
+        const { subcontinent, country } = destination;
         if (!acc[subcontinent]) {
             acc[subcontinent] = [];
         }
