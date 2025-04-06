@@ -187,7 +187,7 @@ const AirlineContinent = () => {
                                     {groupedBySubcontinent[subcontinent].map(({ name, code }) => (
                                         <li key={code}>
                                             <img src={`https://flagcdn.com/w320/${code.toLowerCase()}.png`} alt={name} />
-                                            <button>{name} ({code})</button>
+                                            <button>{name}</button>
                                         </li>
                                     ))}
                                 </ul>
