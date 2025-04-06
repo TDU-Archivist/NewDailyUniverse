@@ -96,28 +96,28 @@ const SportContinent = () => {
     } = MainDataLoad(); 
     const webLogoProxy = process.env.REACT_APP_WEBLOGO_PROXY;
     const { sportContinent } = useParams();
-    const [sports, setSportspaper] = useState('');
+    const [sports, setSports] = useState('');
     const [thumbnails, setThumbnails] = useState({}); // Store fetched thumbnails
 
     useEffect(() => {
         if (sportContinent === 'NorthAmerica'){
-            setSportspaper('N.America');
+            setSports('N.America');
         } else if (sportContinent === 'SouthAmerica'){
-            setSportspaper('S.America');
+            setSports('S.America');
         } else if (sportContinent === 'Europe'){
-            setSportspaper('Europe');
+            setSports('Europe');
         } else if (sportContinent === 'Africa'){
-            setSportspaper('Africa');
+            setSports('Africa');
         } else if (sportContinent === 'Asia'){
-            setSportspaper('Asia');
+            setSports('Asia');
         } else if (sportContinent === 'Oceania'){
-            setSportspaper('Oceania');
+            setSports('Oceania');
         } else if (sportContinent === 'Antarctica'){
-            setSportspaper('Antarctica');
+            setSports('Antarctica');
         } else {
-            setSportspaper('')
+            setSports('')
         }
-    }, [sportContinent, setSportspaper]);
+    }, [sportContinent, setSports]);
 
     const currentSports = dataList?.viewAllSports.filter(continent => continent.continent === sports) || [];
     useEffect(() => {

@@ -24,6 +24,7 @@ import Magazine from './Components/Pages/Magazine';
 import Newspapers from './Components/Pages/Newspapers';
 import Restaurants from './Components/Pages/Restaurants';
 import Sports from './Components/Pages/Sports';
+import Travel from './Components/Pages/Travel';
 
 
 
@@ -37,6 +38,7 @@ import NewspaperContinent from './Components/Pages/NewspaperContinent';
 import RestaurantCategory from './Components/Pages/RestaurantCategory';
 import RestaurantContinent from './Components/Pages/RestaurantContinent';
 import SportContinent from './Components/Pages/SportContinent';
+import TravelContinent from './Components/Pages/TravelContinent';
 
 
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
@@ -67,8 +69,13 @@ function App() {
           <Route path="/NewsChannels" element={<NewsChannels/>}/>
           <Route path="/Magazines" element={<Magazine/>}/>
           <Route path="/Newspapers" element={<Newspapers/>}/>
+          <Route path="/Newspapers/Continent" element={<Newspapers/>}/>
           <Route path="/Restaurants" element={<Restaurants/>}/>
+          <Route path="/Restaurants/Continent" element={<Restaurants/>}/>
           <Route path="/Sports" element={<Sports/>}/>
+          <Route path="/Sports/Continent" element={<Sports/>}/>
+          <Route path="/Travel" element={<Travel/>}/>
+          <Route path="/Travel/Continent" element={<Travel/>}/>
 
           
           <Route path="/Airlines/Continent/:airlineContinent" element={<AirlineContinent/>}/>
@@ -80,6 +87,7 @@ function App() {
           <Route path="/Restaurants/:restaurantCategory" element={<RestaurantCategory/>}/>
           <Route path="/Restaurants/Continent/:restaurantContinent" element={<RestaurantContinent/>}/>
           <Route path="/Sports/Continent/:sportContinent" element={<SportContinent/>}/>
+          <Route path="/Travel/Continent/:travelContinent" element={<TravelContinent/>}/>
 
           <Route path="*" element={<Home/>}/>
         </Routes>

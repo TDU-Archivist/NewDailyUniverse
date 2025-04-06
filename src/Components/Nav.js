@@ -357,7 +357,7 @@ const Nav = () => {
               <Link to='/Newspapers' onClick={handleHideModals}><h6><FaNewspaper className='faIcons'/> NEWSPAPER</h6></Link>
               <Link to='/Restaurants' onClick={handleHideModals}><h6><FaUtensils className='faIcons'/> RESTAURANTS</h6></Link>
               <Link to='/Sports' onClick={handleHideModals}><h6><FaFootballBall className='faIcons'/> SPORTS</h6></Link>
-              <Link><h6><FaMapMarked className='faIcons'/> TRAVEL</h6></Link>
+              <Link to='/Travel' onClick={handleHideModals}><h6><FaMapMarked className='faIcons'/> TRAVEL</h6></Link>
               <Link><h6><FaMapMarkerAlt className='faIcons'/> VISA GUIDE</h6></Link>
               <Link><h6><FaCloudSunRain className='faIcons'/> WEATHER FORECAST</h6></Link>
               <Link><h6><FaClock className='faIcons'/> WORLD CLOCK</h6></Link>
@@ -398,7 +398,7 @@ const Nav = () => {
                 <Link to='/Newspapers/Continent/NorthAmerica'><h6><FaNewspaper className='faIcons'/> NEWSPAPER</h6></Link>
                 <Link to='/Restaurants/Continent/NorthAmerica'><h6><FaUtensils className='faIcons'/> RESTAURANTS</h6></Link>
                 <Link to='/Sports/Continent/NorthAmerica'><h6><FaFootballBall className='faIcons'/> SPORTS</h6></Link>
-                <Link><h6><FaMapMarked className='faIcons'/> TRAVEL</h6></Link>
+                <Link to='/Travel/Continent/NorthAmerica'><h6><FaMapMarked className='faIcons'/> TRAVEL</h6></Link>
                 <Link><h6><FaMapMarkerAlt className='faIcons'/> VISA GUIDE</h6></Link>
                 <Link><h6><FaCloudSunRain className='faIcons'/> WEATHER</h6></Link>
               </div>
@@ -439,7 +439,7 @@ const Nav = () => {
                 <Link to='/Newspapers/Continent/SouthAmerica'><h6><FaNewspaper className='faIcons'/> NEWSPAPER</h6></Link>
                 <Link to='/Restaurants/Continent/SouthAmerica'><h6><FaUtensils className='faIcons'/> RESTAURANTS</h6></Link>
                 <Link to='/Sports/Continent/SouthAmerica'><h6><FaFootballBall className='faIcons'/> SPORTS</h6></Link>
-                <Link><h6><FaMapMarked className='faIcons'/> TRAVEL</h6></Link>
+                <Link to='/Travel/Continent/SouthAmerica'><h6><FaMapMarked className='faIcons'/> TRAVEL</h6></Link>
                 <Link><h6><FaMapMarkerAlt className='faIcons'/> VISA GUIDE</h6></Link>
                 <Link><h6><FaCloudSunRain className='faIcons'/> WEATHER</h6></Link>
               </div>
@@ -480,7 +480,7 @@ const Nav = () => {
                 <Link to='/Newspapers/Continent/Europe'><h6><FaNewspaper className='faIcons'/> NEWSPAPER</h6></Link>
                 <Link to='/Restaurants/Continent/Europe'><h6><FaUtensils className='faIcons'/> RESTAURANTS</h6></Link>
                 <Link to='/Sports/Continent/Europe'><h6><FaFootballBall className='faIcons'/> SPORTS</h6></Link>
-                <Link><h6><FaMapMarked className='faIcons'/> TRAVEL</h6></Link>
+                <Link to='/Travel/Continent/Europe'><h6><FaMapMarked className='faIcons'/> TRAVEL</h6></Link>
                 <Link><h6><FaMapMarkerAlt className='faIcons'/> VISA GUIDE</h6></Link>
                 <Link><h6><FaCloudSunRain className='faIcons'/> WEATHER</h6></Link>
               </div>
@@ -521,7 +521,7 @@ const Nav = () => {
                 <Link to='/Newspapers/Continent/Africa'><h6><FaNewspaper className='faIcons'/> NEWSPAPER</h6></Link>
                 <Link to='/Restaurants/Continent/Africa'><h6><FaUtensils className='faIcons'/> RESTAURANTS</h6></Link>
                 <Link to='/Sports/Continent/Africa'><h6><FaFootballBall className='faIcons'/> SPORTS</h6></Link>
-                <Link><h6><FaMapMarked className='faIcons'/> TRAVEL</h6></Link>
+                <Link to='/Travel/Continent/Africa'><h6><FaMapMarked className='faIcons'/> TRAVEL</h6></Link>
                 <Link><h6><FaMapMarkerAlt className='faIcons'/> VISA GUIDE</h6></Link>
                 <Link><h6><FaCloudSunRain className='faIcons'/> WEATHER</h6></Link>
               </div>
@@ -562,7 +562,7 @@ const Nav = () => {
                 <Link to='/Newspapers/Continent/Asia'><h6><FaNewspaper className='faIcons'/> NEWSPAPER</h6></Link>
                 <Link to='/Restaurants/Continent/Asia'><h6><FaUtensils className='faIcons'/> RESTAURANTS</h6></Link>
                 <Link to='/Sports/Continent/Asia'><h6><FaFootballBall className='faIcons'/> SPORTS</h6></Link>
-                <Link><h6><FaMapMarked className='faIcons'/> TRAVEL</h6></Link>
+                <Link to='/Travel/Continent/Asia'><h6><FaMapMarked className='faIcons'/> TRAVEL</h6></Link>
                 <Link><h6><FaMapMarkerAlt className='faIcons'/> VISA GUIDE</h6></Link>
                 <Link><h6><FaCloudSunRain className='faIcons'/> WEATHER</h6></Link>
               </div>
@@ -603,7 +603,7 @@ const Nav = () => {
                 <Link to='/Newspapers/Continent/Oceania'><h6><FaNewspaper className='faIcons'/> NEWSPAPER</h6></Link>
                 <Link to='/Restaurants/Continent/Oceania'><h6><FaUtensils className='faIcons'/> RESTAURANTS</h6></Link>
                 <Link to='/Sports/Continent/Oceania'><h6><FaFootballBall className='faIcons'/> SPORTS</h6></Link>
-                <Link><h6><FaMapMarked className='faIcons'/> TRAVEL</h6></Link>
+                <Link to='/Travel/Continent/Oceania'><h6><FaMapMarked className='faIcons'/> TRAVEL</h6></Link>
                 <Link><h6><FaMapMarkerAlt className='faIcons'/> VISA GUIDE</h6></Link>
                 <Link><h6><FaCloudSunRain className='faIcons'/> WEATHER</h6></Link>
               </div>
@@ -644,7 +644,7 @@ const Nav = () => {
                 <Link to='/Newspapers/Continent/Antarctica'><h6><FaNewspaper className='faIcons'/> NEWSPAPER</h6></Link>
                 <Link to='/Restaurants/Continent/Antarctica'><h6><FaUtensils className='faIcons'/> RESTAURANTS</h6></Link>
                 <Link to='/Sports/Continent/Antarctica'><h6><FaFootballBall className='faIcons'/> SPORTS</h6></Link>
-                <Link><h6><FaMapMarked className='faIcons'/> TRAVEL</h6></Link>
+                <Link to='/Travel/Continent/Antarctica'><h6><FaMapMarked className='faIcons'/> TRAVEL</h6></Link>
                 <Link><h6><FaMapMarkerAlt className='faIcons'/> VISA GUIDE</h6></Link>
                 <Link><h6><FaCloudSunRain className='faIcons'/> WEATHER</h6></Link>
               </div>

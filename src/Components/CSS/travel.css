@@ -28,19 +28,7 @@ h6{
 }
 
 
-.mainContainer.newspapers{
-    height: auto;
-    width: 100%;
-    background: white;
-    padding-bottom: 10vw;
-}
-.mainContainer.newsCategory{
-    height: auto;
-    width: 100%;
-    background: white;
-    padding-bottom: 10vw;
-}
-.mainContainer.newspaperContinent{
+.mainContainer.travel{
     height: auto;
     width: 100%;
     background: white;
@@ -50,7 +38,7 @@ h6{
 
 
 
-section.newspapersContainerPage.top{
+section.travelContainerPage.top{
     height: auto;
     width: 100%;
     padding: 5vw;
@@ -61,14 +49,12 @@ section.newspapersContainerPage.top{
         url('../assets/imgs/TheDailyUniverseBG.png') no-repeat center;
     background-size: cover;
 }
-section.newspapersContainerPage.top hr{
+section.travelContainerPage.top hr{
     height: 0.5vw;
     background: black;
     width: 100%;
 }
-
-
-.newspapersContentPage.top1{
+.travelContentPage.top1{
     height: 20vw;
     width: 100%;
     display: flex;
@@ -77,13 +63,12 @@ section.newspapersContainerPage.top hr{
     overflow: hidden;
     border-radius: 1vw;
     position: relative;
-    background: gray;
 }
-.newspapersContentPage.top1 img{
+.travelContentPage.top1 video{
     height: auto;
     width: 100%;
 }
-.newspapersContentPage.top2{
+.travelContentPage.top2{
     height: auto;
     width: 100%;
     display: flex;
@@ -91,14 +76,14 @@ section.newspapersContainerPage.top hr{
     justify-content: space-between;
     margin-bottom: 0.5vw;
 }
-.nwspprcpt2.left{
+.trvlcpt2.left{
     height: auto;
     width: 50%;
 }
-.nwspprcpt2.left h3{
+.trvlcpt2.left h3{
     line-height: 3.5vw;
 }
-.nwspprcpt2.right{
+.trvlcpt2.right{
     height: auto;
     width: 40%;
     display: flex;
@@ -109,21 +94,21 @@ section.newspapersContainerPage.top hr{
     padding: 0.3vw 1.5vw;
     margin-bottom: 0.3vw;
 }
-.nwspprcpt2.right input{
+.trvlcpt2.right input{
     background: none;
     border: none;
     outline: none;
     font-size: 0.8vw;
     width: 80%;
 }
-.nwspprcpt2rBtn{
+.trvlcpt2rBtn{
     height: auto;
     width: 20%;
     display: flex;
     justify-content: right;
     align-items: center;
 }
-.nwspprcpt2rBtn button{
+.trvlcpt2rBtn button{
     border: none;
     outline: none;
     background: none;
@@ -136,16 +121,12 @@ section.newspapersContainerPage.top hr{
 }
 
 
-
-
-
-
-section.newspapersContainerPage.mid{
-    height: 40vw;
+section.travelContainerPage.mid{
+    height: auto;
     width: 100%;
     padding: 1vw 5vw;
 }
-.newspapersContentPage.mid1{
+.travelContentPage.mid1{
     height: auto;
     width: 100%;
     display: flex;
@@ -153,7 +134,7 @@ section.newspapersContainerPage.mid{
     justify-content: left;
     align-items: top;
 }
-.nwspprcm1{
+.trvlcm1{
     height: auto;
     width: 24%;
     overflow: hidden;
@@ -163,7 +144,7 @@ section.newspapersContainerPage.mid{
     text-align: center;
     margin: 0.5%;
 }
-.nwspprcpm1Img{
+.trvlcm1Img{
     height: 14vw;
     width: 100%;
     border-radius: 1vw;
@@ -171,25 +152,25 @@ section.newspapersContainerPage.mid{
     background-size: cover;
     display: flex;
     justify-content: center;
-    align-items: bottom;
+    align-items: center;
     overflow: hidden;
 }
-.nwspprcpm1Img img{
+.trvlcm1Img img{
     width: 100%;
 }
-.nwspprcm1Content{
+.trvlcm1Content{
     height: auto;
     width: 100%;
     padding: 1vw;
     padding-bottom: 2vw;
 }
-.nwspprcm1Content h5 {
+.trvlcm1Content h5 {
     font-size: 1.2vw;
     line-height: 1.5vw;
     padding: 0 5%;
     margin: 2% 0;
 }
-.nwspprcm1Content p {
+.trvlcm1Content p {
     font-size: 0.7vw;
     padding: 0 5%;
     color: gray;
@@ -198,9 +179,10 @@ section.newspapersContainerPage.mid{
 
 
 
-/* Newspaper By Category */
 
-section.newspaperCatContainerPage.top{
+/* Travel By Continent and Category */
+
+section.travelCatContainerPage.top{
     height: auto;
     width: 100%;
     padding: 5vw;
@@ -211,7 +193,7 @@ section.newspaperCatContainerPage.top{
         url('../assets/imgs/TheDailyUniverseBG.png') no-repeat center;
     background-size: cover;
 }
-.newspaperCatContentPage.top2{
+.travelCatContentPage.top2{
     height: auto;
     width: 100%;
     display: flex;
@@ -219,14 +201,14 @@ section.newspaperCatContainerPage.top{
     justify-content: space-between;
     /* margin-top: 1vw; */
 }
-.nwspprcatntcpt2.left{
+.trvlcatntcpt2.left{
     height: auto;
     width: 60%;
     display: flex;
     justify-content: left;
     align-items: center;
 }
-.nwspprcatntcpt2.left a{
+.trvlcatntcpt2.left a{
     height: auto;
     display: flex;
     justify-content: center;
@@ -236,14 +218,14 @@ section.newspaperCatContainerPage.top{
     margin-right: 1vw;
     color: gray;
 }
-.nwspprcatntcpt2.left h4{
+.trvlcatntcpt2.left h4{
     text-transform: uppercase;
 }
-.nwspprcatntcpt2.left h4 span{
+.trvlcatntcpt2.left h4 span{
     color: royalblue;
     font-family: "Oswald", sans-serif;
 }
-.nwspprcatntcpt2.right{
+.trvlcatntcpt2.right{
     height: auto;
     width: 40%;
     display: flex;
@@ -253,21 +235,21 @@ section.newspaperCatContainerPage.top{
     border-radius: 50px;
     padding: 0.3vw 1.5vw;
 }
-.nwspprcatntcpt2.right input{
+.trvlcatntcpt2.right input{
     background: none;
     border: none;
     outline: none;
     font-size: 0.8vw;
     width: 80%;
 }
-.nwspprcatntcpt2rBtn{
+.trvlcatntcpt2rBtn{
     height: auto;
     width: 20%;
     display: flex;
     justify-content: right;
     align-items: center;
 }
-.nwspprcatntcpt2rBtn button{
+.trvlcatntcpt2rBtn button{
     border: none;
     outline: none;
     background: none;
@@ -280,12 +262,12 @@ section.newspaperCatContainerPage.top{
 }
 
 
-section.newspaperCatContainerPage.mid{
+section.travelContContainerPage.mid{
     height: auto;
     width: 100%;
     padding: 1vw 5vw;
 }
-.newspaperCatContentPage.mid1{
+.travelContContentPage.mid1{
     height: auto;
     width: 100%;
     display: flex;
@@ -293,58 +275,44 @@ section.newspaperCatContainerPage.mid{
     justify-content: left;
     align-items: top;
 }
-
-
-
-.newspaperCatContentPage.mid1 a{
+.trvlcntntcpm1{
     height: auto;
     width: 24%;
     overflow: hidden;
-    background: rgba(200, 200, 200);
+    border: solid 0.2vw rgba(200, 200, 200);
     border-radius: 1vw;
     text-decoration: none;
     text-align: center;
+    padding: 1vw 1.5vw;
     margin: 0.5%;
-} 
-.nwspprctcpm2Img{
-    height: 14vw;
-    width: 100%;
-    border-radius: 1vw;
-    background: url('../assets/imgs/TheDailyUniverseBG.png') no-repeat center;
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
     position: relative;
 }
-.nwspprctcpm2Img img#nwspprctcpm2iFlag{
-    position: absolute;
-    top: 1vw;
-    left: 1vw;
-    height: 2vw;
-    width: 3.5vw;
+.trvlcntntcpm1 ul{
+    margin-top: 1vw;
+    text-align: left;
+    list-style: none;
+    padding-bottom: 1vw;
+}
+.trvlcntntcpm1 ul li{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+.trvlcntntcpm1 ul li img{
+    height: 1.5vw;
+    width: 2.5vw;
     border-radius: 0.2vw;
-    border: solid 0.1px black;
-    box-shadow: 0 0 10px gray;
+    border: solid 0.1vw black;
 }
-.nwspprctcpm2Img img#nwspprctcpm2iLogo{
-    width: 100%;
+.trvlcntntcpm1 ul li button{
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 0.5vw;
+    font-size: 0.9vw;
 }
-.nwspprctccpm2Dets{
-    padding: 1vw;
-}
-.nwspprctccpm2Dets h6{
-    font-size: 1vw;
-    line-height: 1.2vw;
-    margin: 2% 0;
-}
-.nwspprctccpm2Dets p{
-    font-size: 0.7vw;
-    padding: 0 5%;
-    color: gray;
-}
-.nwspprctccpm2Empty{
+.trvlcntntcpm1Empty{
     height: 30vw;
     width: 100%;
     display: flex;
@@ -352,13 +320,9 @@ section.newspaperCatContainerPage.mid{
     align-items: center;
     text-align: center;
 }
-.nwspprctccpm2Empty span p{
+.trvlcntntcpm1Empty span p{
     color: gray;
 }
-
-
-
-
 
 
 
@@ -369,81 +333,83 @@ section.newspaperCatContainerPage.mid{
 
 
 @media screen and (max-width: 500px){
-    section.newspapersContainerPage.top{
+    section.travelContainerPage.top{
         padding: 15vw 5vw;
         padding-bottom: 2vw;
     }
-    section.newspapersContainerPage.top hr{
+    section.travelContainerPage.top hr{
         margin-top: 5vw;
         height: 1vw;
     }
-    .newspapersContentPage.top2{
+    .travelContentPage.top2{
         height: auto;
         width: 100%;
         display: block;
         margin-bottom: 2vw;
     }
-    .nwspprcpt2.left{
+    .trvlcpt2.left{
         height: auto;
         width: 100%;
         text-align: center;
     }
-    .nwspprcpt2.left h3{
+    .trvlcpt2.left h3{
         font-size: 10vw;
         line-height: 10vw;
     }
-    .nwspprcpt2.left h5{
+    .trvlcpt2.left h5{
         font-size: 4vw;
     }
-    .nwspprcpt2.right{
+    .trvlcpt2.right{
         height: auto;
         width: 100%;
         margin-top: 2vw;
     }
-    .nwspprcpt2.right input{
+    .trvlcpt2.right input{
         font-size: 3.5vw;
         padding: 1% 3%;
         width: 80%;
     }
-    .nwspprcpt2rBtn {
+    .trvlcpt2rBtn {
         height: auto;
         width: 20%;
         display: flex;
         justify-content: right;
         align-items: center;
     }
-    .nwspprcpt2rBtn button {
+    .trvlcpt2rBtn button {
         margin-right: 10%;
         font-size: 4vw;
     }
 
 
-    section.newspapersContainerPage.mid{
+
+
+    section.travelContainerPage.mid{
         padding: 5vw;
     }
-    .newspapersContentPage.mid1 {
+    .travelContentPage.mid1 {
         justify-content: space-between;
     }
-    .nwspprcm1{
+    .trvlcm1{
         height: auto;
         width: 49%;
         margin: 0;
         margin-bottom: 2%;
         border-radius: 3vw;
     }
-    .nwspprcpm1Img{
+    .trvlcm1Img{
         height: 29vw;
         width: 100%;
         border-radius: 0vw;
     }
-    .nwspprcm1Content h5{
+    .trvlcm1Content h5{
         font-size: 3vw;
         font-weight: 400;
         line-height: 3vw;
         padding: 0;
         margin: 3% 0;
     }
-    .nwspprcm1Content p {
+    .trvlcm1Content p {
         font-size: 2.5vw;
     }
 
@@ -452,109 +418,94 @@ section.newspaperCatContainerPage.mid{
 
 
 
-
-    
-    section.newspaperCatContainerPage.top{
+    section.travelCatContainerPage.top{
         padding: 15vw 5vw;
         padding-bottom: 2vw;
     }
-    .newspaperCatContentPage.top2{
+    .travelCatContentPage.top2{
         display: block;
     }
-    .nwspprcatntcpt2.left{
+    .trvlcatntcpt2.left{
         height: auto;
         width: 100%;
         justify-content: space-between;
         text-align: center;
     }
-    .nwspprcatntcpt2.left a{
+    .trvlcatntcpt2.left a{
         font-size: 8vw;
     }
-    .nwspprcatntcpt2.left h4{
+    .trvlcatntcpt2.left h4{
         width: 90%;
         font-size: 4vw;
     }
-    .nwspprcatntcpt2.right{
+    .trvlcatntcpt2.right{
         height: auto;
         width: 100%;
         margin-top: 2vw;
     }
-    .nwspprcatntcpt2.right input{
+    .trvlcatntcpt2.right input{
         font-size: 3.5vw;
         padding: 1% 3%;
         width: 80%;
     }
-    .nwspprcatntcpt2rBtn{
+    .trvlcatntcpt2rBtn{
         height: auto;
         width: 20%;
         display: flex;
         justify-content: right;
         align-items: center;
     }
-    .nwspprcatntcpt2rBtn button{
+    .trvlcatntcpt2rBtn button{
         margin-right: 10%;
         font-size: 4vw;
     }
 
 
-    
-    section.newspaperCatContainerPage.mid{
+
+    section.travelContContainerPage.mid{
         padding: 5vw;
     }
-    .newspaperCatContentPage.mid1 {
+    .travelContContentPage.mid1{
         justify-content: space-between;
     }
-    .newspaperCatContentPage.mid1 a{
+    .trvlcntntcpm1{
         height: auto;
         width: 49%;
         margin: 0;
+        padding: 2vw;
         margin-bottom: 2%;
         border-radius: 3vw;
     }
-    .nwspprctcpm2Img{
-        height: 29vw;
-        width: 100%;
-        border-radius: 0vw;
+    .trvlcntntcpm1 h4{
+        font-size: 4vw;
+        font-weight: 400;
+        line-height: 5vw;
     }
-    .nwspprctcpm2Img img#nwspprctcpm2iFlag{
-        top: 3vw;
-        left: 3vw;
-        height: 5vw;
-        width: 8vw;
+    .trvlcntntcpm1 h6{
+        font-size: 2.5vw;
+        font-weight: 400;
+    }
+    .trvlcntntcpm1 ul{
+        margin-top: 5vw;
+    }
+    .trvlcntntcpm1 ul li{
+        margin-bottom: 2vw;
+    }
+    .trvlcntntcpm1 ul li img{
+        height: 6vw;
+        width: 10vw;
         border-radius: 1vw;
     }
-    .nwspprctccpm2Dets {
-        padding: 2vw;
-    }
-    .nwspprctccpm2Dets h6{
-        font-size: 3vw;
-        font-weight: 400;
-        line-height: 3vw;
-        padding: 0;
-        margin: 3% 0;
-    }
-    .nwspprctccpm2Dets p {
+    .trvlcntntcpm1 ul li button{
+        padding: 1vw 2vw;
         font-size: 2.5vw;
-        padding: 0;
     }
-    .nwspprctccpm2Empty{
+    .trvlcntntcpm1Empty{
         height: 100vw;
     }
-    .nwspprctccpm2Empty span p{
+    .trvlcntntcpm1Empty span p{
         font-size: 3vw;
     }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -563,7 +514,3 @@ section.newspaperCatContainerPage.mid{
 
 
 }
-
-
-
-
