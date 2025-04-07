@@ -43,23 +43,26 @@ nav{
     justify-content: left;
     align-items: center;
 }
-.navContent.left a#navclHome{
+.navContent.left button#navclHome{
     height: auto;
     width: 30%;
     display: flex;
     justify-content: left;
     align-items: center;
+    border: none;
     margin-right: 2%;
+    cursor: pointer;
+    background: none;
 }
-.navContent.left a#navclHome img#navclhWeb{
+.navContent.left button#navclHome img#navclhWeb{
     height: 2.5vw;
     max-width: 100%;
     margin-right: 5%;
 }
-.navContent.left a#navclHome img#navclhMobile{
+.navContent.left button#navclHome img#navclhMobile{
     display: none;
 }
-.navContent.left a#navclHome h4{
+.navContent.left button#navclHome h4{
     font-weight: 400;
     font-size: 1.7vw;
     line-height: 1.5vw;

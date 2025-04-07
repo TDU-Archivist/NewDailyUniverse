@@ -172,10 +172,10 @@ const Nav = () => {
     setViewSocialMedia(false);
     setViewPages(false);
 
-    const timeout = setTimeout(() => {
-      setViewNAmericaNav(false)
-    }, 8000);
-    return () => clearTimeout(timeout);
+    // const timeout = setTimeout(() => {
+    //   setViewNAmericaNav(false)
+    // }, 8000);
+    // return () => clearTimeout(timeout);
   }
   const handleViewSAmericaNav = () => {
     setViewNAmericaNav(false);
@@ -189,10 +189,10 @@ const Nav = () => {
     setViewSocialMedia(false);
     setViewPages(false);
     
-    const timeout = setTimeout(() => {
-      setViewSAmericaNav(false)
-    }, 8000);
-    return () => clearTimeout(timeout);
+    // const timeout = setTimeout(() => {
+    //   setViewSAmericaNav(false)
+    // }, 8000);
+    // return () => clearTimeout(timeout);
   }
   const handleViewEuropeNav = () => {
     setViewNAmericaNav(false);
@@ -206,10 +206,10 @@ const Nav = () => {
     setViewSocialMedia(false);
     setViewPages(false);
     
-    const timeout = setTimeout(() => {
-      setViewEuropeNav(false)
-    }, 8000);
-    return () => clearTimeout(timeout);
+    // const timeout = setTimeout(() => {
+    //   setViewEuropeNav(false)
+    // }, 8000);
+    // return () => clearTimeout(timeout);
   }
   const handleViewAfricaNav = () => {
     setViewNAmericaNav(false);
@@ -223,10 +223,10 @@ const Nav = () => {
     setViewSocialMedia(false);
     setViewPages(false);
     
-    const timeout = setTimeout(() => {
-      setViewAfricaNav(false)
-    }, 8000);
-    return () => clearTimeout(timeout);
+    // const timeout = setTimeout(() => {
+    //   setViewAfricaNav(false)
+    // }, 8000);
+    // return () => clearTimeout(timeout);
   }
   const handleViewAsiaNav = () => {
     setViewNAmericaNav(false);
@@ -240,10 +240,10 @@ const Nav = () => {
     setViewSocialMedia(false);
     setViewPages(false);
     
-    const timeout = setTimeout(() => {
-      setViewAsiaNav(false)
-    }, 8000);
-    return () => clearTimeout(timeout);
+    // const timeout = setTimeout(() => {
+    //   setViewAsiaNav(false)
+    // }, 8000);
+    // return () => clearTimeout(timeout);
   }
   const handleViewOceaniaNav = () => {
     setViewNAmericaNav(false);
@@ -257,10 +257,10 @@ const Nav = () => {
     setViewSocialMedia(false);
     setViewPages(false);
     
-    const timeout = setTimeout(() => {
-      setViewOceniaNav(false)
-    }, 8000);
-    return () => clearTimeout(timeout);
+    // const timeout = setTimeout(() => {
+    //   setViewOceniaNav(false)
+    // }, 8000);
+    // return () => clearTimeout(timeout);
   }
   const handleViewAntarcticaNav = () => {
     setViewNAmericaNav(false);
@@ -274,12 +274,17 @@ const Nav = () => {
     setViewSocialMedia(false);
     setViewPages(false);
     
-    const timeout = setTimeout(() => {
-      setViewAntarticaNav(false)
-    }, 8000);
-    return () => clearTimeout(timeout);
+    // const timeout = setTimeout(() => {
+    //   setViewAntarticaNav(false)
+    // }, 8000);
+    // return () => clearTimeout(timeout);
   }
 
+
+  const handleGoHome = () => {
+    navigate('/');
+    setPickedCountryModal(false);
+  }
 
   
 
@@ -292,14 +297,14 @@ const Nav = () => {
       <div className="mainNavContainer">
         <div className="navContainer website">
           <div className="navContent left">
-            <Link to="/" id='navclHome'>
+            <button onClick={handleGoHome} id='navclHome'>
               <img id='navclhWeb' src={require('./assets/imgs/TheDailyUniverseLogo00.png')} alt="" />
               <img id='navclhMobile' src={require('./assets/imgs/TheDailyUniverseLogo.png')} alt="" />
               {/* <span>
                 <h4>THE DAILY UNIVERSE</h4>
                 <p>READ THE WORLD</p>
               </span> */}
-            </Link>
+            </button>
             <div className="navclSocial">
               {viewSocialMedia && <div className="navclsContents">
                 <h6>SHARE AND FOLLOW US ON:</h6>

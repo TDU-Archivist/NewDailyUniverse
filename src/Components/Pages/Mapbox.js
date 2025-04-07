@@ -197,14 +197,14 @@ const MapboxMap = () => {
               const [lng, lat] = geo.geometry.coordinates[0][0];
               map.flyTo({
                 center: [lng, lat],
-                zoom: 3,
+                zoom: 2,
                 essential: true,
               });
             } else if (geo.geometry && geo.geometry.type === "Point") {
               const [lng, lat] = geo.geometry.coordinates;
               map.flyTo({
                 center: [lng, lat],
-                zoom: 5,
+                zoom: 3,
                 essential: true,
               });
             }
