@@ -28,6 +28,7 @@ import MapboxMap from './Mapbox';
 import CountryFlag from './CountryFlag';
 import ExchangeRateMarquee from './ExchangeRateMarquee';
 import { MainDataLoad } from './MainDataContext';
+import CountryName from './CountryName';
 
 
 
@@ -101,7 +102,8 @@ const MagazineCategory = () => {
     const defaultImage = require("../assets/imgs/MagazinesBG.png");
     const { magazineCategory } = useParams();
     const [magazine, setMagazine] = useState('');
-    const [thumbnails, setThumbnails] = useState({}); // Store fetched thumbnails
+    const [thumbnails, setThumbnails] = useState({});
+    const [selectedCountry, setSelectedCountry] = useState(null);
 
     useEffect(() => {
         if (magazineCategory === 'ArtMagazines'){
@@ -151,6 +153,14 @@ const MagazineCategory = () => {
     }, [setMagazine]);
 
     const currentMagazine = dataList?.viewAllMagazines.filter(category => category.magazine_category === magazine) || [];
+    const countries = [...new Set(currentMagazine.map(mag => mag.country))].sort((a, b) => a.localeCompare(b));
+    const filteredMagazines = currentMagazine.filter(
+        mag => selectedCountry ? mag.country === selectedCountry : false
+    );
+
+
+
+
     useEffect(() => {
         const fetchThumbnails = async () => {
             const newThumbnails = {};
@@ -201,7 +211,18 @@ const MagazineCategory = () => {
                 <div className="magazinCatContentPage top2">
                     <div className="mgzncatntcpt2 left">
                         <Link to='/Magazines'><MdKeyboardDoubleArrowLeft className='faIcons'/></Link>
-                        <h4><span>{magazine}S</span> AROUND THE WORLD</h4>
+                        <h4><span>{magazine}S</span></h4>
+                        <select
+                            onChange={(e) => setSelectedCountry(e.target.value)}
+                            value={selectedCountry || ''}
+                        >
+                            <option value="">All Countries</option>
+                            {countries.map((countryCode, i) => (
+                                <option key={i} value={countryCode}>
+                                <CountryName code={countryCode} />
+                                </option>
+                            ))}
+                        </select>
                     </div>
                     <div className="mgzncatntcpt2 right">
                         <input type="text" placeholder='Search keyword, country or magazine name here...'/>
@@ -213,28 +234,47 @@ const MagazineCategory = () => {
                 </div>
             </section>
             <section className="magazinCatContainerPage mid">
-                <div className="magazinCatContentPage mid1">
-                    {currentMagazine.length ? <>
-                        {currentMagazine?.map((details, i) => (
-                            <a key={i} href={details?.magazine_website} target="_blank" rel="noopener noreferrer">
-                                <div className='mgznctcpm2Img'>
-                                    <img src={details?.country ? `https://flagcdn.com/w320/${(details?.country).toLowerCase()}.png` : require('../assets/imgs/TDULandingBG.png')} alt="" id="mgznctcpm2iFlag" />
-                                    <img src={thumbnails[details?.magazine_website]} alt='' id='mgznctcpm2iLogo' />
-                                </div>
-                                <div className='mgznctccpm2Dets'>
-                                    <h6>{details?.magazine_name}</h6>
-                                    <p>{details?.magazine_description}</p>
-                                </div>
-                            </a>
-                        ))}
-                    </>:<>
-                        <div className="mgznctccpm2Empty">
-                            <span>
-                                <p>No {magazine}s listed yet.</p>
-                            </span>
-                        </div>
-                    </>}
+                {!selectedCountry ? <div className="magazinCatContentPage mid1">
+                    {countries.map((country, i) => (
+                        <button key={i} onClick={() => setSelectedCountry(country)}>
+                            <div className='mgznctcpm2Img'>
+                                <img src={country ? `https://flagcdn.com/w320/${(country).toLowerCase()}.png` : require('../assets/imgs/TDULandingBG.png')} alt="" id="mgznctcpm2iCountry" />
+                            </div>
+                            <div className='mgznctccpm2Dets'>
+                                <h6><CountryName code={`${country}`} /></h6>
+                                <p>Online {magazine}s</p>
+                            </div>
+                        </button>
+                    ))}
                 </div>
+                :<div className="magazinCatContentPage mid1">
+                    {selectedCountry && (
+                        <>
+                            {filteredMagazines.length > 0 ? (
+                                <>
+                                    {filteredMagazines.map((details, i) => (
+                                        <a key={i} href={details?.magazine_website} target="_blank" rel="noopener noreferrer">
+                                            <div className='mgznctcpm2Img'>
+                                                <img src={details?.country ? `https://flagcdn.com/w320/${(details?.country).toLowerCase()}.png` : require('../assets/imgs/TDULandingBG.png')} alt="" id="mgznctcpm2iFlag" />
+                                                <img src={thumbnails[details?.magazine_website]} alt='' id='mgznctcpm2iLogo' />
+                                            </div>
+                                            <div className='mgznctccpm2Dets'>
+                                                <h6>{details?.magazine_name}</h6>
+                                                <p>{details?.magazine_description}</p>
+                                            </div>
+                                        </a>
+                                    ))}
+                                </>
+                            ) : (
+                                <div className="mgznctccpm2Empty">
+                                    <span>
+                                        <p>No {magazine}s listed yet.</p>
+                                    </span>
+                                </div>
+                            )}
+                        </>
+                    )}
+                </div>}
             </section>
 
 

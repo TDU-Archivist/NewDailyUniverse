@@ -28,6 +28,7 @@ import MapboxMap from './Mapbox';
 import CountryFlag from './CountryFlag';
 import ExchangeRateMarquee from './ExchangeRateMarquee';
 import { MainDataLoad } from './MainDataContext';
+import CountryName from './CountryName';
 
 
 
@@ -100,6 +101,7 @@ const RestaurantCategory = () => {
     const { restaurantCategory } = useParams();
     const [restaurant, setRestaurant] = useState('');
     const [thumbnails, setThumbnails] = useState({}); // Store fetched thumbnails
+    const [selectedCountry, setSelectedCountry] = useState(null);
 
     useEffect(() => {
         if (restaurantCategory === 'ExpensiveRestaurants'){
@@ -116,6 +118,10 @@ const RestaurantCategory = () => {
     }, [setRestaurant]);
 
     const currentRestaurants = dataList?.viewAllRestaurants.filter(category => category.restaurant_category === restaurant) || [];
+    const countries = [...new Set(currentRestaurants.map(restaurant => restaurant.country))].sort((a, b) => a.localeCompare(b));
+    const filteredRestaurant = currentRestaurants.filter(
+        restaurant => selectedCountry ? restaurant.country === selectedCountry : false
+    )
     useEffect(() => {
         const fetchThumbnails = async () => {
             const newThumbnails = {};
@@ -163,7 +169,18 @@ const RestaurantCategory = () => {
                 <div className="restaurantCatContentPage top2">
                     <div className="rstrntcatntcpt2 left">
                         <Link to='/Restaurants'><MdKeyboardDoubleArrowLeft className='faIcons'/></Link>
-                        <h4><span>{restaurant}TAURANTS</span> AROUND THE WORLD</h4>
+                        <h4><span>{restaurant}TAURANTS</span></h4>
+                        <select
+                            onChange={(e) => setSelectedCountry(e.target.value)}
+                            value={selectedCountry || ''}
+                        >
+                            <option value="">All Countries</option>
+                            {countries.map((countryCode, i) => (
+                                <option key={i} value={countryCode}>
+                                <CountryName code={countryCode} />
+                                </option>
+                            ))}
+                        </select>
                     </div>
                     <div className="rstrntcatntcpt2 right">
                         <input type="text" placeholder='Search keyword, country or restaurant name here...'/>
@@ -175,28 +192,51 @@ const RestaurantCategory = () => {
                 </div>
             </section>
             <section className="restaurantCatContainerPage mid">
-                <div className="restaurantCatContentPage mid1">
-                    {currentRestaurants.length ? <>
-                        {currentRestaurants?.map((details, i) => (
-                            <a key={i} href={details?.restaurant_website} target="_blank" rel="noopener noreferrer">
+                {currentRestaurants.length > 0 ? <>
+                    {!selectedCountry ? <div className="restaurantCatContentPage mid1">
+                        {countries.map((country, i) => (
+                            <button key={i} onClick={() => setSelectedCountry(country)}>
                                 <div className='rstrntctcpm2Img'>
-                                    <img src={details?.country ? `https://flagcdn.com/w320/${(details?.country).toLowerCase()}.png` : require('../assets/imgs/TDULandingBG.png')} alt="" id="rstrntctcpm2iFlag" />
-                                    <img src={thumbnails[details?.restaurant_website]} alt='' id='rstrntctcpm2iLogo' />
+                                    <img src={country ? `https://flagcdn.com/w320/${(country).toLowerCase()}.png` : require('../assets/imgs/TDULandingBG.png')} alt="" id="rstrntctcpm2iCountry" />
                                 </div>
                                 <div className='rstrntctccpm2Dets'>
-                                    <h6>{details?.restaurant_name}</h6>
-                                    <p>{details?.restaurant_description}</p>
+                                    <h6><CountryName code={`${country}`} />'s</h6>
+                                    <p>{restaurant}taurants</p>
                                 </div>
-                            </a>
+                            </button>
                         ))}
-                    </>:<>
+                    </div>
+                    :<div className="restaurantCatContentPage mid1">
+                        {selectedCountry.length ? <>
+                            {filteredRestaurant?.map((details, i) => (
+                                <a key={i} href={details?.restaurant_website} target="_blank" rel="noopener noreferrer">
+                                    <div className='rstrntctcpm2Img'>
+                                        <img src={details?.country ? `https://flagcdn.com/w320/${(details?.country).toLowerCase()}.png` : require('../assets/imgs/TDULandingBG.png')} alt="" id="rstrntctcpm2iFlag" />
+                                        <img src={thumbnails[details?.restaurant_website]} alt='' id='rstrntctcpm2iLogo' />
+                                    </div>
+                                    <div className='rstrntctccpm2Dets'>
+                                        <h6>{details?.restaurant_name}</h6>
+                                        <p>{details?.restaurant_description}</p>
+                                    </div>
+                                </a>
+                            ))}
+                        </>:<>
+                            <div className="rstrntctccpm2Empty">
+                                <span>
+                                    <p>No {restaurant}taurants listed yet.</p>
+                                </span>
+                            </div>
+                        </>}
+                    </div>}
+                </>:<>
+                    <div className="restaurantCatContentPage mid1">
                         <div className="rstrntctccpm2Empty">
-                            <span>
-                                <p>No {restaurant}taurants listed yet.</p>
-                            </span>
+                        <span>
+                            <p>No {restaurant}taurants listed yet.</p>
+                        </span>
                         </div>
-                    </>}
-                </div>
+                    </div>
+                </>}
             </section>
 
 

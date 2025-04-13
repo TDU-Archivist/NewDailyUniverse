@@ -28,6 +28,7 @@ import MapboxMap from './Mapbox';
 import CountryFlag from './CountryFlag';
 import ExchangeRateMarquee from './ExchangeRateMarquee';
 import { MainDataLoad } from './MainDataContext';
+import CountryName from './CountryName';
 
 
 
@@ -187,7 +188,7 @@ const AirlineContinent = () => {
                                     {groupedBySubcontinent[subcontinent].map(({ name, code }) => (
                                         <li key={code}>
                                             <img src={`https://flagcdn.com/w320/${code.toLowerCase()}.png`} alt={name} />
-                                            <button>{name}</button>
+                                            <button>{name ? name : <CountryName code={`${code}`} />}</button>
                                         </li>
                                     ))}
                                 </ul>

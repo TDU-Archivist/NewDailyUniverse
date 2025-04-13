@@ -28,6 +28,7 @@ import MapboxMap from './Mapbox';
 import CountryFlag from './CountryFlag';
 import ExchangeRateMarquee from './ExchangeRateMarquee';
 import { MainDataLoad } from './MainDataContext';
+import CountryName from './CountryName';
 
 
 const TextSlicer = ({ text = '', maxLength }) => {
@@ -99,7 +100,8 @@ const NewspaperContinent = () => {
     const webLogoProxy = process.env.REACT_APP_WEBLOGO_PROXY;
     const { newspaperContinent } = useParams();
     const [newspaper, setNewspaper] = useState('');
-    const [thumbnails, setThumbnails] = useState({}); // Store fetched thumbnails
+    const [thumbnails, setThumbnails] = useState({}); // Store fetched 
+    const [selectedCountry, setSelectedCountry] = useState(null);
 
     useEffect(() => {
         if (newspaperContinent === 'NorthAmerica'){
@@ -122,6 +124,12 @@ const NewspaperContinent = () => {
     }, [newspaperContinent, setNewspaper]);
 
     const currentNewspapers = dataList?.viewAllNewspapers.filter(continent => continent.continent === newspaper) || [];
+    const countries = [...new Set(currentNewspapers.map(news => news.country))].sort((a, b) => a.localeCompare(b));
+    const filteredNewspaper = currentNewspapers.filter(
+        news => selectedCountry ? news.country === selectedCountry : false
+    );
+
+
     useEffect(() => {
         const fetchThumbnails = async () => {
             const newThumbnails = {};
@@ -169,6 +177,17 @@ const NewspaperContinent = () => {
                     <div className="nwspprcatntcpt2 left">
                         <Link to='/Newspapers'><MdKeyboardDoubleArrowLeft className='faIcons'/></Link>
                         <h4>ALL NEWSPAPERS IN <span>{newspaper}</span></h4>
+                        <select
+                            onChange={(e) => setSelectedCountry(e.target.value)}
+                            value={selectedCountry || ''}
+                        >
+                            <option value="">All {newspaper}</option>
+                            {countries.map((countryCode, i) => (
+                                <option key={i} value={countryCode}>
+                                <CountryName code={countryCode} />
+                                </option>
+                            ))}
+                        </select>
                     </div>
                     <div className="nwspprcatntcpt2 right">
                         <input type="text" placeholder='Search keyword, country or newspaper name here...'/>
@@ -180,28 +199,51 @@ const NewspaperContinent = () => {
                 </div>
             </section>
             <section className="newspaperCatContainerPage mid">
-                <div className="newspaperCatContentPage mid1">
-                    {currentNewspapers.length ? <>
-                        {currentNewspapers?.map((details, i) => (
-                            <a key={i} href={details?.newspaper_website} target="_blank" rel="noopener noreferrer">
+                {currentNewspapers.length > 0 ? <>
+                    {!selectedCountry ? <div className="newspaperCatContentPage mid1">
+                        {countries.map((country, i) => (
+                            <button key={i} onClick={() => setSelectedCountry(country)}>
                                 <div className='nwspprctcpm2Img'>
-                                    <img src={`https://flagcdn.com/w320/${(details?.country).toLowerCase()}.png`} alt="" id="nwspprctcpm2iFlag" />
-                                    <img id='nwspprctcpm2iLogo' src={thumbnails[details?.newspaper_website]} alt='' />
+                                    <img src={country ? `https://flagcdn.com/w320/${(country).toLowerCase()}.png` : require('../assets/imgs/TDULandingBG.png')} alt="" id="nwspprctcpm2iCountry" />
                                 </div>
                                 <div className='nwspprctccpm2Dets'>
-                                    <h6>{details?.newspaper_name}</h6>
-                                    <p>{details?.newspaper_description}</p>
+                                    <h6><CountryName code={`${country}`} /></h6>
+                                    <p>Online Newspapers</p>
                                 </div>
-                            </a>
+                            </button>
                         ))}
-                    </>:<>
+                    </div>
+                    :<div className="newspaperCatContentPage mid1">
+                        {selectedCountry.length ? <>
+                            {filteredNewspaper?.map((details, i) => (
+                                <a key={i} href={details?.newspaper_website} target="_blank" rel="noopener noreferrer">
+                                    <div className='nwspprctcpm2Img'>
+                                        <img src={`https://flagcdn.com/w320/${(details?.country).toLowerCase()}.png`} alt="" id="nwspprctcpm2iFlag" />
+                                        <img id='nwspprctcpm2iLogo' src={thumbnails[details?.newspaper_website]} alt='' />
+                                    </div>
+                                    <div className='nwspprctccpm2Dets'>
+                                        <h6>{details?.newspaper_name}</h6>
+                                        <p>{details?.newspaper_description}</p>
+                                    </div>
+                                </a>
+                            ))}
+                        </>:<>
+                            <div className="nwspprctccpm2Empty">
+                                <span>
+                                    <p>No Newspapers listed yet.</p>
+                                </span>
+                            </div>
+                        </>}
+                    </div>}
+                </>:<>
+                    <div className="newspaperCatContentPage mid1">
                         <div className="nwspprctccpm2Empty">
-                            <span>
-                                <p>No Newspapers listed yet.</p>
-                            </span>
+                        <span>
+                            <p>No {newspaper}s listed yet.</p>
+                        </span>
                         </div>
-                    </>}
-                </div>
+                    </div>
+                </>}
             </section>
         </div>
     )

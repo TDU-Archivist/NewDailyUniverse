@@ -335,38 +335,25 @@ const Nav = () => {
             </div>
           </div>
           <div className="navContent right">
-            {viewPages && <div className={!userLoggedIn ? "nvcntntrModal" : "nvcntntrModal logged"}
-              // onMouseEnter={() => {
-              //   if (hideTimeout) {
-              //     clearTimeout(hideTimeout);
-              //   }
-              //   setHasMouseEntered(true); 
-              //   setViewPages(true); 
-              // }}
-              // onMouseLeave={() => {
-              //   if (hasMouseEntered) {
-              //     const timeout = setTimeout(() => {
-              //       setViewPages(false);
-              //       setHasMouseEntered(false);
-              //     }, 500);
-              //     setHideTimeout(timeout);
-              //   }
-              // }}
-            >
-              <Link to='/Airlines' onClick={handleHideModals}><h6><FaPlane className='faIcons'/> AIRLINES</h6></Link>
-              <Link to='/Airports' onClick={handleHideModals}><h6><FaPlane className='faIcons'/> AIRPORTS</h6></Link>
-              <Link to='/BreakingNews' onClick={handleHideModals}><h6><FaBroadcastTower className='faIcons'/> BREAKING NEWS</h6></Link>
-              <Link to='/GlobalInfo' onClick={handleHideModals}><h6><FaGlobe className='faIcons'/> GLOBAL INFO</h6></Link>
-              <Link to='/NewsChannels' onClick={handleHideModals}><h6><FaTv className='faIcons'/> LIVE NEWS CHANNELS</h6></Link>
-              <Link to='/Magazines' onClick={handleHideModals}><h6><FaNewspaper className='faIcons'/> MAGAZINES</h6></Link>
-              <Link to='/Newspapers' onClick={handleHideModals}><h6><FaNewspaper className='faIcons'/> NEWSPAPER</h6></Link>
-              <Link to='/Restaurants' onClick={handleHideModals}><h6><FaUtensils className='faIcons'/> RESTAURANTS</h6></Link>
-              <Link to='/Sports' onClick={handleHideModals}><h6><FaFootballBall className='faIcons'/> SPORTS</h6></Link>
-              <Link to='/Travel' onClick={handleHideModals}><h6><FaMapMarked className='faIcons'/> TRAVEL</h6></Link>
-              <Link><h6><FaMapMarkerAlt className='faIcons'/> VISA GUIDE</h6></Link>
-              <Link><h6><FaCloudSunRain className='faIcons'/> WEATHER FORECAST</h6></Link>
-              <Link><h6><FaClock className='faIcons'/> WORLD CLOCK</h6></Link>
-            </div>}
+            {viewPages && 
+              <div className="nvcntntrMainModal" onClick={handleHideModals}>
+                <div className={!userLoggedIn ? "nvcntntrModal" : "nvcntntrModal logged"}>
+                  <Link to='/Airlines' onClick={handleHideModals}><h6><FaPlane className='faIcons'/> AIRLINES</h6></Link>
+                  <Link to='/Airports' onClick={handleHideModals}><h6><FaPlane className='faIcons'/> AIRPORTS</h6></Link>
+                  <Link to='/BreakingNews' onClick={handleHideModals}><h6><FaBroadcastTower className='faIcons'/> BREAKING NEWS</h6></Link>
+                  <Link to='/GlobalInfo' onClick={handleHideModals}><h6><FaGlobe className='faIcons'/> GLOBAL INFO</h6></Link>
+                  <Link to='/NewsChannels' onClick={handleHideModals}><h6><FaTv className='faIcons'/> LIVE NEWS CHANNELS</h6></Link>
+                  <Link to='/Magazines' onClick={handleHideModals}><h6><FaNewspaper className='faIcons'/> MAGAZINES</h6></Link>
+                  <Link to='/Newspapers' onClick={handleHideModals}><h6><FaNewspaper className='faIcons'/> NEWSPAPER</h6></Link>
+                  <Link to='/Restaurants' onClick={handleHideModals}><h6><FaUtensils className='faIcons'/> RESTAURANTS</h6></Link>
+                  <Link to='/Sports' onClick={handleHideModals}><h6><FaFootballBall className='faIcons'/> SPORTS</h6></Link>
+                  <Link to='/Travel' onClick={handleHideModals}><h6><FaMapMarked className='faIcons'/> TRAVEL</h6></Link>
+                  <Link><h6><FaMapMarkerAlt className='faIcons'/> VISA GUIDE</h6></Link>
+                  <Link><h6><FaCloudSunRain className='faIcons'/> WEATHER FORECAST</h6></Link>
+                  <Link><h6><FaClock className='faIcons'/> WORLD CLOCK</h6></Link>
+                </div>
+              </div>
+            }
             {viewNAmericaNav && <div className={!userLoggedIn ? "nvcntntrContinent" : "nvcntntrContinent logged"}
               onMouseEnter={() => {
                 if (hideTimeout) {
@@ -655,13 +642,69 @@ const Nav = () => {
               </div>
             </div>}
             <div className="nvcntntr links">
-              <button className={viewNAmericaNav ? 'active' : ''} onMouseEnter={!viewNAmericaNav ? handleViewNAmericaNav : handleHideModals}>N.America</button>
-              <button className={viewSAmericaNav ? 'active' : ''} onMouseEnter={!viewSAmericaNav ? handleViewSAmericaNav : handleHideModals}>S.America</button>
-              <button className={viewEuropeNav ? 'active' : ''} onMouseEnter={!viewEuropeNav ? handleViewEuropeNav : handleHideModals}>Europe</button>
-              <button className={viewAfricaNav ? 'active' : ''} onMouseEnter={!viewAfricaNav ? handleViewAfricaNav : handleHideModals}>Africa</button>
-              <button className={viewAsiaNav ? 'active' : ''} onMouseEnter={!viewAsiaNav ? handleViewAsiaNav : handleHideModals}>Asia</button>
-              <button className={viewOceniaNav ? 'active' : ''} onMouseEnter={!viewOceniaNav ? handleViewOceaniaNav : handleHideModals}>Oceania</button>
-              <button className={viewAntarticaNav ? 'active' : ''} onMouseEnter={!viewAntarticaNav ? handleViewAntarcticaNav : handleHideModals}>Antarctica</button>
+              <button className={viewNAmericaNav ? 'active' : ''} 
+                onMouseEnter={handleViewNAmericaNav}
+                onMouseLeave={() => {
+                  const timeout = setTimeout(() => {
+                    setViewNAmericaNav(false)
+                  }, 500);
+                  setHideTimeout(timeout);
+                }}
+              >N.America</button>
+              <button className={viewSAmericaNav ? 'active' : ''} 
+                onMouseEnter={handleViewSAmericaNav}
+                onMouseLeave={() => {
+                  const timeout = setTimeout(() => {
+                    setViewSAmericaNav(false)
+                  }, 500);
+                  setHideTimeout(timeout);
+                }}
+              >S.America</button>
+              <button className={viewEuropeNav ? 'active' : ''} 
+                onMouseEnter={handleViewEuropeNav}
+                onMouseLeave={() => {
+                  const timeout = setTimeout(() => {
+                    setViewEuropeNav(false)
+                  }, 500);
+                  setHideTimeout(timeout);
+                }}
+              >Europe</button>
+              <button className={viewAfricaNav ? 'active' : ''} 
+                onMouseEnter={handleViewAfricaNav}
+                onMouseLeave={() => {
+                  const timeout = setTimeout(() => {
+                    setViewAfricaNav(false);
+                  }, 500);
+                  setHideTimeout(timeout);
+                }}
+              >Africa</button>
+              <button className={viewAsiaNav ? 'active' : ''} 
+                onMouseEnter={handleViewAsiaNav}
+                onMouseLeave={() => {
+                  const timeout = setTimeout(() => {
+                    setViewAsiaNav(false);
+                  }, 500);
+                  setHideTimeout(timeout);
+                }}
+              >Asia</button>
+              <button className={viewOceniaNav ? 'active' : ''} 
+                onMouseEnter={handleViewOceaniaNav}
+                onMouseLeave={() => {
+                  const timeout = setTimeout(() => {
+                    setViewOceniaNav(false);
+                  }, 500);
+                  setHideTimeout(timeout);
+                }}
+              >Oceania</button>
+              <button className={viewAntarticaNav ? 'active' : ''} 
+                onMouseEnter={handleViewAntarcticaNav} 
+                onMouseLeave={() => {
+                  const timeout = setTimeout(() => {
+                    setViewAntarticaNav(false);
+                  }, 500);
+                  setHideTimeout(timeout);
+                }}
+              >Antarctica</button>
               <button onClick={!viewPages ? handleViewPages : handleHideModals} className={viewPages ? 'active bar' : 'bar'}>{!viewPages ? <FaBars className='faIcons'/> : <FaTimes className='faIcons'/>}</button>
             </div>
             {(!userLoggedIn && !StoredUserID) ? <div className="nvcntntr user">

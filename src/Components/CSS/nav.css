@@ -226,12 +226,22 @@ nav{
     position: relative;
 }
 
+
+
+.nvcntntrMainModal{
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
 .nvcntntrModal{
     height: auto;
     width: 15vw;
     position: absolute;
     top: 7.5vh;
-    right: 5vw;
+    right: 10.5vw;
     padding: 0.5vw;
     border-radius: 0.5vw;
     background: whitesmoke;
@@ -239,7 +249,7 @@ nav{
     box-shadow: 0 0 10px gray;
 }
 .nvcntntrModal.logged{
-    right: 12.5vw;
+    right: 17.5vw;
 }
 .nvcntntrModal a{
     color: black;
@@ -269,10 +279,10 @@ nav{
 
 .nvcntntrContinent{
     height: auto;
-    width: 35vw;
+    width: 38vw;
     position: absolute;
-    top: 7.5vh;
-    right: 15.1vw;
+    top: 6.5vh;
+    right: 14.5vw;
     padding: 1vw;
     border-radius: 0.5vw;
     background: whitesmoke;
@@ -280,7 +290,7 @@ nav{
     box-shadow: 0 0 10px gray;
 }
 .nvcntntrContinent.logged{
-    right: 22.5vw;
+    right: 21.5vw;
 }
 .nvcntntrcTitle{
     height: auto;
