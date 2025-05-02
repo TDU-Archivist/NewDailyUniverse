@@ -23,8 +23,8 @@ const CountryName = ({ code }) => {
     fetchCountry();
   }, [code]);
 
-  if (error) return <span>{error}</span>;
-  if (!country) return <span>Loading...</span>;
+  if (error) return <>{error}</>;
+  if (!country) return <>Loading...</>;
 
   return <>{country}</>;
 };

@@ -160,7 +160,6 @@ const MagazineCategory = () => {
 
 
 
-
     useEffect(() => {
         const fetchThumbnails = async () => {
             const newThumbnails = {};
@@ -193,7 +192,6 @@ const MagazineCategory = () => {
         }
     }, [currentMagazine]);
 
-    // console.log(currentMagazine);
     
 
 
@@ -219,7 +217,7 @@ const MagazineCategory = () => {
                             <option value="">All Countries</option>
                             {countries.map((countryCode, i) => (
                                 <option key={i} value={countryCode}>
-                                <CountryName code={countryCode} />
+                                    <CountryName code={countryCode} />
                                 </option>
                             ))}
                         </select>

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useMemo } from 'react'
 import "../CSS/airlines.css";
 import { useParams } from "react-router-dom";
 import { Link } from 'react-router-dom';
@@ -145,6 +145,13 @@ const AirlineContinent = () => {
     }, {});
 
     
+    const [selectedCountry, setSelectedCountry] = useState('');
+    const countryAirline = currentAirline.filter(coun => coun.country === selectedCountry) || [];
+
+    // console.log(countryAirline);
+    
+
+
     
 
 
@@ -186,10 +193,19 @@ const AirlineContinent = () => {
                                 <h6>All {subcontinent} Airlines</h6>
                                 <ul>
                                     {groupedBySubcontinent[subcontinent].map(({ name, code }) => (
-                                        <li key={code}>
-                                            <img src={`https://flagcdn.com/w320/${code.toLowerCase()}.png`} alt={name} />
-                                            <button>{name ? name : <CountryName code={`${code}`} />}</button>
-                                        </li>
+                                        <i key={code}>
+                                            <li>
+                                                <img src={`https://flagcdn.com/w320/${code.toLowerCase()}.png`} alt={name} />
+                                                <button onClick={() => setSelectedCountry(code)}>{name ? name : <CountryName code={`${code}`} />}</button>
+                                            </li>
+                                            {selectedCountry === code && 
+                                                <ul>
+                                                    {countryAirline.map((details, i) => (
+                                                        <li key={i}><a href={details?.airline_website} target="blank">{details?.airline_name}</a></li>
+                                                    ))}
+                                                </ul>
+                                            }
+                                        </i>
                                     ))}
                                 </ul>
                             </div>

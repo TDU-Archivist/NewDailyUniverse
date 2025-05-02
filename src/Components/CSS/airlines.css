@@ -451,6 +451,31 @@ section.airlineContContainerPage.mid{
     padding: 0.5vw;
     font-size: 0.9vw;
 }
+.arlncntntcpm1 ul ul{
+    margin: 0;
+    margin-bottom: 1vw;
+    padding: 0.5vw;
+    list-style: none;
+    border-radius: 0.5vw;
+    background: whitesmoke;
+}
+.arlncntntcpm1 ul ul li{
+    padding: 0.5vw 1vw;
+    border-radius: 0.5vw;
+}
+.arlncntntcpm1 ul ul li:hover{
+    background: black;
+    transition: 400ms ease;
+}
+.arlncntntcpm1 ul ul li:hover a{
+    color: white;
+    transition: 400ms ease;
+}
+.arlncntntcpm1 ul ul li a{
+    text-decoration: none;
+    color: black;
+    font-size: 0.9vw;
+}
 .arlncntntcpm1Empty{
     height: 30vw;
     width: 100%;
@@ -624,6 +649,18 @@ section.airlineContContainerPage.mid{
     }
     .arlncntntcpm1 ul li button{
         padding: 1vw 2vw;
+        font-size: 2.5vw;
+    }
+    .arlncntntcpm1 ul ul{
+        margin-bottom: 3vw;
+        padding: 1vw;
+        border-radius: 1vw;
+    }
+    .arlncntntcpm1 ul ul li{
+        padding: 1.5vw 3vw;
+        border-radius: 0.5vw;
+    }
+    .arlncntntcpm1 ul ul li a{
         font-size: 2.5vw;
     }
     .arlncntntcpm1Empty{
