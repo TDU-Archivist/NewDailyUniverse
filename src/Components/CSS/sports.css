@@ -393,7 +393,7 @@ section.sportCatContainerPage.mid{
 
 @media screen and (max-width: 500px){
     section.sportsContainerPage.top{
-        padding: 15vw 5vw;
+        padding: 15vw 3vw;
         padding-bottom: 2vw;
     }
     section.sportsContainerPage.top hr{
@@ -444,7 +444,7 @@ section.sportCatContainerPage.mid{
 
 
     section.sportsContainerPage.mid{
-        padding: 5vw;
+        padding: 5vw 3vw;
     }
     .sportsContentPage.mid1 {
         justify-content: space-between;
@@ -476,7 +476,7 @@ section.sportCatContainerPage.mid{
 
 
     section.sportCatContainerPage.top{
-        padding: 15vw 5vw;
+        padding: 15vw 3vw;
         padding-bottom: 2vw;
     }
     .sportCatContentPage.top2{
@@ -520,7 +520,7 @@ section.sportCatContainerPage.mid{
 
 
     section.sportCatContainerPage.mid{
-        padding: 5vw;
+        padding: 5vw 3vw;
     }
     .sportCatContainerPage.mid1 {
         justify-content: space-between;

@@ -199,7 +199,7 @@ section.airportsContainerPage.mid{
 
 @media screen and (max-width: 500px){
     section.airportsContainerPage.top{
-        padding: 15vw 5vw;
+        padding: 15vw 3vw;
         padding-bottom: 2vw;
     }
     section.airportsContainerPage.top hr{
@@ -253,7 +253,7 @@ section.airportsContainerPage.mid{
 
     
     section.airportsContainerPage.mid{
-        padding: 5vw;
+        padding: 5vw 3vw;
     }
     .airprtscpm2c1{
         height: auto;

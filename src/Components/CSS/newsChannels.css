@@ -256,7 +256,7 @@ section.newsChannelsContainerPage.mid{
 
 @media screen and (max-width: 500px){
     section.newsChannelsContainerPage.top{
-        padding: 15vw 5vw;
+        padding: 15vw 3vw;
         padding-bottom: 2vw;
     }
     .newsChannelsContentPage.top2{
@@ -308,7 +308,7 @@ section.newsChannelsContainerPage.mid{
     section.newsChannelsContainerPage.mid{
         height: auto;
         width: 100%;
-        padding: 1vw 5vw;
+        padding: 1vw 3vw;
     }
     .nwschnlcpm1Nav{
         justify-content: center;

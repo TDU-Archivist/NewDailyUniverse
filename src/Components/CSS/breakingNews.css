@@ -250,7 +250,7 @@ section.breakinNewsContainerPage.mid{
 
 @media screen and (max-width: 500px){
     section.breakinNewsContainerPage.top{
-        padding: 15vw 5vw;
+        padding: 15vw 3vw;
         padding-bottom: 2vw;
     }
     section.breakinNewsContainerPage.top hr{
@@ -271,7 +271,7 @@ section.breakinNewsContainerPage.mid{
 
 
     section.breakinNewsContainerPage.mid{
-        padding: 5vw;
+        padding: 5vw 3vw;
     }
     
     .breakinNewsContentPage.title{

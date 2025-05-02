@@ -189,7 +189,7 @@ section.globalInfoContainerPage.mid{
 
 @media screen and (max-width: 500px){
     section.globalInfoContainerPage.top{
-        padding: 15vw 5vw;
+        padding: 15vw 3vw;
         padding-bottom: 2vw;
     }
     section.globalInfoContainerPage.top hr{
@@ -211,7 +211,7 @@ section.globalInfoContainerPage.mid{
 
 
     section.globalInfoContainerPage.mid{
-        padding: 5vw;
+        padding: 5vw 3vw;
     }
     .globalInfoContentPage.mid1{
         justify-content: space-between;

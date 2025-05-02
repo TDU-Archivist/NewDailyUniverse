@@ -474,7 +474,7 @@ section.airlineContContainerPage.mid{
 
 @media screen and (max-width: 500px){
     section.airlinesContainerPage.top{
-        padding: 15vw 5vw;
+        padding: 15vw 3vw;
         padding-bottom: 2vw;
     }
     section.airlinesContainerPage.top hr{
@@ -524,7 +524,7 @@ section.airlineContContainerPage.mid{
 
 
     section.airlinesContainerPage.mid{
-        padding: 5vw;
+        padding: 5vw 3vw;
     }
     .airlinesContentPage.mid1 a{
         height: 29vw;
@@ -545,7 +545,7 @@ section.airlineContContainerPage.mid{
 
     
     section.airlineContContainerPage.top{
-        padding: 15vw 5vw;
+        padding: 15vw 3vw;
         padding-bottom: 2vw;
     }
     .airlineContContentPage.top2{
@@ -589,7 +589,7 @@ section.airlineContContainerPage.mid{
 
 
     section.airlineContContainerPage.mid{
-        padding: 5vw;
+        padding: 5vw 3vw;
     }
     .airlineContContentPage.mid1{
         justify-content: space-between;

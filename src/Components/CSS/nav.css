@@ -235,6 +235,9 @@ nav{
     top: 0;
     left: 0;
     z-index: 0;
+    display: flex;
+    justify-content: center;
+    align-items: start;
 }
 .nvcntntrModal{
     height: auto;
@@ -564,12 +567,12 @@ nav{
 
 @media screen and (max-width: 500px){
     nav{
-        padding: 1vw 5vw;
+        padding: 1vw 3vw;
     }
-    .navContent.left a#navclHome img#navclhWeb{
+    .navContent.left button#navclHome img#navclhWeb{
         display: none;
     }
-    .navContent.left a#navclHome img#navclhMobile{
+    .navContent.left button#navclHome img#navclhMobile{
         display: block;
         height: 10vw;
     }
@@ -642,9 +645,9 @@ nav{
     }
     .nvcntntrModal{
         height: auto;
-        width: 90vw;
-        top: 5.5vh;
-        right: 0;
+        width: 95vw;
+        top: 13vw;
+        right: 2.5vw;
         padding: 3vw;
         border-radius: 2vw;
     }
