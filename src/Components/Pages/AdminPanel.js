@@ -1542,6 +1542,7 @@ const AdminPanel = () => {
                                                 <option value="Western Europe">Western Europe</option>
                                                 <option value="Eastern Europe">Eastern Europe</option>
                                                 <option value="Southern Europe">Southern Europe</option>
+                                                <option value="Central Europe">Central Europe</option>
                                                 <option value="Northern America">Northern America</option>
                                                 <option value="Central America">Central America</option>
                                                 <option value="The Caribbean">The Caribbean</option>
@@ -1874,6 +1875,7 @@ const AdminPanel = () => {
                                                 <option value="Western Europe">Western Europe</option>
                                                 <option value="Eastern Europe">Eastern Europe</option>
                                                 <option value="Southern Europe">Southern Europe</option>
+                                                <option value="Central Europe">Central Europe</option>
                                                 <option value="Northern America">Northern America</option>
                                                 <option value="Central America">Central America</option>
                                                 <option value="The Caribbean">The Caribbean</option>
@@ -3073,6 +3075,7 @@ const AdminPanel = () => {
                                                 <option value="Western Europe">Western Europe</option>
                                                 <option value="Eastern Europe">Eastern Europe</option>
                                                 <option value="Southern Europe">Southern Europe</option>
+                                                <option value="Central Europe">Central Europe</option>
                                                 <option value="Northern America">Northern America</option>
                                                 <option value="Central America">Central America</option>
                                                 <option value="The Caribbean">The Caribbean</option>
@@ -3395,6 +3398,7 @@ const AdminPanel = () => {
                                                 <option value="Western Europe">Western Europe</option>
                                                 <option value="Eastern Europe">Eastern Europe</option>
                                                 <option value="Southern Europe">Southern Europe</option>
+                                                <option value="Central Europe">Central Europe</option>
                                                 <option value="Northern America">Northern America</option>
                                                 <option value="Central America">Central America</option>
                                                 <option value="The Caribbean">The Caribbean</option>
@@ -3687,6 +3691,7 @@ const AdminPanel = () => {
                                             <option value="Western Europe">Western Europe</option>
                                             <option value="Eastern Europe">Eastern Europe</option>
                                             <option value="Southern Europe">Southern Europe</option>
+                                            <option value="Central Europe">Central Europe</option>
                                             <option value="Northern America">Northern America</option>
                                             <option value="Central America">Central America</option>
                                             <option value="The Caribbean">The Caribbean</option>

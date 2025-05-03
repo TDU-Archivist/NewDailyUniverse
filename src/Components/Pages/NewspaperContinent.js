@@ -175,7 +175,7 @@ const NewspaperContinent = () => {
             <section className="newspaperCatContainerPage top">
                 <div className="newspaperCatContentPage top2">
                     <div className="nwspprcatntcpt2 left">
-                        <Link to='/Newspapers'><MdKeyboardDoubleArrowLeft className='faIcons'/></Link>
+                        {/* <Link to='/Newspapers'><MdKeyboardDoubleArrowLeft className='faIcons'/></Link> */}
                         <h4>ALL NEWSPAPERS IN <span>{newspaper}</span></h4>
                         <select
                             onChange={(e) => setSelectedCountry(e.target.value)}

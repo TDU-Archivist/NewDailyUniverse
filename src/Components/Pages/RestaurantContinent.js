@@ -173,7 +173,7 @@ const RestaurantContinent = () => {
             <section className="restaurantCatContainerPage top">
                 <div className="restaurantCatContentPage top2">
                     <div className="rstrntcatntcpt2 left">
-                        <Link to='/Restaurants'><MdKeyboardDoubleArrowLeft className='faIcons'/></Link>
+                        {/* <Link to='/Restaurants'><MdKeyboardDoubleArrowLeft className='faIcons'/></Link> */}
                         <h4>ALL RESTAURANTS IN <span>{restaurant}</span>
                         </h4><select
                             onChange={(e) => setSelectedCountry(e.target.value)}
