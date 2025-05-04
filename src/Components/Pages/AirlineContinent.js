@@ -99,7 +99,6 @@ const AirlineContinent = () => {
 
     const { airlineContinent } = useParams();
     const currentAirline = dataList?.viewAllAirlines.filter(cont => cont.continent === airlineContinent) || [];
-
     const [countries, setCountries] = useState({});
 
     useEffect(() => {
@@ -148,12 +147,50 @@ const AirlineContinent = () => {
     const [selectedCountry, setSelectedCountry] = useState('');
     const countryAirline = currentAirline.filter(coun => coun.country === selectedCountry) || [];
 
-    // console.log(countryAirline);
+
+    const webLogoProxy = process.env.REACT_APP_WEBLOGO_PROXY;
+    const [thumbnails, setThumbnails] = useState({}); // Store fetched 
+    const [airline, setAirline] = useState('')
+    const [searchTerm, setSearchTerm] = useState('');
     
 
-
+    const filteredAirlines = currentAirline?.filter((airline) =>
+        airline.airline_name.toLowerCase().includes(searchTerm.toLowerCase())
+    ) || [];
     
-
+    useEffect(() => {
+        const fetchThumbnails = async () => {
+            const newThumbnails = {};
+    
+            await Promise.all(
+                filteredAirlines?.map(async (details) => {
+                    try {
+                        const response = await axios.get(
+                            `${webLogoProxy}?url=${encodeURIComponent(details?.airline_website)}`
+                        );
+    
+                        // Ensure the response is valid
+                        if (response.data.image && response.data.image !== "No image found") {
+                            newThumbnails[details?.airline_website] = response.data.image;
+                        } else {
+                            // newThumbnails[details?.magazine_website] = defaultImage;
+                        }
+                    } catch (error) {
+                        // Don't fetch the image if there's an error
+                        // newThumbnails[details?.magazine_website] = defaultImage;
+                    }
+                })
+            );
+    
+            setThumbnails(newThumbnails);
+        };
+    
+        if (filteredAirlines?.length) {
+            fetchThumbnails();
+        }
+    }, [filteredAirlines]);
+    
+    
 
     return (
         <div className='mainContainer airlineContinent'>
@@ -176,7 +213,7 @@ const AirlineContinent = () => {
                         <h4>FAMOUS AIRLINES IN <span>{airlineContinent}</span></h4>
                     </div>
                     <div className="arlncntntcpt2 right">
-                        <input type="text" placeholder='Search keyword, country or airline name here...'/>
+                        <input type="text" placeholder='Search keyword, country or airline name here...' value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)}/>
                         <div className="arlncntntcpt2rBtn">
                             <button><FaSearch className='faIcons'/></button>
                             <button><FaMicrophone className='faIcons'/></button>
@@ -185,40 +222,59 @@ const AirlineContinent = () => {
                 </div>
             </section>
             <section className="airlineContContainerPage mid">
-                <div className="airlineContContentPage mid1">
-                    {currentAirline.length ? <>
-                        {Object.keys(groupedBySubcontinent).map((subcontinent) => (
-                            <div className="arlncntntcpm1" key={subcontinent}>
-                                <h4>{subcontinent}</h4>
-                                <h6>All {subcontinent} Airlines</h6>
-                                <ul>
-                                    {groupedBySubcontinent[subcontinent].map(({ name, code }) => (
-                                        <i key={code}>
-                                            <li>
-                                                <img src={`https://flagcdn.com/w320/${code.toLowerCase()}.png`} alt={name} />
-                                                <button onClick={() => setSelectedCountry(code)}>{name ? name : <CountryName code={`${code}`} />}</button>
-                                            </li>
-                                            {selectedCountry === code && 
-                                                <ul>
-                                                    {countryAirline.map((details, i) => (
-                                                        <li key={i}><a href={details?.airline_website} target="blank">{details?.airline_name}</a></li>
-                                                    ))}
-                                                </ul>
-                                            }
-                                        </i>
-                                    ))}
-                                </ul>
-                            </div>
-                        ))}
-                    </>:<>
-                        <div className="arlncntntcpm1Empty">
-                            <span>
-                                <p>No Airline/s data yet.</p>
-                            </span>
+                {(searchTerm && filteredAirlines.length > 0) ?
+                    <>
+                        <div className="airlinesContentPage filtered">
+                            <>
+                                {filteredAirlines.map((details, i) => (
+                                    <a key={i} href={details?.airline_website} target="_blank" rel="noopener noreferrer">
+                                        <div className='airlinecpm1Img'>
+                                            <img src={details?.country ? `https://flagcdn.com/w320/${(details?.country).toLowerCase()}.png` : require('../assets/imgs/TDULandingBG.png')} alt="" id="mgznctcpm2iFlag" />
+                                            <img src={thumbnails[details?.airline_website]} alt='' id='mgznctcpm2iLogo' />
+                                        </div>
+                                        <div className='airlinecpm1Dets'>
+                                            <h6>{details?.airline_name}</h6>
+                                            <p>{details?.airline_description}</p>
+                                        </div>
+                                    </a>
+                                ))}
+                            </>
                         </div>
-                    </>}
-                </div>
-
+                </>:<>
+                    <div className="airlineContContentPage mid1">
+                        {currentAirline.length ? <>
+                            {Object.keys(groupedBySubcontinent).map((subcontinent) => (
+                                <div className="arlncntntcpm1" key={subcontinent}>
+                                    <h4>{subcontinent}</h4>
+                                    <h6>All {subcontinent} Airlines</h6>
+                                    <ul>
+                                        {groupedBySubcontinent[subcontinent].map(({ name, code }) => (
+                                            <i key={code}>
+                                                <li>
+                                                    <img src={`https://flagcdn.com/w320/${code.toLowerCase()}.png`} alt={name} />
+                                                    <button onClick={() => setSelectedCountry(code)}>{name ? name : <CountryName code={`${code}`} />}</button>
+                                                </li>
+                                                {selectedCountry === code && 
+                                                    <ul>
+                                                        {countryAirline.map((details, i) => (
+                                                            <li key={i}><a href={details?.airline_website} target="blank">{details?.airline_name}</a></li>
+                                                        ))}
+                                                    </ul>
+                                                }
+                                            </i>
+                                        ))}
+                                    </ul>
+                                </div>
+                            ))}
+                        </>:<>
+                            <div className="arlncntntcpm1Empty">
+                                <span>
+                                    <p>No Airline/s data yet.</p>
+                                </span>
+                            </div>
+                        </>}
+                    </div>
+                </>}
             </section>
 
 

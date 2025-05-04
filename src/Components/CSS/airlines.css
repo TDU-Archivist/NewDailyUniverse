@@ -174,6 +174,88 @@ section.airlinesContainerPage.mid{
 
 
 
+
+
+.airlinesContentPage.filtered{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    align-items: top;
+}
+.airlinesContentPage.filtered a{
+    height: auto;
+    width: 24%;
+    overflow: hidden;
+    background: rgba(200, 200, 200);
+    border-radius: 1vw;
+    text-decoration: none;
+    text-align: center;
+    margin: 0.5%;
+}
+.airlinecpm1Img{
+    height: 14vw;
+    width: 100%;
+    border-radius: 1vw;
+    background: url('../assets/imgs/TheDailyUniverseBG.png') no-repeat center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+.airlinecpm1Img img#mgznctcpm2iFlag{
+    position: absolute;
+    top: 1vw;
+    left: 1vw;
+    height: 2vw;
+    width: 3.5vw;
+    border-radius: 0.2vw;
+    border: solid 0.1px black;
+    box-shadow: 0 0 10px gray;
+}
+.airlinecpm1Img img#mgznctcpm2iCountry{
+    height: 100%;
+    width: 100%;
+}
+.airlinecpm1Img img#mgznctcpm2iLogo{
+    width: 100%;
+}
+.airlinecpm1Dets{
+    padding: 1vw;
+}
+.airlinecpm1Dets h6{
+    font-size: 1vw;
+    line-height: 1.2vw;
+    margin: 2% 0;
+}
+.airlinecpm1Dets p{
+    font-size: 0.7vw;
+    padding: 0 5%;
+    color: gray;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .airlinesContentPage.mid2{
     height: auto;
     width: 100%;
@@ -563,7 +645,39 @@ section.airlineContContainerPage.mid{
         margin: 3% 0;
     }
 
-
+    .airlinesContentPage.filtered a{
+        height: auto;
+        width: 49%;
+        margin: 0;
+        margin-bottom: 2%;
+        border-radius: 3vw;
+    }
+    .airlinecpm1Img{
+        height: 29vw;
+        width: 100%;
+        border-radius: 0vw;
+    }
+    .airlinecpm1Img img#mgznctcpm2iFlag{
+        top: 3vw;
+        left: 3vw;
+        height: 5vw;
+        width: 8vw;
+        border-radius: 1vw;
+    }
+    .airlinecpm1Dets{
+        padding: 2vw;
+    }
+    .airlinecpm1Dets h6{
+        font-size: 3vw;
+        font-weight: 400;
+        line-height: 3vw;
+        padding: 0;
+        margin: 3% 0;
+    }
+    .airlinecpm1Dets p{
+        font-size: 2.5vw;
+        padding: 0;
+    }
 
 
 

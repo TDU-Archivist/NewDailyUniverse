@@ -192,7 +192,13 @@ const MagazineCategory = () => {
         }
     }, [currentMagazine]);
 
-    
+    const [searchTerm, setSearchTerm] = useState('');
+            
+    const filteredMagz = currentMagazine?.filter((magazine) =>
+        magazine.magazine_name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        magazine.country.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        magazine.magazine_category.toLowerCase().includes(searchTerm.toLowerCase())
+    ) || [];
 
 
 
@@ -223,7 +229,7 @@ const MagazineCategory = () => {
                         </select>
                     </div>
                     <div className="mgzncatntcpt2 right">
-                        <input type="text" placeholder='Search keyword, country or magazine name here...'/>
+                        <input type="text" placeholder='Search keyword, country or magazine name here...' value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)}/>
                         <div className="mgzncatntcpt2rBtn">
                             <button><FaSearch className='faIcons'/></button>
                             <button><FaMicrophone className='faIcons'/></button>
@@ -232,47 +238,64 @@ const MagazineCategory = () => {
                 </div>
             </section>
             <section className="magazinCatContainerPage mid">
-                {!selectedCountry ? <div className="magazinCatContentPage mid1">
-                    {countries.map((country, i) => (
-                        <button key={i} onClick={() => setSelectedCountry(country)}>
+                {(searchTerm && filteredMagz.length > 0) ? <>
+                    <div className="magazinCatContentPage mid1">
+                        {filteredMagz.map((details, i) => (
+                            <a key={i} href={details?.magazine_website} target="_blank" rel="noopener noreferrer">
                             <div className='mgznctcpm2Img'>
-                                <img src={country ? `https://flagcdn.com/w320/${(country).toLowerCase()}.png` : require('../assets/imgs/TDULandingBG.png')} alt="" id="mgznctcpm2iCountry" />
+                                <img src={details?.country ? `https://flagcdn.com/w320/${(details?.country).toLowerCase()}.png` : require('../assets/imgs/TDULandingBG.png')} alt="" id="mgznctcpm2iFlag" />
+                                <img src={thumbnails[details?.magazine_website]} alt='' id='mgznctcpm2iLogo' />
                             </div>
                             <div className='mgznctccpm2Dets'>
-                                <h6><CountryName code={`${country}`} /></h6>
-                                <p>Online {magazine}s</p>
+                                <h6>{details?.magazine_name}</h6>
+                                <p>{details?.magazine_description}</p>
                             </div>
-                        </button>
-                    ))}
-                </div>
-                :<div className="magazinCatContentPage mid1">
-                    {selectedCountry && (
-                        <>
-                            {filteredMagazines.length > 0 ? (
-                                <>
-                                    {filteredMagazines.map((details, i) => (
-                                        <a key={i} href={details?.magazine_website} target="_blank" rel="noopener noreferrer">
-                                            <div className='mgznctcpm2Img'>
-                                                <img src={details?.country ? `https://flagcdn.com/w320/${(details?.country).toLowerCase()}.png` : require('../assets/imgs/TDULandingBG.png')} alt="" id="mgznctcpm2iFlag" />
-                                                <img src={thumbnails[details?.magazine_website]} alt='' id='mgznctcpm2iLogo' />
-                                            </div>
-                                            <div className='mgznctccpm2Dets'>
-                                                <h6>{details?.magazine_name}</h6>
-                                                <p>{details?.magazine_description}</p>
-                                            </div>
-                                        </a>
-                                    ))}
-                                </>
-                            ) : (
-                                <div className="mgznctccpm2Empty">
-                                    <span>
-                                        <p>No {magazine}s listed yet.</p>
-                                    </span>
+                            </a>
+                        ))}
+                    </div>
+                </>:<>
+                    {!selectedCountry ? <div className="magazinCatContentPage mid1">
+                        {countries.map((country, i) => (
+                            <button key={i} onClick={() => setSelectedCountry(country)}>
+                                <div className='mgznctcpm2Img'>
+                                    <img src={country ? `https://flagcdn.com/w320/${(country).toLowerCase()}.png` : require('../assets/imgs/TDULandingBG.png')} alt="" id="mgznctcpm2iCountry" />
                                 </div>
-                            )}
-                        </>
-                    )}
-                </div>}
+                                <div className='mgznctccpm2Dets'>
+                                    <h6><CountryName code={`${country}`} /></h6>
+                                    <p>Online {magazine}s</p>
+                                </div>
+                            </button>
+                        ))}
+                    </div>
+                    :<div className="magazinCatContentPage mid1">
+                        {selectedCountry && (
+                            <>
+                                {filteredMagazines.length > 0 ? (
+                                    <>
+                                        {filteredMagazines.map((details, i) => (
+                                            <a key={i} href={details?.magazine_website} target="_blank" rel="noopener noreferrer">
+                                                <div className='mgznctcpm2Img'>
+                                                    <img src={details?.country ? `https://flagcdn.com/w320/${(details?.country).toLowerCase()}.png` : require('../assets/imgs/TDULandingBG.png')} alt="" id="mgznctcpm2iFlag" />
+                                                    <img src={thumbnails[details?.magazine_website]} alt='' id='mgznctcpm2iLogo' />
+                                                </div>
+                                                <div className='mgznctccpm2Dets'>
+                                                    <h6>{details?.magazine_name}</h6>
+                                                    <p>{details?.magazine_description}</p>
+                                                </div>
+                                            </a>
+                                        ))}
+                                    </>
+                                ) : (
+                                    <div className="mgznctccpm2Empty">
+                                        <span>
+                                            <p>No {magazine}s listed yet.</p>
+                                        </span>
+                                    </div>
+                                )}
+                            </>
+                        )}
+                    </div>}
+                </>}
             </section>
 
 

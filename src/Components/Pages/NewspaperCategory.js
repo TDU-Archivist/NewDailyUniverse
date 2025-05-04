@@ -154,6 +154,14 @@ const NewspaperCategory = () => {
     }
   }, [currentNewspapers]);
 
+  const [searchTerm, setSearchTerm] = useState('');
+          
+  const filteredNewspapers = currentNewspapers?.filter((newspaper) =>
+      newspaper.newspaper_name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      newspaper.country.toLowerCase().includes(searchTerm.toLowerCase())
+  ) || [];
+
+
   return (
     <div className='mainContainer newsCategory'>
       <div className={webLoader ? "allLoaderContainer active" : "allLoaderContainer disable"}>
@@ -181,7 +189,7 @@ const NewspaperCategory = () => {
                 </select>
             </div>
             <div className="nwspprcatntcpt2 right">
-                <input type="text" placeholder='Search keyword, country or newspaper name here...'/>
+                <input type="text" placeholder='Search keyword, country or newspaper name here...' value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)}/>
                 <div className="nwspprcatntcpt2rBtn">
                     <button><FaSearch className='faIcons'/></button>
                     <button><FaMicrophone className='faIcons'/></button>
@@ -190,50 +198,67 @@ const NewspaperCategory = () => {
         </div>
       </section>
       <section className="newspaperCatContainerPage mid">
-        {currentNewspapers.length > 0 ? <>
-          {!selectedCountry ? <div className="newspaperCatContentPage mid1">
-              {countries.map((country, i) => (
-                  <button key={i} onClick={() => setSelectedCountry(country)}>
-                      <div className='nwspprctcpm2Img'>
-                          <img src={country ? `https://flagcdn.com/w320/${(country).toLowerCase()}.png` : require('../assets/imgs/TDULandingBG.png')} alt="" id="nwspprctcpm2iCountry" />
-                      </div>
-                      <div className='nwspprctccpm2Dets'>
-                          <h6><CountryName code={`${country}`} /></h6>
-                          <p>Online {newspaper}</p>
-                      </div>
-                  </button>
-              ))}
-          </div>
-          :<div className="newspaperCatContentPage mid1">
-              {selectedCountry.length ? <>
-                  {filteredNewspaper?.map((details, i) => (
-                      <a key={i} href={details?.newspaper_website} target="_blank" rel="noopener noreferrer">
-                          <div className='nwspprctcpm2Img'>
-                            <img src={`https://flagcdn.com/w320/${(details?.country).toLowerCase()}.png`} alt="" id="nwspprctcpm2iFlag" />
-                            <img id='nwspprctcpm2iLogo' src={thumbnails[details?.newspaper_website]} alt='' />
-                          </div>
-                          <div className='nwspprctccpm2Dets'>
-                              <h6>{details?.newspaper_name}</h6>
-                              <p>{details?.newspaper_description}</p>
-                          </div>
-                      </a>
-                  ))}
-              </>:<>
-                  <div className="nwspprctccpm2Empty">
-                      <span>
-                          <p>No {newspaper}s listed yet.</p>
-                      </span>
-                  </div>
-              </>}
-          </div>}
-        </>:<>
+        {(searchTerm && filteredNewspapers.length > 0) ? <>
           <div className="newspaperCatContentPage mid1">
-            <div className="nwspprctccpm2Empty">
-              <span>
-                <p>No {newspaper}s listed yet.</p>
-              </span>
-            </div>
+            {filteredNewspapers?.map((details, i) => (
+                <a key={i} href={details?.newspaper_website} target="_blank" rel="noopener noreferrer">
+                <div className='nwspprctcpm2Img'>
+                    <img src={`https://flagcdn.com/w320/${(details?.country).toLowerCase()}.png`} alt="" id="nwspprctcpm2iFlag" />
+                    <img id='nwspprctcpm2iLogo' src={thumbnails[details?.newspaper_website]} alt='' />
+                </div>
+                <div className='nwspprctccpm2Dets'>
+                    <h6>{details?.newspaper_name}</h6>
+                    <p>{details?.newspaper_description}</p>
+                </div>
+                </a>
+            ))}
           </div>
+        </>:<>
+          {currentNewspapers.length > 0 ? <>
+            {!selectedCountry ? <div className="newspaperCatContentPage mid1">
+                {countries.map((country, i) => (
+                    <button key={i} onClick={() => setSelectedCountry(country)}>
+                        <div className='nwspprctcpm2Img'>
+                            <img src={country ? `https://flagcdn.com/w320/${(country).toLowerCase()}.png` : require('../assets/imgs/TDULandingBG.png')} alt="" id="nwspprctcpm2iCountry" />
+                        </div>
+                        <div className='nwspprctccpm2Dets'>
+                            <h6><CountryName code={`${country}`} /></h6>
+                            <p>Online {newspaper}</p>
+                        </div>
+                    </button>
+                ))}
+            </div>
+            :<div className="newspaperCatContentPage mid1">
+                {selectedCountry.length ? <>
+                    {filteredNewspaper?.map((details, i) => (
+                        <a key={i} href={details?.newspaper_website} target="_blank" rel="noopener noreferrer">
+                            <div className='nwspprctcpm2Img'>
+                              <img src={`https://flagcdn.com/w320/${(details?.country).toLowerCase()}.png`} alt="" id="nwspprctcpm2iFlag" />
+                              <img id='nwspprctcpm2iLogo' src={thumbnails[details?.newspaper_website]} alt='' />
+                            </div>
+                            <div className='nwspprctccpm2Dets'>
+                                <h6>{details?.newspaper_name}</h6>
+                                <p>{details?.newspaper_description}</p>
+                            </div>
+                        </a>
+                    ))}
+                </>:<>
+                    <div className="nwspprctccpm2Empty">
+                        <span>
+                            <p>No {newspaper}s listed yet.</p>
+                        </span>
+                    </div>
+                </>}
+            </div>}
+          </>:<>
+            <div className="newspaperCatContentPage mid1">
+              <div className="nwspprctccpm2Empty">
+                <span>
+                  <p>No {newspaper}s listed yet.</p>
+                </span>
+              </div>
+            </div>
+          </>}
         </>}
       </section>
 

@@ -92,7 +92,51 @@ const Restaurants = () => {
         exchangeRates,
         viewAllArticles,
         data,
+        dataList
     } = MainDataLoad(); 
+
+    const webLogoProxy = process.env.REACT_APP_WEBLOGO_PROXY;
+    const [thumbnails, setThumbnails] = useState({});
+    const [searchTerm, setSearchTerm] = useState('');
+        
+    const filteredRestaurants = dataList?.viewAllRestaurants?.filter((restaurant) =>
+      restaurant.restaurant_name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      restaurant.country.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      restaurant.restaurant_category.toLowerCase().includes(searchTerm.toLowerCase())
+    ) || [];
+    useEffect(() => {
+      const fetchThumbnails = async () => {
+          const newThumbnails = {};
+  
+          await Promise.all(
+            filteredRestaurants?.map(async (details) => {
+                  try {
+                      const response = await axios.get(
+                          `${webLogoProxy}?url=${encodeURIComponent(details?.restaurant_website)}`
+                      );
+  
+                      // Ensure the response is valid
+                      if (response.data.image && response.data.image !== "No image found") {
+                          newThumbnails[details?.restaurant_website] = response.data.image;
+                      } else {
+                          // newThumbnails[details?.magazine_website] = defaultImage;
+                      }
+                  } catch (error) {
+                      // Don't fetch the image if there's an error
+                      // newThumbnails[details?.magazine_website] = defaultImage;
+                  }
+              })
+          );
+  
+          setThumbnails(newThumbnails);
+      };
+  
+      if (filteredRestaurants?.length) {
+        fetchThumbnails();
+      }
+    }, [filteredRestaurants]);
+
+
 
 
     return (
@@ -116,7 +160,7 @@ const Restaurants = () => {
                   {/* <p>The must visit restaurants and recommended food and drinks around the world.</p> */}
                 </div>
                 <div className="rstrntscpt2 right">
-                  <input type="text" placeholder='Search keyword, article or topic here...'/>
+                  <input type="text" placeholder='Search keyword, article or topic here...'  value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)}/>
                   <div className="rstrntscpt2rBtn">
                     <button><FaSearch className='faIcons'/></button>
                     <button><FaMicrophone className='faIcons'/></button>
@@ -125,7 +169,23 @@ const Restaurants = () => {
               </div><hr />
             </section>
             <section className="restaurantsContainerPage mid">
-                <div className="restaurantsContentPage mid1">
+                {(searchTerm && filteredRestaurants.length > 0) ? <>
+                  <div className="restaurantCatContentPage mid1">
+                    {filteredRestaurants?.map((details, i) => (
+                        <a key={i} href={details?.restaurant_website} target="_blank" rel="noopener noreferrer">
+                            <div className='rstrntctcpm2Img'>
+                                <img src={details?.country ? `https://flagcdn.com/w320/${(details?.country).toLowerCase()}.png` : require('../assets/imgs/TDULandingBG.png')} alt="" id="rstrntctcpm2iFlag" />
+                                <img src={thumbnails[details?.restaurant_website]} alt='' id='rstrntctcpm2iLogo' />
+                            </div>
+                            <div className='rstrntctccpm2Dets'>
+                                <h6>{details?.restaurant_name}</h6>
+                                <p>{details?.restaurant_description}</p>
+                            </div>
+                        </a>
+                    ))}
+                  </div>
+                </>:<>
+                  <div className="restaurantsContentPage mid1">
                     <Link className="rstrntscm1" to='/Restaurants/ExpensiveRestaurants'>
                         <div className='rstrntscm1Img'>
                             <img src={require('../assets/imgs/Restaurants/expensive-restaurants.jpg')} alt="" />
@@ -162,7 +222,8 @@ const Restaurants = () => {
                             <p>Find the list of Most Unique Restaurants around the World. Traveling soon? Try and taste the best food in these restaurants.</p>
                         </div>
                     </Link>
-                </div>
+                  </div>
+                </>}
             </section>
 
 

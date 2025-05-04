@@ -138,6 +138,12 @@ const NewsChannels = () => {
         fetchCountryNames();
     }, [dataList]);
 
+    
+    const [searchTerm, setSearchTerm] = useState('');
+    
+    const filteredChannels = dataList?.viewAllLiveChannels?.filter((channels) =>
+        channels.channel_name.toLowerCase().includes(searchTerm.toLowerCase())
+    ) || [];
 
 
     return (
@@ -160,7 +166,7 @@ const NewsChannels = () => {
                         <p>Stay Informed with Live Telecasts from these Trusted News Channels.</p>
                     </div>
                     <div className="nwschnlcpt2 right">
-                        <input type="text" placeholder='Search keyword, news channel or youtube channel here...'/>
+                        <input type="text" placeholder='Search keyword, news channel or youtube channel here...' value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)}/>
                         <div className="nwschnlcpt2rBtn">
                             <button><FaSearch className='faIcons'/></button>
                             <button><FaMicrophone className='faIcons'/></button>
@@ -178,18 +184,33 @@ const NewsChannels = () => {
                 <div className="newsChannelsContentPage mid2">
                     {viewLiveChannels && <div className="nwschnlcpm2Content1">
                         <>
-                            {dataList?.viewAllLiveChannels?.map((details, i) => (
-                                <a className="nwschnlcpm2c1" href={details?.channel_website} target='blank' key={i}>
-                                    <div className='nwschnlcpm2c1Img'>
-                                        <img id='nwschnlcpm2c1iLogo' src={details?.channel_logo} alt="" />
-                                        <h6>{details?.country}</h6>
-                                    </div>
-                                    <div className='nwschnlcpm2c1Content'>
-                                        <h5>{details?.channel_name}</h5>
-                                        <p>{countries[details?.country] || details?.country}</p>
-                                    </div>
-                                </a>
-                            ))}
+                            {(searchTerm && filteredChannels.length > 0) ?<>
+                                {filteredChannels?.map((details, i) => (
+                                    <a className="nwschnlcpm2c1" href={details?.channel_website} target='blank' key={i}>
+                                        <div className='nwschnlcpm2c1Img'>
+                                            <img id='nwschnlcpm2c1iLogo' src={details?.channel_logo} alt="" />
+                                            <h6>{details?.country}</h6>
+                                        </div>
+                                        <div className='nwschnlcpm2c1Content'>
+                                            <h5>{details?.channel_name}</h5>
+                                            <p>{countries[details?.country] || details?.country}</p>
+                                        </div>
+                                    </a>
+                                ))}
+                            </>:<>
+                                {dataList?.viewAllLiveChannels?.map((details, i) => (
+                                    <a className="nwschnlcpm2c1" href={details?.channel_website} target='blank' key={i}>
+                                        <div className='nwschnlcpm2c1Img'>
+                                            <img id='nwschnlcpm2c1iLogo' src={details?.channel_logo} alt="" />
+                                            <h6>{details?.country}</h6>
+                                        </div>
+                                        <div className='nwschnlcpm2c1Content'>
+                                            <h5>{details?.channel_name}</h5>
+                                            <p>{countries[details?.country] || details?.country}</p>
+                                        </div>
+                                    </a>
+                                ))}
+                            </>}
                         </>
                     </div>}
                     {viewYoutubeChannels && <div className="nwschnlcpm2Content1">

@@ -92,7 +92,47 @@ const Airlines = () => {
         exchangeRates,
         viewAllArticles,
         data,
+        dataList,
     } = MainDataLoad(); 
+    const webLogoProxy = process.env.REACT_APP_WEBLOGO_PROXY;
+    const [thumbnails, setThumbnails] = useState({}); // Store fetched 
+    const [airline, setAirline] = useState('')
+    const [searchTerm, setSearchTerm] = useState('');
+    
+    const filteredAirlines = dataList?.viewAllAirlines?.filter((airline) =>
+        airline.airline_name.toLowerCase().includes(searchTerm.toLowerCase())
+    ) || [];
+    useEffect(() => {
+        const fetchThumbnails = async () => {
+            const newThumbnails = {};
+    
+            await Promise.all(
+                filteredAirlines?.map(async (details) => {
+                    try {
+                        const response = await axios.get(
+                            `${webLogoProxy}?url=${encodeURIComponent(details?.airline_website)}`
+                        );
+    
+                        // Ensure the response is valid
+                        if (response.data.image && response.data.image !== "No image found") {
+                            newThumbnails[details?.airline_website] = response.data.image;
+                        } else {
+                            // newThumbnails[details?.magazine_website] = defaultImage;
+                        }
+                    } catch (error) {
+                        // Don't fetch the image if there's an error
+                        // newThumbnails[details?.magazine_website] = defaultImage;
+                    }
+                })
+            );
+    
+            setThumbnails(newThumbnails);
+        };
+    
+        if (filteredAirlines?.length) {
+            fetchThumbnails();
+        }
+    }, [filteredAirlines]);
 
 
     return (
@@ -116,7 +156,7 @@ const Airlines = () => {
                         <h5>FAMOUS AIRLINES AROUND THE WORLD</h5>
                     </div>
                     <div className="airlnscpt2 right">
-                        <input type="text" placeholder='Search airline or keywords here...'/>
+                        <input type="text" placeholder='Search airline or keywords here...' value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)}/>
                         <div className="airlnscpt2rBtn">
                             <button><FaSearch className='faIcons'/></button>
                             <button><FaMicrophone className='faIcons'/></button>
@@ -126,44 +166,65 @@ const Airlines = () => {
                 <hr />
             </section>
             <section className="airlinesContainerPage mid">
-                <div className="airlinesContentPage mid1">
-                    <Link to='/Airlines/Continent/America'>
-                        <img src={require('../assets/imgs/Airlines/AmericanAirlines.png')} alt="" />
-                        <div>
-                            <h6>AMERICAN AIRLINES</h6>
+                {(searchTerm && filteredAirlines.length > 0) ?
+                    <>
+                        <div className="airlinesContentPage filtered">
+                            <>
+                                {filteredAirlines.map((details, i) => (
+                                    <a key={i} href={details?.airline_website} target="_blank" rel="noopener noreferrer">
+                                        <div className='airlinecpm1Img'>
+                                            <img src={details?.country ? `https://flagcdn.com/w320/${(details?.country).toLowerCase()}.png` : require('../assets/imgs/TDULandingBG.png')} alt="" id="mgznctcpm2iFlag" />
+                                            <img src={thumbnails[details?.airline_website]} alt='' id='mgznctcpm2iLogo' />
+                                        </div>
+                                        <div className='airlinecpm1Dets'>
+                                            <h6>{details?.airline_name}</h6>
+                                            <p>{details?.airline_description}</p>
+                                        </div>
+                                    </a>
+                                ))}
+                            </>
                         </div>
-                    </Link>
-                    <Link to='/Airlines/Continent/Europe'>
-                        <img src={require('../assets/imgs/Airlines/EuropeanAirlines.png')} alt="" />
-                        <div>
-                            <h6>EUROPEAN AIRLINES</h6>
+                    </>:<>
+                        <div className="airlinesContentPage mid1">
+                            <Link to='/Airlines/Continent/America'>
+                                <img src={require('../assets/imgs/Airlines/AmericanAirlines.png')} alt="" />
+                                <div>
+                                    <h6>AMERICAN AIRLINES</h6>
+                                </div>
+                            </Link>
+                            <Link to='/Airlines/Continent/Europe'>
+                                <img src={require('../assets/imgs/Airlines/EuropeanAirlines.png')} alt="" />
+                                <div>
+                                    <h6>EUROPEAN AIRLINES</h6>
+                                </div>
+                            </Link>
+                            <Link to='/Airlines/Continent/Africa'>
+                                <img src={require('../assets/imgs/Airlines/AfricanAirlines.png')} alt="" />
+                                <div>
+                                    <h6>AFRICAN AIRLINES</h6>
+                                </div>
+                            </Link>
+                            <Link to='/Airlines/Continent/Asia'>
+                                <img src={require('../assets/imgs/Airlines/AsianAirlines.png')} alt="" />
+                                <div>
+                                    <h6>ASIAN AIRLINES</h6>
+                                </div>
+                            </Link>
+                            <Link to='/Airlines/Continent/Oceania'>
+                                <img src={require('../assets/imgs/Airlines/OceanianAirlines.png')} alt="" />
+                                <div>
+                                    <h6>OCEANIAN AIRLINES</h6>
+                                </div>
+                            </Link>
+                            <Link to='/Airlines/Continent/Antarctica'>
+                                <img src={require('../assets/imgs/Airlines/AntarticaAirlines.png')} alt="" />
+                                <div>
+                                    <h6>ANTARCTICAN AIRLINES</h6>
+                                </div>
+                            </Link>
                         </div>
-                    </Link>
-                    <Link to='/Airlines/Continent/Africa'>
-                        <img src={require('../assets/imgs/Airlines/AfricanAirlines.png')} alt="" />
-                        <div>
-                            <h6>AFRICAN AIRLINES</h6>
-                        </div>
-                    </Link>
-                    <Link to='/Airlines/Continent/Asia'>
-                        <img src={require('../assets/imgs/Airlines/AsianAirlines.png')} alt="" />
-                        <div>
-                            <h6>ASIAN AIRLINES</h6>
-                        </div>
-                    </Link>
-                    <Link to='/Airlines/Continent/Oceania'>
-                        <img src={require('../assets/imgs/Airlines/OceanianAirlines.png')} alt="" />
-                        <div>
-                            <h6>OCEANIAN AIRLINES</h6>
-                        </div>
-                    </Link>
-                    <Link to='/Airlines/Continent/Antarctica'>
-                        <img src={require('../assets/imgs/Airlines/AntarticaAirlines.png')} alt="" />
-                        <div>
-                            <h6>ANTARCTICAN AIRLINES</h6>
-                        </div>
-                    </Link>
-                </div>
+                    </>
+                }
                 {/* <div className="airlinesContentPage mid2">
                     <div className="airlnscpm2Header">
                         <h5>RECOMMENDED AIRLINES</h5>

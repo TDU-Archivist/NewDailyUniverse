@@ -154,6 +154,12 @@ const RestaurantCategory = () => {
         }
     }, [currentRestaurants]);
     
+    const [searchTerm, setSearchTerm] = useState('');
+                
+    const filteredRestaurants = currentRestaurants?.filter((restaurant) =>
+        restaurant.restaurant_name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        restaurant.country.toLowerCase().includes(searchTerm.toLowerCase())
+    ) || [];
 
 
     return (
@@ -183,7 +189,7 @@ const RestaurantCategory = () => {
                         </select>
                     </div>
                     <div className="rstrntcatntcpt2 right">
-                        <input type="text" placeholder='Search keyword, country or restaurant name here...'/>
+                        <input type="text" placeholder='Search keyword, country or restaurant name here...' value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)}/>
                         <div className="rstrntcatntcpt2rBtn">
                             <button><FaSearch className='faIcons'/></button>
                             <button><FaMicrophone className='faIcons'/></button>
@@ -192,50 +198,67 @@ const RestaurantCategory = () => {
                 </div>
             </section>
             <section className="restaurantCatContainerPage mid">
-                {currentRestaurants.length > 0 ? <>
-                    {!selectedCountry ? <div className="restaurantCatContentPage mid1">
-                        {countries.map((country, i) => (
-                            <button key={i} onClick={() => setSelectedCountry(country)}>
+                {(searchTerm && filteredRestaurants.length > 0) ? <>
+                    <div className="restaurantCatContentPage mid1">
+                        {filteredRestaurants?.map((details, i) => (
+                            <a key={i} href={details?.restaurant_website} target="_blank" rel="noopener noreferrer">
                                 <div className='rstrntctcpm2Img'>
-                                    <img src={country ? `https://flagcdn.com/w320/${(country).toLowerCase()}.png` : require('../assets/imgs/TDULandingBG.png')} alt="" id="rstrntctcpm2iCountry" />
+                                    <img src={details?.country ? `https://flagcdn.com/w320/${(details?.country).toLowerCase()}.png` : require('../assets/imgs/TDULandingBG.png')} alt="" id="rstrntctcpm2iFlag" />
+                                    <img src={thumbnails[details?.restaurant_website]} alt='' id='rstrntctcpm2iLogo' />
                                 </div>
                                 <div className='rstrntctccpm2Dets'>
-                                    <h6><CountryName code={`${country}`} />'s</h6>
-                                    <p>{restaurant}taurants</p>
+                                    <h6>{details?.restaurant_name}</h6>
+                                    <p>{details?.restaurant_description}</p>
                                 </div>
-                            </button>
+                            </a>
                         ))}
                     </div>
-                    :<div className="restaurantCatContentPage mid1">
-                        {selectedCountry.length ? <>
-                            {filteredRestaurant?.map((details, i) => (
-                                <a key={i} href={details?.restaurant_website} target="_blank" rel="noopener noreferrer">
+                </>:<>
+                    {currentRestaurants.length > 0 ? <>
+                        {!selectedCountry ? <div className="restaurantCatContentPage mid1">
+                            {countries.map((country, i) => (
+                                <button key={i} onClick={() => setSelectedCountry(country)}>
                                     <div className='rstrntctcpm2Img'>
-                                        <img src={details?.country ? `https://flagcdn.com/w320/${(details?.country).toLowerCase()}.png` : require('../assets/imgs/TDULandingBG.png')} alt="" id="rstrntctcpm2iFlag" />
-                                        <img src={thumbnails[details?.restaurant_website]} alt='' id='rstrntctcpm2iLogo' />
+                                        <img src={country ? `https://flagcdn.com/w320/${(country).toLowerCase()}.png` : require('../assets/imgs/TDULandingBG.png')} alt="" id="rstrntctcpm2iCountry" />
                                     </div>
                                     <div className='rstrntctccpm2Dets'>
-                                        <h6>{details?.restaurant_name}</h6>
-                                        <p>{details?.restaurant_description}</p>
+                                        <h6><CountryName code={`${country}`} />'s</h6>
+                                        <p>{restaurant}taurants</p>
                                     </div>
-                                </a>
+                                </button>
                             ))}
-                        </>:<>
-                            <div className="rstrntctccpm2Empty">
-                                <span>
-                                    <p>No {restaurant}taurants listed yet.</p>
-                                </span>
-                            </div>
-                        </>}
-                    </div>}
-                </>:<>
-                    <div className="restaurantCatContentPage mid1">
-                        <div className="rstrntctccpm2Empty">
-                        <span>
-                            <p>No {restaurant}taurants listed yet.</p>
-                        </span>
                         </div>
-                    </div>
+                        :<div className="restaurantCatContentPage mid1">
+                            {selectedCountry.length ? <>
+                                {filteredRestaurant?.map((details, i) => (
+                                    <a key={i} href={details?.restaurant_website} target="_blank" rel="noopener noreferrer">
+                                        <div className='rstrntctcpm2Img'>
+                                            <img src={details?.country ? `https://flagcdn.com/w320/${(details?.country).toLowerCase()}.png` : require('../assets/imgs/TDULandingBG.png')} alt="" id="rstrntctcpm2iFlag" />
+                                            <img src={thumbnails[details?.restaurant_website]} alt='' id='rstrntctcpm2iLogo' />
+                                        </div>
+                                        <div className='rstrntctccpm2Dets'>
+                                            <h6>{details?.restaurant_name}</h6>
+                                            <p>{details?.restaurant_description}</p>
+                                        </div>
+                                    </a>
+                                ))}
+                            </>:<>
+                                <div className="rstrntctccpm2Empty">
+                                    <span>
+                                        <p>No {restaurant}taurants listed yet.</p>
+                                    </span>
+                                </div>
+                            </>}
+                        </div>}
+                    </>:<>
+                        <div className="restaurantCatContentPage mid1">
+                            <div className="rstrntctccpm2Empty">
+                            <span>
+                                <p>No {restaurant}taurants listed yet.</p>
+                            </span>
+                            </div>
+                        </div>
+                    </>}
                 </>}
             </section>
 

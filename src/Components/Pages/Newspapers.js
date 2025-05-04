@@ -92,9 +92,49 @@ const Newspapers = () => {
         exchangeRates,
         viewAllArticles,
         data,
+        dataList,
     } = MainDataLoad(); 
 
-
+    const webLogoProxy = process.env.REACT_APP_WEBLOGO_PROXY;
+    const [thumbnails, setThumbnails] = useState({});
+    const [searchTerm, setSearchTerm] = useState('');
+        
+    const filteredNewspapers = dataList?.viewAllNewspapers?.filter((newspaper) =>
+      newspaper.newspaper_name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      newspaper.country.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      newspaper.newspaper_category.toLowerCase().includes(searchTerm.toLowerCase())
+    ) || [];
+    useEffect(() => {
+      const fetchThumbnails = async () => {
+          const newThumbnails = {};
+  
+          await Promise.all(
+            filteredNewspapers?.map(async (details) => {
+                  try {
+                      const response = await axios.get(
+                          `${webLogoProxy}?url=${encodeURIComponent(details?.newspaper_website)}`
+                      );
+  
+                      // Ensure the response is valid
+                      if (response.data.image && response.data.image !== "No image found") {
+                          newThumbnails[details?.newspaper_website] = response.data.image;
+                      } else {
+                          // newThumbnails[details?.magazine_website] = defaultImage;
+                      }
+                  } catch (error) {
+                      // Don't fetch the image if there's an error
+                      // newThumbnails[details?.magazine_website] = defaultImage;
+                  }
+              })
+          );
+  
+          setThumbnails(newThumbnails);
+      };
+  
+      if (filteredNewspapers?.length) {
+        fetchThumbnails();
+      }
+    }, [filteredNewspapers]);
 
 
     return (
@@ -117,7 +157,7 @@ const Newspapers = () => {
                     {/* <p>Stay Informed in traditional reading like before, checkout everyday's edition here.</p> */}
                   </div>
                   <div className="nwspprcpt2 right">
-                      <input type="text" placeholder='Search keyword, article or topic here...'/>
+                      <input type="text" placeholder='Search keyword, article or topic here...' value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)}/>
                       <div className="nwspprcpt2rBtn">
                           <button><FaSearch className='faIcons'/></button>
                           <button><FaMicrophone className='faIcons'/></button>
@@ -127,44 +167,61 @@ const Newspapers = () => {
             </section>
 
             <section className="newspapersContainerPage mid">
-              <div className="newspapersContentPage mid1">
-                <Link className="nwspprcm1" to='/Newspapers/AlternativeNewspaper'>
-                  <div className='nwspprcpm1Img'>
-                    <img src={require('../assets/imgs/Newspaper/00.AltNewspaper.png')} alt="" />
-                  </div>
-                  <div className='nwspprcm1Content'>
-                    <h5>ALTERNATIVE NEWSPAPER</h5>
-                    <p>Find the most interesting issues, hot topics and breakings news. Read the the latest daily news from the list of Alternative Newspapers around the world!</p>
-                  </div>
-                </Link>
-                <Link className="nwspprcm1" to='/Newspapers/CollegeNewspaper'>
-                  <div className='nwspprcpm1Img'>
-                    <img src={require('../assets/imgs/Newspaper/00.CollegeNewspaper.png')} alt="" />
-                  </div>
-                  <div className='nwspprcm1Content'>
-                    <h5>COLLEGE NEWSPAPER</h5>
-                    <p>The list of student newspapers (College Newspapers and University Newspapers) from the best colleges and universities around the world.</p>
-                  </div>
-                </Link>
-                <Link className="nwspprcm1" to='/Newspapers/LocalCountryNewspaper'>
-                  <div className='nwspprcpm1Img'>
-                    <img src={require('../assets/imgs/Newspaper/00.LocalNewspaper.png')} alt="" />
-                  </div>
-                  <div className='nwspprcm1Content'>
-                    <h5>LOCAL COUNTRY NEWSPAPER</h5>
-                    <p>Get the latest news today! Find thousands of online newspapers from around the world. All newspapers are carefully sorted by region, country, and state.</p>
-                  </div>
-                </Link>
-                <Link className="nwspprcm1" to='/Newspapers/WorldNewspaper'>
-                  <div className='nwspprcpm1Img'>
-                    <img src={require('../assets/imgs/Newspaper/00.WorldNewspaper.png')} alt="" />
-                  </div>
-                  <div className='nwspprcm1Content'>
-                    <h5>WORLD NEWSPAPER</h5>
-                    <p>Check the list of real-time news from World Newspapers Online. We cover news on politics, society, culture, sport, travel, and more. Learn more.</p>
-                  </div>
-                </Link>
-              </div>
+              {(searchTerm && filteredNewspapers.length > 0) ? <>
+                <div className="newspaperCatContentPage mid1">
+                  {filteredNewspapers?.map((details, i) => (
+                    <a key={i} href={details?.newspaper_website} target="_blank" rel="noopener noreferrer">
+                      <div className='nwspprctcpm2Img'>
+                        <img src={`https://flagcdn.com/w320/${(details?.country).toLowerCase()}.png`} alt="" id="nwspprctcpm2iFlag" />
+                        <img id='nwspprctcpm2iLogo' src={thumbnails[details?.newspaper_website]} alt='' />
+                      </div>
+                      <div className='nwspprctccpm2Dets'>
+                        <h6>{details?.newspaper_name}</h6>
+                        <p>{details?.newspaper_description}</p>
+                      </div>
+                    </a>
+                  ))}
+                </div>
+              </>:<>
+                <div className="newspapersContentPage mid1">
+                  <Link className="nwspprcm1" to='/Newspapers/AlternativeNewspaper'>
+                    <div className='nwspprcpm1Img'>
+                      <img src={require('../assets/imgs/Newspaper/00.AltNewspaper.png')} alt="" />
+                    </div>
+                    <div className='nwspprcm1Content'>
+                      <h5>ALTERNATIVE NEWSPAPER</h5>
+                      <p>Find the most interesting issues, hot topics and breakings news. Read the the latest daily news from the list of Alternative Newspapers around the world!</p>
+                    </div>
+                  </Link>
+                  <Link className="nwspprcm1" to='/Newspapers/CollegeNewspaper'>
+                    <div className='nwspprcpm1Img'>
+                      <img src={require('../assets/imgs/Newspaper/00.CollegeNewspaper.png')} alt="" />
+                    </div>
+                    <div className='nwspprcm1Content'>
+                      <h5>COLLEGE NEWSPAPER</h5>
+                      <p>The list of student newspapers (College Newspapers and University Newspapers) from the best colleges and universities around the world.</p>
+                    </div>
+                  </Link>
+                  <Link className="nwspprcm1" to='/Newspapers/LocalCountryNewspaper'>
+                    <div className='nwspprcpm1Img'>
+                      <img src={require('../assets/imgs/Newspaper/00.LocalNewspaper.png')} alt="" />
+                    </div>
+                    <div className='nwspprcm1Content'>
+                      <h5>LOCAL COUNTRY NEWSPAPER</h5>
+                      <p>Get the latest news today! Find thousands of online newspapers from around the world. All newspapers are carefully sorted by region, country, and state.</p>
+                    </div>
+                  </Link>
+                  <Link className="nwspprcm1" to='/Newspapers/WorldNewspaper'>
+                    <div className='nwspprcpm1Img'>
+                      <img src={require('../assets/imgs/Newspaper/00.WorldNewspaper.png')} alt="" />
+                    </div>
+                    <div className='nwspprcm1Content'>
+                      <h5>WORLD NEWSPAPER</h5>
+                      <p>Check the list of real-time news from World Newspapers Online. We cover news on politics, society, culture, sport, travel, and more. Learn more.</p>
+                    </div>
+                  </Link>
+                </div>
+              </>}
             </section>
 
 
