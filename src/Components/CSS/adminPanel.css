@@ -42,9 +42,9 @@ h6{
 
 
 section.adminPanelContainerPage{
-    height: auto;
+    height: 100vh;
     width: 100%;
-    padding: 5vw;
+    padding: 4vw 5vw;
     padding-bottom: 1.5vw;
 }
 .adminPanelContentPage{
@@ -52,10 +52,10 @@ section.adminPanelContainerPage{
     width: 100%;
     display: flex;
     justify-content: space-between;
-    align-items: start;
+    align-items: top;
 }
 .admnpnlcp.left{
-    height: 42.7vw;
+    height: 100%;
     width: 20%;
     padding: 1%;
     background: rgb(230, 230, 230);
@@ -91,7 +91,6 @@ section.adminPanelContainerPage{
 .admnpnlcplNavigations{
     height: auto;
     width: 100%;
-    margin-top: 10%;
 }
 .admnpnlcplNavigations button{
     width: 100%;
@@ -142,16 +141,19 @@ section.adminPanelContainerPage{
 
 
 .admnpnlcp.right{
-    height: 42.7vw;
-    width: 75%;
+    height: 43.5vw;
+    width: 78%;
     background: rgb(230, 230, 230);
     border-radius: 1vw;
     padding: 1% 2%;
-    overflow-x: hidden;
     overflow-y: scroll;
+    overflow-x: hidden;
 }
 
-
+.admnpnlcpr{
+    height: auto;
+    width: 100%;
+}
 .admnpnlcprContainer{
     height: auto;
     width: 100%;
@@ -864,10 +866,7 @@ section.adminPanelContainerPage{
     margin-top: 3%;
 }
 .admnpnlcprcaairlineBtn p{
-    width: 83%;
     text-align: center;
-    font-weight: 600;
-    font-size: 0.9vw;
 }
 .admnpnlcprcaairlineBtn button{
     display: flex;
@@ -1031,7 +1030,6 @@ section.adminPanelContainerPage{
     margin-top: 3%;
 }
 .admnpnlcprcaairportBtn p{
-    width: 83%;
     text-align: center;
 }
 .admnpnlcprcaairportBtn button{
@@ -1215,7 +1213,6 @@ section.adminPanelContainerPage{
     margin-top: 3%;
 }
 .admnpnlcprcalivechannelBtn p{
-    width: 83%;
     text-align: center;
 }
 .admnpnlcprcalivechannelBtn button{
@@ -1351,7 +1348,6 @@ section.adminPanelContainerPage{
     margin-top: 3%;
 }
 .admnpnlcprcayoutubechannelBtn p{
-    width: 83%;
     text-align: center;
 }
 .admnpnlcprcayoutubechannelBtn button{
@@ -1499,7 +1495,6 @@ section.adminPanelContainerPage{
     margin-top: 3%;
 }
 .admnpnlcprcamagazineBtn p{
-    width: 83%;
     text-align: center;
 }
 .admnpnlcprcamagazineBtn button{
@@ -1646,7 +1641,6 @@ section.adminPanelContainerPage{
     margin-top: 3%;
 }
 .admnpnlcprcanewspaperBtn p{
-    width: 83%;
     text-align: center;
 }
 .admnpnlcprcanewspaperBtn button{
@@ -1790,7 +1784,6 @@ section.adminPanelContainerPage{
     margin-top: 3%;
 }
 .admnpnlcprcarestaurantBtn p{
-    width: 83%;
     text-align: center;
 }
 .admnpnlcprcarestaurantBtn button{
@@ -1918,7 +1911,6 @@ section.adminPanelContainerPage{
     margin-top: 3%;
 }
 .admnpnlcprcasportBtn p{
-    width: 83%;
     text-align: center;
 }
 .admnpnlcprcasportBtn button{
@@ -1954,5 +1946,280 @@ section.adminPanelContainerPage{
 
 
 
+.admnpnlcprContainer.addTravelDes button#travelDesList{
+    position: absolute;
+    top: 1vw;
+    right: 1vw;
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 2vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.admnpnlcprcAddTravelDes{
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    margin-top: 3%;
+}
+.admnpnlcprcatraveldes.left{
+    height: auto;
+    width: 30%;
+}
+.admnpnlcprcatraveldes.left div{
+    margin-bottom: 1vw;
+}
+.admnpnlcprcatraveldes.left div h6{
+    margin-left: 2%;
+    margin-bottom: 1%;
+    font-size: 0.7vw;
+    font-weight: 600;
+    color: gray;
+}
+.admnpnlcprcatraveldes.left div select,
+.admnpnlcprcatraveldes.left div input{
+    height: auto;
+    width: 100%;
+    padding: 5px 10px;
+    font-size: 0.7vw;
+    border: solid 2px gray;
+    outline: none;
+    background: none;
+    color: black;
+    border-radius: 10px;
+}
+.admnpnlcprcatraveldes.left div select option{
+    background: gray;
+}
+.admnpnlcprcatraveldes.right{
+    height: auto;
+    width: 65%;
+}
+.admnpnlcprcatraveldes.right div h6{
+    margin-left: 2%;
+    margin-bottom: 1%;
+    font-size: 0.7vw;
+    font-weight: 600;
+    color: gray;
+}
+.admnpnlcprcatraveldesrHeader{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.admnpnlcprcatraveldesrHeader div{
+    width: 49%;
+    margin-bottom: 1vw;
+}
+.admnpnlcprcatraveldesrHeader div input,
+.admnpnlcprcatraveldesrHeader div select{
+    height: auto;
+    width: 100%;
+    padding: 5px 10px;
+    font-size: 0.7vw;
+    border: solid 2px gray;
+    outline: none;
+    background: none;
+    color: black;
+    border-radius: 10px;
+}
+.admnpnlcprcatraveldesrContent{
+    height: auto;
+    width: 100%;
+}
+.admnpnlcprcatraveldesrContent textarea{
+    height: 12vw;
+    width: 100%;
+    padding: 10px;
+    font-size: 0.7vw;
+    border: solid 2px gray;
+    outline: none;
+    background: none;
+    color: black;
+    border-radius: 10px;
+    resize: none;
+}
+.admnpnlcprcatraveldesBtn{
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 3%;
+}
+.admnpnlcprcatraveldesBtn p{
+    text-align: center;
+}
+.admnpnlcprcatraveldesBtn button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    outline: none;
+    border: solid 2px white;
+    color: white;
+    cursor: pointer;
+    padding: 5px 20px;
+    border-radius: 50px;
+    transition: 400ms ease;
+    opacity: 50%;
+    transition: 400ms ease;
+}
+.admnpnlcprcatraveldesBtn button h6{
+    font-size: 0.9vw;
+    font-weight: 600;
+}
+.admnpnlcprcatraveldesBtn button:hover{
+    opacity: 100%;
+    transition: 400ms ease;
+    background: red;
+    border: solid 2px red;
+}
 
 
+
+.admnpnlcprContainer.addVisaGuide button#visaGuideList{
+    position: absolute;
+    top: 1vw;
+    right: 1vw;
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 2vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.admnpnlcprcAddVisaGuide{
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    margin-top: 3%;
+}
+.admnpnlcprcavisaguide.left{
+    height: auto;
+    width: 30%;
+}
+.admnpnlcprcavisaguide.left div{
+    margin-bottom: 1vw;
+}
+.admnpnlcprcavisaguide.left div h6{
+    margin-left: 2%;
+    margin-bottom: 1%;
+    font-size: 0.7vw;
+    font-weight: 600;
+    color: gray;
+}
+.admnpnlcprcavisaguide.left div select,
+.admnpnlcprcavisaguide.left div input{
+    height: auto;
+    width: 100%;
+    padding: 5px 10px;
+    font-size: 0.7vw;
+    border: solid 2px gray;
+    outline: none;
+    background: none;
+    color: black;
+    border-radius: 10px;
+}
+.admnpnlcprcavisaguide.left div select option{
+    background: gray;
+}
+.admnpnlcprcavisaguide.right{
+    height: auto;
+    width: 65%;
+}
+.admnpnlcprcavisaguide.right div h6{
+    margin-left: 2%;
+    margin-bottom: 1%;
+    font-size: 0.7vw;
+    font-weight: 600;
+    color: gray;
+}
+.admnpnlcprcavisaguiderHeader{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.admnpnlcprcavisaguiderHeader div{
+    width: 49%;
+    margin-bottom: 1vw;
+}
+.admnpnlcprcavisaguiderHeader div input,
+.admnpnlcprcavisaguiderHeader div select{
+    height: auto;
+    width: 100%;
+    padding: 5px 10px;
+    font-size: 0.7vw;
+    border: solid 2px gray;
+    outline: none;
+    background: none;
+    color: black;
+    border-radius: 10px;
+}
+.admnpnlcprcavisaguiderContent{
+    height: auto;
+    width: 100%;
+}
+.admnpnlcprcavisaguiderContent textarea{
+    height: 12vw;
+    width: 100%;
+    padding: 10px;
+    font-size: 0.7vw;
+    border: solid 2px gray;
+    outline: none;
+    background: none;
+    color: black;
+    border-radius: 10px;
+    resize: none;
+}
+.admnpnlcprcavisaguideBtn{
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 3%;
+}
+.admnpnlcprcavisaguideBtn p{
+    text-align: center;
+}
+.admnpnlcprcavisaguideBtn button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    outline: none;
+    border: solid 2px white;
+    color: white;
+    cursor: pointer;
+    padding: 5px 20px;
+    border-radius: 50px;
+    transition: 400ms ease;
+    opacity: 50%;
+    transition: 400ms ease;
+}
+.admnpnlcprcavisaguideBtn button h6{
+    font-size: 0.9vw;
+    font-weight: 600;
+}
+.admnpnlcprcavisaguideBtn button:hover{
+    opacity: 100%;
+    transition: 400ms ease;
+    background: red;
+    border: solid 2px red;
+}

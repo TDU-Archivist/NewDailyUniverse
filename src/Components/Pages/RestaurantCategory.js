@@ -222,7 +222,7 @@ const RestaurantCategory = () => {
                                         <img src={country ? `https://flagcdn.com/w320/${(country).toLowerCase()}.png` : require('../assets/imgs/TDULandingBG.png')} alt="" id="rstrntctcpm2iCountry" />
                                     </div>
                                     <div className='rstrntctccpm2Dets'>
-                                        <h6><CountryName code={`${country}`} />'s</h6>
+                                        <h6><CountryName code={`${country}`} /></h6>
                                         <p>{restaurant}taurants</p>
                                     </div>
                                 </button>
