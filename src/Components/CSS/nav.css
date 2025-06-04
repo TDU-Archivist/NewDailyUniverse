@@ -78,7 +78,7 @@ nav{
 }
 .navclExtra{
     height: auto;
-    width: 10%;
+    width: 11%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -116,7 +116,7 @@ nav{
     height: auto;
     position: absolute;
     top: 6vh;
-    left: -1vw;
+    left: -7.4vw;
     padding: 0.5vw;
     border-radius: 0.5vw;
     background: whitesmoke;
@@ -176,7 +176,7 @@ nav{
     width: 15vw;
     position: absolute;
     top: 6vh;
-    left: -1vw;
+    left: -6.5vw;
     padding: 0.5vw 1vw;
     border-radius: 0.5vw;
     background: whitesmoke;
