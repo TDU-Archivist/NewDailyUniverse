@@ -357,9 +357,11 @@ section.newspaperCatContainerPage.mid{
     padding: 1vw;
 }
 .nwspprctccpm2Dets h6{
+    width: 100%;
     font-size: 1vw;
     line-height: 1.2vw;
     margin: 2% 0;
+    text-align: center;
 }
 .nwspprctccpm2Dets p{
     font-size: 0.7vw;
@@ -380,7 +382,45 @@ section.newspaperCatContainerPage.mid{
 
 
 
-
+.nwspprctccpm2Region{
+    height: auto;
+    width: 100%;
+    margin-bottom: 2vw;
+}
+.nwspprctccpm2Region h4{
+    padding: 0.5vw 1vw;
+}
+.nwspprctccpm2Region div{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    align-items: top;
+    text-align: center;
+}
+.nwspprctccpm2Region div a{
+    height: auto;
+    width: 24%;
+    overflow: hidden;
+    background: rgba(200, 200, 200);
+    border-radius: 1vw;
+    text-decoration: none;
+    text-align: center;
+    margin: 0.5%;
+}
+.nwspprctccpm2Region div a .nwspprctcpm2Img{
+    height: 14vw;
+    width: 100%;
+    border-radius: 1vw;
+    background: url('../assets/imgs/TheDailyUniverseBG.png') no-repeat center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
 
 
 

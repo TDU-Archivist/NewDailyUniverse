@@ -318,7 +318,6 @@ section.restaurantCatContainerPage.mid{
 }
 
 
-
 .restaurantCatContentPage.mid1 a{
     height: auto;
     width: 24%;
@@ -362,9 +361,11 @@ section.restaurantCatContainerPage.mid{
     padding: 1vw;
 }
 .rstrntctccpm2Dets h6{
+    width: 100%;
     font-size: 1vw;
     line-height: 1.2vw;
     margin: 2% 0;
+    text-align: center;
 }
 .rstrntctccpm2Dets p{
     font-size: 0.7vw;
@@ -386,8 +387,45 @@ section.restaurantCatContainerPage.mid{
 
 
 
-
-
+.rstrntctccpm2Region{
+    height: auto;
+    width: 100%;
+    margin-bottom: 2vw;
+}
+.rstrntctccpm2Region h4{
+    padding: 0.5vw 1vw;
+}
+.rstrntctccpm2Region div{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    align-items: top;
+    text-align: center;
+}
+.rstrntctccpm2Region div a{
+    height: auto;
+    width: 24%;
+    overflow: hidden;
+    background: rgba(200, 200, 200);
+    border-radius: 1vw;
+    text-decoration: none;
+    text-align: center;
+    margin: 0.5%;
+}
+.rstrntctccpm2Region div a .rstrntctcpm2Img{
+    height: 14vw;
+    width: 100%;
+    border-radius: 1vw;
+    background: url('../assets/imgs/TheDailyUniverseBG.png') no-repeat center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
 
 
 @media screen and (max-width: 500px){

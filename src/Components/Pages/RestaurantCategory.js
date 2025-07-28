@@ -122,6 +122,17 @@ const RestaurantCategory = () => {
     const filteredRestaurant = currentRestaurants.filter(
         restaurant => selectedCountry ? restaurant.country === selectedCountry : false
     )
+
+    // Group restaurants by region
+    const groupedByRegion = filteredRestaurant.reduce((acc, restaurant) => {
+        const region = restaurant.region || '';
+            if (!acc[region]) {
+                acc[region] = [];
+            }
+            acc[region].push(restaurant);
+        return acc;
+    }, {});
+    
     useEffect(() => {
         const fetchThumbnails = async () => {
             const newThumbnails = {};
@@ -230,17 +241,24 @@ const RestaurantCategory = () => {
                         </div>
                         :<div className="restaurantCatContentPage mid1">
                             {selectedCountry.length ? <>
-                                {filteredRestaurant?.map((details, i) => (
-                                    <a key={i} href={details?.restaurant_website} target="_blank" rel="noopener noreferrer">
-                                        <div className='rstrntctcpm2Img'>
-                                            <img src={details?.country ? `https://flagcdn.com/w320/${(details?.country).toLowerCase()}.png` : require('../assets/imgs/TDULandingBG.png')} alt="" id="rstrntctcpm2iFlag" />
-                                            <img src={thumbnails[details?.restaurant_website]} alt='' id='rstrntctcpm2iLogo' />
+                                {Object.entries(groupedByRegion).map(([regionName, restaurants]) => (
+                                    <div className='rstrntctccpm2Region' key={regionName}>
+                                        <h4>{regionName}</h4>
+                                        <div>
+                                            {restaurants.map((details, i) => (
+                                                <a key={i} href={details?.restaurant_website} target="_blank" rel="noopener noreferrer">
+                                                    <div className='rstrntctcpm2Img'>
+                                                        <img src={details?.country ? `https://flagcdn.com/w320/${(details?.country).toLowerCase()}.png` : require('../assets/imgs/TDULandingBG.png')} alt="" id="rstrntctcpm2iFlag" />
+                                                        <img src={thumbnails[details?.restaurant_website]} alt='' id='rstrntctcpm2iLogo' />
+                                                    </div>
+                                                    <div className='rstrntctccpm2Dets'>
+                                                        <h6>{details?.restaurant_name}</h6>
+                                                        <p>{details?.restaurant_description}</p>
+                                                    </div>
+                                                </a>
+                                            ))}
                                         </div>
-                                        <div className='rstrntctccpm2Dets'>
-                                            <h6>{details?.restaurant_name}</h6>
-                                            <p>{details?.restaurant_description}</p>
-                                        </div>
-                                    </a>
+                                    </div>
                                 ))}
                             </>:<>
                                 <div className="rstrntctccpm2Empty">
@@ -253,9 +271,9 @@ const RestaurantCategory = () => {
                     </>:<>
                         <div className="restaurantCatContentPage mid1">
                             <div className="rstrntctccpm2Empty">
-                            <span>
-                                <p>No {restaurant}taurants listed yet.</p>
-                            </span>
+                                <span>
+                                    <p>No {restaurant}taurants listed yet.</p>
+                                </span>
                             </div>
                         </div>
                     </>}

@@ -188,8 +188,8 @@ const SportContinent = () => {
                                     <img id='sprtctcpm2iLogo' src={thumbnails[details?.sports_website]} alt='' />
                                 </div>
                                 <div className='sprtctccpm2Dets'>
-                                    <h6>{details?.sports_name}</h6>
-                                    <p>{details?.sports_description}</p>
+                                    <h6>{details?.sports_team}</h6>
+                                    <p>{details?.sports_game}</p>
                                 </div>
                             </a>
                         ))}

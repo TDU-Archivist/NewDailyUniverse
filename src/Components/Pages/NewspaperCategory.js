@@ -120,8 +120,20 @@ const NewspaperCategory = () => {
   const currentNewspapers = dataList?.viewAllNewspapers.filter(category => category.newspaper_category === newspaper) || [];
   const countries = [...new Set(currentNewspapers.map(news => news.country))].sort((a, b) => a.localeCompare(b));
   const filteredNewspaper = currentNewspapers.filter(
-      news => selectedCountry ? news.country === selectedCountry : false
+    news => selectedCountry ? news.country === selectedCountry : false
   );
+
+  // Group restaurants by region
+  const groupedNewspapers = filteredNewspaper.reduce((acc, newspaper) => {
+    const region = newspaper.region || '';
+      if (!acc[region]) {
+        acc[region] = [];
+      }
+      acc[region].push(newspaper);
+    return acc;
+  }, {});
+
+
   useEffect(() => {
     const fetchThumbnails = async () => {
         const newThumbnails = {};
@@ -230,17 +242,24 @@ const NewspaperCategory = () => {
             </div>
             :<div className="newspaperCatContentPage mid1">
                 {selectedCountry.length ? <>
-                    {filteredNewspaper?.map((details, i) => (
-                        <a key={i} href={details?.newspaper_website} target="_blank" rel="noopener noreferrer">
-                            <div className='nwspprctcpm2Img'>
-                              <img src={`https://flagcdn.com/w320/${(details?.country).toLowerCase()}.png`} alt="" id="nwspprctcpm2iFlag" />
-                              <img id='nwspprctcpm2iLogo' src={thumbnails[details?.newspaper_website]} alt='' />
-                            </div>
-                            <div className='nwspprctccpm2Dets'>
+                    {Object.entries(groupedNewspapers).map(([regionName, newspapers]) => (
+                      <div className='nwspprctccpm2Region' key={regionName}>
+                        <h4>{regionName}</h4>
+                        <div>
+                          {newspapers.map((details, i) => (
+                            <a key={i} href={details?.newspaper_website} target="_blank" rel="noopener noreferrer">
+                              <div className='nwspprctcpm2Img'>
+                                <img src={`https://flagcdn.com/w320/${(details?.country).toLowerCase()}.png`} alt="" id="nwspprctcpm2iFlag"/>
+                                <img id='nwspprctcpm2iLogo' src={thumbnails[details?.newspaper_website]} alt='' />
+                              </div>
+                              <div className='nwspprctccpm2Dets'>
                                 <h6>{details?.newspaper_name}</h6>
                                 <p>{details?.newspaper_description}</p>
-                            </div>
-                        </a>
+                              </div>
+                            </a>
+                          ))}
+                        </div>
+                      </div>
                     ))}
                 </>:<>
                     <div className="nwspprctccpm2Empty">

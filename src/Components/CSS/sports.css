@@ -344,6 +344,7 @@ section.sportCatContainerPage.mid{
     margin: 2% 0;
 }
 .sprtctccpm2Dets p{
+    text-transform: capitalize;
     font-size: 0.7vw;
     padding: 0 5%;
     color: gray;

@@ -701,7 +701,7 @@ const Home = () => {
         </div>
         <div className="mainContentPage mid8">
           <div className="mncntntpm8More">
-            <h4>FAMOUS AIRLINES AROUND THE WORLD</h4>
+            <h4>AIRLINES FROM AROUND THE WORLD</h4>
             <Link to='/Airports'><h6>VIEW COUNTRIES AIRPORTS</h6></Link>
           </div>
           <div className="mncntntpm8Container1">
